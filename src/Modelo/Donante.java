@@ -13,7 +13,7 @@ public class Donante extends Usuario{
         super();
     }
 
-    public Donante(int id_donante, String motivo_dont, String entidad_dont, String proyecto_dont, String cedula_usu_dont, String cedula_usu, String nombre_usu, String apellido_usu, Date fechaNacimiento_usu, Character sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
+    public Donante(int id_donante, String motivo_dont, String entidad_dont, String proyecto_dont, String cedula_usu_dont, String cedula_usu, String nombre_usu, String apellido_usu, Date fechaNacimiento_usu, Character sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, Ciudad ciudad_usu, String direccion_usu, String contraseña_usu) {
         super(cedula_usu, nombre_usu, apellido_usu, fechaNacimiento_usu, sexo_usu, tipoSangre_usu, correo_usu, celular_usu, ciudad_usu, direccion_usu, contraseña_usu);
         this.id_donante = id_donante;
         this.motivo_dont = motivo_dont;
@@ -21,6 +21,8 @@ public class Donante extends Usuario{
         this.proyecto_dont = proyecto_dont;
         this.cedula_usu_dont = cedula_usu_dont;
     }
+
+    
 
     public int getId_donante() {
         return id_donante;

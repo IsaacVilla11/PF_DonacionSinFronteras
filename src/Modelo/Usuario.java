@@ -12,14 +12,14 @@ public class Usuario {
     private String tipoSangre_usu;
     private String correo_usu;
     private String celular_usu;
-    private String ciudad_usu;
+    private Ciudad ciudad_usu;
     private String direccion_usu;
     private String contraseña_usu;
 
     public Usuario() {
     }
 
-    public Usuario(String cedula_usu, String nombre_usu, String apellido_usu, Date fechaNacimiento_usu, Character sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
+    public Usuario(String cedula_usu, String nombre_usu, String apellido_usu, Date fechaNacimiento_usu, Character sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, Ciudad ciudad_usu, String direccion_usu, String contraseña_usu) {
         this.cedula_usu = cedula_usu;
         this.nombre_usu = nombre_usu;
         this.apellido_usu = apellido_usu;
@@ -97,11 +97,11 @@ public class Usuario {
         this.celular_usu = celular_usu;
     }
 
-    public String getCiudad_usu() {
+    public Ciudad getCiudad_usu() {
         return ciudad_usu;
     }
 
-    public void setCiudad_usu(String ciudad_usu) {
+    public void setCiudad_usu(Ciudad ciudad_usu) {
         this.ciudad_usu = ciudad_usu;
     }
 

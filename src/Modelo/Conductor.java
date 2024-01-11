@@ -14,7 +14,7 @@ public class Conductor extends Usuario {
         super();
     }
 
-    public Conductor(int id_conductor, String licencia_con, String jornada_con, String tipoLicencia_con, String cedula_usu_con, String cedula_usu, String nombre_usu, String apellido_usu, Date fechaNacimiento_usu, Character sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
+    public Conductor(int id_conductor, String licencia_con, String jornada_con, String tipoLicencia_con, String cedula_usu_con, String cedula_usu, String nombre_usu, String apellido_usu, Date fechaNacimiento_usu, Character sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, Ciudad ciudad_usu, String direccion_usu, String contraseña_usu) {
         super(cedula_usu, nombre_usu, apellido_usu, fechaNacimiento_usu, sexo_usu, tipoSangre_usu, correo_usu, celular_usu, ciudad_usu, direccion_usu, contraseña_usu);
         this.id_conductor = id_conductor;
         this.licencia_con = licencia_con;
@@ -23,6 +23,7 @@ public class Conductor extends Usuario {
         this.cedula_usu_con = cedula_usu_con;
     }
 
+    
     public int getId_conductor() {
         return id_conductor;
     }
