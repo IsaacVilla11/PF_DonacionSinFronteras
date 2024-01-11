@@ -21,6 +21,7 @@ public class LugarAfectado {
         return id_lugarAf;
     }
 
+    
     public void setId_lugarAf(int id_lugarAf) {
         this.id_lugarAf = id_lugarAf;
     }

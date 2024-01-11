@@ -23,6 +23,7 @@ public class RegistroDonacion {
         return id_regDon;
     }
 
+    
     public void setId_regDon(int id_regDon) {
         this.id_regDon = id_regDon;
     }
