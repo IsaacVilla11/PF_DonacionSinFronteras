@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EncabezadoFactura {
 
-    private int id_encabezado;
+    private int id_encabezadoFact;
     private Date fecha_fact;
     private double total;
     private int id_comprador_fact;
@@ -12,19 +12,19 @@ public class EncabezadoFactura {
     public EncabezadoFactura() {
     }
 
-    public EncabezadoFactura(int id_encabezado, Date fecha_fact, double total, int id_comprador_fact) {
-        this.id_encabezado = id_encabezado;
+    public EncabezadoFactura(int id_encabezadoFact, Date fecha_fact, double total, int id_comprador_fact) {
+        this.id_encabezadoFact = id_encabezadoFact;
         this.fecha_fact = fecha_fact;
         this.total = total;
         this.id_comprador_fact = id_comprador_fact;
     }
 
-    public int getId_encabezado() {
-        return id_encabezado;
+    public int getId_encabezadoFact() {
+        return id_encabezadoFact;
     }
 
-    public void setId_encabezado(int id_encabezado) {
-        this.id_encabezado = id_encabezado;
+    public void setId_encabezadoFact(int id_encabezadoFact) {
+        this.id_encabezadoFact = id_encabezadoFact;
     }
 
     public Date getFecha_fact() {
@@ -53,7 +53,9 @@ public class EncabezadoFactura {
 
     @Override
     public String toString() {
-        return "EncabezadoFactura{" + "id_encabezado=" + id_encabezado + ", fecha_fact=" + fecha_fact + ", total=" + total + ", id_comprador_fact=" + id_comprador_fact + '}';
+        return "EncabezadoFactura{" + "id_encabezadoFact=" + id_encabezadoFact + ", fecha_fact=" + fecha_fact + ", total=" + total + ", id_comprador_fact=" + id_comprador_fact + '}';
     }
+
+   
 
 }
