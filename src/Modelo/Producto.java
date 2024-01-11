@@ -2,7 +2,7 @@ package Modelo;
 
 public class Producto {
 
-    private int id_pro;
+    private int id_producto;
     private String tipo_pro;
     private boolean disponibilidad_pro;
     private String nombre_pro;
@@ -11,20 +11,21 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int id_pro, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
-        this.id_pro = id_pro;
+    public Producto(int id_producto, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
+        this.id_producto = id_producto;
         this.tipo_pro = tipo_pro;
         this.disponibilidad_pro = disponibilidad_pro;
         this.nombre_pro = nombre_pro;
         this.imagen_pro = imagen_pro;
     }
 
-    public int getId_pro() {
-        return id_pro;
+    public int getId_producto() {
+        return id_producto;
     }
 
-    public void setId_pro(int id_pro) {
-        this.id_pro = id_pro;
+
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
     }
 
     public String getTipo_pro() {
@@ -61,7 +62,8 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "id_pro=" + id_pro + ", tipo_pro=" + tipo_pro + ", disponibilidad_pro=" + disponibilidad_pro + ", nombre_pro=" + nombre_pro + ", imagen_pro=" + imagen_pro + '}';
+        return "Producto{" + "id_producto=" + id_producto + ", tipo_pro=" + tipo_pro + ", disponibilidad_pro=" + disponibilidad_pro + ", nombre_pro=" + nombre_pro + ", imagen_pro=" + imagen_pro + '}';
     }
+
 
 }
