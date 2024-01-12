@@ -34,10 +34,15 @@ public class V_Principal extends javax.swing.JFrame {
 
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton9.setForeground(new java.awt.Color(20, 51, 166));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosPlantilla/usuario.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/usuario.png"))); // NOI18N
         jButton9.setText("   Usuarios");
         jButton9.setBorderPainted(false);
         jButton9.setContentAreaFilled(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 160, 50));
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -49,7 +54,7 @@ public class V_Principal extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(20, 51, 166));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosPlantilla/ver-mas.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver-mas.png"))); // NOI18N
         jButton1.setText("Ver mas");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setContentAreaFilled(false);
@@ -81,7 +86,7 @@ public class V_Principal extends javax.swing.JFrame {
         jButton6.setContentAreaFilled(false);
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, 110, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosPlantilla/PDSF_HOME.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/PDSF_HOME.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -101,6 +106,10 @@ public class V_Principal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
