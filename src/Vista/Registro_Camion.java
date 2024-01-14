@@ -40,10 +40,21 @@ public class Registro_Camion extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jTextField10 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        panel2 = new org.edisoncor.gui.panel.Panel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -55,27 +66,27 @@ public class Registro_Camion extends javax.swing.JFrame {
         panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/camion1.png"))); // NOI18N
-        panel1.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 360, 620));
+        panel1.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 0, 370, 620));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setText("REGISTRO DE CAMION");
-        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, -1, -1));
+        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("Color:");
-        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
+        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 102));
         jLabel7.setText("CEDULA  PROPIETARIO :");
-        panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, 20));
+        panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, 20));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 102));
         jLabel9.setText("Marca:");
-        panel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, -1));
+        panel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 102));
@@ -84,24 +95,15 @@ public class Registro_Camion extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 102));
         jLabel11.setText("Modelo:");
-        panel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, -1, -1));
+        panel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel13.setText("Peso maximo:");
-        panel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 110, -1));
-        panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 196, 30));
-        panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 196, 30));
-        panel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 200, 30));
-        panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 196, 30));
-
-        jButton3.setBackground(new java.awt.Color(0, 204, 0));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("REGISTRARTE");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.setBorderPainted(false);
-        panel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, 140, 39));
+        panel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 110, -1));
+        panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 196, 30));
+        panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 100, 30));
+        panel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 200, 30));
+        panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 196, 30));
 
         jButton5.setBackground(new java.awt.Color(51, 51, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -109,26 +111,131 @@ public class Registro_Camion extends javax.swing.JFrame {
         jButton5.setText("VOLVER");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.setBorderPainted(false);
-        panel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, 80, 30));
+        panel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, 80, 30));
+        panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 200, 30));
 
-        jButton6.setBackground(new java.awt.Color(102, 0, 0));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Cedula", "Marca", "Color", "Modelo", "Peso Maximo"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 740, 120));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel14.setText("ID");
+        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 50, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        panel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 200, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel15.setText("Peso maximo:");
+        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 110, -1));
+
+        panel2.setColorPrimario(new java.awt.Color(169, 169, 169));
+        panel2.setColorSecundario(new java.awt.Color(152, 255, 152));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
+        jLabel5.setText("Que desea hacer?");
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 51));
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
+        jButton4.setText("CONSULTAR");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setBorderPainted(false);
+
+        jButton7.setBackground(new java.awt.Color(0, 0, 51));
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
+        jButton7.setText("MODIFICAR");
+        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton7.setBorderPainted(false);
+
+        jButton6.setBackground(new java.awt.Color(51, 0, 51));
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("CANCELAR");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/reporte.png"))); // NOI18N
+        jButton6.setText("REPORTE");
         jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.setBorderPainted(false);
-        panel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 140, 40));
-        panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 200, 30));
+
+        jButton8.setBackground(new java.awt.Color(0, 0, 51));
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
+        jButton8.setText("ELIMINAR");
+        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton8.setBorderPainted(false);
+
+        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
+        panel2.setLayout(panel2Layout);
+        panel2Layout.setHorizontalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        panel2Layout.setVerticalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addGap(36, 36, 36)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        panel1.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 60, 240, 400));
+
+        jButton9.setBackground(new java.awt.Color(0, 204, 0));
+        jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
+        jButton9.setText("Guardar");
+        jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton9.setBorderPainted(false);
+        panel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 140, 39));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 977, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1308, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -172,22 +279,33 @@ public class Registro_Camion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IMAGEN;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
     private org.edisoncor.gui.panel.Panel panel1;
+    private org.edisoncor.gui.panel.Panel panel2;
     // End of variables declaration//GEN-END:variables
 }

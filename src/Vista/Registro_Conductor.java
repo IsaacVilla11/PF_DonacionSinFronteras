@@ -27,9 +27,9 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        brightPassFilter1 = new org.edisoncor.gui.util.BrightPassFilter();
         panel1 = new org.edisoncor.gui.panel.Panel();
         IMAGEN = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -41,7 +41,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -49,20 +48,28 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jComboBox3 = new javax.swing.JComboBox<>();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
-        jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        panel2 = new org.edisoncor.gui.panel.Panel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -74,32 +81,27 @@ public class Registro_Conductor extends javax.swing.JFrame {
         panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         IMAGEN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Rectangle 1.png"))); // NOI18N
-        panel1.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 640));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setText("REGISTRO DE CONDUCTOR");
-        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
+        panel1.add(IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 640));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("Apellido:");
-        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
+        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 102));
         jLabel7.setText("Cedula:");
-        panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 67, -1, 20));
+        panel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, 20));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 102));
         jLabel8.setText("Tipo de Sangre:");
-        panel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, -1));
+        panel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 102));
         jLabel9.setText("Nombre:");
-        panel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
+        panel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 102));
@@ -108,72 +110,65 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 102));
         jLabel11.setText("Fecha de Nacimiento:");
-        panel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, -1, -1));
+        panel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 102));
         jLabel12.setText("Sexo:");
-        panel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 80, -1));
+        panel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 80, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 102));
         jLabel13.setText("Celular:");
-        panel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 510, 70, -1));
+        panel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 70, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setText("Jornada:");
-        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, -1, -1));
+        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 102));
         jLabel15.setText("Ciudad:");
-        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, -1, -1));
+        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 102));
         jLabel16.setText("Correo:");
-        panel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 60, -1));
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel17.setText("Licencia:");
-        panel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, -1, -1));
+        panel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 60, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 102));
         jLabel18.setText("Contraseña:");
-        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, -1, -1));
+        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 102));
         jLabel19.setText("Direccion:");
-        panel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
+        panel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 102));
         jLabel20.setText("Tipo de Licencia:");
-        panel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, -1, 20));
-        panel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 196, 30));
-        panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 196, 30));
-        panel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 540, 196, 30));
-        panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 196, 30));
-        panel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 196, 30));
-        panel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 160, 30));
-        panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 150, 196, 30));
-        panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 196, 30));
-        panel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 196, 30));
-        panel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 196, 30));
-        panel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, 200, 30));
+        panel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, 20));
+        panel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 196, 30));
+        panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 196, 30));
+        panel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 196, 30));
+        panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 196, 30));
+        panel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 160, 30));
+        panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 196, 30));
+        panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 196, 30));
+        panel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 196, 30));
+        panel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 200, 30));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
-        panel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 200, -1));
+        panel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 200, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "C1", "D ", "D1", "E", "El " }));
-        panel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 200, -1));
+        panel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 200, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutina", "Despertina", "Nocturna" }));
-        panel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, 200, -1));
+        panel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 200, -1));
 
         jCheckBox1.setText("M");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -181,18 +176,10 @@ public class Registro_Conductor extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        panel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
+        panel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
 
         jCheckBox3.setText("F");
-        panel1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(0, 204, 0));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("REGISTRARTE");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.setBorderPainted(false);
-        panel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, 140, 39));
+        panel1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(51, 51, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -200,17 +187,127 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jButton5.setText("VOLVER");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.setBorderPainted(false);
-        panel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, 80, 30));
+        panel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, 80, 30));
+
+        jTable2.setBackground(new java.awt.Color(204, 255, 204));
+        jTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cedula", "Nombre", "Apelido", "F. Nacimiento", "Sexo", "Correo", "Cedular", "Ciudad", "Direccionl", "Contraseña", "Tipo Licencia", "Jornada"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        panel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 590, 980, 130));
+
+        panel2.setColorPrimario(new java.awt.Color(169, 169, 169));
+        panel2.setColorSecundario(new java.awt.Color(152, 255, 152));
+
+        jLabel1.setFont(new java.awt.Font("Nirmala UI", 2, 24)); // NOI18N
+        jLabel1.setText("Que desea hacer?");
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 51));
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
+        jButton3.setText("CONSULTAR");
+        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setBorderPainted(false);
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 51));
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
+        jButton4.setText("MODIFICAR");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setBorderPainted(false);
+
+        jButton6.setBackground(new java.awt.Color(51, 0, 51));
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/reporte.png"))); // NOI18N
+        jButton6.setText("REPORTE");
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton6.setBorderPainted(false);
+
+        jButton8.setBackground(new java.awt.Color(0, 0, 51));
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
+        jButton8.setText("ELIMINAR");
+        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton8.setBorderPainted(false);
+
+        javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
+        panel2.setLayout(panel2Layout);
+        panel2Layout.setHorizontalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(89, 89, 89))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+        panel2Layout.setVerticalGroup(
+            panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(43, 43, 43)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        panel1.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 90, 330, 440));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setText("REGISTRO DE CONDUCTOR");
+        panel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
+        jButton7.setBackground(new java.awt.Color(0, 204, 0));
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
+        jButton7.setText("Guardar");
+        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton7.setBorderPainted(false);
+        panel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 140, 39));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 977, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1230, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
         );
 
         pack();
@@ -257,8 +354,13 @@ public class Registro_Conductor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IMAGEN;
+    private org.edisoncor.gui.util.BrightPassFilter brightPassFilter1;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -272,26 +374,28 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private org.edisoncor.gui.panel.Panel panel1;
+    private org.edisoncor.gui.panel.Panel panel2;
     // End of variables declaration//GEN-END:variables
 }
