@@ -113,7 +113,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jButton5.setContentAreaFilled(false);
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 110, 30));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 110, -1));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 110, 100));
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -148,7 +148,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 110, 300));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, 290));
 
         jButton8.setBackground(new java.awt.Color(20, 51, 166));
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -172,7 +172,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jLabel4.setText("Aqui solo se mostraran las imagenes de las donaciones, mas nada");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 56, -1, -1));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 1000, 230));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 990, 230));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/agregar.png"))); // NOI18N
         jButton1.setText("Agregar Donacion");
