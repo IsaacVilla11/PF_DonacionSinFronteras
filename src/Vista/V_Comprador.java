@@ -1,8 +1,16 @@
 package Vista;
 
+import javax.swing.JButton;
+
 public class V_Comprador extends javax.swing.JFrame {
 
-   
+    public V_Comprador() {
+        initComponents();
+    }
+
+    public JButton getBtnregresar() {
+        return btnregresar;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -32,63 +40,62 @@ public class V_Comprador extends javax.swing.JFrame {
         jpSecciones.setBackground(new java.awt.Color(255, 255, 255));
         jpSecciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(20, 51, 166));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("INICIO");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jpSecciones.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, -1));
 
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(20, 51, 166));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("PRODUCTOS");
         jpSecciones.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 140, 20));
 
+        jLabel13.setBackground(new java.awt.Color(0, 0, 0));
         jLabel13.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(20, 51, 166));
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("CARRITO DE COMPRAS");
         jpSecciones.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
+        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
         jLabel14.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(20, 51, 166));
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("FACTURA");
         jpSecciones.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 80, 20));
 
+        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
         jLabel17.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(20, 51, 166));
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("REPORTE");
         jpSecciones.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 80, 20));
 
         btnInicio.setBackground(new java.awt.Color(255, 255, 255));
-        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/btn2.png"))); // NOI18N
         btnInicio.setBorder(null);
         jpSecciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 50));
 
         btnRopa.setBackground(new java.awt.Color(255, 255, 255));
-        btnRopa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/btn2.png"))); // NOI18N
         btnRopa.setBorder(null);
         jpSecciones.add(btnRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 50));
 
         btnCompras.setBackground(new java.awt.Color(255, 255, 255));
-        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/btn2.png"))); // NOI18N
         btnCompras.setBorder(null);
         jpSecciones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 190, 50));
 
         btnFactura.setBackground(new java.awt.Color(255, 255, 255));
-        btnFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/btn2.png"))); // NOI18N
         btnFactura.setBorder(null);
         jpSecciones.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 190, 50));
 
         btnReporte.setBackground(new java.awt.Color(255, 255, 255));
-        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/btn2.png"))); // NOI18N
         btnReporte.setBorder(null);
         jpSecciones.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 190, 50));
 
         btnregresar.setBackground(new java.awt.Color(255, 255, 255));
         btnregresar.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        btnregresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/usuario.png"))); // NOI18N
-        btnregresar.setText("CERRAS SESION");
+        btnregresar.setText("CERRAR SESION");
         btnregresar.setBorder(null);
         btnregresar.setBorderPainted(false);
         jpSecciones.add(btnregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 140, 50));

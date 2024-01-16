@@ -1,13 +1,23 @@
 package Vista;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author ASUS
  */
-public class Login_Solicitante extends javax.swing.JFrame {
+public class Login_Administrador extends javax.swing.JFrame {
 
-    public Login_Solicitante() {
+    public Login_Administrador() {
         initComponents();
+    }
+
+    public JButton getBtnIniciarSesionAdmin() {
+        return btnIniciarSesionAdmin;
+    }
+
+    public JButton getBtnRegresar() {
+        return btnRegresar;
     }
 
     @SuppressWarnings("unchecked")
@@ -16,12 +26,12 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        btnIniciarSesionAdmin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -31,24 +41,16 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setText("LOGIN SOLICITANTE");
+        jLabel1.setText("LOGIN ADMINISTRADOR");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(20, 51, 166));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INICIAR SESION");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setBorderPainted(false);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 127, 39));
-
-        jButton2.setBackground(new java.awt.Color(20, 51, 166));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("REGISTRARME");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setBorderPainted(false);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 132, 39));
+        btnRegresar.setBackground(new java.awt.Color(20, 51, 166));
+        btnRegresar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegresar.setBorderPainted(false);
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 127, 39));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 102));
@@ -61,6 +63,14 @@ public class Login_Solicitante extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 152, -1, -1));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 187, 196, 36));
+
+        btnIniciarSesionAdmin.setBackground(new java.awt.Color(20, 51, 166));
+        btnIniciarSesionAdmin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnIniciarSesionAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarSesionAdmin.setText("INICIAR SESION");
+        btnIniciarSesionAdmin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnIniciarSesionAdmin.setBorderPainted(false);
+        jPanel1.add(btnIniciarSesionAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 127, 39));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -82,8 +92,8 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnIniciarSesionAdmin;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

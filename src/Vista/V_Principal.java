@@ -1,9 +1,39 @@
 package Vista;
 
+import javax.swing.JButton;
+
 public class V_Principal extends javax.swing.JFrame {
 
     public V_Principal() {
         initComponents();
+    }
+
+    public JButton getBtnAyuda() {
+        return btnAyuda;
+    }
+
+    public JButton getBtnDonaciones() {
+        return btnDonaciones;
+    }
+
+    public JButton getBtnDonar1() {
+        return btnDonar1;
+    }
+
+    public JButton getBtnIniciarSesion() {
+        return btnIniciarSesion;
+    }
+
+    public JButton getBtnRegistrarse() {
+        return btnRegistrarse;
+    }
+
+    public JButton getBtnVentas() {
+        return btnVentas;
+    }
+
+    public JButton getBtnVermas() {
+        return btnVermas;
     }
 
     @SuppressWarnings("unchecked")
@@ -11,80 +41,70 @@ public class V_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnVentas = new javax.swing.JButton();
+        btnVermas = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
+        btnDonaciones = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        btnDonar1 = new javax.swing.JButton();
+        btnAyuda = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(20, 51, 166));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Empezar");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setBorderPainted(false);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 590, 140, 40));
+        btnVentas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnVentas.setForeground(new java.awt.Color(20, 51, 166));
+        btnVentas.setText("Ventas");
+        btnVentas.setBorderPainted(false);
+        btnVentas.setContentAreaFilled(false);
+        jPanel1.add(btnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 110, 50));
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(20, 51, 166));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/usuario.png"))); // NOI18N
-        jButton9.setText("   Usuarios");
-        jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, 160, 50));
+        btnVermas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnVermas.setForeground(new java.awt.Color(20, 51, 166));
+        btnVermas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver-mas.png"))); // NOI18N
+        btnVermas.setText("Ver mas");
+        btnVermas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVermas.setContentAreaFilled(false);
+        jPanel1.add(btnVermas, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 590, 150, 40));
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(20, 51, 166));
-        jButton8.setText("Ventas");
-        jButton8.setBorderPainted(false);
-        jButton8.setContentAreaFilled(false);
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, 110, 50));
+        btnRegistrarse.setBackground(new java.awt.Color(20, 51, 166));
+        btnRegistrarse.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.setBorderPainted(false);
+        jPanel1.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 20, 120, 50));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(20, 51, 166));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver-mas.png"))); // NOI18N
-        jButton1.setText("Ver mas");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 590, 150, 40));
+        btnDonaciones.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnDonaciones.setForeground(new java.awt.Color(20, 51, 166));
+        btnDonaciones.setText("Donaciones");
+        btnDonaciones.setBorderPainted(false);
+        btnDonaciones.setContentAreaFilled(false);
+        jPanel1.add(btnDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, 110, 50));
 
-        jButton5.setBackground(new java.awt.Color(20, 51, 166));
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Registrarse");
-        jButton5.setBorderPainted(false);
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 20, 120, 50));
+        btnIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnIniciarSesion.setForeground(new java.awt.Color(20, 51, 166));
+        btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.setBorderPainted(false);
+        btnIniciarSesion.setContentAreaFilled(false);
+        jPanel1.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, 130, 50));
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(20, 51, 166));
-        jButton7.setText("Donaciones");
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 20, 110, 50));
+        btnDonar1.setBackground(new java.awt.Color(20, 51, 166));
+        btnDonar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnDonar1.setForeground(new java.awt.Color(255, 255, 255));
+        btnDonar1.setText("Donar ahora");
+        btnDonar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDonar1.setBorderPainted(false);
+        jPanel1.add(btnDonar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 590, 140, 40));
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(20, 51, 166));
-        jButton6.setText("Iniciar Sesión");
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, 110, 50));
+        btnAyuda.setBackground(new java.awt.Color(20, 51, 166));
+        btnAyuda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAyuda.setForeground(new java.awt.Color(255, 255, 255));
+        btnAyuda.setText("Ayuda");
+        btnAyuda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAyuda.setBorderPainted(false);
+        jPanel1.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 140, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/PDSF_HOME.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -103,23 +123,15 @@ public class V_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnAyuda;
+    private javax.swing.JButton btnDonaciones;
+    private javax.swing.JButton btnDonar1;
+    private javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JButton btnVentas;
+    private javax.swing.JButton btnVermas;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
