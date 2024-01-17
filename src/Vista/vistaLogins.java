@@ -66,6 +66,7 @@ public class vistaLogins extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmnR = new javax.swing.JMenu();
         jmiLoginAdmin = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -148,6 +149,9 @@ public class vistaLogins extends javax.swing.JFrame {
         });
         jmnR.add(jmiLoginAdmin);
 
+        jMenuItem1.setText("Crud");
+        jmnR.add(jMenuItem1);
+
         jMenu1.add(jmnR);
 
         jMenuBar1.add(jMenu1);
@@ -187,6 +191,7 @@ public class vistaLogins extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem jmiLoginAdmin;
     private javax.swing.JMenu jmnR;
