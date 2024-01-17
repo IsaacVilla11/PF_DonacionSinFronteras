@@ -265,7 +265,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="btnregresar">
+            <Component class="javax.swing.JButton" name="btnCerrarSesion">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f9" green="e3" red="8b" type="rgb"/>

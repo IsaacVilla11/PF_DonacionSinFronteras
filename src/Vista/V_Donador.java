@@ -1,8 +1,16 @@
 package Vista;
 
+import javax.swing.JButton;
+
 public class V_Donador extends javax.swing.JFrame {
 
- 
+    public V_Donador() {
+        initComponents();
+    }
+
+    public JButton getBtnCerrarSesion() {
+        return btnCerrarSesion;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -20,7 +28,7 @@ public class V_Donador extends javax.swing.JFrame {
         btnDonarMUbeles = new javax.swing.JButton();
         BtnDonarRopa = new javax.swing.JButton();
         btnReporte = new javax.swing.JButton();
-        btnregresar = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -114,11 +122,11 @@ public class V_Donador extends javax.swing.JFrame {
         btnReporte.setContentAreaFilled(false);
         jPanel2.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 200, 60));
 
-        btnregresar.setBackground(new java.awt.Color(139, 227, 249));
-        btnregresar.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        btnregresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/usuario.png"))); // NOI18N
-        btnregresar.setText("Cerrar sesión");
-        jPanel2.add(btnregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 200, 50));
+        btnCerrarSesion.setBackground(new java.awt.Color(139, 227, 249));
+        btnCerrarSesion.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/usuario.png"))); // NOI18N
+        btnCerrarSesion.setText("Cerrar sesión");
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 200, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 200, 590));
 
@@ -143,11 +151,11 @@ public class V_Donador extends javax.swing.JFrame {
     private javax.swing.JButton BtnDonarAlimentos;
     private javax.swing.JButton BtnDonarRopa;
     public static javax.swing.JPanel Contenido;
+    private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnDonarMUbeles;
     private javax.swing.JButton btnDonarMedi;
     private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnReporte;
-    private javax.swing.JButton btnregresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

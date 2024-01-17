@@ -59,6 +59,8 @@ public class ControladorLogins {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
+        ControladorLoginSolicitante control = new ControladorLoginSolicitante(vista);
+        control.iniciarControl();
     }
 
     public void mostrarLoginAdministrador() {
@@ -91,4 +93,5 @@ public class ControladorLogins {
         ControladorRegistroComprador control = new ControladorRegistroComprador(vista);
         control.iniciarControl();
     }
+
 }

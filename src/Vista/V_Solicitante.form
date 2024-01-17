@@ -147,6 +147,11 @@
                   <Component id="btnInicio" alignment="0" max="32767" attributes="0"/>
                   <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                   <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnregresar" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -159,6 +164,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" pref="82" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnregresar" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -206,6 +213,21 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ESTADO DE SOLICITUD"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnregresar">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dubai" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="CERRAR SESION"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
             </Component>

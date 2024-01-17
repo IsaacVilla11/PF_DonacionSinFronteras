@@ -16,14 +16,22 @@ public class Login_Solicitante extends javax.swing.JFrame {
         return btnRegresar;
     }
 
+    public JButton getBtnIniciarSesion() {
+        return btnIniciarSesion;
+    }
+
+    public JButton getBtnRegistrar() {
+        return btnRegistrar;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -41,21 +49,21 @@ public class Login_Solicitante extends javax.swing.JFrame {
         jLabel1.setText("LOGIN SOLICITANTE");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(20, 51, 166));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INICIAR SESION");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setBorderPainted(false);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 127, 39));
+        btnIniciarSesion.setBackground(new java.awt.Color(20, 51, 166));
+        btnIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarSesion.setText("INICIAR SESION");
+        btnIniciarSesion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnIniciarSesion.setBorderPainted(false);
+        jPanel1.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 127, 39));
 
-        jButton2.setBackground(new java.awt.Color(20, 51, 166));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("REGISTRARME");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setBorderPainted(false);
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 132, 39));
+        btnRegistrar.setBackground(new java.awt.Color(20, 51, 166));
+        btnRegistrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("REGISTRARME");
+        btnRegistrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.setBorderPainted(false);
+        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 132, 39));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 102));
@@ -97,9 +105,9 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
