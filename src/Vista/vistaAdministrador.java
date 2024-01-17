@@ -42,10 +42,15 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -176,24 +181,44 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitud.png"))); // NOI18N
         jMenu4.setText("Solicitante");
+
+        jMenuItem1.setText("Registro");
+        jMenu4.add(jMenuItem1);
+
         jMenu2.add(jMenu4);
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donantes.png"))); // NOI18N
         jMenu5.setText("Donante");
+
+        jMenuItem2.setText("Registro");
+        jMenu5.add(jMenuItem2);
+
         jMenu2.add(jMenu5);
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/comprador.png"))); // NOI18N
         jMenu6.setText("Comprador");
+
+        jMenuItem3.setText("Registro");
+        jMenu6.add(jMenuItem3);
+
         jMenu2.add(jMenu6);
 
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/chofer.png"))); // NOI18N
         jMenu7.setText("Conductor");
+
+        jMenuItem4.setText("Registro");
+        jMenu7.add(jMenuItem4);
+
         jMenu2.add(jMenu7);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/candado.png"))); // NOI18N
         jMenu3.setText("Administradores");
+
+        jMenuItem5.setText("Crud");
+        jMenu3.add(jMenuItem5);
+
         jMenuBar1.add(jMenu3);
 
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/pagina-de-inicio (1).png"))); // NOI18N
@@ -241,6 +266,11 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

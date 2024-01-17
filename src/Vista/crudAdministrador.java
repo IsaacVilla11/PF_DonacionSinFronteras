@@ -27,6 +27,7 @@ public class crudAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -123,10 +124,12 @@ public class crudAdministrador extends javax.swing.JFrame {
         jLabel13.setText("Cargo");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, -1, -1));
 
+        btSexo.add(btnH);
         btnH.setText("Hombre");
         btnH.setContentAreaFilled(false);
         jPanel1.add(btnH, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
 
+        btSexo.add(btnM);
         btnM.setText("Mujer");
         btnM.setContentAreaFilled(false);
         btnM.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +203,7 @@ public class crudAdministrador extends javax.swing.JFrame {
         jPanel1.add(jDnacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 160, -1));
 
         btnCargar.setText("Cargar");
-        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
+        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, 20));
 
         jLabel9.setText("Correo");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
@@ -288,6 +291,7 @@ public class crudAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaComprador;
+    private javax.swing.ButtonGroup btSexo;
     private javax.swing.JButton btnCargar;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnDelete;
