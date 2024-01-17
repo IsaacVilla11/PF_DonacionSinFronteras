@@ -48,7 +48,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
@@ -70,6 +69,7 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         jLabel2.setText("jLabel2");
 
@@ -155,7 +155,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
         panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 196, 30));
         panel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 196, 30));
         panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 196, 30));
-        panel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 160, 30));
         panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 196, 30));
         panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 196, 30));
         panel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 196, 30));
@@ -296,6 +295,9 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jButton7.setBorderPainted(false);
         panel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 140, 39));
 
+        jDateChooser1.setForeground(new java.awt.Color(0, 0, 102));
+        panel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 190, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -366,6 +368,7 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -394,7 +397,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField9;
     private org.edisoncor.gui.panel.Panel panel1;
     private org.edisoncor.gui.panel.Panel panel2;
     // End of variables declaration//GEN-END:variables
