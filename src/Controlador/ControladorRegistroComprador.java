@@ -24,7 +24,7 @@ public class ControladorRegistroComprador {
     }
 
     public void crearComprador() {
-        System.out.println("Crear codigo");
+        //Crear Codigo
     }
 
     public void IrLoginComprador() {

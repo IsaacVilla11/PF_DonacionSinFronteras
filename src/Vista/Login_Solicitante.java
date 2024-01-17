@@ -1,5 +1,7 @@
 package Vista;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author ASUS
@@ -8,6 +10,10 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
     public Login_Solicitante() {
         initComponents();
+    }
+
+    public JButton getBtnRegresar() {
+        return btnRegresar;
     }
 
     @SuppressWarnings("unchecked")
@@ -22,6 +28,7 @@ public class Login_Solicitante extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        btnRegresar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -62,6 +69,14 @@ public class Login_Solicitante extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 187, 196, 36));
 
+        btnRegresar.setBackground(new java.awt.Color(20, 51, 166));
+        btnRegresar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegresar.setBorderPainted(false);
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 39));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -82,6 +97,7 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -81,6 +81,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Administradores"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jmiCrudAdmin">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crud"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu8">
           <Properties>

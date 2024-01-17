@@ -57,7 +57,7 @@ public class Login_Comprador extends javax.swing.JFrame {
         btnRegresar.setText("Regresar");
         btnRegresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegresar.setBorderPainted(false);
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 127, 39));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 39));
 
         btnRegistrarComprador.setBackground(new java.awt.Color(20, 51, 166));
         btnRegistrarComprador.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

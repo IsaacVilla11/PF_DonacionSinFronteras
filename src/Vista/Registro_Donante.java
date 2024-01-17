@@ -1,10 +1,21 @@
 package Vista;
 
+import javax.swing.JButton;
 
 public class Registro_Donante extends javax.swing.JFrame {
-    
-   
-    
+
+    public Registro_Donante() {
+        initComponents();
+    }
+
+    public JButton getBTNCrear() {
+        return BTNCrear;
+    }
+
+    public JButton getBtnregresodonate() {
+        return btnregresodonate;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

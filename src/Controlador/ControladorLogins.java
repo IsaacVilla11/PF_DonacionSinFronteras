@@ -37,6 +37,9 @@ public class ControladorLogins {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
+        ControladorLoginDonador control = new ControladorLoginDonador(vista);
+        control.iniciarControl();
+
     }
 
     public void mostrarLoginComprador() {

@@ -4,6 +4,7 @@ import Vista.CRUD_Comprador;
 import Vista.Registro_Comprador;
 import Vista.V_CrudComprador;
 import Vista.V_Principal;
+import Vista.crudAdministrador;
 import Vista.vistaAdministrador;
 
 /**
@@ -22,6 +23,7 @@ public class ControladorModuloAdmin {
     public void iniciarControl() {
         vistaModAdmin.getBtnCerrarSesion().addActionListener(l -> regresesarMenuPrincipal());
         vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
+        vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
 
     }
 
@@ -42,6 +44,16 @@ public class ControladorModuloAdmin {
         vista.setVisible(true);
 
         ControladorCrudComprador control = new ControladorCrudComprador(vista);
+        control.iniciarControl();
+    }
+
+    public void mostrarCrudAdmin() {
+        vistaModAdmin.dispose();
+        crudAdministrador vista = new crudAdministrador();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorCrudAdmin control = new ControladorCrudAdmin(vista);
         control.iniciarControl();
     }
 }

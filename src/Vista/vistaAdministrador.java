@@ -21,6 +21,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmiRegistroComprador;
     }
 
+    public JMenuItem getJmiCrudAdmin() {
+        return jmiCrudAdmin;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -52,6 +56,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jmiRegistroComprador = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jmiCrudAdmin = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -204,6 +209,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/candado.png"))); // NOI18N
         jMenu3.setText("Administradores");
+
+        jmiCrudAdmin.setText("Crud");
+        jMenu3.add(jmiCrudAdmin);
+
         jMenuBar1.add(jMenu3);
 
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/pagina-de-inicio (1).png"))); // NOI18N
@@ -255,6 +264,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem jmiCrudAdmin;
     private javax.swing.JMenuItem jmiRegistroComprador;
     // End of variables declaration//GEN-END:variables
 }
