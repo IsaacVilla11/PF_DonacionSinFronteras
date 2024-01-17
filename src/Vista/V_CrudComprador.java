@@ -2,9 +2,13 @@ package Vista;
 
 import javax.swing.JButton;
 
-public class CRUD_Comprador extends javax.swing.JFrame {
+/**
+ *
+ * @author IV
+ */
+public class V_CrudComprador extends javax.swing.JFrame {
 
-    public CRUD_Comprador() {
+    public V_CrudComprador() {
         initComponents();
     }
 
@@ -16,8 +20,6 @@ public class CRUD_Comprador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jOptionPane1 = new javax.swing.JOptionPane();
-        buttonGroupSexo = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -58,6 +60,8 @@ public class CRUD_Comprador extends javax.swing.JFrame {
         NumCompras = new javax.swing.JTextField();
         btnRegresar = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(810, 589));
 
@@ -82,10 +86,8 @@ public class CRUD_Comprador extends javax.swing.JFrame {
         jLabel6.setText("REGISTRO");
         jLabel6.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        buttonGroupSexo.add(btnH);
         btnH.setText("Hombre");
 
-        buttonGroupSexo.add(btnM);
         btnM.setText("Mujer");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
@@ -234,7 +236,7 @@ public class CRUD_Comprador extends javax.swing.JFrame {
                                         .addComponent(btnModi, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(38, 38, 38)
                                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,20 +321,22 @@ public class CRUD_Comprador extends javax.swing.JFrame {
                                 .addComponent(btnModi, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 986, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -347,7 +351,6 @@ public class CRUD_Comprador extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnM;
     private javax.swing.JButton btnModi;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.ButtonGroup buttonGroupSexo;
     private javax.swing.JComboBox<String> cbBoxSangre;
     private javax.swing.JComboBox<String> cbboxCiudad;
     private com.toedter.calendar.JDateChooser jDnacimiento;
@@ -367,7 +370,6 @@ public class CRUD_Comprador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtApe;

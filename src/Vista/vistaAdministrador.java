@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -14,6 +15,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
     public JButton getBtnCerrarSesion() {
         return btnCerrarSesion;
+    }
+
+    public JMenuItem getJmiRegistroComprador() {
+        return jmiRegistroComprador;
     }
 
     @SuppressWarnings("unchecked")
@@ -44,6 +49,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        jmiRegistroComprador = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
@@ -184,6 +190,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/comprador.png"))); // NOI18N
         jMenu6.setText("Comprador");
+
+        jmiRegistroComprador.setText("Registro");
+        jMenu6.add(jmiRegistroComprador);
+
         jMenu2.add(jMenu6);
 
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/chofer.png"))); // NOI18N
@@ -245,5 +255,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem jmiRegistroComprador;
     // End of variables declaration//GEN-END:variables
 }

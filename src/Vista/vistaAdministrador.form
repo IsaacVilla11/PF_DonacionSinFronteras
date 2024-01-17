@@ -56,6 +56,13 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Comprador"/>
               </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jmiRegistroComprador">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Registro"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu7">
               <Properties>
