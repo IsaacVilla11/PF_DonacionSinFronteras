@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
 
 /**
@@ -25,6 +26,23 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmiCrudAdmin;
     }
 
+    public JButton getBtnCA() {
+        return btnCA;
+    }
+
+    public JButton getBtnLA() {
+        return btnLA;
+    }
+
+    public JButton getBtnTables() {
+        return btnTables;
+    }
+
+    public JDesktopPane getDeskRegistros() {
+        return deskRegistros;
+    }
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,8 +55,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
+        deskRegistros = new javax.swing.JDesktopPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         btnCerrarSesion = new javax.swing.JButton();
@@ -48,6 +65,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jToolBar1 = new javax.swing.JToolBar();
+        btnLA = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        btnCA = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        btnTables = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -91,49 +114,39 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jButton7.setText("Donaciones");
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
         jButton6.setForeground(new java.awt.Color(20, 51, 166));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/camion.png"))); // NOI18N
         jButton6.setText("Conductor");
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 110, -1));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, -1));
 
         jButton5.setForeground(new java.awt.Color(20, 51, 166));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/mensajes.png"))); // NOI18N
         jButton5.setText("Solicitudes");
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 110, 30));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 30));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 110, 100));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 140, 100));
 
-        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jDesktopPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        deskRegistros.setBackground(new java.awt.Color(255, 255, 255));
+        deskRegistros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jLabel1.setText("Aqui se muestran las diferentes seciones de centro de acopio y lugares de ayuda");
-
-        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout deskRegistrosLayout = new javax.swing.GroupLayout(deskRegistros);
+        deskRegistros.setLayout(deskRegistrosLayout);
+        deskRegistrosLayout.setHorizontalGroup(
+            deskRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addComponent(jLabel1)
-                .addContainerGap(153, Short.MAX_VALUE))
+        deskRegistrosLayout.setVerticalGroup(
+            deskRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 859, -1));
+        jPanel3.add(deskRegistros, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 110, 820, -1));
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Aqui se muestra", "la cedula", "y nombre de ", "donantes", " ", " " };
@@ -142,7 +155,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 110, 290));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 140, 290));
 
         btnCerrarSesion.setBackground(new java.awt.Color(20, 51, 166));
         btnCerrarSesion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -153,7 +166,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(20, 51, 166));
         jLabel2.setText("Registros");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(20, 51, 166));
         jLabel3.setText("Donaciones registradas");
@@ -177,7 +190,39 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(20, 51, 166));
         jLabel5.setText(":PDSF");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, -1));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, -1, -1));
+
+        jToolBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jToolBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jToolBar1.setRollover(true);
+
+        btnLA.setText("Lugares de Ayuda");
+        btnLA.setBorderPainted(false);
+        btnLA.setContentAreaFilled(false);
+        btnLA.setFocusable(false);
+        btnLA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLA.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnLA);
+        jToolBar1.add(jSeparator1);
+
+        btnCA.setText("Centro de acopio");
+        btnCA.setBorderPainted(false);
+        btnCA.setContentAreaFilled(false);
+        btnCA.setFocusable(false);
+        btnCA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCA.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnCA);
+        jToolBar1.add(jSeparator2);
+
+        btnTables.setText("Agregar");
+        btnTables.setBorderPainted(false);
+        btnTables.setContentAreaFilled(false);
+        btnTables.setFocusable(false);
+        btnTables.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTables.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnTables);
+
+        jPanel3.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 320, 20));
 
         jMenuBar1.setBackground(new java.awt.Color(102, 204, 255));
         jMenuBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
@@ -237,15 +282,17 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCA;
     private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnLA;
+    private javax.swing.JButton btnTables;
+    private javax.swing.JDesktopPane deskRegistros;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -264,6 +311,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem jmiCrudAdmin;
     private javax.swing.JMenuItem jmiRegistroComprador;
     // End of variables declaration//GEN-END:variables

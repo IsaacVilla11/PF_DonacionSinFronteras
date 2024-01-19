@@ -1,11 +1,15 @@
 package Controlador;
 
 import Vista.CRUD_Comprador;
+import Vista.Crud_lugarAfectado;
 import Vista.Registro_Comprador;
 import Vista.V_CrudComprador;
 import Vista.V_Principal;
 import Vista.crudAdministrador;
 import Vista.vistaAdministrador;
+import javax.swing.JInternalFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,16 +18,19 @@ import Vista.vistaAdministrador;
 public class ControladorModuloAdmin {
 
     vistaAdministrador vistaModAdmin;
+    Crud_lugarAfectado vistaLugarAfectado;
+ 
 
     public ControladorModuloAdmin(vistaAdministrador vistaModAdmin) {
         this.vistaModAdmin = vistaModAdmin;
         vistaModAdmin.setVisible(true);
-    }
 
+    }
     public void iniciarControl() {
         vistaModAdmin.getBtnCerrarSesion().addActionListener(l -> regresesarMenuPrincipal());
         vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
         vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
+        vistaModAdmin.getBtnLA().addActionListener(e -> mostrarTableLA());
 
     }
 
@@ -55,5 +62,10 @@ public class ControladorModuloAdmin {
 
         ControladorCrudAdmin control = new ControladorCrudAdmin(vista);
         control.iniciarControl();
+    }
+    public void mostrarTableLA() {
+     // Abrir la nueva ventana de productos
+    Crud_lugarAfectado vistaRegistros = new Crud_lugarAfectado();
+    vistaModAdmin.getDeskRegistros().add(vistaRegistros);
     }
 }
