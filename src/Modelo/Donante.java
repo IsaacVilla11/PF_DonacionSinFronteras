@@ -7,21 +7,20 @@ public class Donante extends Usuario{
     private String motivo_dont;
     private String entidad_dont;
     private String proyecto_dont;
-    private String cedula_usu_dont;
+    private int id_persona_dont;
 
     public Donante() {
         super();
     }
 
-    public Donante(int id_donante, String motivo_dont, String entidad_dont, String proyecto_dont, String cedula_usu_dont, String cedula_usu, String nombre_usu, String apellido_usu, String fechaNacimiento_usu, String sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
-        super(cedula_usu, nombre_usu, apellido_usu, fechaNacimiento_usu, sexo_usu, tipoSangre_usu, correo_usu, celular_usu, ciudad_usu, direccion_usu, contraseña_usu);
+    public Donante(int id_donante, String motivo_dont, String entidad_dont, String proyecto_dont, int id_persona_dont, int id_persona, String cedula_usu, String nombre_usu, String apellido_usu, String fechaNacimiento_usu, String sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
+        super(id_persona, cedula_usu, nombre_usu, apellido_usu, fechaNacimiento_usu, sexo_usu, tipoSangre_usu, correo_usu, celular_usu, ciudad_usu, direccion_usu, contraseña_usu);
         this.id_donante = id_donante;
         this.motivo_dont = motivo_dont;
         this.entidad_dont = entidad_dont;
         this.proyecto_dont = proyecto_dont;
-        this.cedula_usu_dont = cedula_usu_dont;
+        this.id_persona_dont = id_persona_dont;
     }
-
     
 
     
@@ -58,17 +57,18 @@ public class Donante extends Usuario{
         this.proyecto_dont = proyecto_dont;
     }
 
-    public String getCedula_usu_dont() {
-        return cedula_usu_dont;
+    public int getId_persona_dont() {
+        return id_persona_dont;
     }
 
-    public void setCedula_usu_dont(String cedula_usu_dont) {
-        this.cedula_usu_dont = cedula_usu_dont;
+    public void setId_persona_dont(int id_persona_dont) {
+        this.id_persona_dont = id_persona_dont;
     }
 
     @Override
     public String toString() {
-        return "Donante{" + "id_donante=" + id_donante + ", motivo_dont=" + motivo_dont + ", entidad_dont=" + entidad_dont + ", proyecto_dont=" + proyecto_dont + ", cedula_usu_dont=" + cedula_usu_dont + '}';
+        return super.toString()+"Donante{" + "id_donante=" + id_donante + ", motivo_dont=" + motivo_dont + ", entidad_dont=" + entidad_dont + ", proyecto_dont=" + proyecto_dont + ", id_persona_dont=" + id_persona_dont + '}';
     }
+
     
 }

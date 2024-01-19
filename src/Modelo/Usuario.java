@@ -3,7 +3,7 @@ package Modelo;
 import java.util.Date;
 
 public class Usuario {
-
+    private int id_persona;
     private String cedula_usu;
     private String nombre_usu;
     private String apellido_usu;
@@ -19,7 +19,8 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String cedula_usu, String nombre_usu, String apellido_usu, String fechaNacimiento_usu, String sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
+    public Usuario(int id_persona, String cedula_usu, String nombre_usu, String apellido_usu, String fechaNacimiento_usu, String sexo_usu, String tipoSangre_usu, String correo_usu, String celular_usu, String ciudad_usu, String direccion_usu, String contraseña_usu) {
+        this.id_persona = id_persona;
         this.cedula_usu = cedula_usu;
         this.nombre_usu = nombre_usu;
         this.apellido_usu = apellido_usu;
@@ -32,6 +33,16 @@ public class Usuario {
         this.direccion_usu = direccion_usu;
         this.contraseña_usu = contraseña_usu;
     }
+
+    public int getId_persona() {
+        return id_persona;
+    }
+
+    public void setId_persona(int id_persona) {
+        this.id_persona = id_persona;
+    }
+
+    
 
     public String getCedula_usu() {
         return cedula_usu;

@@ -60,4 +60,6 @@ public class ConexionPg {
     public Connection getCon() {
         return con;
     }
+
+    
 }
