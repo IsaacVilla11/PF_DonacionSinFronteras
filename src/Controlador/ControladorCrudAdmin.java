@@ -34,6 +34,12 @@ public class ControladorCrudAdmin {
         vistaCrudAdmin.setVisible(true);
     }
 
+    public ControladorCrudAdmin(crudAdministrador vistaCrudAdmin) {
+        this.vistaCrudAdmin = vistaCrudAdmin;
+        vistaCrudAdmin.setVisible(true);
+    }
+    
+
     public void iniciarControl() {
         cargarTabla();
         vistaCrudAdmin.getBtnRegresar().addActionListener(l -> regresarModuloAdmin());
