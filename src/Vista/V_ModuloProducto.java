@@ -114,7 +114,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnImagenProducto1 = new javax.swing.JButton();
         btnCargarImagen1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        btnCargarCampos = new javax.swing.JButton();
         btnAyuda1 = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         cbxTipoMueble = new javax.swing.JComboBox<>();
@@ -291,31 +290,37 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel12.setText("Imagen:");
         jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
 
+        btnCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear.setText("CREAR");
         btnCrear.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel6.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 130, 50));
 
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/eliminar.png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
         btnEliminar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         jPanel6.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 130, 50));
 
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/modificar.png"))); // NOI18N
         btnModificar.setText("MODIFICAR");
         btnModificar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         jPanel6.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 130, 50));
 
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultar.setText("CONSULTAR");
         btnConsultar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         jPanel6.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 130, 50));
 
         jLabel14.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoTabla.png"))); // NOI18N
         jLabel14.setText("Tabla de registros");
         jLabel14.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 150, 40));
 
         jLabel15.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoFormulario.png"))); // NOI18N
         jLabel15.setText("Formulario:");
         jLabel15.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
@@ -331,6 +336,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator4.setPreferredSize(new java.awt.Dimension(5, 0));
         jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 20, 300));
 
+        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/informe.png"))); // NOI18N
         btnReporte.setText("REPORTE");
         btnReporte.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         jPanel6.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, 130, 50));
@@ -383,12 +389,15 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel6.add(txtCodigoVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 110, 30));
 
         btnImagenProducto.setBackground(new java.awt.Color(255, 255, 255));
+        btnImagenProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
         jPanel6.add(btnImagenProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 200, 130));
 
         btnCargarImagen.setBackground(new java.awt.Color(255, 255, 255));
+        btnCargarImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
         btnCargarImagen.setBorder(null);
         jPanel6.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 110, 90));
 
+        btnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda.setText("Ayuda");
         btnAyuda.setContentAreaFilled(false);
         jPanel6.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 100, -1));
@@ -414,6 +423,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va6.setText("Disponibilidad:");
         jPanel6.add(va6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, -1, -1));
 
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar.setContentAreaFilled(false);
         jPanel6.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, 40));
 
@@ -438,6 +448,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         vaSi.setBorder(null);
         vaSi.setContentAreaFilled(false);
         vaSi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        vaSi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver.png"))); // NOI18N
         jPanel6.add(vaSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 70, 40, 30));
 
         cbxColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Blanco", "Negro", "Gris", "Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Rosa", "Morado", "Marrón", "Beige", "Celeste", "Turquesa", "Dorado", "Plateado", "Verde oliva", "Lavanda", "Cian", "Magenta", "Índigo", "Verde menta", "Coral", "Azul marino", "Cobre", "Otro" }));
@@ -536,6 +547,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel8.add(cbxMaterialMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 200, 30));
 
+        btnCrear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear1.setText("CREAR");
         btnCrear1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnCrear1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -560,6 +572,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel8.add(btnCrear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 130, 50));
 
+        btnEliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/eliminar.png"))); // NOI18N
         btnEliminar1.setText("ELIMINAR");
         btnEliminar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnEliminar1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -577,6 +590,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel8.add(btnEliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 130, 50));
 
+        btnModificar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/modificar.png"))); // NOI18N
         btnModificar1.setText("MODIFICAR");
         btnModificar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnModificar1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -594,6 +608,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel8.add(btnModificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 130, 50));
 
+        btnConsultar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultar1.setText("CONSULTAR");
         btnConsultar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnConsultar1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -613,12 +628,14 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoTabla.png"))); // NOI18N
         jLabel22.setText("Tabla de registros");
         jLabel22.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel8.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 150, 40));
 
         jLabel23.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoFormulario.png"))); // NOI18N
         jLabel23.setText("Formulario:");
         jLabel23.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jPanel8.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
@@ -642,6 +659,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator7.setPreferredSize(new java.awt.Dimension(5, 0));
         jPanel8.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 20, 300));
 
+        btnReporte1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/informe.png"))); // NOI18N
         btnReporte1.setText("REPORTE");
         btnReporte1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnReporte1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -831,6 +849,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel8.add(txtCodigoVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 110, 30));
 
         btnImagenProducto1.setBackground(new java.awt.Color(255, 255, 255));
+        btnImagenProducto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
         btnImagenProducto1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImagenProducto1ActionPerformed(evt);
@@ -839,6 +858,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel8.add(btnImagenProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 200, 130));
 
         btnCargarImagen1.setBackground(new java.awt.Color(255, 255, 255));
+        btnCargarImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
         btnCargarImagen1.setBorder(null);
         btnCargarImagen1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -852,16 +872,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel8.setText("Codigo mueble: ");
         jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
 
-        btnCargarCampos.setText("N/A");
-        btnCargarCampos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        btnCargarCampos.setContentAreaFilled(false);
-        btnCargarCampos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarCamposActionPerformed(evt);
-            }
-        });
-        jPanel8.add(btnCargarCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 90, 40));
-
+        btnAyuda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda1.setText("Ayuda");
         btnAyuda1.setContentAreaFilled(false);
         btnAyuda1.addActionListener(new java.awt.event.ActionListener() {
@@ -926,6 +937,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 910, 370));
 
+        btnConsultarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultarTipo.setContentAreaFilled(false);
         btnConsultarTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -934,6 +946,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel8.add(btnConsultarTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 50, 40));
 
+        btnLimpiar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar1.setContentAreaFilled(false);
         btnLimpiar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -965,7 +978,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel8.add(cbxCodigosMuebles, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 466, 130, 30));
 
-        vaSi1.setText("Si");
+        vaSi1.setContentAreaFilled(false);
+        vaSi1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver.png"))); // NOI18N
         vaSi1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vaSi1ActionPerformed(evt);
@@ -1040,6 +1054,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel10.add(cbxFormaFarmac, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 240, 30));
 
+        btnCrear2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear2.setText("CREAR");
         btnCrear2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnCrear2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1064,6 +1079,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel10.add(btnCrear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 130, 50));
 
+        btnEliminar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/eliminar.png"))); // NOI18N
         btnEliminar2.setText("ELIMINAR");
         btnEliminar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnEliminar2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1081,6 +1097,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel10.add(btnEliminar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, 130, 50));
 
+        btnModificar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/modificar.png"))); // NOI18N
         btnModificar2.setText("MODIFICAR");
         btnModificar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnModificar2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1098,6 +1115,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel10.add(btnModificar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 450, 130, 50));
 
+        btnConsultar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultar2.setText("CONSULTAR");
         btnConsultar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnConsultar2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1118,12 +1136,14 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoTabla.png"))); // NOI18N
         jLabel32.setText("Tabla de registros");
         jLabel32.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel10.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 150, 40));
 
         jLabel33.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoFormulario.png"))); // NOI18N
         jLabel33.setText("Formulario:");
         jLabel33.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jPanel10.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
@@ -1148,6 +1168,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator10.setPreferredSize(new java.awt.Dimension(5, 0));
         jPanel10.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 20, 300));
 
+        btnReporte2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/informe.png"))); // NOI18N
         btnReporte2.setText("REPORTE");
         btnReporte2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnReporte2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1345,6 +1366,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel10.add(txtCodigoDonable, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 110, 30));
 
         btnImagenProducto2.setBackground(new java.awt.Color(255, 255, 255));
+        btnImagenProducto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
         btnImagenProducto2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImagenProducto2ActionPerformed(evt);
@@ -1353,13 +1375,14 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel10.add(btnImagenProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 200, 130));
 
         btnCargarImagen2.setBackground(new java.awt.Color(255, 255, 255));
+        btnCargarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
         btnCargarImagen2.setBorder(null);
         btnCargarImagen2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarImagen2ActionPerformed(evt);
             }
         });
-        jPanel10.add(btnCargarImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, 90));
+        jPanel10.add(btnCargarImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, 90));
 
         jLabel37.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
@@ -1380,6 +1403,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         vaSi2.setBorder(null);
         vaSi2.setContentAreaFilled(false);
         vaSi2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        vaSi2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver.png"))); // NOI18N
         vaSi2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vaSi2ActionPerformed(evt);
@@ -1405,6 +1429,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 640, 460));
 
+        btnLimpiar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnLimpiar2.setContentAreaFilled(false);
         btnLimpiar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1480,6 +1505,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel12.add(cbxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 220, 30));
 
+        btnCrear3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear3.setText("CREAR");
         btnCrear3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnCrear3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1504,6 +1530,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel12.add(btnCrear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 130, 50));
 
+        btnEliminar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/eliminar.png"))); // NOI18N
         btnEliminar3.setText("ELIMINAR");
         btnEliminar3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnEliminar3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1521,6 +1548,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel12.add(btnEliminar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 130, 50));
 
+        btnModificar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/modificar.png"))); // NOI18N
         btnModificar3.setText("MODIFICAR");
         btnModificar3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnModificar3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1538,6 +1566,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel12.add(btnModificar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 130, 50));
 
+        btnConsultar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultar3.setText("CONSULTAR");
         btnConsultar3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnConsultar3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1558,23 +1587,26 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel43.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoTabla.png"))); // NOI18N
         jLabel43.setText("Tabla de registros");
         jLabel43.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel12.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 150, 40));
 
         jLabel44.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoFormulario.png"))); // NOI18N
         jLabel44.setText("Formulario:");
         jLabel44.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jPanel12.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        btnAyudaCategoriaAli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyudaCategoriaAli.setContentAreaFilled(false);
         btnAyudaCategoriaAli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAyudaCategoriaAliActionPerformed(evt);
             }
         });
-        jPanel12.add(btnAyudaCategoriaAli, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 40, -1));
+        jPanel12.add(btnAyudaCategoriaAli, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 40, 40));
 
         jSeparator11.setBackground(new java.awt.Color(0, 204, 255));
         jSeparator11.setForeground(new java.awt.Color(0, 204, 255));
@@ -1587,6 +1619,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator12.setPreferredSize(new java.awt.Dimension(5, 0));
         jPanel12.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 20, 300));
 
+        btnReporte3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/informe.png"))); // NOI18N
         btnReporte3.setText("REPORTE");
         btnReporte3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnReporte3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1790,6 +1823,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel12.add(txtCodigoDonable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 110, 30));
 
         btnImagenProducto3.setBackground(new java.awt.Color(255, 255, 255));
+        btnImagenProducto3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
         btnImagenProducto3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImagenProducto3ActionPerformed(evt);
@@ -1798,19 +1832,21 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel12.add(btnImagenProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 200, 130));
 
         btnCargarImagen3.setBackground(new java.awt.Color(255, 255, 255));
+        btnCargarImagen3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
         btnCargarImagen3.setBorder(null);
         btnCargarImagen3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarImagen3ActionPerformed(evt);
             }
         });
-        jPanel12.add(btnCargarImagen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, 90));
+        jPanel12.add(btnCargarImagen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 110, 90));
 
         jLabel48.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setText("Codigo alimento: ");
         jPanel12.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
 
+        btnAyuda3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda3.setText("Ayuda");
         btnAyuda3.setContentAreaFilled(false);
         btnAyuda3.addActionListener(new java.awt.event.ActionListener() {
@@ -1828,6 +1864,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         vaSi3.setBorder(null);
         vaSi3.setContentAreaFilled(false);
         vaSi3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        vaSi3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver.png"))); // NOI18N
         vaSi3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vaSi3ActionPerformed(evt);
@@ -1835,6 +1872,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         });
         jPanel12.add(vaSi3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, 40, 30));
 
+        btnLimpiar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar3.setContentAreaFilled(false);
         btnLimpiar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2093,10 +2131,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private void btnCargarImagen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarImagen1ActionPerformed
 
     }//GEN-LAST:event_btnCargarImagen1ActionPerformed
-
-    private void btnCargarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarCamposActionPerformed
-
-    }//GEN-LAST:event_btnCargarCamposActionPerformed
 
     private void btnAyuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyuda1ActionPerformed
 
@@ -2578,7 +2612,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnAyuda3;
     private javax.swing.JButton btnAyudaCategoriaAli;
     private javax.swing.JButton btnAyudaTipoMuebles;
-    private javax.swing.JButton btnCargarCampos;
     private javax.swing.JButton btnCargarImagen;
     private javax.swing.JButton btnCargarImagen1;
     private javax.swing.JButton btnCargarImagen2;
