@@ -4,6 +4,7 @@ import Vista.CRUD_Comprador;
 import Vista.Crud_lugarAfectado;
 import Vista.Registro_Comprador;
 import Vista.V_CrudComprador;
+import Vista.V_ModuloProducto;
 import Vista.V_Principal;
 import Vista.crudAdministrador;
 import Vista.vistaAdministrador;
@@ -31,6 +32,8 @@ public class ControladorModuloAdmin {
         vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
         vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
         vistaModAdmin.getBtnLA().addActionListener(e -> mostrarTableLA());
+       vistaModAdmin.getBtnProductos().addActionListener(l -> mostrarModuloProductos());
+        
 
     }
 
@@ -67,5 +70,14 @@ public class ControladorModuloAdmin {
      // Abrir la nueva ventana de productos
     Crud_lugarAfectado vistaRegistros = new Crud_lugarAfectado();
     vistaModAdmin.getDeskRegistros().add(vistaRegistros);
+    }
+    public void mostrarModuloProductos(){
+        vistaModAdmin.dispose();
+        V_ModuloProducto vista = new V_ModuloProducto();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+        
+        ControladorModuloProductos control = new ControladorModuloProductos(vista);
+        control.iniciarControl();
     }
 }

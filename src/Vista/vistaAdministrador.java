@@ -14,6 +14,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtnProductos() {
+        return btnProductos;
+    }
+
     public JButton getBtnCerrarSesion() {
         return btnCerrarSesion;
     }
@@ -52,7 +56,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
+        btnProductos = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         deskRegistros = new javax.swing.JDesktopPane();
@@ -109,12 +113,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton7.setForeground(new java.awt.Color(20, 51, 166));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donacion.png"))); // NOI18N
-        jButton7.setText("Donaciones");
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
+        btnProductos.setForeground(new java.awt.Color(20, 51, 166));
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donacion.png"))); // NOI18N
+        btnProductos.setText("Donaciones");
+        btnProductos.setBorderPainted(false);
+        btnProductos.setContentAreaFilled(false);
+        jPanel1.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
         jButton6.setForeground(new java.awt.Color(20, 51, 166));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/camion.png"))); // NOI18N
@@ -285,6 +289,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCA;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnLA;
+    private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnTables;
     private javax.swing.JDesktopPane deskRegistros;
     private javax.swing.JButton jButton1;
@@ -292,7 +297,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
