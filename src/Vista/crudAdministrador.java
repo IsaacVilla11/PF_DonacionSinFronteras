@@ -1,6 +1,13 @@
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -16,6 +23,91 @@ public class crudAdministrador extends javax.swing.JFrame {
         return btnRegresar;
     }
 
+    public JTable getTablaAdmi() {
+        return TablaAdmi;
+    }
+
+    public ButtonGroup getBtSexo() {
+        return btSexo;
+    }
+
+    public JButton getBtnCargar() {
+        return btnCargar;
+    }
+
+    public JButton getBtnConsultar() {
+        return btnConsultar;
+    }
+
+    public JButton getBtnDelete() {
+        return btnDelete;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public JRadioButton getBtnH() {
+        return btnH;
+    }
+
+    public JRadioButton getBtnM() {
+        return btnM;
+    }
+
+    public JButton getBtnModi() {
+        return btnModi;
+    }
+
+    public JComboBox<String> getCbBoxCargo() {
+        return cbBoxCargo;
+    }
+
+    public JComboBox<String> getCbBoxSangre() {
+        return cbBoxSangre;
+    }
+
+    public JComboBox<String> getCbboxCiudad() {
+        return cbboxCiudad;
+    }
+
+    public JDateChooser getjDnacimiento() {
+        return jDnacimiento;
+    }
+
+    public JTextField getTxtApe() {
+        return txtApe;
+    }
+
+    public JTextField getTxtCedu() {
+        return txtCedu;
+    }
+
+    public JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+
+    public JTextField getTxtDirecc() {
+        return txtDirecc;
+    }
+
+    public JTextField getTxtNomb() {
+        return txtNomb;
+    }
+
+    public JPasswordField getTxtPass() {
+        return txtPass;
+    }
+
+    public JTextField getTxt_codigo_administrador() {
+        return txt_codigo_administrador;
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,7 +131,7 @@ public class crudAdministrador extends javax.swing.JFrame {
         btnH = new javax.swing.JRadioButton();
         btnM = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaComprador = new javax.swing.JTable();
+        TablaAdmi = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
         cbboxCiudad = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -47,7 +139,7 @@ public class crudAdministrador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txt_codigo_comprador = new javax.swing.JTextField();
+        txt_codigo_administrador = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jDnacimiento = new com.toedter.calendar.JDateChooser();
@@ -58,7 +150,7 @@ public class crudAdministrador extends javax.swing.JFrame {
         cbBoxSangre = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbBoxCargo = new javax.swing.JComboBox<>();
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,14 +216,9 @@ public class crudAdministrador extends javax.swing.JFrame {
         btSexo.add(btnM);
         btnM.setText("Mujer");
         btnM.setContentAreaFilled(false);
-        btnM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnM, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 100, -1));
 
-        TablaComprador.setModel(new javax.swing.table.DefaultTableModel(
+        TablaAdmi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null},
@@ -155,7 +242,7 @@ public class crudAdministrador extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TablaComprador);
+        jScrollPane1.setViewportView(TablaAdmi);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 361, 982, 140));
 
@@ -182,8 +269,8 @@ public class crudAdministrador extends javax.swing.JFrame {
         jLabel5.setText("Apellido");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 127, -1, -1));
 
-        txt_codigo_comprador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(txt_codigo_comprador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 100, -1));
+        txt_codigo_administrador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txt_codigo_administrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 100, -1));
 
         jLabel7.setText("Sexo");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
@@ -220,8 +307,8 @@ public class crudAdministrador extends javax.swing.JFrame {
         jLabel18.setText("Lista:");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 180, 20));
+        cbBoxCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cbBoxCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 180, 20));
 
         btnRegresar.setBackground(new java.awt.Color(241, 244, 255));
         btnRegresar.setText("Regresar");
@@ -242,12 +329,9 @@ public class crudAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMActionPerformed
-    }//GEN-LAST:event_btnMActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaComprador;
+    private javax.swing.JTable TablaAdmi;
     private javax.swing.ButtonGroup btSexo;
     private javax.swing.JButton btnCargar;
     private javax.swing.JButton btnConsultar;
@@ -257,9 +341,9 @@ public class crudAdministrador extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnM;
     private javax.swing.JButton btnModi;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cbBoxCargo;
     private javax.swing.JComboBox<String> cbBoxSangre;
     private javax.swing.JComboBox<String> cbboxCiudad;
-    private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDnacimiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -286,6 +370,6 @@ public class crudAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField txtDirecc;
     private javax.swing.JTextField txtNomb;
     private javax.swing.JPasswordField txtPass;
-    private javax.swing.JTextField txt_codigo_comprador;
+    private javax.swing.JTextField txt_codigo_administrador;
     // End of variables declaration//GEN-END:variables
 }
