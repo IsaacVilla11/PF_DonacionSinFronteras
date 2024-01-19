@@ -1,5 +1,7 @@
 package Controlador;
 
+import Modelo.ModeloAdministrador;
+import Modelo.ModeloUsuario;
 import Vista.CRUD_Comprador;
 import Vista.Registro_Comprador;
 import Vista.V_CrudComprador;
@@ -14,6 +16,8 @@ import Vista.vistaAdministrador;
 public class ControladorModuloAdmin {
 
     vistaAdministrador vistaModAdmin;
+    ModeloAdministrador modeloAdmin;
+    ModeloUsuario modeloUsuario;
 
     public ControladorModuloAdmin(vistaAdministrador vistaModAdmin) {
         this.vistaModAdmin = vistaModAdmin;
@@ -52,8 +56,10 @@ public class ControladorModuloAdmin {
         crudAdministrador vista = new crudAdministrador();
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
+       // ModeloUsuario modeloUsuario=new ModeloUsuario();
+        //ModeloAdministrador modeloAdmin=new ModeloAdministrador();
 
-        ControladorCrudAdmin control = new ControladorCrudAdmin(vista);
+        ControladorCrudAdmin control = new ControladorCrudAdmin(vista, modeloAdmin, modeloUsuario);
         control.iniciarControl();
     }
 }
