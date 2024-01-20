@@ -1,10 +1,14 @@
 package Controlador;
 
+import Modelo.Comprador;
+import Modelo.ModeloComprador;
 import Vista.Login_Comprador;
 import Vista.Registro_Comprador;
 import Vista.V_Comprador;
 import Vista.V_Principal;
 import Vista.vistaLogins;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +24,7 @@ public class ControladorLoginComprador {
     }
 
     public void iniciarControl() {
-        LoginCom.getBtnIniciarSesionComprador().addActionListener(l -> iniciarSesion());
+        LoginCom.getBtnIniciarSesionComprador().addActionListener(l -> LoginComprador());
         LoginCom.getBtnRegistrarComprador().addActionListener(l -> registroComprador());
         LoginCom.getBtnRegresar().addActionListener(l -> regresesarMenuLogins());
 
@@ -46,6 +50,25 @@ public class ControladorLoginComprador {
         control.iniciarControl();
     }
 
+       // Método para Credenciales  login del comprador
+    public void LoginComprador() {
+       ModeloComprador modCompra = new ModeloComprador();
+        List<Comprador> com = modCompra.ListaComprador();
+
+        boolean bandera = modCompra.ConsultarComprador(LoginCom.getTxtUsuario().getText(), LoginCom.getTxtContrasenia().getText(), com);
+
+        if (bandera) {
+            iniciarSesion();
+            LoginCom.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario/Contraseña incorrecto");
+            limpiarcampos();
+        }
+    }
+    public void limpiarcampos(){
+        LoginCom.getTxtUsuario().setText("");
+        LoginCom.getTxtContrasenia().setText("");
+    }
     public void regresesarMenuLogins() {
         LoginCom.dispose();
         vistaLogins vista = new vistaLogins();

@@ -42,15 +42,7 @@ public class ControladorCrudComprador {
         ControladorModuloAdmin control = new ControladorModuloAdmin(vista);
         control.iniciarControl();
     }
-      // Método para consultar si las credenciales de un comprador son correctas en el registro comprador
-    public boolean ConsultarComprador(String usuario, String contrasenia, List<Comprador> compradores) {
-        for (Comprador admin : compradores) {
-            if (admin.getCedula_usu().equals(usuario) && admin.getContraseña_usu().equals(contrasenia)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    
     
     public void RegistrarComprador() {
         ModeloComprador compra = new ModeloComprador();
