@@ -3,7 +3,6 @@ package Controlador;
 import Vista.CRUD_Comprador;
 import Vista.Crud_lugarAfectado;
 import Vista.Registro_Comprador;
-import Vista.V_CrudComprador;
 import Vista.V_ModuloProducto;
 import Vista.V_Principal;
 import Vista.crudAdministrador;
@@ -49,7 +48,7 @@ public class ControladorModuloAdmin {
 
     public void mostrarCrudComprador() {
         vistaModAdmin.dispose();
-        V_CrudComprador vista = new V_CrudComprador();
+        CRUD_Comprador vista = new CRUD_Comprador();
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
