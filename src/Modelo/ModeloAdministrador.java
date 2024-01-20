@@ -77,14 +77,14 @@ public class ModeloAdministrador extends Administrador {
         }
     }
 
-    public boolean modificarPersona(String fecha) {
+    /* public boolean modificarPersona(String fecha) {
         Date date = new Date();
 
         SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
         fecha = formatofecha.format(date);
         java.sql.Date fechasql = java.sql.Date.valueOf(fecha);
         try {
-            String sqlPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?,direccion_usu=?,contrasenia_usu=? WHERE id_persona_adm=?";
+            String sqlPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?,direccion_usu=?,contrasenia_usu=? WHERE cedula_usu=?";
             PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlPersona);
 
             statementPersona.setString(1, getNombre_usu());
@@ -97,7 +97,7 @@ public class ModeloAdministrador extends Administrador {
             statementPersona.setString(8, getCiudad_usu());
             statementPersona.setString(9, getDireccion_usu());
             statementPersona.setString(10, getContraseña_usu());
-            statementPersona.setInt(11, getId_persona()); // Establecer el valor del parámetro faltante
+            statementPersona.setString(11, getCedula_usu()); // Establecer el valor del parámetro faltante
 
             int rowsAffectedPersona = statementPersona.executeUpdate();
             statementPersona.close();
@@ -107,14 +107,13 @@ public class ModeloAdministrador extends Administrador {
             ex.printStackTrace();
             return false;
         }
-    }
-
+    }*/
     public boolean modificarAdministrador() {
         try {
-            String sqlAdmin = "UPDATE administrador SET cargo_adm=? WHERE id_persona_adm=?";
+            String sqlAdmin = "UPDATE administrador SET cargo_adm=? WHERE cedula_usu=?";
             PreparedStatement statementAdmin = cone.getCon().prepareStatement(sqlAdmin);
             statementAdmin.setString(1, getCargo_adm());
-            statementAdmin.setInt(2, getId_persona());
+            statementAdmin.setString(2, getCedula_usu());
 
             int rowsAffectedAdmin = statementAdmin.executeUpdate();
             statementAdmin.close();
@@ -127,10 +126,64 @@ public class ModeloAdministrador extends Administrador {
     }
 
     //eliminar
- public void eliminar_administrador(String cedula) {
-   
-}
+    public void eliminar_administrador(String cedula) throws SQLException {
+        //  String sql = "DELETE FROM persona WHERE cedula_usu = ?";
+        Connection conexion = null;
+        PreparedStatement statement = null;
 
+        try {
+
+            // Buscar el ID de la persona basado en la cédula
+            int idPersona = obtenerIdPersonaPorCedula(cedula);
+
+            // Eliminar al administrador basado en el ID de la persona
+            String deleteAdminSql = "DELETE FROM administrador WHERE id_persona_adm = ?";
+            PreparedStatement statementAdmin = cone.getCon().prepareStatement(deleteAdminSql);
+            statementAdmin.setInt(1, idPersona);
+            statementAdmin.executeUpdate();
+
+            // Luego de eliminar al administrador, se puede eliminar la persona
+            String deletePersonaSql = "DELETE FROM persona WHERE id_persona = ?";
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(deletePersonaSql);
+            statementPersona.setInt(1, idPersona);
+            statementPersona.executeUpdate();
+
+            System.out.println("El administrador y la persona asociada fueron eliminados exitosamente");
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            if (cone != null) {
+
+            }
+        }
+    }
+/// metodo para obtener el id de la persona Mediante la cedula
+    private int obtenerIdPersonaPorCedula(String cedula) throws SQLException {
+        int idPersona = -1;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+
+        try {
+            String selectSql = "SELECT id_persona FROM persona WHERE cedula_usu = ?";
+            statement = cone.getCon().prepareStatement(selectSql);
+            statement.setString(1, cedula);
+            rs = statement.executeQuery();
+
+            if (rs.next()) {
+                idPersona = rs.getInt("id_persona");
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (statement != null) {
+                statement.close();
+            }
+        }
+
+        return idPersona;
+    }
 
     public List<Administrador> ListaAdministrador() {
         ConexionPg cone = new ConexionPg();//Conectamos a la base

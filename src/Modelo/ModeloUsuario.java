@@ -54,6 +54,38 @@ public class ModeloUsuario extends Usuario {
             return false;
         }
     }
+    
+    public boolean modificarPersona(String fecha) {
+        Date date = new Date();
+
+        SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+        fecha = formatofecha.format(date);
+        java.sql.Date fechasql = java.sql.Date.valueOf(fecha);
+        try {
+            String sqlPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?,direccion_usu=?,contrasenia_usu=? WHERE cedula_usu=?";
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlPersona);
+
+            statementPersona.setString(1, getNombre_usu());
+            statementPersona.setString(2, getApellido_usu());
+            statementPersona.setDate(3, fechasql); // Utilizar la fecha proporcionada como argumento
+            statementPersona.setString(4, getSexo_usu());
+            statementPersona.setString(5, getTipoSangre_usu());
+            statementPersona.setString(6, getCorreo_usu());
+            statementPersona.setString(7, getCelular_usu());
+            statementPersona.setString(8, getCiudad_usu());
+            statementPersona.setString(9, getDireccion_usu());
+            statementPersona.setString(10, getContraseña_usu());
+            statementPersona.setString(11, getCedula_usu()); // Establecer el valor del parámetro faltante
+
+            int rowsAffectedPersona = statementPersona.executeUpdate();
+            statementPersona.close();
+
+            return rowsAffectedPersona > 0;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
     // verificar que no se repita uuna llave primaria 
     public boolean verificarDuplicidadCedula(String cedulaAdmi) {
         String sql = "SELECT COUNT(*) AS count FROM persona WHERE cedula_usu = ?";
