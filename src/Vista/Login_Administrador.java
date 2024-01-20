@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -16,6 +17,14 @@ public class Login_Administrador extends javax.swing.JFrame {
         return btnIniciarSesionAdmin;
     }
 
+    public JTextField getTxtContrasenia() {
+        return txtContrasenia;
+    }
+
+    public JTextField getTxtUsuario() {
+        return txtUsuario;
+    }
+    
     public JButton getBtnRegresar() {
         return btnRegresar;
     }
@@ -29,8 +38,8 @@ public class Login_Administrador extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
+        txtContrasenia = new javax.swing.JTextField();
         btnIniciarSesionAdmin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -61,8 +70,8 @@ public class Login_Administrador extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("Contraseña:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 152, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 187, 196, 36));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
+        jPanel1.add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 187, 196, 36));
 
         btnIniciarSesionAdmin.setBackground(new java.awt.Color(20, 51, 166));
         btnIniciarSesionAdmin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -99,7 +108,7 @@ public class Login_Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtContrasenia;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
