@@ -102,7 +102,15 @@ public class ModeloComprador extends Comprador {
         }
     }
 
-  
+    // Método para consultar si las credenciales de un comprador son correctas en el registro comprador
+    public boolean ConsultarComprador(String usuario, String contrasenia, List<Comprador> compradores) {
+        for (Comprador admin : compradores) {
+            if (admin.getCedula_usu().equals(usuario) && admin.getContraseña_usu().equals(contrasenia)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     // verificar que no se repita uuna llave primaria 
     public boolean verificarDuplicidadCedula(String cedulaCompra) {
