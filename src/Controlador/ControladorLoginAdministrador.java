@@ -3,6 +3,7 @@ package Controlador;
 import Vista.Login_Administrador;
 import Vista.vistaAdministrador;
 import Vista.vistaLogins;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +19,7 @@ public class ControladorLoginAdministrador {
     }
 
     public void iniciarControl() {
-        vistaLogAdmin.getBtnIniciarSesionAdmin().addActionListener(l -> iniciarSesion());
+        vistaLogAdmin.getBtnIniciarSesionAdmin().addActionListener(l -> validarU_Admnistrador());
         vistaLogAdmin.getBtnRegresar().addActionListener(l -> regresesarMenuLogins());
 
     }
@@ -42,5 +43,23 @@ public class ControladorLoginAdministrador {
         ControladorLogins control = new ControladorLogins(vista);
         control.iniciarControl();
 
+    }
+    public void validarU_Admnistrador() {
+        String auxUsuario = vistaLogAdmin.getTxtUsuario().getText();
+        String auxPassword = vistaLogAdmin.getTxtContrasenia().getText();
+        String usuario = "admin";
+        String contraseña = "123";
+        if (auxUsuario.isEmpty() || auxPassword.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "CAMPOS VACIOS");
+        } else {
+            if (auxUsuario.equals(usuario) && auxPassword.equals(contraseña)) {
+                //JOptionPane.showMessageDialog(null, "BIENVENIDO AL SISTEMA");
+
+                vistaLogAdmin.dispose();
+               iniciarSesion();
+            } else {
+                JOptionPane.showMessageDialog(null, " ERROR: USUARIO O CONTRASEÑA INCORRECTO");
+            }
+        }
     }
 }

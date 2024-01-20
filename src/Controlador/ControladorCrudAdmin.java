@@ -38,7 +38,6 @@ public class ControladorCrudAdmin {
         this.vistaCrudAdmin = vistaCrudAdmin;
         vistaCrudAdmin.setVisible(true);
     }
-    
 
     public void iniciarControl() {
         cargarTabla();
@@ -258,8 +257,7 @@ public class ControladorCrudAdmin {
                 return;
             }
             per.setContraseña_usu(contraseniaAdmi);
-
-            if (admin.modificarPersona(FechaNacimiento)) {
+            if (per.modificarPersona(FechaNacimiento)) {
                 // Obtener el id_persona recién insertado
                 int idPersona = per.traerCodigoDePersonaCrear(cedula);
 
@@ -271,11 +269,10 @@ public class ControladorCrudAdmin {
                     String cargo = vistaCrudAdmin.getCbBoxCargo().getSelectedItem().toString();
                     admin.setCargo_adm(cargo);
                     if (admin.modificarAdministrador()) {
-                        JOptionPane.showMessageDialog(vistaCrudAdmin, "Se modifico exitosamente");
-                        vistaCrudAdmin.getTxtCedu().setEditable(true);
+                        JOptionPane.showMessageDialog(vistaCrudAdmin, "Se modificó exitosamente");
                         cargarTabla();
                     } else {
-                        JOptionPane.showMessageDialog(vistaCrudAdmin, "No se pudo modificar el administrador");
+                        JOptionPane.showMessageDialog(vistaCrudAdmin, "No se pudo modifcar el administrador");
                     }
                 } else {
                     JOptionPane.showMessageDialog(vistaCrudAdmin, "No se pudo obtener el id_persona");
@@ -291,25 +288,26 @@ public class ControladorCrudAdmin {
     }
 
     private void eliminarAdmin() {
-        int fila = vistaCrudAdmin.getTablaAdmi().getSelectedRow();
+        String cedula = vistaCrudAdmin.getTxtCedu().getText();
 
-        if (fila == -1) {
-            JOptionPane.showMessageDialog(null, "Aún no ha seleccionado una fila");
-        } else {
-            int response = JOptionPane.showConfirmDialog(vistaCrudAdmin, "¿Seguro que desea eliminar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (cedula != null && !cedula.isEmpty()) {
+            int response = JOptionPane.showConfirmDialog(vistaCrudAdmin, "¿Seguro que desea eliminar al administrador con cédula " + cedula + "?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (response == JOptionPane.YES_OPTION) {
-                String cedula = vistaCrudAdmin.getTablaAdmi().getValueAt(fila, 0).toString();
-
                 try {
+                    // Llamar al método para eliminar el administrador
                     modAdmi.eliminar_administrador(cedula);
+                    JOptionPane.showMessageDialog(vistaCrudAdmin, "Administrador eliminado exitosamente");
+                    cargarTabla(); // Actualizar el JTable después de la eliminación
                 } catch (Exception ex) {
                     // Manejo de excepciones
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Error al intentar eliminar el registro: " + ex.getMessage());
                 }
-                cargarTabla(); // Actualizar el JTable después de la eliminación
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "La cédula ingresada no es válida");
         }
+
     }
 
     // metodo para consultar si existe un administrador por cedula
