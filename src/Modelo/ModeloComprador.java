@@ -1,5 +1,6 @@
 package Modelo;
 
+import com.sun.jdi.connect.spi.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -102,6 +103,127 @@ public class ModeloComprador extends Comprador {
         }
     }
 
+    public Comprador buscarComprador(String cedula) throws SQLException {
+
+        String sqlPersona = "SELECT * FROM persona WHERE cedula_usu = ?";
+        String sqlComprador = "SELECT metodoPago_com, estadoCivil_com FROM comprador WHERE id_persona_com = ?";
+
+        PreparedStatement statementPersona = null;
+        PreparedStatement statementComprador = null;
+        ResultSet rsPersona = null;
+        ResultSet rsComprador = null;
+        ConexionPg conexion = new ConexionPg();
+
+        try {
+            statementPersona = conexion.getCon().prepareStatement(sqlPersona);
+            statementPersona.setString(1, cedula);
+            rsPersona = statementPersona.executeQuery();
+
+            if (rsPersona.next()) {
+                Comprador mi_compra = new Comprador();
+
+                mi_compra.setCedula_usu(rsPersona.getString("cedula_usu"));
+                mi_compra.setNombre_usu(rsPersona.getString("nombre_usu"));
+                mi_compra.setApellido_usu(rsPersona.getString("apellido_usu"));
+                mi_compra.setCorreo_usu(rsPersona.getString("correo_usu"));
+                mi_compra.setSexo_usu(rsPersona.getString("sexo_usu"));
+                mi_compra.setFechaNacimiento_usu(rsPersona.getString("fechaNacimiento_usu"));
+                mi_compra.setDireccion_usu(rsPersona.getString("direccion_usu"));
+                mi_compra.setCiudad_usu(rsPersona.getString("ciudad_usu"));
+                mi_compra.setCelular_usu(rsPersona.getString("celular_usu"));
+                mi_compra.setTipoSangre_usu(rsPersona.getString("tipoSangre_usu"));
+                mi_compra.setContraseña_usu(rsPersona.getString("contrasenia_usu"));
+
+                // Consulta para obtener datos del comprador
+                statementComprador = conexion.getCon().prepareStatement(sqlComprador);
+                statementComprador.setInt(1, rsPersona.getInt("id_persona"));
+                rsComprador = statementComprador.executeQuery();
+                if (rsComprador.next()) {
+                    mi_compra.setMetodoPago_com(rsComprador.getString("metodoPago_com"));
+                    mi_compra.setEstadoCivil_com(rsComprador.getString("estadoCivil_com"));
+                }
+
+                return mi_compra;
+            } else {
+                return null; // Retornar null si no se encuentra el comprador con la cédula
+            }
+        } finally {
+            if (rsPersona != null) {
+                rsPersona.close();
+            }
+            if (rsComprador != null) {
+                rsComprador.close();
+            }
+            if (statementPersona != null) {
+                statementPersona.close();
+            }
+            if (statementComprador != null) {
+                statementComprador.close();
+            }
+            if (conexion.getCon() != null) {
+                conexion.getCon().close();
+            }
+        }
+    }
+     //eliminar
+    public void eliminar_comprador(String cedula) throws SQLException {
+        //  String sql = "DELETE FROM persona WHERE cedula_usu = ?";
+        Connection conexion = null;
+        PreparedStatement statement = null;
+
+        try {
+
+            // Buscar el ID de la persona basado en la cédula
+            int idPersona = obtenerIdPersonaPorCedula(cedula);
+
+            // Eliminar al comprador basado en el ID de la persona
+            String deleteAdminSql = "DELETE FROM comprador WHERE id_persona_com = ?";
+            PreparedStatement statementCompra = cone.getCon().prepareStatement(deleteAdminSql);
+            statementCompra.setInt(1, idPersona);
+            statementCompra.executeUpdate();
+
+            // Luego de eliminar al comprador, se puede eliminar la persona
+            String deletePersonaSql = "DELETE FROM persona WHERE id_persona = ?";
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(deletePersonaSql);
+            statementPersona.setInt(1, idPersona);
+            statementPersona.executeUpdate();
+
+            System.out.println("El comprador y la persona asociada fueron eliminados exitosamente");
+        } finally {
+            if (statement != null) {
+                statement.close();
+            }
+            if (cone != null) {
+
+            }
+        }
+    }
+    /// metodo para obtener el id de la persona Mediante la cedula
+    private int obtenerIdPersonaPorCedula(String cedula) throws SQLException {
+        int idPersona = -1;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+
+        try {
+            String selectSql = "SELECT id_persona FROM persona WHERE cedula_usu = ?";
+            statement = cone.getCon().prepareStatement(selectSql);
+            statement.setString(1, cedula);
+            rs = statement.executeQuery();
+
+            if (rs.next()) {
+                idPersona = rs.getInt("id_persona");
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (statement != null) {
+                statement.close();
+            }
+        }
+
+        return idPersona;
+    }
     // Método para consultar si las credenciales de un comprador son correctas en el registro comprador
     public boolean ConsultarComprador(String usuario, String contrasenia, List<Comprador> compradores) {
         for (Comprador admin : compradores) {
