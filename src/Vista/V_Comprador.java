@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 public class V_Comprador extends javax.swing.JFrame {
 
@@ -12,6 +13,26 @@ public class V_Comprador extends javax.swing.JFrame {
         return btnregresar;
     }
 
+    public static JPanel getContenido() {
+        return Contenido;
+    }
+
+    public JButton getBtnFactura() {
+        return btnFactura;
+    }
+
+    public JButton getBtnInicio() {
+        return btnInicio;
+    }
+
+    public JButton getBtnProductos() {
+        return btnProductos;
+    }
+
+    public JButton getBtnReporte() {
+        return btnReporte;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -19,12 +40,10 @@ public class V_Comprador extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jpSecciones = new javax.swing.JPanel();
         btnProductos = new javax.swing.JButton();
-        btnCompras = new javax.swing.JButton();
         btnFactura = new javax.swing.JButton();
         btnReporte = new javax.swing.JButton();
         btnregresar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnInicio = new javax.swing.JButton();
         jpEncabezado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,15 +63,6 @@ public class V_Comprador extends javax.swing.JFrame {
         btnProductos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jpSecciones.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, 50));
 
-        btnCompras.setBackground(new java.awt.Color(255, 255, 255));
-        btnCompras.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/comprar-34.png"))); // NOI18N
-        btnCompras.setText("       CARRITO DE COMPRAS");
-        btnCompras.setBorder(null);
-        btnCompras.setBorderPainted(false);
-        btnCompras.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jpSecciones.add(btnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 170, 50));
-
         btnFactura.setBackground(new java.awt.Color(255, 255, 255));
         btnFactura.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
         btnFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/factura-34.png"))); // NOI18N
@@ -60,7 +70,7 @@ public class V_Comprador extends javax.swing.JFrame {
         btnFactura.setBorder(null);
         btnFactura.setBorderPainted(false);
         btnFactura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jpSecciones.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 170, 50));
+        jpSecciones.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 50));
 
         btnReporte.setBackground(new java.awt.Color(255, 255, 255));
         btnReporte.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
@@ -69,7 +79,7 @@ public class V_Comprador extends javax.swing.JFrame {
         btnReporte.setBorder(null);
         btnReporte.setBorderPainted(false);
         btnReporte.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jpSecciones.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 170, 50));
+        jpSecciones.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 50));
 
         btnregresar.setBackground(new java.awt.Color(255, 255, 255));
         btnregresar.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
@@ -78,16 +88,15 @@ public class V_Comprador extends javax.swing.JFrame {
         btnregresar.setBorder(null);
         btnregresar.setBorderPainted(false);
         jpSecciones.add(btnregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 140, 50));
-        jpSecciones.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/pagina-de-inicio (1).png"))); // NOI18N
-        jButton1.setText("         INICIO");
-        jButton1.setBorder(null);
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jpSecciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, 50));
+        btnInicio.setBackground(new java.awt.Color(255, 255, 255));
+        btnInicio.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
+        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/pagina-de-inicio (1).png"))); // NOI18N
+        btnInicio.setText("         INICIO");
+        btnInicio.setBorder(null);
+        btnInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInicio.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jpSecciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, 50));
 
         jpEncabezado.setBackground(new java.awt.Color(255, 255, 255));
         jpEncabezado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -151,15 +160,13 @@ public class V_Comprador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel Contenido;
-    private javax.swing.JButton btnCompras;
     private javax.swing.JButton btnFactura;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnReporte;
     private javax.swing.JButton btnregresar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jpEncabezado;
     private javax.swing.JPanel jpSecciones;
