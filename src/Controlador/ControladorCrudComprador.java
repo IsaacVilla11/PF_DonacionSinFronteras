@@ -1,6 +1,7 @@
 package Controlador;
 
 
+import Modelo.Administrador;
 import Modelo.Comprador;
 
 import Modelo.ModeloComprador;
@@ -8,8 +9,11 @@ import Modelo.ModeloUsuario;
 import Vista.CRUD_Comprador;
 import Vista.CRUD_Comprador;
 import Vista.vistaAdministrador;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,6 +35,8 @@ public class ControladorCrudComprador {
         cargarTabla();
         vistaCrudCompra.getBtnRegresar().addActionListener(l -> regresarModuloAdmin());
         vistaCrudCompra.getBtnGuardar().addActionListener(l->RegistrarComprador());
+        vistaCrudCompra.getBtnConsultar().addActionListener(l-> consultarComprador());
+        vistaCrudCompra.getBtnDelete().addActionListener(l-> eliminarComprador());
     }
     
     public void regresarModuloAdmin() {
@@ -204,6 +210,78 @@ public class ControladorCrudComprador {
             };
             tb.addRow(rowData);
         });
+
+        vistaCrudCompra.getTablaComprador().setModel(tb);
+    }
+    
+    private void eliminarComprador() {
+        String cedula = vistaCrudCompra.getTxtCedu().getText();
+
+        if (cedula != null && !cedula.isEmpty()) {
+            int response = JOptionPane.showConfirmDialog(vistaCrudCompra, "¿Seguro que desea eliminar al comprador con cédula " + cedula + "?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                try {
+                    // Llamar al método para eliminar el comprador
+                    modCompra.eliminar_comprador(cedula);
+                    JOptionPane.showMessageDialog(vistaCrudCompra, "Comprador eliminado exitosamente");
+                    cargarTabla(); // Actualizar el JTable después de la eliminación
+                } catch (Exception ex) {
+                    // Manejo de excepciones
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al intentar eliminar el registro: " + ex.getMessage());
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "La cédula ingresada no es válida");
+        }
+
+    }
+     // metodo para consultar si existe un comprador por cedula
+    private void consultarComprador() {
+        String cedula = vistaCrudCompra.getTxtCedu().getText();
+        DefaultTableModel tb = new DefaultTableModel();
+        tb.addColumn("Cedula");
+        tb.addColumn("Nombre");
+        tb.addColumn("Apellido");
+        tb.addColumn("Fecha Nacimiento");
+        tb.addColumn("Sexo");
+        tb.addColumn("Correo");
+        tb.addColumn("Tipo Sangre");
+        tb.addColumn("Celular");
+        tb.addColumn("Ciudad");
+        tb.addColumn("Direccion");
+        tb.addColumn("Metodo Pago");
+        tb.addColumn("Estado Civil");
+        tb.addColumn("Contraseña");
+
+        Comprador compra = null;
+        try {
+            compra = modCompra.buscarComprador(cedula); // Llama al método para buscar el comprador por la cédula
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorCrudComprador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (compra != null) {
+            JOptionPane.showMessageDialog(vistaCrudCompra, "Si existe ese comprador");
+            Object[] rowData = {
+                compra.getCedula_usu(),
+                compra.getNombre_usu(),
+                compra.getApellido_usu(),
+                compra.getFechaNacimiento_usu(),
+                compra.getSexo_usu(),
+                compra.getCorreo_usu(),
+                compra.getTipoSangre_usu(),
+                compra.getCelular_usu(),
+                compra.getCiudad_usu(),
+                compra.getDireccion_usu(),
+                compra.getMetodoPago_com(),
+                compra.getEstadoCivil_com(),
+                compra.getContraseña_usu()
+            };
+            tb.addRow(rowData);
+        } else {
+            JOptionPane.showMessageDialog(vistaCrudCompra, "No se encontró el comprador con la cédula especificada");
+        }
 
         vistaCrudCompra.getTablaComprador().setModel(tb);
     }
