@@ -45,6 +45,38 @@ public class vistaAdministrador extends javax.swing.JFrame {
     public JDesktopPane getDeskRegistros() {
         return deskRegistros;
     }
+
+    public JButton getBtnCentroAcopio() {
+        return btnCentroAcopio;
+    }
+
+    public JButton getBtnLugarAyuda() {
+        return btnLugarAyuda;
+    }
+
+    public JMenuItem getJmitemAlimentos() {
+        return jmitemAlimentos;
+    }
+
+    public JMenuItem getJmitemCiudad() {
+        return jmitemCiudad;
+    }
+
+    public JMenuItem getJmitemMedicamentos() {
+        return jmitemMedicamentos;
+    }
+
+    public JMenuItem getJmitemMueble() {
+        return jmitemMueble;
+    }
+
+    public JMenuItem getJmitemRegDonacion() {
+        return jmitemRegDonacion;
+    }
+
+    public JMenuItem getJmitemRopa() {
+        return jmitemRopa;
+    }
     
 
     @SuppressWarnings("unchecked")
@@ -53,8 +85,8 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jPanel3 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnCentroAcopio = new javax.swing.JButton();
+        btnLugarAyuda = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btnProductos = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -84,6 +116,18 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jmiCrudAdmin = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenu12 = new javax.swing.JMenu();
+        jmitemRopa = new javax.swing.JMenuItem();
+        jmitemMueble = new javax.swing.JMenuItem();
+        jMenu13 = new javax.swing.JMenu();
+        jmitemMedicamentos = new javax.swing.JMenuItem();
+        jmitemAlimentos = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jmitemCiudad = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jmitemRegDonacion = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -93,21 +137,21 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(20, 51, 166));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/flecha-hacia-abajo-para-navegar (1).png"))); // NOI18N
-        jButton3.setText("  Centros de ayuda");
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 16, -1, -1));
+        btnCentroAcopio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCentroAcopio.setForeground(new java.awt.Color(20, 51, 166));
+        btnCentroAcopio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/flecha-hacia-abajo-para-navegar (1).png"))); // NOI18N
+        btnCentroAcopio.setText("Centros de Acopio");
+        btnCentroAcopio.setBorderPainted(false);
+        btnCentroAcopio.setContentAreaFilled(false);
+        jPanel3.add(btnCentroAcopio, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 16, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(20, 51, 166));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/flecha-hacia-abajo-para-navegar (1).png"))); // NOI18N
-        jButton4.setText("  Lugares de Acopio");
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 16, -1, -1));
+        btnLugarAyuda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnLugarAyuda.setForeground(new java.awt.Color(20, 51, 166));
+        btnLugarAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/flecha-hacia-abajo-para-navegar (1).png"))); // NOI18N
+        btnLugarAyuda.setText("  Lugares de Ayuda");
+        btnLugarAyuda.setBorderPainted(false);
+        btnLugarAyuda.setContentAreaFilled(false);
+        jPanel3.add(btnLugarAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 16, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -264,6 +308,58 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/products.png"))); // NOI18N
+        jMenu11.setText("Productos ");
+
+        jMenu12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/Money.png"))); // NOI18N
+        jMenu12.setText("Tipo Vendible");
+
+        jmitemRopa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ropa.png"))); // NOI18N
+        jmitemRopa.setText("Ropa");
+        jMenu12.add(jmitemRopa);
+
+        jmitemMueble.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/mueble.png"))); // NOI18N
+        jmitemMueble.setText("Mueble");
+        jMenu12.add(jmitemMueble);
+
+        jMenu11.add(jMenu12);
+
+        jMenu13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donacion.png"))); // NOI18N
+        jMenu13.setText("Tipo Donable");
+
+        jmitemMedicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/medicine.png"))); // NOI18N
+        jmitemMedicamentos.setText("Medicamentos");
+        jMenu13.add(jmitemMedicamentos);
+
+        jmitemAlimentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/diet.png"))); // NOI18N
+        jmitemAlimentos.setText("Alimentos");
+        jMenu13.add(jmitemAlimentos);
+
+        jMenu11.add(jMenu13);
+
+        jMenuBar1.add(jMenu11);
+
+        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/iconoCiudad.png"))); // NOI18N
+        jMenu9.setText("Ciudad");
+
+        jmitemCiudad.setText("Resgistro");
+        jMenu9.add(jmitemCiudad);
+
+        jMenuBar1.add(jMenu9);
+
+        jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
+        jMenu10.setText("Registros");
+
+        jmitemRegDonacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
+        jmitemRegDonacion.setText("Registro Donacion");
+        jMenu10.add(jmitemRegDonacion);
+
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
+        jMenuItem3.setText("Registro Transporte");
+        jMenu10.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu10);
+
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/pagina-de-inicio (1).png"))); // NOI18N
         jMenu8.setText("Inicio");
         jMenuBar1.add(jMenu8);
@@ -287,14 +383,14 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCA;
+    private javax.swing.JButton btnCentroAcopio;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnLA;
+    private javax.swing.JButton btnLugarAyuda;
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnTables;
     private javax.swing.JDesktopPane deskRegistros;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
@@ -303,6 +399,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -310,7 +410,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -320,5 +422,11 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem jmiCrudAdmin;
     private javax.swing.JMenuItem jmiRegistroComprador;
+    private javax.swing.JMenuItem jmitemAlimentos;
+    private javax.swing.JMenuItem jmitemCiudad;
+    private javax.swing.JMenuItem jmitemMedicamentos;
+    private javax.swing.JMenuItem jmitemMueble;
+    private javax.swing.JMenuItem jmitemRegDonacion;
+    private javax.swing.JMenuItem jmitemRopa;
     // End of variables declaration//GEN-END:variables
 }
