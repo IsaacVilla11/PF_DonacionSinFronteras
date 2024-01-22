@@ -127,7 +127,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jmitemCiudad = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         jmitemRegDonacion = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmiRegistroTransporte = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -354,9 +354,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jmitemRegDonacion.setText("Registro Donacion");
         jMenu10.add(jmitemRegDonacion);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
-        jMenuItem3.setText("Registro Transporte");
-        jMenu10.add(jMenuItem3);
+        jmiRegistroTransporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
+        jmiRegistroTransporte.setText("Registro Transporte");
+        jMenu10.add(jmiRegistroTransporte);
 
         jMenuBar1.add(jMenu10);
 
@@ -412,7 +412,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -422,6 +421,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem jmiCrudAdmin;
     private javax.swing.JMenuItem jmiRegistroComprador;
+    private javax.swing.JMenuItem jmiRegistroTransporte;
     private javax.swing.JMenuItem jmitemAlimentos;
     private javax.swing.JMenuItem jmitemCiudad;
     private javax.swing.JMenuItem jmitemMedicamentos;
