@@ -14,10 +14,20 @@ public class vistaAdministrador extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JButton getBtnProductos() {
-        return btnProductos;
+    public vistaAdministrador(JButton btnDonaciones) {
+        this.btnDonaciones = btnDonaciones;
     }
 
+    public JButton getBtnDonaciones() {
+        return btnDonaciones;
+    }
+
+   
+    public JMenuItem getJmiRegistroTransporte() {
+        return jmiRegistroTransporte;
+    }
+
+    
     public JButton getBtnCerrarSesion() {
         return btnCerrarSesion;
     }
@@ -88,7 +98,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         btnCentroAcopio = new javax.swing.JButton();
         btnLugarAyuda = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        btnProductos = new javax.swing.JButton();
+        btnDonaciones = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         deskRegistros = new javax.swing.JDesktopPane();
@@ -110,10 +120,13 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jmiRegistroComprador = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jmiCrudAdmin = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
@@ -157,12 +170,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnProductos.setForeground(new java.awt.Color(20, 51, 166));
-        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donacion.png"))); // NOI18N
-        btnProductos.setText("Donaciones");
-        btnProductos.setBorderPainted(false);
-        btnProductos.setContentAreaFilled(false);
-        jPanel1.add(btnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
+        btnDonaciones.setForeground(new java.awt.Color(20, 51, 166));
+        btnDonaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donacion.png"))); // NOI18N
+        btnDonaciones.setText("Donaciones");
+        btnDonaciones.setBorderPainted(false);
+        btnDonaciones.setContentAreaFilled(false);
+        jPanel1.add(btnDonaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
         jButton6.setForeground(new java.awt.Color(20, 51, 166));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/camion.png"))); // NOI18N
@@ -280,10 +293,18 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitud.png"))); // NOI18N
         jMenu4.setText("Solicitante");
+
+        jMenuItem1.setText("Crud");
+        jMenu4.add(jMenuItem1);
+
         jMenu2.add(jMenu4);
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donantes.png"))); // NOI18N
         jMenu5.setText("Donante");
+
+        jMenuItem2.setText("Crud");
+        jMenu5.add(jMenuItem2);
+
         jMenu2.add(jMenu5);
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/comprador.png"))); // NOI18N
@@ -296,6 +317,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/chofer.png"))); // NOI18N
         jMenu7.setText("Conductor");
+
+        jMenuItem3.setText("Crud");
+        jMenu7.add(jMenuItem3);
+
         jMenu2.add(jMenu7);
 
         jMenuBar1.add(jMenu2);
@@ -385,9 +410,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCA;
     private javax.swing.JButton btnCentroAcopio;
     private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnDonaciones;
     private javax.swing.JButton btnLA;
     private javax.swing.JButton btnLugarAyuda;
-    private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnTables;
     private javax.swing.JDesktopPane deskRegistros;
     private javax.swing.JButton jButton1;
@@ -412,6 +437,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

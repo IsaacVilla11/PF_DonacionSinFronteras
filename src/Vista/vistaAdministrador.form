@@ -40,6 +40,13 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Solicitante"/>
               </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Crud"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu5">
               <Properties>
@@ -48,6 +55,13 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Donante"/>
               </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Crud"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu6">
               <Properties>
@@ -71,6 +85,13 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Conductor"/>
               </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Crud"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
             </Menu>
           </SubComponents>
         </Menu>
@@ -310,7 +331,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnProductos">
+            <Component class="javax.swing.JButton" name="btnDonaciones">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="a6" green="33" red="14" type="rgb"/>
