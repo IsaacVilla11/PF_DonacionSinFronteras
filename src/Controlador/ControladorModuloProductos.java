@@ -56,11 +56,11 @@ public class ControladorModuloProductos {
                 + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
                 + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
     }
-
+    //Metodos para el crud de ropa
     private void crearRopa() {
         mostrarMensaje("CREACION EXITOSA", 1000, icon);
         //JOptionPane.showMessageDialog(vistaModProducto, "Error al crear un registro.", "Error", JOptionPane.ERROR_MESSAGE);
-
+        
     }
 
     private void consultarRopa() {

@@ -230,8 +230,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         spnCantidadProducto = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
-        spnStock = new javax.swing.JSpinner();
-        va5 = new javax.swing.JLabel();
         va1 = new javax.swing.JLabel();
         txtNombreProducto = new javax.swing.JTextField();
         txtCodigoVendible = new javax.swing.JTextField();
@@ -286,8 +284,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         spnCantidadProducto1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         txtCodigoProducto1 = new javax.swing.JTextField();
-        spnStock1 = new javax.swing.JSpinner();
-        va9 = new javax.swing.JLabel();
         va10 = new javax.swing.JLabel();
         txtNombreProducto1 = new javax.swing.JTextField();
         txtCodigoVendible1 = new javax.swing.JTextField();
@@ -548,12 +544,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel3.setText("Codigo ropa: ");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 80, -1));
         jPanel6.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, 110, 30));
-        jPanel6.add(spnStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 260, 80, -1));
-
-        va5.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va5.setForeground(new java.awt.Color(0, 0, 0));
-        va5.setText("Stock:");
-        jPanel6.add(va5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, -1, -1));
 
         va1.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va1.setForeground(new java.awt.Color(0, 0, 0));
@@ -804,12 +794,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel6.setText("Codigo mueble: ");
         jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 90, 40));
         jPanel8.add(txtCodigoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, 110, 30));
-        jPanel8.add(spnStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 260, 80, -1));
-
-        va9.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va9.setForeground(new java.awt.Color(0, 0, 0));
-        va9.setText("Stock:");
-        jPanel8.add(va9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, -1, -1));
 
         va10.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va10.setForeground(new java.awt.Color(0, 0, 0));
@@ -1605,8 +1589,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JSpinner spnCantidadProducto1;
     private javax.swing.JSpinner spnCantidadProducto2;
     private javax.swing.JSpinner spnCantidadProducto3;
-    private javax.swing.JSpinner spnStock;
-    private javax.swing.JSpinner spnStock1;
     private javax.swing.JTable tblAlimentos;
     private javax.swing.JTable tblMedicamentos;
     private javax.swing.JTable tblMuebles;
@@ -1653,11 +1635,9 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel va24;
     private javax.swing.JLabel va3;
     private javax.swing.JLabel va4;
-    private javax.swing.JLabel va5;
     private javax.swing.JLabel va6;
     private javax.swing.JLabel va7;
     private javax.swing.JLabel va8;
-    private javax.swing.JLabel va9;
     private javax.swing.JCheckBox vaSi;
     private javax.swing.JCheckBox vaSi1;
     private javax.swing.JCheckBox vaSi2;
