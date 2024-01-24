@@ -99,8 +99,6 @@ public class Login_Comprador extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        txtContrasenia.setText("jPasswordField1");
         jPanel1.add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 200, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
