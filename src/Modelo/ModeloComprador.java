@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 public class ModeloComprador extends Comprador {
 
@@ -165,7 +166,8 @@ public class ModeloComprador extends Comprador {
             }
         }
     }
-     //eliminar
+    //eliminar
+
     public void eliminar_comprador(String cedula) throws SQLException {
         //  String sql = "DELETE FROM persona WHERE cedula_usu = ?";
         Connection conexion = null;
@@ -198,6 +200,7 @@ public class ModeloComprador extends Comprador {
             }
         }
     }
+
     /// metodo para obtener el id de la persona Mediante la cedula
     private int obtenerIdPersonaPorCedula(String cedula) throws SQLException {
         int idPersona = -1;
@@ -224,6 +227,7 @@ public class ModeloComprador extends Comprador {
 
         return idPersona;
     }
+
     // Método para consultar si las credenciales de un comprador son correctas en el registro comprador
     public boolean ConsultarComprador(String usuario, String contrasenia, List<Comprador> compradores) {
         for (Comprador admin : compradores) {
@@ -232,6 +236,12 @@ public class ModeloComprador extends Comprador {
             }
         }
         return false;
+    }
+    
+    // Método para obtener el modelo de la tabla con las imágenes desde la base de datos
+    public DefaultTableModel obtenerModeloTablaDesdeBD() {
+        
+        return null;
     }
 
     // verificar que no se repita uuna llave primaria 
