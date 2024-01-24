@@ -5,9 +5,16 @@
  */
 package Vista;
 
+import Controlador.ControladorModuloComprador;
+import Modelo.ConexionPg;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -22,6 +29,7 @@ public class VC_Reporte extends javax.swing.JPanel {
         initComponents();
     }
 
+
     public JButton getBtnImprimir() {
         return btnImprimir;
     }
@@ -34,15 +42,14 @@ public class VC_Reporte extends javax.swing.JPanel {
         return tblReportCompras;
     }
     
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblReportCompras = new javax.swing.JTable();
-        btnImprimir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnImprimir = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(800, 500));
@@ -72,10 +79,10 @@ public class VC_Reporte extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblReportCompras);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
+
         btnImprimir.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         btnImprimir.setText("IMPRIMIR");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -107,10 +114,10 @@ public class VC_Reporte extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(btnImprimir)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImprimir;
