@@ -1,8 +1,12 @@
 package Modelo;
 
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -10,23 +14,98 @@ import java.sql.ResultSet;
  */
 public class ModeloProducto {
 
-    public static boolean insertarProducto(Producto producto) {
+    public static int insertarProducto(Producto producto) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "Insert into producto (tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro)")) {
+                        "INSERT INTO producto (tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro) VALUES (?, ?, ?, ?) RETURNING id_producto")) {
 
             pst.setString(1, producto.getTipo_pro());
             pst.setBoolean(2, producto.isDisponibilidad_pro());
             pst.setString(3, producto.getNombre_pro());
             pst.setBytes(4, producto.getImagen_pro());
 
-            int filasInsertadas = pst.executeUpdate();
-            return filasInsertadas > 0;
+            ResultSet rs = pst.executeQuery();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+            if (rs.next()) {
+                return rs.getInt(1); // Devolver el ID generado por la consulta RETURNING
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al insertar producto: " + ex.getMessage());
         }
+
+        return -1; // En caso de error, devolver -1
     }
 
+    public static List<Producto> obtenerTodosLosProductos() {
+        List<Producto> listaProductos = new ArrayList<>();
+
+        try (Connection conexion = new ConexionPg().getCon();
+                Statement stmt = conexion.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM producto")) {
+
+            while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setId_producto(rs.getInt("id_producto"));
+                producto.setTipo_pro(rs.getString("tipo_pro"));
+                producto.setDisponibilidad_pro(rs.getBoolean("disponibilidad_pro"));
+                producto.setNombre_pro(rs.getString("nombre_pro"));
+                // Puedes optar por no recuperar la imagen aquí para mejorar el rendimiento
+
+                listaProductos.add(producto);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al obtener los productos: " + ex.getMessage());
+        }
+
+        return listaProductos;
+    }
+
+    public static int obtenerUltimoIdProducto() {
+        int ultimoId = -1;
+
+        try (Connection conexion = new ConexionPg().getCon();
+                Statement stmt = conexion.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT MAX(id_producto) FROM producto")) {
+
+            if (rs.next()) {
+                ultimoId = rs.getInt(1);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al obtener el último ID de producto: " + ex.getMessage());
+        }
+
+        return ultimoId;
+    }
+
+    public static Producto obtenerProductoPorId(int idProducto) {
+        Producto producto = null;
+
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM producto WHERE id_producto = ?")) {
+
+            pst.setInt(1, idProducto);
+
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    // Construir un objeto Producto con los datos obtenidos de la consulta
+                    producto = new Producto();
+                    producto.setId_producto(rs.getInt("id_producto"));
+                    producto.setTipo_pro(rs.getString("tipo_pro"));
+                    producto.setDisponibilidad_pro(rs.getBoolean("disponibilidad_pro"));
+                    producto.setNombre_pro(rs.getString("nombre_pro"));
+                    producto.setImagen_pro(rs.getBytes("imagen_pro"));
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al obtener el Producto por ID: " + ex.getMessage());
+        }
+
+        return producto;
+    }
 }

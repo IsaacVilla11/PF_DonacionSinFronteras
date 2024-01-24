@@ -7,6 +7,12 @@ public class TipoVendible extends Producto {
     private String tipo;
     private int id_pro_ven;
 
+    private TipoVendible tipoVendible;
+
+    public TipoVendible getTipoVendible() {
+        return tipoVendible;
+    }
+
     public TipoVendible() {
         super();
     }
@@ -18,6 +24,22 @@ public class TipoVendible extends Producto {
         this.tipo = tipo;
         this.id_pro_ven = id_pro_ven;
     }
+
+    public TipoVendible(int id_vendible, double precio, String tipo, int id_pro_ven) {
+        this.id_vendible = id_vendible;
+        this.precio = precio;
+        this.tipo = tipo;
+        this.id_pro_ven = id_pro_ven;
+    }
+
+    public TipoVendible(double precio, String tipo, int id_pro_ven, TipoVendible tipoVendible) {
+        this.precio = precio;
+        this.tipo = tipo;
+        this.id_pro_ven = id_pro_ven;
+        this.tipoVendible = tipoVendible;
+    }
+    
+    
 
     public int getId_vendible() {
         return id_vendible;

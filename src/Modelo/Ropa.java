@@ -6,20 +6,25 @@ public class Ropa extends TipoVendible {
     private String marca_rop;
     private String talla_rop;
     private String color_rop;
-    private String tipo_rop;
     private int id_vendible_rop;
 
     public Ropa() {
         super();
     }
 
-    public Ropa(int id_rop, String marca_rop, String talla_rop, String color_rop, String tipo_rop, int id_vendible_rop, int id_vendible, double precio, String tipo, int id_pro_ven, int id_pro, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
+    public Ropa(int id_rop, String marca_rop, String talla_rop, String color_rop, int id_vendible_rop, int id_vendible, double precio, String tipo, int id_pro_ven, int id_pro, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
         super(id_vendible, precio, tipo, id_pro_ven, id_pro, tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro);
         this.id_rop = id_rop;
         this.marca_rop = marca_rop;
         this.talla_rop = talla_rop;
         this.color_rop = color_rop;
-        this.tipo_rop = tipo_rop;
+        this.id_vendible_rop = id_vendible_rop;
+    }
+
+    public Ropa(String marca_rop, String talla_rop, String color_rop, int id_vendible_rop) {
+        this.marca_rop = marca_rop;
+        this.talla_rop = talla_rop;
+        this.color_rop = color_rop;
         this.id_vendible_rop = id_vendible_rop;
     }
 
@@ -53,14 +58,6 @@ public class Ropa extends TipoVendible {
 
     public void setColor_rop(String color_rop) {
         this.color_rop = color_rop;
-    }
-
-    public String getTipo_rop() {
-        return tipo_rop;
-    }
-
-    public void setTipo_rop(String tipo_rop) {
-        this.tipo_rop = tipo_rop;
     }
 
     public int getId_vendible_rop() {

@@ -19,10 +19,16 @@ public class Producto {
         this.imagen_pro = imagen_pro;
     }
 
+    public Producto(String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
+        this.tipo_pro = tipo_pro;
+        this.disponibilidad_pro = disponibilidad_pro;
+        this.nombre_pro = nombre_pro;
+        this.imagen_pro = imagen_pro;
+    }
+    
     public int getId_producto() {
         return id_producto;
     }
-
 
     public void setId_producto(int id_producto) {
         this.id_producto = id_producto;
@@ -64,6 +70,5 @@ public class Producto {
     public String toString() {
         return "Producto{" + "id_producto=" + id_producto + ", tipo_pro=" + tipo_pro + ", disponibilidad_pro=" + disponibilidad_pro + ", nombre_pro=" + nombre_pro + ", imagen_pro=" + imagen_pro + '}';
     }
-
 
 }

@@ -1,8 +1,11 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -194,8 +197,54 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return mensajeExito;
     }
 
-    
-    
+    public JCheckBox getChbxDisponibliidad_Producto_Si() {
+        return chbxDisponibliidad_Producto_Si;
+    }
+
+    public JTextField getTxtCodigoProducto() {
+        return txtCodigoProducto;
+    }
+
+    public JTextField getTxtCodigoRopa() {
+        return txtCodigoRopa;
+    }
+
+    public JTextField getTxtCodigoVendible() {
+        return txtCodigoVendible;
+    }
+
+    public JTextField getTxtNombreProducto() {
+        return txtNombreProducto;
+    }
+
+    public JComboBox<String> getCbxTipoRopa() {
+        return cbxTipoRopa;
+    }
+
+    public JTextField getTxtPrecioVendible() {
+        return txtPrecioVendible;
+    }
+
+    public JTextField getTxtMarca() {
+        return txtMarca;
+    }
+
+    public JComboBox<String> getCbxColor() {
+        return cbxColor;
+    }
+
+    public JComboBox<String> getCbxTalla() {
+        return cbxTalla;
+    }
+
+    public JTable getTblRopa() {
+        return tblRopa;
+    }
+
+    public JTextField getTxtTipoProducto() {
+        return txtTipoProducto;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -221,13 +270,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         btnReporte = new javax.swing.JButton();
         va2 = new javax.swing.JLabel();
-        va4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         chbxDisponibliidad_Producto_Si = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
-        txtTipoProducto = new javax.swing.JTextField();
         txtCodigoRopa = new javax.swing.JTextField();
-        spnCantidadProducto = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
         va1 = new javax.swing.JLabel();
@@ -238,7 +284,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnAyuda = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        va3 = new javax.swing.JLabel();
         txtPrecioVendible = new javax.swing.JTextField();
         va6 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
@@ -255,6 +300,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         cbxTipoRopa = new javax.swing.JComboBox<>();
+        txtTipoProducto = new javax.swing.JTextField();
+        va3 = new javax.swing.JLabel();
         panelMuebles = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
@@ -275,13 +322,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         btnReporte1 = new javax.swing.JButton();
         va7 = new javax.swing.JLabel();
-        va8 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         chbxDisponibliidad_Producto_Si1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        txtTipoProducto1 = new javax.swing.JTextField();
         txtCodigoMueble = new javax.swing.JTextField();
-        spnCantidadProducto1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         txtCodigoProducto1 = new javax.swing.JTextField();
         va10 = new javax.swing.JLabel();
@@ -295,7 +339,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         cbxTipoMueble = new javax.swing.JComboBox<>();
         jLabel26 = new javax.swing.JLabel();
         cbxTamañoMueble = new javax.swing.JComboBox<>();
-        va11 = new javax.swing.JLabel();
         txtPrecioVendible1 = new javax.swing.JTextField();
         va12 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -516,11 +559,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va2.setText("Codigo vendible: ");
         jPanel6.add(va2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 100, -1));
 
-        va4.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va4.setForeground(new java.awt.Color(0, 0, 0));
-        va4.setText("Cantidad Productos:");
-        jPanel6.add(va4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, -1, -1));
-
         jLabel9.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Precio:");
@@ -533,11 +571,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REGISTRO DE ROPA");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 230, -1));
-
-        txtTipoProducto.setText("Vendible");
-        jPanel6.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 110, 30));
         jPanel6.add(txtCodigoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 140, 30));
-        jPanel6.add(spnCantidadProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, 80, -1));
 
         jLabel3.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -575,11 +609,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Talla");
         jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
-
-        va3.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va3.setForeground(new java.awt.Color(0, 0, 0));
-        va3.setText("Tipo:  ");
-        jPanel6.add(va3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, -1, -1));
         jPanel6.add(txtPrecioVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 110, 30));
 
         va6.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
@@ -619,7 +648,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel6.add(cbxColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 150, -1));
         jPanel6.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 120, -1));
 
-        cbxTalla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Talla S = Small ", "Talla P = Pequeña", "Talla M = Medium ", "Talla M = Mediana", "Talla L = Large", "Talla L = Grande", "Talla XL = Extra Large", "Talla EG = Extra Grande", "Otros" }));
+        cbxTalla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Talla S = Small ", "Talla P = Pequeña", "Talla M = Mediana", "Talla L = Grande", "Talla XL = Extra Large", "Talla EG = Extra Grande", "Otros" }));
         jPanel6.add(cbxTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 150, -1));
 
         tblRopa.setModel(new javax.swing.table.DefaultTableModel(
@@ -649,6 +678,40 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         cbxTipoRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Informal", "Semiformal", "Formal" }));
         jPanel6.add(cbxTipoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 150, -1));
+
+        txtTipoProducto.setText("Vendible");
+        txtTipoProducto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTipoProductoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTipoProductoFocusLost(evt);
+            }
+        });
+        txtTipoProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtTipoProductoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtTipoProductoMouseExited(evt);
+            }
+        });
+        txtTipoProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoProductoActionPerformed(evt);
+            }
+        });
+        txtTipoProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTipoProductoKeyReleased(evt);
+            }
+        });
+        jPanel6.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 110, 30));
+
+        va3.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
+        va3.setForeground(new java.awt.Color(0, 0, 0));
+        va3.setText("Tipo producto:  ");
+        jPanel6.add(va3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, -1));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -766,11 +829,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va7.setText("Codigo vendible: ");
         jPanel8.add(va7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 100, -1));
 
-        va8.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va8.setForeground(new java.awt.Color(0, 0, 0));
-        va8.setText("Cantidad Productos:");
-        jPanel8.add(va8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, -1, -1));
-
         jLabel24.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Precio:");
@@ -783,11 +841,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("REGISTRO DE MUEBLES");
         jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 290, -1));
-
-        txtTipoProducto1.setText("Vendible");
-        jPanel8.add(txtTipoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 110, 30));
         jPanel8.add(txtCodigoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 140, 30));
-        jPanel8.add(spnCantidadProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, 80, -1));
 
         jLabel6.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -836,11 +890,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         cbxTamañoMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pequeño", "Mediano", "Grande", "Muy Grande" }));
         jPanel8.add(cbxTamañoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 120, -1));
-
-        va11.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va11.setForeground(new java.awt.Color(0, 0, 0));
-        va11.setText("Tipo:  ");
-        jPanel8.add(va11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, -1, -1));
         jPanel8.add(txtPrecioVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 110, 30));
 
         va12.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
@@ -1402,37 +1451,30 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_ModuloProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_ModuloProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_ModuloProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_ModuloProducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void txtTipoProductoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTipoProductoFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoProductoFocusGained
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new V_ModuloProducto().setVisible(true);
-            }
-        });
-    }
+    private void txtTipoProductoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTipoProductoFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoProductoFocusLost
+
+    private void txtTipoProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoProductoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoProductoMouseEntered
+
+    private void txtTipoProductoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoProductoMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoProductoMouseExited
+
+    private void txtTipoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoProductoActionPerformed
+
+    private void txtTipoProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoProductoKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoProductoKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelAlimentos;
@@ -1585,8 +1627,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JPanel panelRopa;
     private javax.swing.JSpinner spnCantidadDonables;
     private javax.swing.JSpinner spnCantidadDonables1;
-    private javax.swing.JSpinner spnCantidadProducto;
-    private javax.swing.JSpinner spnCantidadProducto1;
     private javax.swing.JSpinner spnCantidadProducto2;
     private javax.swing.JSpinner spnCantidadProducto3;
     private javax.swing.JTable tblAlimentos;
@@ -1613,12 +1653,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txtPrecioVendible;
     private javax.swing.JTextField txtPrecioVendible1;
     private javax.swing.JTextField txtTipoProducto;
-    private javax.swing.JTextField txtTipoProducto1;
     private javax.swing.JTextField txtTipoProducto2;
     private javax.swing.JTextField txtTipoProducto3;
     private javax.swing.JLabel va1;
     private javax.swing.JLabel va10;
-    private javax.swing.JLabel va11;
     private javax.swing.JLabel va12;
     private javax.swing.JLabel va13;
     private javax.swing.JLabel va14;
@@ -1634,10 +1672,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel va23;
     private javax.swing.JLabel va24;
     private javax.swing.JLabel va3;
-    private javax.swing.JLabel va4;
     private javax.swing.JLabel va6;
     private javax.swing.JLabel va7;
-    private javax.swing.JLabel va8;
     private javax.swing.JCheckBox vaSi;
     private javax.swing.JCheckBox vaSi1;
     private javax.swing.JCheckBox vaSi2;
