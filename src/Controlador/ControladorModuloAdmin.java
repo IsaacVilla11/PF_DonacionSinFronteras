@@ -11,6 +11,7 @@ import Vista.crudCiudad;
 import Vista.crud_Donacion;
 import Vista.crud_RegistroDonacion;
 import Vista.vistaAdministrador;
+import Vista.CRUD_Solicitante;
 import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
@@ -36,6 +37,7 @@ public class ControladorModuloAdmin {
        vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
        vistaModAdmin.getBtnLA().addActionListener(e -> mostrarTableLA());
        vistaModAdmin.getJmitemRopa().addActionListener(l -> mostrarModuloProductos());
+       vistaModAdmin.getJmiCrudSolicitante().addActionListener (l -> mostrarCrudSlcitnt());
        
        //Notocar
        vistaModAdmin.getJmitemRegDonacion().addActionListener(l->mostrarRegistroDonante());
@@ -139,6 +141,15 @@ public class ControladorModuloAdmin {
         vista.setVisible(true);
         
         ControladorModuloProductos control = new ControladorModuloProductos(vista);
+        control.iniciarControl();
+    }
+    public void mostrarCrudSlcitnt() {
+        vistaModAdmin.dispose();
+        CRUD_Solicitante vista = new CRUD_Solicitante();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorCrudSolicitante control = new ControladorCrudSolicitante(vista);
         control.iniciarControl();
     }
 }
