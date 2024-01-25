@@ -41,7 +41,7 @@
                 <Property name="text" type="java.lang.String" value="Solicitante"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+                <MenuItem class="javax.swing.JMenuItem" name="jmiCrudSolicitante">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crud"/>
                   </Properties>

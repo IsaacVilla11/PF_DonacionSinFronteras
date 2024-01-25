@@ -87,6 +87,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
     public JMenuItem getJmitemRopa() {
         return jmitemRopa;
     }
+
+    public JMenuItem getJmiCrudSolicitante() {
+        return jmiCrudSolicitante;
+    }
     
 
     @SuppressWarnings("unchecked")
@@ -120,7 +124,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmiCrudSolicitante = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -294,8 +298,8 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitud.png"))); // NOI18N
         jMenu4.setText("Solicitante");
 
-        jMenuItem1.setText("Crud");
-        jMenu4.add(jMenuItem1);
+        jmiCrudSolicitante.setText("Crud");
+        jMenu4.add(jmiCrudSolicitante);
 
         jMenu2.add(jMenu4);
 
@@ -437,7 +441,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
@@ -448,6 +451,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem jmiCrudAdmin;
+    private javax.swing.JMenuItem jmiCrudSolicitante;
     private javax.swing.JMenuItem jmiRegistroComprador;
     private javax.swing.JMenuItem jmiRegistroTransporte;
     private javax.swing.JMenuItem jmitemAlimentos;
