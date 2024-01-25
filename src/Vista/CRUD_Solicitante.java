@@ -1,5 +1,16 @@
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 public class CRUD_Solicitante extends javax.swing.JFrame {
 
     /**
@@ -18,6 +29,7 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -54,6 +66,7 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         txtdireccion = new javax.swing.JTextField();
         btnCargar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,10 +122,12 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
         txtContra_soli.setText("jPasswordField1");
         jPanel1.add(txtContra_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 210, -1));
 
+        sexo.add(rbH);
         rbH.setForeground(new java.awt.Color(0, 0, 102));
         rbH.setText("Hombre");
         jPanel1.add(rbH, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 100, -1));
 
+        sexo.add(rbM);
         rbM.setForeground(new java.awt.Color(0, 0, 102));
         rbM.setText("Mujer");
         jPanel1.add(rbM, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 90, -1));
@@ -154,7 +169,7 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
 
         btnEliminar.setForeground(new java.awt.Color(0, 0, 102));
         btnEliminar.setText("ELIMINAR");
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 100, 30));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 100, 30));
 
         btnConsultar.setForeground(new java.awt.Color(0, 0, 102));
         btnConsultar.setText("CONSULTAR");
@@ -174,8 +189,8 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
 
         jLabel15.setForeground(new java.awt.Color(0, 0, 102));
         jLabel15.setText("CODIGO:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, -1, -1));
-        jPanel1.add(txtcodigo_solicitn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, 80, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 70, -1, -1));
+        jPanel1.add(txtcodigo_solicitn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 80, -1));
 
         f_nac_soli.setForeground(new java.awt.Color(0, 0, 102));
         jPanel1.add(f_nac_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, -1));
@@ -196,6 +211,10 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
         btnCargar.setForeground(new java.awt.Color(0, 0, 102));
         btnCargar.setText("Cargar");
         jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
+
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 102));
+        btnRegresar.setText("REGRESAR");
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,9 +240,98 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    public JButton getBtnCargar() {
+        return btnCargar;
+    }
+
+    public JButton getBtnConsultar() {
+        return btnConsultar;
+    }
+
+    public JButton getBtnCrear() {
+        return btnCrear;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public JComboBox<String> getCbBoxSangre() {
+        return cbBoxSangre;
+    }
+
+    public JComboBox<String> getCboxciudad_soli() {
+        return cboxciudad_soli;
+    }
+
+    public JDateChooser getF_nac_soli() {
+        return f_nac_soli;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JRadioButton getRbH() {
+        return rbH;
+    }
+
+    public JRadioButton getRbM() {
+        return rbM;
+    }
+
+    public JTable getTabla_Solicitante() {
+        return tabla_Solicitante;
+    }
+
+    public JPasswordField getTxtContra_soli() {
+        return txtContra_soli;
+    }
+
+    public JTextField getTxtapellido_soli() {
+        return txtapellido_soli;
+    }
+
+    public JTextField getTxtcedula_soli() {
+        return txtcedula_soli;
+    }
+
+    public JTextField getTxtcelular_soli() {
+        return txtcelular_soli;
+    }
+
+    public JTextField getTxtcodigo_solicitn() {
+        return txtcodigo_solicitn;
+    }
+
+    public JTextField getTxtcorreo_soli() {
+        return txtcorreo_soli;
+    }
+
+    public JTextField getTxtdireccion() {
+        return txtdireccion;
+    }
+
+    public JTextField getTxtnombre_soli() {
+        return txtnombre_soli;
+    }
+
+    public ButtonGroup getSexo() {
+        return sexo;
+    }
+
+    public JButton getBtnRegresar() {
+        return btnRegresar;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCargar;
@@ -231,6 +339,7 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cbBoxSangre;
     private javax.swing.JComboBox<String> cboxciudad_soli;
     private com.toedter.calendar.JDateChooser f_nac_soli;
@@ -253,6 +362,7 @@ public class CRUD_Solicitante extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton rbH;
     private javax.swing.JRadioButton rbM;
+    private javax.swing.ButtonGroup sexo;
     private javax.swing.JTable tabla_Solicitante;
     private javax.swing.JPasswordField txtContra_soli;
     private javax.swing.JTextField txtapellido_soli;
