@@ -6,6 +6,8 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,8 +22,39 @@ public class crudCiudad extends javax.swing.JFrame {
         initComponents();
     }
 
+ 
     public JButton getBtnVolver() {
         return btnVolver;
+    }
+
+    public JButton getBtnConsultar() {
+        return btnConsultar;
+    }
+
+    public JButton getBtnCargar() {
+        return btnCargar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public JTable getTblCiudad() {
+        return tblCiudad;
+    }
+
+ 
+
+    public JTextField getTxtNombreCiudad() {
+        return txtNombreCiudad;
     }
 
     /**
@@ -34,42 +67,41 @@ public class crudCiudad extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jTextField8 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
+        txtNombreCiudad = new javax.swing.JTextField();
+        btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCiudad = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnCargar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
-        jButton4.setText("CONSULTAR");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setBorderPainted(false);
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 97, 140, -1));
+        btnConsultar.setBackground(new java.awt.Color(0, 0, 51));
+        btnConsultar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
+        btnConsultar.setText("CONSULTAR");
+        btnConsultar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnConsultar.setBorderPainted(false);
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 97, 140, -1));
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 51));
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
-        jButton7.setText("MODIFICAR");
-        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.setBorderPainted(false);
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 147, 140, -1));
+        btnModificar.setBackground(new java.awt.Color(0, 0, 51));
+        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
+        btnModificar.setText("MODIFICAR");
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setBorderPainted(false);
+        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 147, 140, -1));
 
         btnVolver.setBackground(new java.awt.Color(51, 51, 255));
         btnVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -91,56 +123,51 @@ public class crudCiudad extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 190, 30));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 102));
         jLabel10.setText("Nombre ciudad");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 20));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("ID_Ciudad");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 17, -1, 20));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 30));
+        jPanel3.add(txtNombreCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 30));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 64, 422, 131));
 
-        jButton8.setBackground(new java.awt.Color(0, 0, 51));
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
-        jButton8.setText("ELIMINAR");
-        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton8.setBorderPainted(false);
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 197, 140, -1));
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setBorderPainted(false);
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 197, 140, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCiudad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "ID Ciudad", "Nombre"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblCiudad);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 206, 422, 160));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 206, 422, 90));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Registra la Ciudad");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 14, -1, -1));
 
-        jButton9.setBackground(new java.awt.Color(0, 204, 0));
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
-        jButton9.setText("Guardar");
-        jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton9.setBorderPainted(false);
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 56, 140, -1));
+        btnGuardar.setBackground(new java.awt.Color(0, 204, 0));
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGuardar.setBorderPainted(false);
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, 56, 140, -1));
+
+        btnCargar.setText("Cargar Registros");
+        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -192,22 +219,19 @@ public class crudCiudad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCargar;
+    private javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTable tblCiudad;
+    private javax.swing.JTextField txtNombreCiudad;
     // End of variables declaration//GEN-END:variables
 }

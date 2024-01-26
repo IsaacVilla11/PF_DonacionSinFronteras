@@ -61,5 +61,13 @@ public class ConexionPg {
         return con;
     }
 
-    
+    public void cerrarConexion() {
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
