@@ -5,6 +5,8 @@ import Vista.V_ModuloProducto;
 import Vista.vistaAdministrador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +23,7 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -41,6 +44,10 @@ public class ControladorModuloProductos {
         deshabilitarCamposRopa();
         cargarIdsRopaEnComboBox();
         cargarIdsCamposRopa();
+        //vistaModProducto.getBtnCrear().setEnabled(true);
+        vistaModProducto.getBtnEliminar().setEnabled(false);
+        vistaModProducto.getBtnModificar().setEnabled(false);
+        validacionesEventosKeyTyped();
     }
     // <editor-fold desc="">
     // </editor-fold>
@@ -65,11 +72,34 @@ public class ControladorModuloProductos {
         Connection conexion = null;
 
         try {
-            // Crear un objeto Producto con los datos adecuados de cada componente
+
+            // Atributos de producto
             String tipoProducto = vistaModProducto.getTxtTipoProducto().getText();
             boolean disponibilidadProducto = vistaModProducto.getChbxDisponibliidad_Producto_Si().isSelected();
             String nombreProducto = vistaModProducto.getTxtNombreProducto().getText();
+            //Atributos de tipoVendible
+            String precioVendibleStr = vistaModProducto.getTxtPrecioVendible().getText();
+            double precioVendible = precioVendibleStr.isEmpty() ? 0.0 : Double.parseDouble(precioVendibleStr);
+            String tipo = vistaModProducto.getCbxTipoRopa().getSelectedItem().toString();
 
+            //Atributos de Ropa
+            String marca = vistaModProducto.getTxtMarca().getText();
+            if (marca.equals("")) {
+                marca = "N/A";
+            }
+
+            String talla = vistaModProducto.getCbxTalla().getSelectedItem().toString();
+
+            String color = vistaModProducto.getCbxColor().getSelectedItem().toString();
+            if (color.equals("Seleccionar")) {
+                color = "N/A";
+            }
+
+            // Validar que los campos requeridos estén llenos
+            if (nombreProducto.isEmpty() || "Seleccionar".equals(talla) || "Seleccionar".equals(tipo)) {
+                JOptionPane.showMessageDialog(vistaModProducto, "Por favor, complete todos los campos requeridos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return; // Salir del método si hay campos vacíos
+            }
             Producto producto = new Producto(tipoProducto, disponibilidadProducto, nombreProducto, imagenBytes);
 
             // Iniciar la transacción
@@ -80,17 +110,10 @@ public class ControladorModuloProductos {
             int idProducto = ModeloProducto.insertarProducto(producto);
 
             if (idProducto != -1) {
-                System.out.println("Producto insertado correctamente. ID generado: " + idProducto);
+                //System.out.println("Producto insertado correctamente. ID generado: " + idProducto);
 
                 // Crear un objeto TipoVendible con los datos necesarios
                 TipoVendible tipoVendible = new TipoVendible();
-
-                String precioVendibleStr = vistaModProducto.getTxtPrecioVendible().getText();
-                double precioVendible = precioVendibleStr.isEmpty() ? 0.0 : Double.parseDouble(precioVendibleStr);
-                String tipo = vistaModProducto.getCbxTipoRopa().getSelectedItem().toString();
-                if (tipo.equals("Seleccionar")) {
-                    tipo = "N/A";
-                }
 
                 tipoVendible.setPrecio(precioVendible);
                 tipoVendible.setTipo(tipo);
@@ -100,25 +123,10 @@ public class ControladorModuloProductos {
                 int idTipoVendible = ModeloTipoVendible.insertarTipoVendible(tipoVendible);
 
                 if (idTipoVendible != -1) {
-                    System.out.println("Registro TipoVendible insertado con éxito. ID generado: " + idTipoVendible);
+                    //System.out.println("Registro TipoVendible insertado con éxito. ID generado: " + idTipoVendible);
 
                     // Crear un objeto Ropa con los datos necesarios
                     Ropa ropa = new Ropa();
-
-                    //Atributos de Ropa
-                    String marca = vistaModProducto.getTxtMarca().getText();
-                    if (marca.equals("")) {
-                        marca = "N/A";
-                    }
-
-                    String talla = vistaModProducto.getCbxTalla().getSelectedItem().toString();
-                    if (talla.equals("Seleccionar")) {
-                        talla = "N/A";
-                    }
-                    String color = vistaModProducto.getCbxColor().getSelectedItem().toString();
-                    if (color.equals("Seleccionar")) {
-                        color = "N/A";
-                    }
 
                     ropa.setMarca_rop(marca);
                     ropa.setTalla_rop(talla);
@@ -129,8 +137,8 @@ public class ControladorModuloProductos {
                     int idRopa = ModeloRopa.insertarRopa(ropa);
 
                     if (idRopa != -1) {
-                        System.out.println("Registro de Ropa insertado con éxito. ID generado: " + idRopa);
-                        mostrarMensaje("CREACION EXITOSA", 1000, icon);
+                        //System.out.println("Registro de Ropa insertado con éxito. ID generado: " + idRopa);
+                        mostrarMensaje("CREACION EXITOSA", 2000, icon);
                         cargarDatosEnTabla();
                         limpiarCamposRopa();
                         cargarIdsCamposRopa();
@@ -181,6 +189,10 @@ public class ControladorModuloProductos {
     }
 
     private void consultarRopa() {
+        vistaModProducto.getBtnCrear().setEnabled(false);
+        vistaModProducto.getBtnEliminar().setEnabled(true);
+        vistaModProducto.getBtnModificar().setEnabled(true);
+
         // Obtener el código seleccionado del ComboBox
         String codigoSeleccionado = vistaModProducto.getCbxCodigosRopa().getSelectedItem().toString();
 
@@ -241,15 +253,169 @@ public class ControladorModuloProductos {
     }
 
     private void modificarRopa() {
-        mostrarMensaje("MODIFICACION EXITOSA", 1000, icon);
+
+        try {
+            int confirmacion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de modificar este registro de ropa ?", "Confirmar modificacion", JOptionPane.YES_NO_OPTION);
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                String idRopaStr = vistaModProducto.getTxtCodigoRopa().getText();
+                int idRopa = Integer.parseInt(idRopaStr);
+                Ropa ropa = ModeloRopa.obtenerRopaPorId(idRopa);
+
+                if (ropa != null) {
+                    //Atributos de Ropa
+                    String marca = vistaModProducto.getTxtMarca().getText();
+                    if (marca.equals("")) {
+                        marca = "N/A";
+                    }
+
+                    String talla = vistaModProducto.getCbxTalla().getSelectedItem().toString();
+                    if (talla.equals("Seleccionar")) {
+                        talla = "N/A";
+                    }
+                    String color = vistaModProducto.getCbxColor().getSelectedItem().toString();
+                    if (color.equals("Seleccionar")) {
+                        color = "N/A";
+                    }
+
+                    ropa.setMarca_rop(marca);
+                    ropa.setTalla_rop(talla);
+                    ropa.setColor_rop(color);
+
+                    boolean resulModRopa = ModeloRopa.modificarRopa(ropa);
+                    if (resulModRopa) {
+
+                        System.out.println("Modifiacion exitosa de ropa");
+                    } else {
+                        JOptionPane.showMessageDialog(vistaModProducto, "Error al modificar la ropa.", "Error", JOptionPane.ERROR_MESSAGE);
+
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(vistaModProducto, "La ropa con id " + idRopa + " no existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+
+                }
+                //Modificar atributos de tipoVendible
+
+                String idTipoVendibleStr = vistaModProducto.getTxtCodigoVendible().getText();
+                int idTipoVendible = Integer.parseInt(idTipoVendibleStr);
+                TipoVendible tipoVendible = ModeloTipoVendible.obtenerTipoVendiblePorId(idTipoVendible);
+                if (tipoVendible != null) {
+                    String precioVendibleStr = vistaModProducto.getTxtPrecioVendible().getText();
+                    double precioVendible = precioVendibleStr.isEmpty() ? 0.0 : Double.parseDouble(precioVendibleStr);
+                    String tipo = vistaModProducto.getCbxTipoRopa().getSelectedItem().toString();
+                    if (tipo.equals("Seleccionar")) {
+                        tipo = "N/A";
+                    }
+
+                    tipoVendible.setPrecio(precioVendible);
+                    tipoVendible.setTipo(tipo);
+                    boolean resulModficacionTipoVendible = ModeloTipoVendible.modificarTipoVendible(tipoVendible);
+                    if (resulModficacionTipoVendible) {
+                        System.out.println("Modificaion exitosa de tipoVendible");
+
+                    } else {
+                        System.out.println("Error al modificar el tipoVendible");
+
+                    }
+                } else {
+                    System.out.println("El id " + idTipoVendible + "de tipoVendible no existe en la base de datos");
+                }
+                //Modificar atributos de producto
+                String idProductotr = vistaModProducto.getTxtCodigoProducto().getText();
+                int idProducto = Integer.parseInt(idProductotr);
+
+                Producto producto = ModeloProducto.obtenerProductoPorId(idProducto);
+
+                if (producto != null) {
+                    String nombreProducto = vistaModProducto.getTxtNombreProducto().getText();
+                    producto.setNombre_pro(nombreProducto);
+                    // Verificar si se ha seleccionado una nueva imagen y actualizar el atributo imagen_pro del producto
+                    if (rutaImagenSeleccionada != null && !rutaImagenSeleccionada.isEmpty()) {
+                        byte[] nuevaImagenBytes = obtenerBytesImagen(rutaImagenSeleccionada);
+                        producto.setImagen_pro(nuevaImagenBytes);
+                    }
+
+                    boolean resulModficacionProducto = ModeloProducto.modificarProducto(producto);
+                    if (resulModficacionProducto) {
+                        System.out.println("Modificaion exitosa de producto");
+                        mostrarMensaje("MODIFICACION EXITOSA", 2000, icon);
+
+                        limpiarCamposRopa();
+                        cargarDatosEnTabla();
+                        vistaModProducto.getBtnCrear().setEnabled(true);
+                    } else {
+                        System.out.println("Error al modificar producto");
+
+                    }
+                } else {
+                    System.out.println("El id " + idProducto + " de producto no existe en la base de datos");
+                }
+            } else {
+                JOptionPane.showMessageDialog(vistaModProducto, "Modficacion cancelada");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al modificar atributos de ropa, tipovendible y ropa");
+        }
+
     }
 
     private void eliminarRopa() {
-        
-        mostrarMensaje("ELIMINACION EXITOSA", 1000, icon);
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de eliminar este registro de ropa ?", "Confirmar modificacion", JOptionPane.YES_NO_OPTION);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            try {
+                // Obtener el ID de la Ropa seleccionada en el ComboBox
+                String idRopaString = (String) vistaModProducto.getCbxCodigosRopa().getSelectedItem();
+                int idRopa = Integer.parseInt(idRopaString);
+
+                // Obtener el ID del TipoVendible asociado a la Ropa
+                int idTipoVendible = ModeloRopa.obtenerIdTipoVendiblePorIdRopa(idRopa);
+
+                // Obtener el ID del Producto asociado al TipoVendible
+                int idProducto = ModeloTipoVendible.obtenerIdProductoPorIdTipoVendible(idTipoVendible);
+
+                // Eliminar la Ropa (esto eliminará automáticamente el TipoVendible debido a la restricción de clave foránea)
+                boolean eliminacionExitosaRopa = ModeloRopa.eliminarRopa(idRopa);
+
+                // Verificar si la eliminación de la Ropa fue exitosa
+                if (eliminacionExitosaRopa) {
+                    // Eliminar el TipoVendible asociado
+                    boolean eliminacionExitosaTipoVendible = ModeloTipoVendible.eliminarTipoVendible(idTipoVendible);
+
+                    // Verificar si la eliminación del TipoVendible fue exitosa
+                    if (eliminacionExitosaTipoVendible) {
+                        // Eliminar el Producto asociado
+                        boolean eliminacionExitosaProducto = ModeloProducto.eliminarProducto(idProducto);
+
+                        // Verificar si la eliminación del Producto fue exitosa
+                        if (eliminacionExitosaProducto) {
+                            // Puedes mostrar un mensaje de éxito
+                            mostrarMensaje("ELIMINACIÓN EXITOSA", 2000, icon);
+                            cargarDatosEnTabla();
+                            cargarIdsRopaEnComboBox();
+                            limpiarCamposRopa();
+                            return;
+                        }
+                    }
+                }
+
+                // Si algo falla, mostrar un mensaje de error
+                JOptionPane.showMessageDialog(vistaModProducto, "ERROR AL ELIMINAR LA ROPA ", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (NullPointerException | NumberFormatException ex) {
+                // Manejar posibles excepciones al obtener el ID seleccionado
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(vistaModProducto, "ERROR AL OBTENER EL ID DE LA ROPA ", "Error", JOptionPane.ERROR_MESSAGE);
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(vistaModProducto, "Modficacion cancelada");
+        }
+
     }
 
     private void reporteRopa() {
+
         mostrarMensaje("REPORTE EXITOSO", 1000, icon);
     }
 
@@ -266,6 +432,9 @@ public class ControladorModuloProductos {
         //vistaModProducto.getChbxDisponibliidad_Producto_Si().setSelected(false);
         vistaModProducto.getTxtPrecioVendible().setText("");
         cargarIdsCamposRopa();
+        vistaModProducto.getBtnCrear().setEnabled(true);
+        vistaModProducto.getBtnEliminar().setEnabled(false);
+        vistaModProducto.getBtnModificar().setEnabled(false);
 
     }
 
@@ -322,6 +491,61 @@ public class ControladorModuloProductos {
         vistaModProducto.getTxtCodigoVendible().setText(String.valueOf(idUltimoTipoVendible + 1));
         int idUltimoProducto = ModeloProducto.obtenerUltimoIdProducto();
         vistaModProducto.getTxtCodigoProducto().setText(String.valueOf(idUltimoProducto + 1));
+    }
+
+    private void agregarValidacionCampoTexto(JTextField campoTexto, int longitudMaxima) {
+        campoTexto.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                validarCampoTexto(e, campoTexto, longitudMaxima);
+            }
+        });
+    }
+
+    private void agregarValidacionCampoNumerico(JTextField campoTexto, int longitudMaxima) {
+        campoTexto.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                validarCampoNumerico(e, campoTexto, longitudMaxima);
+            }
+        });
+    }
+
+    private void validarCampoTexto(KeyEvent e, JTextField campoTexto, int longitudMaxima) {
+        String texto = campoTexto.getText();
+        char caracter = e.getKeyChar();
+        boolean esLetra = Character.isLetter(caracter);
+        boolean esEspacio = (caracter == ' ');
+        boolean esRetroceso = (caracter == KeyEvent.VK_BACK_SPACE);
+        boolean esEnter = (caracter == KeyEvent.VK_ENTER);
+
+        if (!(esLetra || (texto.length() > 0 && esEspacio) || esRetroceso || esEnter)) {
+            e.consume();
+        } else if (texto.length() >= longitudMaxima) {
+            e.consume();
+        }
+    }
+
+    private void validarCampoNumerico(KeyEvent e, JTextField campoTexto, int longitudMaxima) {
+        String texto = campoTexto.getText();
+        char caracter = e.getKeyChar();
+        boolean esDigito = Character.isDigit(caracter);
+        boolean esPuntoDecimal = (caracter == '.');
+
+        boolean esRetroceso = (caracter == KeyEvent.VK_BACK_SPACE);
+        boolean esEnter = (caracter == KeyEvent.VK_ENTER);
+
+        if (!(esDigito || esPuntoDecimal || esRetroceso || esEnter)) {
+            e.consume();
+        } else if (texto.length() >= longitudMaxima) {
+            e.consume();
+        } else if (esPuntoDecimal && texto.contains(".")) {
+            e.consume();  // Permite solo un punto decimal
+        }
+    }
+
+    private void validacionesEventosKeyTyped() {
+        agregarValidacionCampoTexto(vistaModProducto.getTxtNombreProducto(), 60);
+        agregarValidacionCampoTexto(vistaModProducto.getTxtMarca(), 60);
+        agregarValidacionCampoNumerico(vistaModProducto.getTxtPrecioVendible(), Integer.MAX_VALUE);
     }
 
     // </editor-fold>

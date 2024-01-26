@@ -108,4 +108,46 @@ public class ModeloProducto {
 
         return producto;
     }
+
+    public static boolean eliminarProducto(int idProducto) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement("DELETE FROM producto WHERE id_producto = ?")) {
+
+            // Eliminar el registro de la tabla Producto
+            pst.setInt(1, idProducto);
+            int filasEliminadas = pst.executeUpdate();
+
+            // Verificar si se eliminó correctamente
+            return filasEliminadas > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al eliminar el Producto: " + ex.getMessage());
+        }
+
+        return false;
+    }
+
+    public static boolean modificarProducto(Producto producto) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement(
+                        "UPDATE producto SET tipo_pro=?, disponibilidad_pro=?, nombre_pro=?, imagen_pro=? WHERE id_producto=?")) {
+
+            pst.setString(1, producto.getTipo_pro());
+            pst.setBoolean(2, producto.isDisponibilidad_pro());
+            pst.setString(3, producto.getNombre_pro());
+            pst.setBytes(4, producto.getImagen_pro());
+            pst.setInt(5, producto.getId_producto());
+
+            int filasActualizadas = pst.executeUpdate();
+
+            return filasActualizadas > 0;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al modificar producto: " + ex.getMessage());
+        }
+
+        return false;
+    }
+
 }

@@ -106,4 +106,70 @@ public class ModeloTipoVendible {
         return tipoVendible;
     }
 
+    public static boolean eliminarTipoVendible(int idTipoVendible) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement("DELETE FROM tipoVendible WHERE id_vendible = ?")) {
+
+            // Eliminar primero el registro de la tabla TipoVendible
+            pst.setInt(1, idTipoVendible);
+            int filasEliminadas = pst.executeUpdate();
+
+            // Verificar si se eliminó correctamente antes de continuar con la cascada
+            if (filasEliminadas > 0) {
+                // Luego, eliminar el registro correspondiente en la tabla Producto
+                int idProducto = obtenerIdProductoPorIdTipoVendible(idTipoVendible);
+                ModeloProducto.eliminarProducto(idProducto);
+
+                return true;
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al eliminar el TipoVendible: " + ex.getMessage());
+        }
+
+        return false;
+    }
+
+    public static int obtenerIdProductoPorIdTipoVendible(int idTipoVendible) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement("SELECT id_producto_ven FROM tipoVendible WHERE id_vendible = ?")) {
+
+            pst.setInt(1, idTipoVendible);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt("id_producto_ven");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al obtener ID de Producto por ID de TipoVendible: " + ex.getMessage());
+        }
+
+        return -1;
+    }
+
+    public static boolean modificarTipoVendible(TipoVendible tipoVendible) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement(
+                        "UPDATE tipoVendible SET precio=?, tipo=? WHERE id_vendible=?")) {
+
+            pst.setDouble(1, tipoVendible.getPrecio());
+            pst.setString(2, tipoVendible.getTipo());
+            pst.setInt(3, tipoVendible.getId_vendible());
+
+            int filasActualizadas = pst.executeUpdate();
+
+            return filasActualizadas > 0;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al modificar tipo vendible: " + ex.getMessage());
+        }
+
+        return false;
+    }
+
+    
+
 }

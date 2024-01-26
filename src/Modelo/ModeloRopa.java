@@ -141,5 +141,71 @@ public class ModeloRopa {
 
         return ropa;
     }
+    public static boolean eliminarRopa(int idRopa) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement("DELETE FROM ropa WHERE id_rop = ?")) {
+
+            // Eliminar primero el registro de la tabla Ropa
+            pst.setInt(1, idRopa);
+            int filasEliminadas = pst.executeUpdate();
+
+            // Verificar si se eliminó correctamente antes de continuar con la cascada
+            if (filasEliminadas > 0) {
+                // Luego, eliminar el registro correspondiente en la tabla TipoVendible
+                int idTipoVendible = obtenerIdTipoVendiblePorIdRopa(idRopa);
+                ModeloTipoVendible.eliminarTipoVendible(idTipoVendible);
+
+                // Finalmente, eliminar el registro correspondiente en la tabla Producto
+                int idProducto = ModeloTipoVendible.obtenerIdProductoPorIdTipoVendible(idTipoVendible);
+                ModeloProducto.eliminarProducto(idProducto);
+
+                return true;
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al eliminar la Ropa: " + ex.getMessage());
+        }
+
+        return false;
+    }
+    public static int obtenerIdTipoVendiblePorIdRopa(int idRopa) {
+        try (Connection conexion = new ConexionPg().getCon();
+                PreparedStatement pst = conexion.prepareStatement("SELECT id_vendible_rop FROM ropa WHERE id_rop = ?")) {
+
+            pst.setInt(1, idRopa);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt("id_vendible_rop");
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al obtener ID de TipoVendible por ID de Ropa: " + ex.getMessage());
+        }
+
+        return -1;
+    }
+    public static boolean modificarRopa(Ropa ropa) {
+        try (Connection conexion = new ConexionPg().getCon();
+             PreparedStatement pst = conexion.prepareStatement(
+                     "UPDATE ropa SET marca_rop=?, talla_rop=?, color_rop=? WHERE id_rop=?")) {
+
+            pst.setString(1, ropa.getMarca_rop());
+            pst.setString(2, ropa.getTalla_rop());
+            pst.setString(3, ropa.getColor_rop());
+            pst.setInt(4, ropa.getId_rop());
+
+            int filasActualizadas = pst.executeUpdate();
+
+            return filasActualizadas > 0;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.err.println("Error al modificar ropa: " + ex.getMessage());
+        }
+
+        return false;
+    }
 
 }

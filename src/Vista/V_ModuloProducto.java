@@ -302,6 +302,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         cbxTipoRopa = new javax.swing.JComboBox<>();
         txtTipoProducto = new javax.swing.JTextField();
         va3 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
         panelMuebles = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
@@ -565,7 +569,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, -1, -1));
 
         chbxDisponibliidad_Producto_Si.setText("Si");
-        jPanel6.add(chbxDisponibliidad_Producto_Si, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, 40, -1));
+        jPanel6.add(chbxDisponibliidad_Producto_Si, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, 40, -1));
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -614,7 +618,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va6.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va6.setForeground(new java.awt.Color(0, 0, 0));
         va6.setText("Disponibilidad:");
-        jPanel6.add(va6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, -1, -1));
+        jPanel6.add(va6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, -1, -1));
 
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar.setContentAreaFilled(false);
@@ -712,6 +716,26 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va3.setForeground(new java.awt.Color(0, 0, 0));
         va3.setText("Tipo producto:  ");
         jPanel6.add(va3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, -1));
+
+        jLabel50.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel50.setText("$");
+        jPanel6.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 10, -1));
+
+        jLabel51.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel51.setText("*");
+        jPanel6.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 20, 20));
+
+        jLabel52.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel52.setText("*");
+        jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 20, 20));
+
+        jLabel53.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel53.setText("*");
+        jPanel6.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 20, 20));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1584,6 +1608,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
