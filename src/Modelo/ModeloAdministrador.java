@@ -283,6 +283,15 @@ public class ModeloAdministrador extends Administrador {
         }
     }
 
+     // Método para consultar si las credenciales de un admin son correctas en el registro admini
+    public boolean ConsultarAdministrador(String usuario, String contrasenia, List<Administrador> administradores) {
+        for (Administrador admin : administradores) {
+            if (admin.getCedula_usu().equals(usuario) && admin.getContraseña_usu().equals(contrasenia)) {
+                return true;
+            }
+        }
+        return false;
+    }
     // verificar que no se repita uuna llave primaria 
     public boolean verificarDuplicidadCedula(String cedulaAdmi) {
         String sql = "SELECT COUNT(*) AS count FROM administrador WHERE cedula_usu = ?";
