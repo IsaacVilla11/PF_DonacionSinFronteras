@@ -2,7 +2,9 @@ package Vista;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JTable;
 
 /**
  *
@@ -52,10 +54,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return btnTables;
     }
 
-    public JDesktopPane getDeskRegistros() {
-        return deskRegistros;
-    }
-
+  
     public JButton getBtnCentroAcopio() {
         return btnCentroAcopio;
     }
@@ -88,8 +87,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmitemRopa;
     }
 
-    public JMenuItem getJmiCrudSolicitante() {
-        return jmiCrudSolicitante;
+    public JTable getTableRegistros() {
+        return tableRegistros;
+    }
+
+    public JLabel getLblmsjRegistro() {
+        return lblmsjRegistro;
     }
     
 
@@ -105,11 +108,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         btnDonaciones = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        deskRegistros = new javax.swing.JDesktopPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         btnCerrarSesion = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        lblmsjRegistro = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -121,10 +123,13 @@ public class vistaAdministrador extends javax.swing.JFrame {
         btnCA = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
         btnTables = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableRegistros = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jmiCrudSolicitante = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -197,22 +202,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 140, 100));
 
-        deskRegistros.setBackground(new java.awt.Color(255, 255, 255));
-        deskRegistros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-
-        javax.swing.GroupLayout deskRegistrosLayout = new javax.swing.GroupLayout(deskRegistros);
-        deskRegistros.setLayout(deskRegistrosLayout);
-        deskRegistrosLayout.setHorizontalGroup(
-            deskRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
-        );
-        deskRegistrosLayout.setVerticalGroup(
-            deskRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        jPanel3.add(deskRegistros, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 110, 820, -1));
-
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Aqui se muestra", "la cedula", "y nombre de ", "donantes", " ", " " };
             public int getSize() { return strings.length; }
@@ -229,9 +218,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
         btnCerrarSesion.setBorderPainted(false);
         jPanel3.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, 140, 40));
 
-        jLabel2.setForeground(new java.awt.Color(20, 51, 166));
-        jLabel2.setText("Registros");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        lblmsjRegistro.setForeground(new java.awt.Color(20, 51, 166));
+        lblmsjRegistro.setText("Registros");
+        jPanel3.add(lblmsjRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 250, 20));
 
         jLabel3.setForeground(new java.awt.Color(20, 51, 166));
         jLabel3.setText("Donaciones registradas");
@@ -260,34 +249,56 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jToolBar1.setBackground(new java.awt.Color(255, 255, 255));
         jToolBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jToolBar1.setRollover(true);
+        jToolBar1.setBorderPainted(false);
 
         btnLA.setText("Lugares de Ayuda");
-        btnLA.setBorderPainted(false);
+        btnLA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         btnLA.setContentAreaFilled(false);
         btnLA.setFocusable(false);
         btnLA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLA.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnLA);
+
+        jSeparator1.setBackground(new java.awt.Color(51, 51, 51));
         jToolBar1.add(jSeparator1);
 
         btnCA.setText("Centro de acopio");
-        btnCA.setBorderPainted(false);
+        btnCA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         btnCA.setContentAreaFilled(false);
         btnCA.setFocusable(false);
         btnCA.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCA.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnCA);
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jToolBar1.add(jSeparator2);
 
         btnTables.setText("Agregar");
-        btnTables.setBorderPainted(false);
+        btnTables.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         btnTables.setContentAreaFilled(false);
         btnTables.setFocusable(false);
         btnTables.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTables.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnTables);
+        jToolBar1.add(jSeparator3);
 
-        jPanel3.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 320, 20));
+        jPanel3.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 280, 20));
+
+        tableRegistros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        tableRegistros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tableRegistros);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 820, 300));
 
         jMenuBar1.setBackground(new java.awt.Color(102, 204, 255));
         jMenuBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
@@ -298,8 +309,8 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitud.png"))); // NOI18N
         jMenu4.setText("Solicitante");
 
-        jmiCrudSolicitante.setText("Crud");
-        jMenu4.add(jmiCrudSolicitante);
+        jMenuItem1.setText("Crud");
+        jMenu4.add(jMenuItem1);
 
         jMenu2.add(jMenu4);
 
@@ -418,11 +429,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnLA;
     private javax.swing.JButton btnLugarAyuda;
     private javax.swing.JButton btnTables;
-    private javax.swing.JDesktopPane deskRegistros;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -441,17 +450,19 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem jmiCrudAdmin;
-    private javax.swing.JMenuItem jmiCrudSolicitante;
     private javax.swing.JMenuItem jmiRegistroComprador;
     private javax.swing.JMenuItem jmiRegistroTransporte;
     private javax.swing.JMenuItem jmitemAlimentos;
@@ -460,5 +471,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmitemMueble;
     private javax.swing.JMenuItem jmitemRegDonacion;
     private javax.swing.JMenuItem jmitemRopa;
+    private javax.swing.JLabel lblmsjRegistro;
+    private javax.swing.JTable tableRegistros;
     // End of variables declaration//GEN-END:variables
 }
