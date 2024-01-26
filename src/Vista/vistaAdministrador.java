@@ -24,12 +24,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return btnDonaciones;
     }
 
-   
     public JMenuItem getJmiRegistroTransporte() {
         return jmiRegistroTransporte;
     }
 
-    
     public JButton getBtnCerrarSesion() {
         return btnCerrarSesion;
     }
@@ -54,7 +52,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return btnTables;
     }
 
-  
     public JButton getBtnCentroAcopio() {
         return btnCentroAcopio;
     }
@@ -94,7 +91,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
     public JLabel getLblmsjRegistro() {
         return lblmsjRegistro;
     }
-    
+
+    public JMenuItem getJmiModuloProducto() {
+        return jmiModuloProducto;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -139,6 +139,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jmiCrudAdmin = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
+        jmiModuloProducto = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
         jmitemRopa = new javax.swing.JMenuItem();
         jmitemMueble = new javax.swing.JMenuItem();
@@ -351,6 +352,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/products.png"))); // NOI18N
         jMenu11.setText("Productos ");
 
+        jmiModuloProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
+        jmiModuloProducto.setText("Registro");
+        jMenu11.add(jmiModuloProducto);
+
         jMenu12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/Money.png"))); // NOI18N
         jMenu12.setText("Tipo Vendible");
 
@@ -463,6 +468,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem jmiCrudAdmin;
+    private javax.swing.JMenuItem jmiModuloProducto;
     private javax.swing.JMenuItem jmiRegistroComprador;
     private javax.swing.JMenuItem jmiRegistroTransporte;
     private javax.swing.JMenuItem jmitemAlimentos;

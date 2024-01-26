@@ -49,7 +49,7 @@ public class ControladorModuloAdmin {
        vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
        vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
        vistaModAdmin.getBtnCA().addActionListener(e -> cargarTablaCA());
-       vistaModAdmin.getJmitemRopa().addActionListener(l -> mostrarModuloProductos());
+       vistaModAdmin.getJmiModuloProducto().addActionListener(l -> mostrarModuloProductos());
        
        //Notocar
        vistaModAdmin.getJmitemRegDonacion().addActionListener(l->mostrarRegistroDonante());

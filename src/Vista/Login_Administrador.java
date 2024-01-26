@@ -70,11 +70,7 @@ public class Login_Administrador extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("Contraseña:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 152, -1, -1));
-
-        txtUsuario.setText("admin");
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
-
-        txtContrasenia.setText("123");
         jPanel1.add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 187, 196, 36));
 
         btnIniciarSesionAdmin.setBackground(new java.awt.Color(20, 51, 166));
