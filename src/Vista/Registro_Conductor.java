@@ -4,6 +4,14 @@
  */
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ASUS TUF
@@ -16,6 +24,95 @@ public class Registro_Conductor extends javax.swing.JFrame {
     public Registro_Conductor() {
         initComponents();
     }
+
+    public JButton getBntVolver() {
+        return bntVolver;
+    }
+
+    public JButton getBtnConsultar() {
+        return btnConsultar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public JComboBox<String> getComboJornada() {
+        return ComboJornada;
+    }
+
+    public JComboBox<String> getComboLicencia() {
+        return ComboLicencia;
+    }
+
+    public JDateChooser getF_nacimiento() {
+        return F_nacimiento;
+    }
+
+    public JRadioButton getBtnH() {
+        return btnH;
+    }
+
+    public JRadioButton getBtnM() {
+        return btnM;
+    }
+
+    public JComboBox<String> getCbBoxSangre() {
+        return cbBoxSangre;
+    }
+
+    public JTextField getTxtapellido() {
+        return txtapellido;
+    }
+
+    public JTextField getTxtcedula() {
+        return txtcedula;
+    }
+
+    public JTextField getTxtcelular() {
+        return txtcelular;
+    }
+
+    public JPasswordField getTxtcontra() {
+        return txtcontra;
+    }
+
+    public JTextField getTxtcorreo() {
+        return txtcorreo;
+    }
+
+    public JTextField getTxtdirecion() {
+        return txtdirecion;
+    }
+
+    public JComboBox<String> getCbboxCiudad() {
+        return cbboxCiudad;
+    }
+
+
+
+    public JTextField getTxtnombre() {
+        return txtnombre;
+    }
+
+    public JTable getTablaConductor() {
+        return TablaConductor;
+    }
+
+    public JButton getBtncargar() {
+        return btncargar;
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,32 +141,33 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jButton5 = new javax.swing.JButton();
+        txtnombre = new javax.swing.JTextField();
+        txtcelular = new javax.swing.JTextField();
+        txtcedula = new javax.swing.JTextField();
+        txtdirecion = new javax.swing.JTextField();
+        txtapellido = new javax.swing.JTextField();
+        txtcorreo = new javax.swing.JTextField();
+        txtcontra = new javax.swing.JPasswordField();
+        ComboLicencia = new javax.swing.JComboBox<>();
+        ComboJornada = new javax.swing.JComboBox<>();
+        bntVolver = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TablaConductor = new javax.swing.JTable();
         panel2 = new org.edisoncor.gui.panel.Panel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        F_nacimiento = new com.toedter.calendar.JDateChooser();
+        btnH = new javax.swing.JRadioButton();
+        btnM = new javax.swing.JRadioButton();
+        cbBoxSangre = new javax.swing.JComboBox<>();
+        cbboxCiudad = new javax.swing.JComboBox<>();
+        btnGuardar = new javax.swing.JButton();
+        btncargar = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -151,46 +249,31 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(0, 0, 102));
         jLabel20.setText("Tipo de Licencia:");
         panel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, 20));
-        panel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 196, 30));
-        panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 196, 30));
-        panel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 196, 30));
-        panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 196, 30));
-        panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 196, 30));
-        panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 196, 30));
-        panel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 196, 30));
-        panel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 200, 30));
+        panel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 196, 30));
+        panel1.add(txtcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 196, 30));
+        panel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 196, 30));
+        panel1.add(txtdirecion, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 196, 30));
+        panel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 196, 30));
+        panel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 196, 30));
+        panel1.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 200, 30));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
-        panel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 200, -1));
+        ComboLicencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "C1", "D ", "D1", "E", "El " }));
+        panel1.add(ComboLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 200, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "C1", "D ", "D1", "E", "El " }));
-        panel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 200, -1));
+        ComboJornada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutina", "Despertina", "Nocturna" }));
+        panel1.add(ComboJornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 200, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutina", "Despertina", "Nocturna" }));
-        panel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 200, -1));
+        bntVolver.setBackground(new java.awt.Color(51, 51, 255));
+        bntVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bntVolver.setForeground(new java.awt.Color(255, 255, 255));
+        bntVolver.setText("VOLVER");
+        bntVolver.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bntVolver.setBorderPainted(false);
+        panel1.add(bntVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, 80, 30));
 
-        jCheckBox1.setText("M");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        panel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
-
-        jCheckBox3.setText("F");
-        panel1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, -1));
-
-        jButton5.setBackground(new java.awt.Color(51, 51, 255));
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("VOLVER");
-        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.setBorderPainted(false);
-        panel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, 80, 30));
-
-        jTable2.setBackground(new java.awt.Color(204, 255, 204));
-        jTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TablaConductor.setBackground(new java.awt.Color(204, 255, 204));
+        TablaConductor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TablaConductor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -198,9 +281,9 @@ public class Registro_Conductor extends javax.swing.JFrame {
                 "Cedula", "Nombre", "Apelido", "F. Nacimiento", "Sexo", "Correo", "Cedular", "Ciudad", "Direccionl", "Contraseña", "Tipo Licencia", "Jornada"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TablaConductor);
 
-        panel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 590, 980, 130));
+        panel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, 980, 130));
 
         panel2.setColorPrimario(new java.awt.Color(169, 169, 169));
         panel2.setColorSecundario(new java.awt.Color(152, 255, 152));
@@ -208,21 +291,21 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Nirmala UI", 2, 24)); // NOI18N
         jLabel1.setText("Que desea hacer?");
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 51));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
-        jButton3.setText("CONSULTAR");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.setBorderPainted(false);
+        btnConsultar.setBackground(new java.awt.Color(0, 0, 51));
+        btnConsultar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
+        btnConsultar.setText("CONSULTAR");
+        btnConsultar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnConsultar.setBorderPainted(false);
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
-        jButton4.setText("MODIFICAR");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setBorderPainted(false);
+        btnModificar.setBackground(new java.awt.Color(0, 0, 51));
+        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
+        btnModificar.setText("MODIFICAR");
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setBorderPainted(false);
 
         jButton6.setBackground(new java.awt.Color(51, 0, 51));
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -232,13 +315,13 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.setBorderPainted(false);
 
-        jButton8.setBackground(new java.awt.Color(0, 0, 51));
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
-        jButton8.setText("ELIMINAR");
-        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton8.setBorderPainted(false);
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setBorderPainted(false);
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -252,9 +335,9 @@ public class Registro_Conductor extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(89, 89, 89))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                 .addContainerGap(66, Short.MAX_VALUE)
@@ -269,11 +352,11 @@ public class Registro_Conductor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(43, 43, 43)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(45, Short.MAX_VALUE))
@@ -286,17 +369,26 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel5.setText("REGISTRO DE CONDUCTOR");
         panel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
-        jButton7.setBackground(new java.awt.Color(0, 204, 0));
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
-        jButton7.setText("Guardar");
-        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.setBorderPainted(false);
-        panel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 140, 39));
+        F_nacimiento.setForeground(new java.awt.Color(0, 0, 102));
+        panel1.add(F_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 190, -1));
 
-        jDateChooser1.setForeground(new java.awt.Color(0, 0, 102));
-        panel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 190, -1));
+        btnH.setText("Hombre");
+        panel1.add(btnH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 80, -1));
+
+        btnM.setText("Mujer");
+        panel1.add(btnM, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 90, -1));
+
+        cbBoxSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ORH+", "ORH-", "ARH+", "ARH-", "BRH+", "BRH-", "ABRH+", "ABRH-", " " }));
+        panel1.add(cbBoxSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 130, 20));
+
+        cbboxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuenca", "Quito", "Guayaquil", "Loja", "Ambato" }));
+        panel1.add(cbboxCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 200, -1));
+
+        btnGuardar.setText("CREAR");
+        panel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 90, 34));
+
+        btncargar.setText("Cargar");
+        panel1.add(btncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 70, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -314,10 +406,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,6 +433,9 @@ public class Registro_Conductor extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Registro_Conductor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -355,20 +446,23 @@ public class Registro_Conductor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboJornada;
+    private javax.swing.JComboBox<String> ComboLicencia;
+    private com.toedter.calendar.JDateChooser F_nacimiento;
     private javax.swing.JLabel IMAGEN;
+    private javax.swing.JTable TablaConductor;
+    private javax.swing.JButton bntVolver;
     private org.edisoncor.gui.util.BrightPassFilter brightPassFilter1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JRadioButton btnH;
+    private javax.swing.JRadioButton btnM;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btncargar;
+    private javax.swing.JComboBox<String> cbBoxSangre;
+    private javax.swing.JComboBox<String> cbboxCiudad;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -387,17 +481,15 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private org.edisoncor.gui.panel.Panel panel1;
     private org.edisoncor.gui.panel.Panel panel2;
+    private javax.swing.JTextField txtapellido;
+    private javax.swing.JTextField txtcedula;
+    private javax.swing.JTextField txtcelular;
+    private javax.swing.JPasswordField txtcontra;
+    private javax.swing.JTextField txtcorreo;
+    private javax.swing.JTextField txtdirecion;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }

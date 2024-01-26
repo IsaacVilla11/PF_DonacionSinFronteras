@@ -10,9 +10,9 @@ import java.util.logging.Logger;
 
 public class ConexionPg {
 
-    String cadenaConexion = "jdbc:postgresql://localhost:5432/PF_DonacionSinFronteras"; // NOmbre de la base en postgres
-    String userPG = "postgres";  
-    String passPG = "1234"; //Cada uno pone su Contraseña 
+    String cadenaConexion = "jdbc:postgresql://localhost:5432/PF_DonacionSinFronterasd"; // NOmbre de la base en postgres
+    String userPG = "postgres";
+    String passPG = "123"; //Cada uno pone su Contraseña 
 
     Connection con;
 
@@ -62,12 +62,14 @@ public class ConexionPg {
     }
 
     public void cerrarConexion() {
-        if (con != null) {
-            try {
+        try {
+            if (con != null && !con.isClosed()) {
                 con.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
             }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            // Manejar la excepción, por ejemplo, imprimir un mensaje de error
         }
     }
+
 }
