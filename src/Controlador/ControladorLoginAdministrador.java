@@ -1,8 +1,13 @@
 package Controlador;
 
+import Modelo.Administrador;
+import Modelo.Comprador;
+import Modelo.ModeloAdministrador;
+import Modelo.ModeloComprador;
 import Vista.Login_Administrador;
 import Vista.vistaAdministrador;
 import Vista.vistaLogins;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +24,7 @@ public class ControladorLoginAdministrador {
     }
 
     public void iniciarControl() {
-        vistaLogAdmin.getBtnIniciarSesionAdmin().addActionListener(l -> validarU_Admnistrador());
+        vistaLogAdmin.getBtnIniciarSesionAdmin().addActionListener(l -> LoginAdministrador());
         vistaLogAdmin.getBtnRegresar().addActionListener(l -> regresesarMenuLogins());
 
     }
@@ -44,7 +49,26 @@ public class ControladorLoginAdministrador {
         control.iniciarControl();
 
     }
-    public void validarU_Admnistrador() {
+         // Método para Credenciales  login del administrador
+    public void LoginAdministrador() {
+       ModeloAdministrador modAdmin = new ModeloAdministrador();
+        List<Administrador> adm = modAdmin.ListaAdministrador();
+
+        boolean bandera = modAdmin.ConsultarAdministrador(vistaLogAdmin.getTxtUsuario().getText(), vistaLogAdmin.getTxtContrasenia().getText(), adm);
+
+        if (bandera) {
+            iniciarSesion();
+            vistaLogAdmin.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario/Contraseña incorrecto");
+            limpiarcampos();
+        }
+    }
+    public void limpiarcampos(){
+        vistaLogAdmin.getTxtUsuario().setText("");
+        vistaLogAdmin.getTxtContrasenia().setText("");
+    }
+    /*/public void validarU_Admnistrador() {
         String auxUsuario = vistaLogAdmin.getTxtUsuario().getText();
         String auxPassword = vistaLogAdmin.getTxtContrasenia().getText();
         String usuario = "admin";
@@ -61,5 +85,5 @@ public class ControladorLoginAdministrador {
                 JOptionPane.showMessageDialog(null, " ERROR: USUARIO O CONTRASEÑA INCORRECTO");
             }
         }
-    }
+    }*/
 }
