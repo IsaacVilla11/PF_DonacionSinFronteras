@@ -5,6 +5,7 @@ import Modelo.LugarAfectado;
 import Modelo.ModeloCentroAcopio;
 import Modelo.ModeloLugarAfectado;
 import Vista.CRUD_Comprador;
+import Vista.CRUD_Donante;
 import Vista.Crud_centroAcopio;
 import Vista.Crud_lugarAfectado;
 import Vista.Registro_Comprador;
@@ -47,6 +48,7 @@ public class ControladorModuloAdmin {
     public void iniciarControl() {
        vistaModAdmin.getBtnCerrarSesion().addActionListener(l -> regresesarMenuPrincipal());
        vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
+       vistaModAdmin.getJmiRegistroDonante().addActionListener(l->mostrarCrudDonante());
        vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
        vistaModAdmin.getBtnCA().addActionListener(e -> cargarTablaCA());
        vistaModAdmin.getJmiModuloProducto().addActionListener(l -> mostrarModuloProductos());
@@ -210,7 +212,15 @@ public class ControladorModuloAdmin {
         ControladorCrudAdmin control = new ControladorCrudAdmin(vista);
         control.iniciarControl();
     }
-
+    public void mostrarCrudDonante(){
+        vistaModAdmin.dispose();
+        CRUD_Donante  vista=new CRUD_Donante();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+        
+        ControladorCrudDonante control= new ControladorCrudDonante(vista);
+        control.iniciarControl();
+    }
     public void mostrarModuloProductos(){
         vistaModAdmin.dispose();
         V_ModuloProducto vista = new V_ModuloProducto();
