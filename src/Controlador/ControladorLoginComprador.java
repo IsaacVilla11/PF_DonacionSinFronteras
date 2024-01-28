@@ -17,12 +17,12 @@ import javax.swing.JOptionPane;
 public class ControladorLoginComprador {
 
     Login_Comprador LoginCom;
-
+    String cedulaComp;
     public ControladorLoginComprador(Login_Comprador LoginCom) {
         this.LoginCom = LoginCom;
         LoginCom.setVisible(true);
     }
-
+    
     public void iniciarControl() {
         LoginCom.getBtnIniciarSesionComprador().addActionListener(l -> LoginComprador());
         LoginCom.getBtnRegistrarComprador().addActionListener(l -> registroComprador());
@@ -36,7 +36,7 @@ public class ControladorLoginComprador {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
-        ControladorModuloComprador control = new ControladorModuloComprador(vista);
+        ControladorModuloComprador control = new ControladorModuloComprador(vista, cedulaComp);
         control.iniciarControl();
     }
 
@@ -58,6 +58,7 @@ public class ControladorLoginComprador {
         boolean bandera = modCompra.ConsultarComprador(LoginCom.getTxtUsuario().getText(), LoginCom.getTxtContrasenia().getText(), com);
 
         if (bandera) {
+            cedulaComp=LoginCom.getTxtUsuario().getText();
             iniciarSesion();
             LoginCom.dispose();
         } else {
