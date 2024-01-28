@@ -1,6 +1,7 @@
 package Modelo;
 
 import com.sun.jdi.connect.spi.Connection;
+import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 public class ModeloComprador extends Comprador {
@@ -202,7 +205,7 @@ public class ModeloComprador extends Comprador {
     }
 
     /// metodo para obtener el id de la persona Mediante la cedula
-    private int obtenerIdPersonaPorCedula(String cedula) throws SQLException {
+    public int obtenerIdPersonaPorCedula(String cedula) throws SQLException {
         int idPersona = -1;
         PreparedStatement statement = null;
         ResultSet rs = null;
@@ -241,9 +244,53 @@ public class ModeloComprador extends Comprador {
     // Método para obtener el modelo de la tabla con las imágenes desde la base de datos
     public DefaultTableModel obtenerModeloTablaDesdeBD() {
         
-        return null;
+         ConexionPg cone = new ConexionPg();
+        String sql = "SELECT p.id_producto, v.precio ,p.imagen_pro FROM producto p JOIN tipovendible v ON p.id_producto = v.id_producto_ven";
+
+        try {
+            PreparedStatement statement = cone.getCon().prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+
+            DefaultTableModel modelo = new DefaultTableModel(new String[]{"CODIGO PRODUCTO", "PRECIO", "IMAGEN"}, 0);
+
+            while (rs.next()) {
+                String codigoProducto = rs.getString("id_producto");
+                String precioProducto = rs.getString("precio");
+                byte[] imagenBytes = rs.getBytes("imagen_pro");
+
+                if (imagenBytes != null && imagenBytes.length > 0) {
+                    // Agrega un mensaje de depuración para imprimir los bytes de la imagen
+                    System.out.println("Imagen recuperada para el producto " + codigoProducto + ": " + imagenBytes);
+                    // ajustar tamaño de imagen para el jtable
+                    ImageIcon imagenIcon = new ImageIcon(imagenBytes);
+                    Image imagenEscalada = imagenIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                    ImageIcon imagenEscaladaIcon = new ImageIcon(imagenEscalada);
+
+                    JLabel imagenLabel = new JLabel(imagenEscaladaIcon);
+
+                    // Creamos un array de objetos para cada fila
+                    Object[] fila = new Object[]{codigoProducto, precioProducto, imagenLabel};
+
+                    // Agregamos la fila al modelo de la tabla
+                    modelo.addRow(fila);
+                    System.out.println("Imagen agregada correctamente para el producto " + codigoProducto);
+                } else {
+                    // Si los bytes de la imagen son nulos o están vacíos, agregamos un JLabel vacío a la tabla
+                    modelo.addRow(new Object[]{codigoProducto, precioProducto, new JLabel()});
+                    System.out.println("No se encontró imagen para el producto " + codigoProducto);
+                }
+            }
+
+            return modelo;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("Error al recuperar las imágenes desde la base de datos");
+            return new DefaultTableModel(new String[]{"Código Producto", "Precio", "Imagen"}, 0);
+        }
     }
 
+    
     // verificar que no se repita uuna llave primaria 
     public boolean verificarDuplicidadCedula(String cedulaCompra) {
         String sql = "SELECT COUNT(*) AS count FROM comprador WHERE cedula_usu = ?";
