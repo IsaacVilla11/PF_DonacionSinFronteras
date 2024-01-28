@@ -5,6 +5,7 @@ import Vista.Login_Comprador;
 import Vista.Login_Donador;
 import Vista.Login_Solicitante;
 import Vista.Registro_Comprador;
+import Vista.Registro_Donante;
 import Vista.V_Principal;
 import Vista.vistaLogins;
 
@@ -28,7 +29,7 @@ public class ControladorLogins {
         vistaLogin.getJmiLoginAdmin().addActionListener(l -> mostrarLoginAdministrador());
         vistaLogin.getBtnRegresarMenu().addActionListener(l -> regresesarMenuPrincipal());
         vistaLogin.getBtnRegistroComprador().addActionListener(l -> mostrarRegistroComprador());
-
+        vistaLogin.getBtnRegistroDonador().addActionListener(l-> mostrarRegistroDonante());
     }
 
     public void mostrarLoginDonador() {
@@ -91,6 +92,16 @@ public class ControladorLogins {
         vista.setVisible(true);
 
         ControladorRegistroComprador control = new ControladorRegistroComprador(vista);
+        control.iniciarControl();
+    }
+    
+    public void mostrarRegistroDonante() {
+        vistaLogin.dispose();
+        Registro_Donante vista = new Registro_Donante();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorRegistroDonante control = new ControladorRegistroDonante(vista);
         control.iniciarControl();
     }
 
