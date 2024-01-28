@@ -1,7 +1,9 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class V_Comprador extends javax.swing.JFrame {
 
@@ -9,6 +11,10 @@ public class V_Comprador extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JLabel getLblFecha() {
+        return lblFecha;
+    }
+    
     public JButton getBtnregresar() {
         return btnregresar;
     }
@@ -47,9 +53,12 @@ public class V_Comprador extends javax.swing.JFrame {
         jpEncabezado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
         Contenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpSecciones.setBackground(new java.awt.Color(255, 255, 255));
         jpSecciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,6 +107,8 @@ public class V_Comprador extends javax.swing.JFrame {
         btnInicio.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jpSecciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, 50));
 
+        jPanel1.add(jpSecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 106, -1, 519));
+
         jpEncabezado.setBackground(new java.awt.Color(255, 255, 255));
         jpEncabezado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -109,6 +120,11 @@ public class V_Comprador extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/pngCarrito.png"))); // NOI18N
         jLabel2.setText(":PDSF");
         jpEncabezado.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, -1, -1));
+
+        lblFecha.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        jpEncabezado.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 40, 110, 30));
+
+        jPanel1.add(jpEncabezado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1087, -1));
 
         Contenido.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -123,25 +139,7 @@ public class V_Comprador extends javax.swing.JFrame {
             .addGap(0, 519, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 1087, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jpSecciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jpEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpSecciones, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        jPanel1.add(Contenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 106, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,5 +168,6 @@ public class V_Comprador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jpEncabezado;
     private javax.swing.JPanel jpSecciones;
+    private javax.swing.JLabel lblFecha;
     // End of variables declaration//GEN-END:variables
 }
