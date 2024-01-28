@@ -387,9 +387,9 @@ public class ControladorCrudAdmin {
         vistaCrudAdmin.getTxtNomb().setText(admin.getNombre_usu());
         vistaCrudAdmin.getTxtApe().setText(admin.getApellido_usu());
 
-        if (admin.getSexo_usu() == "Hombre") {
+        if ("Hombre".equals(admin.getSexo_usu())) {
             vistaCrudAdmin.getBtnH().setSelected(true);
-        } else if (admin.getSexo_usu() == "Mujer") {
+        } else if ("Mujer".equals(admin.getSexo_usu())) {
             vistaCrudAdmin.getBtnM().setSelected(true);
         }
 
