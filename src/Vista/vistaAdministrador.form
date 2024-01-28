@@ -56,9 +56,9 @@
                 <Property name="text" type="java.lang.String" value="Donante"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                <MenuItem class="javax.swing.JMenuItem" name="jmiRegistroDonante">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Crud"/>
+                    <Property name="text" type="java.lang.String" value="Registro"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>

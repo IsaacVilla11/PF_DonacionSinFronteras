@@ -36,6 +36,11 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmiRegistroComprador;
     }
 
+    public JMenuItem getJmiRegistroDonante() {
+        return jmiRegistroDonante;
+    }
+
+    
     public JMenuItem getJmiCrudAdmin() {
         return jmiCrudAdmin;
     }
@@ -131,7 +136,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jmiRegistroDonante = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jmiRegistroComprador = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
@@ -318,8 +323,8 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/donantes.png"))); // NOI18N
         jMenu5.setText("Donante");
 
-        jMenuItem2.setText("Crud");
-        jMenu5.add(jMenuItem2);
+        jmiRegistroDonante.setText("Registro");
+        jMenu5.add(jmiRegistroDonante);
 
         jMenu2.add(jMenu5);
 
@@ -456,7 +461,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -470,6 +474,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiCrudAdmin;
     private javax.swing.JMenuItem jmiModuloProducto;
     private javax.swing.JMenuItem jmiRegistroComprador;
+    private javax.swing.JMenuItem jmiRegistroDonante;
     private javax.swing.JMenuItem jmiRegistroTransporte;
     private javax.swing.JMenuItem jmitemAlimentos;
     private javax.swing.JMenuItem jmitemCiudad;
