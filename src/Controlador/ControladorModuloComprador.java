@@ -1,8 +1,15 @@
 package Controlador;
 
+import Modelo.Comprador;
 import Modelo.ConexionPg;
+import Modelo.DetalleFactura;
+import Modelo.EncabezadoFactura;
 import Modelo.ModeloComprador;
+import Modelo.ModeloDetalleFactura;
+import Modelo.ModeloEncabezadoFact;
+import Modelo.Producto;
 import Modelo.TablaImagenRender;
+import Vista.Login_Comprador;
 import Vista.VC_Inicio;
 import Vista.VC_Productos;
 import Vista.VC_Reporte;
@@ -12,6 +19,10 @@ import Vista.V_Principal;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -29,12 +40,13 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class ControladorModuloComprador {
 
+    String cedula;
     V_Comprador vistaModCom; // Principal y unica vista
 
-    public ControladorModuloComprador(V_Comprador vistaModCom) {
+    public ControladorModuloComprador(V_Comprador vistaModCom, String cedula) {
         this.vistaModCom = vistaModCom;
         this.vistaModCom.setVisible(true);  // ---> Estas llamando a la vista del modeloCotrolador del parametro, coloca this
-
+        this.cedula = cedula;
         initVentanaInicio(); // o ShowJPanel(new VC_Inicio());
     }
 
@@ -42,9 +54,7 @@ public class ControladorModuloComprador {
         Inicializaciones 
      */
     public void iniciarControl() {
-
-        //ajustarAltoFilas();
-        //crearTablaConImagenes();
+        sacarFecha();
         vistaModCom.getBtnregresar().addActionListener(l -> regresesarMenuPrincipal());
         vistaModCom.getBtnInicio().addActionListener(l -> initVentanaInicio());
         vistaModCom.getBtnProductos().addActionListener(l -> initProductoVenta());
@@ -59,13 +69,20 @@ public class ControladorModuloComprador {
 
     public void initProductoVenta() {
         VC_Productos view = new VC_Productos();
-
+        crearTablaConImagenes(view);
+        ajustarAltoFilas(view);
         ShowJPanel(view);
 
         view.getBtnAgregar().addActionListener(l -> agregarCarrito(view));
-        view.getBtnReset().addActionListener(l -> System.out.println("Boton de RESETEO"));
-        view.getBtnPagar().addActionListener(l -> System.out.println("Boton de PAGAR"));
-        view.getBtnDelete().addActionListener(l -> System.out.println("Boton de DELETE"));
+        view.getBtnReset().addActionListener(l -> resetProductos(view));
+        view.getBtnPagar().addActionListener(l -> procesarCompra(view));
+        view.getBtnDelete().addActionListener(l -> eliminarSeleccionProduct(view));
+
+    }
+
+    // metodo para sacarla fecha actual
+    public void sacarFecha() {
+        vistaModCom.getLblFecha().setText(DateTimeFormatter.ofPattern("MMM dd yyyy").format(LocalDateTime.now()));
 
     }
 
@@ -159,12 +176,35 @@ public class ControladorModuloComprador {
                 if (cantidadProductos > 0) {
 
                     // Obtener los valores de las celdas de la fila seleccionada
-                    Object[] rowData = new Object[view.getTablaProductos().getColumnCount() + 1]; // Añadir una columna para la cantidad de productos
-                    for (int i = 0; i < view.getTablaProductos().getColumnCount(); i++) {
-                        rowData[i] = view.getTablaProductos().getValueAt(filaSeleccionada, i);
-                    }
-                    rowData[view.getTablaProductos().getColumnCount()] = cantidadProductos; // Agregar la cantidad de productos
+                    Object[] rowData = new Object[4]; // Se añaden 3 columnas: idProducto, precio, cantidad
 
+                    rowData[0] = view.getTablaProductos().getValueAt(filaSeleccionada, 0); // idProducto
+                    rowData[1] = cantidadProductos; // cantidad
+                    rowData[2] = view.getTablaProductos().getValueAt(filaSeleccionada, 1); // precio
+                    rowData[3] = Double.parseDouble(rowData[2].toString()) * cantidadProductos;
+                    // Calcular el subtotal (precio * cantidad)
+                    //double precio = Double.parseDouble(rowData[2].toString());
+                    //double subtotal = precio * cantidadProductos;
+
+                    // Obtener el total acumulado actual
+                    double totalAcumulado = 0.0;
+                    try {
+                        totalAcumulado = Double.parseDouble(view.getTxtSubtotal().getText());
+                    } catch (NumberFormatException e) {
+                        // Si el campo está vacío, establecer el total acumulado a 0.0
+                        totalAcumulado = 0.0;
+                    }
+
+                    // Sumar el subtotal al total acumulado
+                    totalAcumulado += Double.parseDouble(rowData[3].toString());
+
+                    // Actualizar el JTextField del subtotal con el total acumulado
+                    view.getTxtSubtotal().setText(String.valueOf(totalAcumulado));
+                    view.getTxtSubtotal().setEditable(false);
+
+                    // actualizo el JTextField del total con lo acumulado del subtotal
+                    view.getTxtTotal().setText(String.valueOf(totalAcumulado));
+                    view.getTxtTotal().setEditable(false);
                     // Agregar la fila al modelo de tabla "susProductos"
                     DefaultTableModel modeloSusProductos = (DefaultTableModel) view.getTblSusProductos().getModel();
                     modeloSusProductos.addRow(rowData);
@@ -173,7 +213,100 @@ public class ControladorModuloComprador {
                 }
             }
         } catch (Exception e) {
+
             System.out.println(e);
+        }
+    }
+
+    // metodo para vaciar el jtable susProductos
+    public void resetProductos(VC_Productos view) {
+        DefaultTableModel modeloSusProductos = (DefaultTableModel) view.getTblSusProductos().getModel();
+        modeloSusProductos.setRowCount(0); // Elimina todas las filas del modelo
+        view.getTxtSubtotal().setText("0.0"); // Establece el subtotal a 0.0
+        view.getTxtTotal().setText("0.0");
+    }
+
+    // metodo para eliminar fila seleccionada
+    public void eliminarSeleccionProduct(VC_Productos view) {
+        DefaultTableModel modeloSusProductos = (DefaultTableModel) view.getTblSusProductos().getModel();
+        int filaSeleccionada = view.getTblSusProductos().getSelectedRow();
+
+        if (filaSeleccionada != -1) {
+            modeloSusProductos.removeRow(filaSeleccionada);
+
+            // Recalcular subtotal después de eliminar la fila
+            recalcularSubtotal(view);
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
+        }
+    }
+
+    private void recalcularSubtotal(VC_Productos view) {
+        DefaultTableModel modeloSusProductos = (DefaultTableModel) view.getTblSusProductos().getModel();
+        double subtotal = 0.0;
+
+        for (int i = 0; i < modeloSusProductos.getRowCount(); i++) {
+            double precio = Double.parseDouble(modeloSusProductos.getValueAt(i, 1).toString());
+            int cantidad = Integer.parseInt(modeloSusProductos.getValueAt(i, 2).toString());
+
+            subtotal += precio * cantidad;
+        }
+
+        view.getTxtSubtotal().setText(String.valueOf(subtotal));
+        view.getTxtTotal().setText(String.valueOf(subtotal));
+    }
+
+    public void procesarCompra(VC_Productos view) {
+        boolean pagado = true;
+        ModeloEncabezadoFact enca = new ModeloEncabezadoFact();
+        ModeloDetalleFactura deta = new ModeloDetalleFactura();
+
+        try {
+            // 1. Obtener valores de la interfaz
+            LocalDate fechaFactura = LocalDate.now();
+            enca.setFecha_fact(java.sql.Date.valueOf(fechaFactura));
+
+            double totalFactura = Double.parseDouble(view.getTxtTotal().getText());
+            enca.setTotal(totalFactura);
+
+            // Asigna el ID del comprador al encabezado de factura
+            enca.setId_comprador_fact(enca.traerCodigoDePersonaCrear(cedula));
+
+            if (enca.insertaEncabezadoFact(enca.traerCodigoDePersonaCrear(cedula))) {
+                // Obtener el id_encabezadoFact recién insertado
+                int idEncabezadoFact = enca.obtenerUltimoIdEncabezado();
+
+                if (idEncabezadoFact > 0) {
+                    // Asignar el id_encabezadoFact al modelo DetalleFactura
+                    deta.setId_encabezadoFact_det(idEncabezadoFact);
+
+                    for (int j = 0; j < view.getTblSusProductos().getRowCount(); j++) {
+
+                        deta.setId_pro_det(Integer.valueOf(view.getTblSusProductos().getValueAt(j, 0).toString()));
+
+                        deta.setCant_produ_det(Integer.valueOf(view.getTblSusProductos().getValueAt(j, 1).toString()));
+
+                        deta.setSubtotal_det(Double.valueOf(view.getTblSusProductos().getValueAt(j, 3).toString()));
+
+                        if (!deta.insertaDetalleFact()) {
+                            JOptionPane.showMessageDialog(view, "No se guardó");
+                            pagado = false;
+                            break;
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(view, "No se pudo obtener el id_encabezadoFact");
+                }
+            } else {
+                JOptionPane.showMessageDialog(view, "No se pudo registrar el encabezado");
+            }
+            if (pagado) {
+                JOptionPane.showMessageDialog(view, "Su compra se efectuó exitosamente");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e);
+            JOptionPane.showMessageDialog(view, "Error al procesar la compra");
         }
     }
 
