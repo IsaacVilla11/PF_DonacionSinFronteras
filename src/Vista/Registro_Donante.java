@@ -1,6 +1,12 @@
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class Registro_Donante extends javax.swing.JFrame {
 
@@ -8,13 +14,79 @@ public class Registro_Donante extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JButton getBTNCrear() {
-        return BTNCrear;
+    public JButton getBtnAtras() {
+        return btnAtras;
     }
 
-    public JButton getBtnregresodonate() {
-        return btnregresodonate;
+    public JButton getBtnGuardar() {
+        return btnGuardar;
     }
+
+    public JRadioButton getBtnH() {
+        return btnH;
+    }
+
+    public JRadioButton getBtnM() {
+        return btnM;
+    }
+
+    public ButtonGroup getBtngroupSexo() {
+        return btngroupSexo;
+    }
+
+    public JComboBox<String> getCbBoxSangre() {
+        return cbBoxSangre;
+    }
+
+    public JComboBox<String> getCbboxCiudad() {
+        return cbboxCiudad;
+    }
+
+    public JDateChooser getjDnacimiento() {
+        return jDnacimiento;
+    }
+
+    public JTextField getTxtApe() {
+        return txtApe;
+    }
+
+    public JTextField getTxtCedu() {
+        return txtCedu;
+    }
+
+    public JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+
+    public JTextField getTxtDirecc() {
+        return txtDirecc;
+    }
+
+    public JTextField getTxtMotivo() {
+        return txtMotivo;
+    }
+
+    public JTextField getTxtNomb() {
+        return txtNomb;
+    }
+
+    public JPasswordField getTxtPass() {
+        return txtPass;
+    }
+
+    public JTextField getTxtentidad() {
+        return txtentidad;
+    }
+
+    public JTextField getTxtproyecto() {
+        return txtproyecto;
+    }
+
+   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -22,19 +94,19 @@ public class Registro_Donante extends javax.swing.JFrame {
 
         btngroupSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        btnregresodonate = new javax.swing.JButton();
-        BTNCrear = new javax.swing.JButton();
-        txtceduladona = new javax.swing.JTextField();
-        txtnomdona = new javax.swing.JTextField();
-        txtapedona = new javax.swing.JTextField();
+        btnAtras = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        txtCedu = new javax.swing.JTextField();
+        txtNomb = new javax.swing.JTextField();
+        txtApe = new javax.swing.JTextField();
         jDnacimiento = new com.toedter.calendar.JDateChooser();
         btnH = new javax.swing.JRadioButton();
         btnM = new javax.swing.JRadioButton();
-        jbxtipodona = new javax.swing.JComboBox<>();
-        txtcorredona = new javax.swing.JTextField();
-        jbxciudona = new javax.swing.JComboBox<>();
-        txtceludona = new javax.swing.JTextField();
-        txtdiredona = new javax.swing.JTextField();
+        cbBoxSangre = new javax.swing.JComboBox<>();
+        txtCorreo = new javax.swing.JTextField();
+        cbboxCiudad = new javax.swing.JComboBox<>();
+        txtCelular = new javax.swing.JTextField();
+        txtDirecc = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,13 +119,11 @@ public class Registro_Donante extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        txtcodigo_don = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         txtproyecto = new javax.swing.JTextField();
         txtentidad = new javax.swing.JTextField();
-        txtcontradona = new javax.swing.JPasswordField();
+        txtPass = new javax.swing.JPasswordField();
         txtMotivo = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -63,19 +133,21 @@ public class Registro_Donante extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnregresodonate.setBackground(new java.awt.Color(255, 255, 255));
-        btnregresodonate.setText("Regresar");
-        btnregresodonate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(204, 255, 204), null, null));
-        jPanel1.add(btnregresodonate, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 150, 40));
+        btnAtras.setBackground(new java.awt.Color(255, 255, 255));
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnRegresar.png"))); // NOI18N
+        btnAtras.setText("Regresar");
+        btnAtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(204, 255, 204), null, null));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 150, 40));
 
-        BTNCrear.setBackground(new java.awt.Color(255, 255, 255));
-        BTNCrear.setText("CREAR CUENTA");
-        BTNCrear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 204), new java.awt.Color(255, 255, 255), null, null));
-        jPanel1.add(BTNCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 150, 40));
-        jPanel1.add(txtceduladona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 170, -1));
-        jPanel1.add(txtnomdona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 170, 20));
-        jPanel1.add(txtapedona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 170, -1));
-        jPanel1.add(jDnacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 110, -1));
+        btnGuardar.setBackground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
+        btnGuardar.setText("CREAR");
+        btnGuardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 204), new java.awt.Color(255, 255, 255), null, null));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 110, 40));
+        jPanel1.add(txtCedu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 170, -1));
+        jPanel1.add(txtNomb, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 170, 20));
+        jPanel1.add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 170, -1));
+        jPanel1.add(jDnacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 170, -1));
 
         btnH.setBackground(new java.awt.Color(255, 255, 255));
         btngroupSexo.add(btnH);
@@ -87,14 +159,14 @@ public class Registro_Donante extends javax.swing.JFrame {
         btnM.setText("Mujer");
         jPanel1.add(btnM, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 70, -1));
 
-        jbxtipodona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ORH+", "ORH-", "ARH+", "ARH-", "BRH+", "BRH-", "ABRH+", "ABRH-" }));
-        jPanel1.add(jbxtipodona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, -1));
-        jPanel1.add(txtcorredona, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 170, -1));
+        cbBoxSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ORH+", "ORH-", "ARH+", "ARH-", "BRH+", "BRH-", "ABRH+", "ABRH-" }));
+        jPanel1.add(cbBoxSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 170, -1));
 
-        jbxciudona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuenca", "Quito", "Guayaquil", "Loja", "Ambato" }));
-        jPanel1.add(jbxciudona, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
-        jPanel1.add(txtceludona, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 170, -1));
-        jPanel1.add(txtdiredona, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 170, -1));
+        cbboxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuenca", "Quito", "Guayaquil", "Loja", "Ambato" }));
+        jPanel1.add(cbboxCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 170, -1));
+        jPanel1.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 170, -1));
+        jPanel1.add(txtDirecc, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 170, -1));
 
         jLabel2.setText("Cedula:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
@@ -112,10 +184,10 @@ public class Registro_Donante extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
 
         jLabel7.setText("Tipo de Sangre");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
         jLabel8.setText("Correo:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
         jLabel9.setText("Ciudad: ");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, -1, -1));
@@ -127,14 +199,10 @@ public class Registro_Donante extends javax.swing.JFrame {
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
 
         jLabel12.setText("Motivo: ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, -1));
 
         jLabel13.setText("Contraseña:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
-
-        jLabel14.setText("Codigo:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, -1, -1));
-        jPanel1.add(txtcodigo_don, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 80, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
 
         jLabel15.setText("Proyecto: ");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, -1));
@@ -143,8 +211,8 @@ public class Registro_Donante extends javax.swing.JFrame {
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
         jPanel1.add(txtproyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 170, -1));
         jPanel1.add(txtentidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 170, -1));
-        jPanel1.add(txtcontradona, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 170, -1));
-        jPanel1.add(txtMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 170, -1));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, 170, -1));
+        jPanel1.add(txtMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 170, -1));
 
         jLabel17.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         jLabel17.setText("REGISTRO DONANTE");
@@ -168,17 +236,18 @@ public class Registro_Donante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BTNCrear;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JRadioButton btnH;
     private javax.swing.JRadioButton btnM;
     private javax.swing.ButtonGroup btngroupSexo;
-    private javax.swing.JButton btnregresodonate;
+    private javax.swing.JComboBox<String> cbBoxSangre;
+    private javax.swing.JComboBox<String> cbboxCiudad;
     private com.toedter.calendar.JDateChooser jDnacimiento;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -192,18 +261,15 @@ public class Registro_Donante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JComboBox<String> jbxciudona;
-    private javax.swing.JComboBox<String> jbxtipodona;
+    private javax.swing.JTextField txtApe;
+    private javax.swing.JTextField txtCedu;
+    private javax.swing.JTextField txtCelular;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDirecc;
     private javax.swing.JTextField txtMotivo;
-    private javax.swing.JTextField txtapedona;
-    private javax.swing.JTextField txtceduladona;
-    private javax.swing.JTextField txtceludona;
-    private javax.swing.JTextField txtcodigo_don;
-    private javax.swing.JPasswordField txtcontradona;
-    private javax.swing.JTextField txtcorredona;
-    private javax.swing.JTextField txtdiredona;
+    private javax.swing.JTextField txtNomb;
+    private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtentidad;
-    private javax.swing.JTextField txtnomdona;
     private javax.swing.JTextField txtproyecto;
     // End of variables declaration//GEN-END:variables
 }
