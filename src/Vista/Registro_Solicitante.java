@@ -59,7 +59,7 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel15.setForeground(new java.awt.Color(20, 51, 166));
         jLabel15.setText("INGRESE SUS DATOS ");
         jLabel15.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, -1, -1));
@@ -130,10 +130,9 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         jPanel2.add(cboxciudad_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 122, -1));
 
         txtContra_soli.setForeground(new java.awt.Color(0, 0, 102));
-        txtContra_soli.setText("jPasswordField1");
         jPanel2.add(txtContra_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 178, -1));
 
-        btnRegresar.setBackground(new java.awt.Color(0, 0, 102));
+        btnRegresar.setBackground(new java.awt.Color(20, 51, 166));
         btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("REGRESAR");
@@ -150,7 +149,7 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         jPanel2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 178, -1));
         jPanel2.add(txtnum_solicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 55, -1));
 
-        btnRegistrar.setBackground(new java.awt.Color(0, 0, 102));
+        btnRegistrar.setBackground(new java.awt.Color(20, 51, 166));
         btnRegistrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("REGISTRARME");
@@ -170,7 +169,7 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
         );
 
         pack();
