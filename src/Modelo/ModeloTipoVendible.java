@@ -17,11 +17,12 @@ public class ModeloTipoVendible {
     public static int insertarTipoVendible(TipoVendible tipoVendible) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "INSERT INTO tipoVendible (precio, tipo, id_producto_ven) VALUES (?, ?, ?) RETURNING id_vendible")) {
+                        "INSERT INTO tipoVendible (precio, tipo, estado, id_producto_ven) VALUES (?, ?, ?, ?) RETURNING id_vendible")) {
 
             pst.setDouble(1, tipoVendible.getPrecio());
             pst.setString(2, tipoVendible.getTipo());
-            pst.setInt(3, tipoVendible.getId_pro_ven());
+            pst.setString(3, tipoVendible.getEstado());
+            pst.setInt(4, tipoVendible.getId_pro_ven());
 
             ResultSet rs = pst.executeQuery();
 
@@ -48,6 +49,7 @@ public class ModeloTipoVendible {
                 tipoVendible.setId_vendible(rs.getInt("id_vendible"));
                 tipoVendible.setPrecio(rs.getDouble("precio"));
                 tipoVendible.setTipo(rs.getString("tipo"));
+                tipoVendible.setEstado(rs.getString("estado"));
                 tipoVendible.setId_pro_ven(rs.getInt("id_producto_ven"));
 
                 listaTipoVendible.add(tipoVendible);
@@ -95,6 +97,7 @@ public class ModeloTipoVendible {
                     tipoVendible.setId_vendible(rs.getInt("id_vendible"));
                     tipoVendible.setPrecio(rs.getDouble("precio"));
                     tipoVendible.setTipo(rs.getString("tipo"));
+                    tipoVendible.setEstado(rs.getString("estado"));
                     tipoVendible.setId_pro_ven(rs.getInt("id_producto_ven"));
                 }
             }
@@ -153,11 +156,12 @@ public class ModeloTipoVendible {
     public static boolean modificarTipoVendible(TipoVendible tipoVendible) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "UPDATE tipoVendible SET precio=?, tipo=? WHERE id_vendible=?")) {
+                        "UPDATE tipoVendible SET precio=?, tipo=?, estado=? WHERE id_vendible=?")) {
 
             pst.setDouble(1, tipoVendible.getPrecio());
             pst.setString(2, tipoVendible.getTipo());
-            pst.setInt(3, tipoVendible.getId_vendible());
+            pst.setString(3, tipoVendible.getEstado());
+            pst.setInt(4, tipoVendible.getId_vendible());
 
             int filasActualizadas = pst.executeUpdate();
 
@@ -169,7 +173,5 @@ public class ModeloTipoVendible {
 
         return false;
     }
-
-    
 
 }

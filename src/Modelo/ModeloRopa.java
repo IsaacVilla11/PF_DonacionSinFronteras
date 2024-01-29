@@ -17,17 +17,15 @@ public class ModeloRopa {
     public static int insertarRopa(Ropa ropa) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "INSERT INTO ropa (marca_rop, talla_rop, color_rop, id_vendible_rop) VALUES (?, ?, ?, ?) RETURNING id_rop")) {
+                        "INSERT INTO ropa (talla_rop, id_vendible_rop) VALUES (?, ?) RETURNING id_rop")) {
 
             // Verificar si el objeto Ropa no es nulo antes de acceder a sus propiedades
             if (ropa != null) {
-                pst.setString(1, ropa.getMarca_rop());
-                pst.setString(2, ropa.getTalla_rop());
-                pst.setString(3, ropa.getColor_rop());
+                pst.setString(1, ropa.getTalla_rop());
 
                 // Verificar si la propiedad id_vendible_rop no es nula antes de usarla
                 if (ropa.getId_vendible_rop() != 0) {
-                    pst.setInt(4, ropa.getId_vendible_rop());
+                    pst.setInt(2, ropa.getId_vendible_rop());
                 } else {
                     throw new IllegalArgumentException("id_vendible_rop no puede ser nulo");
                     // O manejar de acuerdo a las necesidades de tu aplicación
@@ -80,9 +78,7 @@ public class ModeloRopa {
             while (rs.next()) {
                 Ropa ropa = new Ropa();
                 ropa.setId_rop(rs.getInt("id_rop"));
-                ropa.setMarca_rop(rs.getString("marca_rop"));
                 ropa.setTalla_rop(rs.getString("talla_rop"));
-                ropa.setColor_rop(rs.getString("color_rop"));
                 ropa.setId_vendible_rop(rs.getInt("id_vendible_rop"));
 
                 listaRopas.add(ropa);
@@ -128,9 +124,7 @@ public class ModeloRopa {
                     // Construir un objeto Ropa con los datos obtenidos de la consulta
                     ropa = new Ropa();
                     ropa.setId_rop(rs.getInt("id_rop"));
-                    ropa.setMarca_rop(rs.getString("marca_rop"));
                     ropa.setTalla_rop(rs.getString("talla_rop"));
-                    ropa.setColor_rop(rs.getString("color_rop"));
                     ropa.setId_vendible_rop(rs.getInt("id_vendible_rop"));
                 }
             }
@@ -141,6 +135,7 @@ public class ModeloRopa {
 
         return ropa;
     }
+
     public static boolean eliminarRopa(int idRopa) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement("DELETE FROM ropa WHERE id_rop = ?")) {
@@ -169,6 +164,7 @@ public class ModeloRopa {
 
         return false;
     }
+
     public static int obtenerIdTipoVendiblePorIdRopa(int idRopa) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement("SELECT id_vendible_rop FROM ropa WHERE id_rop = ?")) {
@@ -187,15 +183,14 @@ public class ModeloRopa {
 
         return -1;
     }
+
     public static boolean modificarRopa(Ropa ropa) {
         try (Connection conexion = new ConexionPg().getCon();
-             PreparedStatement pst = conexion.prepareStatement(
-                     "UPDATE ropa SET marca_rop=?, talla_rop=?, color_rop=? WHERE id_rop=?")) {
+                PreparedStatement pst = conexion.prepareStatement(
+                        "UPDATE ropa SET talla_rop=? WHERE id_rop=?")) {
 
-            pst.setString(1, ropa.getMarca_rop());
-            pst.setString(2, ropa.getTalla_rop());
-            pst.setString(3, ropa.getColor_rop());
-            pst.setInt(4, ropa.getId_rop());
+            pst.setString(1, ropa.getTalla_rop());
+            pst.setInt(2, ropa.getId_rop());
 
             int filasActualizadas = pst.executeUpdate();
 
@@ -206,6 +201,43 @@ public class ModeloRopa {
         }
 
         return false;
+    }
+
+    public static List<Ropa> obtenerDetallesRopa() {
+        List<Ropa> detalles = new ArrayList<>();
+
+        // Establecer la conexión a la base de datos (deberías manejar las excepciones)
+        try (Connection connection = new ConexionPg().getCon()) {
+            // Consulta SQL para obtener los detalles de la ropa
+            String sql = "SELECT "
+                    + "ropa.id_rop, "
+                    + "tipoVendible.tipo, "
+                    + "tipoVendible.estado, "
+                    + "ropa.talla_rop, "
+                    + "tipoVendible.precio "
+                    + "FROM producto "
+                    + "JOIN tipoVendible ON tipoVendible.id_producto_ven = producto.id_producto "
+                    + "JOIN ropa ON ropa.id_vendible_rop = tipoVendible.id_vendible";
+
+            try (PreparedStatement statement = connection.prepareStatement(sql);
+                    ResultSet resultSet = statement.executeQuery()) {
+                // Iterar a través de los resultados y construir objetos RopaDetalle
+                while (resultSet.next()) {
+                    Ropa detalle = new Ropa();
+                    detalle.setId_rop(resultSet.getInt("id_rop"));
+                    detalle.setTipo(resultSet.getString("tipo"));
+                    detalle.setEstado(resultSet.getString("estado"));
+                    detalle.setTalla_rop(resultSet.getString("talla_rop"));
+                    detalle.setPrecio(resultSet.getDouble("precio"));
+
+                    detalles.add(detalle);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejar la excepción adecuadamente en tu aplicación
+        }
+
+        return detalles;
     }
 
 }

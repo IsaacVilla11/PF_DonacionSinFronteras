@@ -1,7 +1,6 @@
 package Vista;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -197,10 +196,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return mensajeExito;
     }
 
-    public JCheckBox getChbxDisponibliidad_Producto_Si() {
-        return chbxDisponibliidad_Producto_Si;
-    }
-
     public JTextField getTxtCodigoProducto() {
         return txtCodigoProducto;
     }
@@ -213,24 +208,12 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return txtCodigoVendible;
     }
 
-    public JTextField getTxtNombreProducto() {
-        return txtNombreProducto;
-    }
-
     public JComboBox<String> getCbxTipoRopa() {
         return cbxTipoRopa;
     }
 
     public JTextField getTxtPrecioVendible() {
         return txtPrecioVendible;
-    }
-
-    public JTextField getTxtMarca() {
-        return txtMarca;
-    }
-
-    public JComboBox<String> getCbxColor() {
-        return cbxColor;
     }
 
     public JComboBox<String> getCbxTalla() {
@@ -245,6 +228,42 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return txtTipoProducto;
     }
 
+    public JComboBox<String> getCbxEstado() {
+        return cbxEstado;
+    }
+
+    public JComboBox<String> getCbxMaterialMueble() {
+        return cbxMaterialMueble;
+    }
+
+    public JComboBox<String> getCbxTamañoMueble() {
+        return cbxTamañoMueble;
+    }
+
+    public JTable getTblMuebles() {
+        return tblMuebles;
+    }
+
+    public JTextField getTxtCodigoMueble() {
+        return txtCodigoMueble;
+    }
+
+    public JTextField getTxtCodigoProducto1() {
+        return txtCodigoProducto1;
+    }
+
+    public JTextField getTxtCodigoVendible1() {
+        return txtCodigoVendible1;
+    }
+
+    public JTextField getTxtPrecioVendible1() {
+        return txtPrecioVendible1;
+    }
+
+    public JTextField getTxtTipoProducto1() {
+        return txtTipoProducto1;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -257,7 +276,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         mensajeExito = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         btnCrear = new javax.swing.JButton();
@@ -271,29 +289,22 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnReporte = new javax.swing.JButton();
         va2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        chbxDisponibliidad_Producto_Si = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         txtCodigoRopa = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtCodigoProducto = new javax.swing.JTextField();
         va1 = new javax.swing.JLabel();
-        txtNombreProducto = new javax.swing.JTextField();
         txtCodigoVendible = new javax.swing.JTextField();
         btnImagenProducto = new javax.swing.JButton();
         btnCargarImagen = new javax.swing.JButton();
         btnAyuda = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtPrecioVendible = new javax.swing.JTextField();
-        va6 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
         cbxCodigosRopa = new javax.swing.JComboBox<>();
         vaSi = new javax.swing.JCheckBox();
-        cbxColor = new javax.swing.JComboBox<>();
-        txtMarca = new javax.swing.JTextField();
+        cbxEstado = new javax.swing.JComboBox<>();
         cbxTalla = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRopa = new javax.swing.JTable();
@@ -311,7 +322,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         mensajeExito1 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         cbxMaterialMueble = new javax.swing.JComboBox<>();
@@ -327,13 +337,11 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnReporte1 = new javax.swing.JButton();
         va7 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        chbxDisponibliidad_Producto_Si1 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         txtCodigoMueble = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtCodigoProducto1 = new javax.swing.JTextField();
         va10 = new javax.swing.JLabel();
-        txtNombreProducto1 = new javax.swing.JTextField();
         txtCodigoVendible1 = new javax.swing.JTextField();
         btnImagenProducto1 = new javax.swing.JButton();
         btnCargarImagen1 = new javax.swing.JButton();
@@ -344,16 +352,15 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         cbxTamañoMueble = new javax.swing.JComboBox<>();
         txtPrecioVendible1 = new javax.swing.JTextField();
-        va12 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblMuebles = new javax.swing.JTable();
         btnConsultarTipo = new javax.swing.JButton();
         btnLimpiar1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jSeparator8 = new javax.swing.JSeparator();
         jLabel27 = new javax.swing.JLabel();
         cbxCodigosMuebles = new javax.swing.JComboBox<>();
         vaSi1 = new javax.swing.JCheckBox();
+        va4 = new javax.swing.JLabel();
+        txtTipoProducto1 = new javax.swing.JTextField();
         PanelMedicamentos = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
@@ -490,28 +497,23 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         mensajeExito.setForeground(new java.awt.Color(0, 204, 255));
         mensajeExito.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         mensajeExito.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanel6.add(mensajeExito, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 220, 60));
-
-        jLabel10.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Nombre Producto:");
-        jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 110, -1));
+        jPanel6.add(mensajeExito, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 220, 60));
 
         jLabel11.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Tipo:");
-        jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
+        jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Imagen:");
-        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
+        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         btnCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
-        btnCrear.setText("CREAR");
+        btnCrear.setText("Crear");
         btnCrear.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         btnCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel6.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 130, 50));
+        jPanel6.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 130, 50));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/eliminar.png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
@@ -551,7 +553,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jSeparator4.setForeground(new java.awt.Color(0, 204, 255));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator4.setPreferredSize(new java.awt.Dimension(5, 0));
-        jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 20, 300));
+        jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 20, 300));
 
         btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/informe.png"))); // NOI18N
         btnReporte.setText("REPORTE");
@@ -560,84 +562,60 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         va2.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va2.setForeground(new java.awt.Color(0, 0, 0));
-        va2.setText("Codigo vendible: ");
-        jPanel6.add(va2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 100, -1));
+        va2.setText("ID Tipo Vendible: ");
+        jPanel6.add(va2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 100, -1));
 
         jLabel9.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Precio:");
-        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, -1, -1));
-
-        chbxDisponibliidad_Producto_Si.setText("Si");
-        jPanel6.add(chbxDisponibliidad_Producto_Si, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 230, 40, -1));
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("REGISTRO DE ROPA");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 230, -1));
-        jPanel6.add(txtCodigoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 140, 30));
+        jPanel6.add(txtCodigoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 80, 30));
 
         jLabel3.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Codigo ropa: ");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 80, -1));
-        jPanel6.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, 110, 30));
+        jPanel6.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 70, 30));
 
         va1.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va1.setForeground(new java.awt.Color(0, 0, 0));
-        va1.setText("Codigo producto: ");
-        jPanel6.add(va1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 100, -1));
-        jPanel6.add(txtNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 240, 30));
-        jPanel6.add(txtCodigoVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 110, 30));
+        va1.setText("ID producto: ");
+        jPanel6.add(va1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 80, -1));
+        jPanel6.add(txtCodigoVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 70, 30));
 
         btnImagenProducto.setBackground(new java.awt.Color(255, 255, 255));
         btnImagenProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
-        jPanel6.add(btnImagenProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 200, 130));
+        jPanel6.add(btnImagenProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 200, 130));
 
         btnCargarImagen.setBackground(new java.awt.Color(255, 255, 255));
         btnCargarImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
         btnCargarImagen.setBorder(null);
-        jPanel6.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 110, 90));
+        jPanel6.add(btnCargarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, 90));
 
         btnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda.setText("Ayuda");
         btnAyuda.setContentAreaFilled(false);
         jPanel6.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 100, -1));
 
-        jLabel17.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setText("Marca:");
-        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
-
         jLabel13.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("Talla");
-        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
-        jPanel6.add(txtPrecioVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 110, 30));
-
-        va6.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va6.setForeground(new java.awt.Color(0, 0, 0));
-        va6.setText("Disponibilidad:");
-        jPanel6.add(va6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, -1, -1));
+        jLabel13.setText("Talla:");
+        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
+        jPanel6.add(txtPrecioVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 110, 30));
 
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar.setContentAreaFilled(false);
         jPanel6.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, 40));
 
-        jLabel5.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Opcional");
-        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, -1, -1));
-
-        jSeparator5.setBackground(new java.awt.Color(0, 204, 255));
-        jSeparator5.setForeground(new java.awt.Color(0, 204, 255));
-        jSeparator5.setPreferredSize(new java.awt.Dimension(5, 0));
-        jPanel6.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 230, 10));
-
         jLabel19.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Datos de administrador");
-        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, -1, -1));
+        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
 
         cbxCodigosRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel6.add(cbxCodigosRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 466, 130, 30));
@@ -646,15 +624,15 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         vaSi.setContentAreaFilled(false);
         vaSi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         vaSi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver.png"))); // NOI18N
-        jPanel6.add(vaSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 70, 40, 30));
+        jPanel6.add(vaSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 40, 30));
 
-        cbxColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Blanco", "Negro", "Gris", "Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Rosa", "Morado", "Marrón", "Beige", "Celeste", "Turquesa", "Dorado", "Plateado", "Verde oliva", "Lavanda", "Cian", "Magenta", "Índigo", "Verde menta", "Coral", "Azul marino", "Cobre", "Otro" }));
-        jPanel6.add(cbxColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 150, -1));
-        jPanel6.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 120, -1));
+        cbxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Usado", "Seminuevo", "Nuevo", "Otro" }));
+        jPanel6.add(cbxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 150, -1));
 
         cbxTalla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Talla S = Small ", "Talla P = Pequeña", "Talla M = Mediana", "Talla L = Grande", "Talla XL = Extra Large", "Talla EG = Extra Grande", "Otros" }));
-        jPanel6.add(cbxTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 150, -1));
+        jPanel6.add(cbxTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 150, -1));
 
+        tblRopa.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tblRopa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -666,76 +644,53 @@ public class V_ModuloProducto extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblRopa.setAlignmentX(1.0F);
+        tblRopa.setAlignmentY(1.0F);
+        tblRopa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblRopa);
 
         jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, 860, -1));
 
         jLabel4.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Codigo ropa: ");
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 119, 80, -1));
+        jLabel4.setText("ID ropa: ");
+        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 50, -1));
 
         jLabel16.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel16.setText("Color:");
-        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
+        jLabel16.setText("Estado:");
+        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
 
-        cbxTipoRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Informal", "Semiformal", "Formal" }));
-        jPanel6.add(cbxTipoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 150, -1));
+        cbxTipoRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camisetas", "Pantalones", "Faldas", "Vestidos", "Chaquetas", "Abrigos", "Trajes", "Ropa Deportiva", "Ropa Interior", "Ropa de Baño", "Ropa de Dormir", "Accesorios (sombreros, guantes, bufandas, etc.)", "Calzado", "Ropa Casual", "Ropa Formal", "Ropa Infantil", "Ropa de Maternidad", "Ropa Étnica o Cultural", "Ropa de Trabajo", "Ropa de Fiesta/Eventos Especiales" }));
+        jPanel6.add(cbxTipoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 150, -1));
 
         txtTipoProducto.setText("Vendible");
-        txtTipoProducto.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtTipoProductoFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtTipoProductoFocusLost(evt);
-            }
-        });
-        txtTipoProducto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtTipoProductoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                txtTipoProductoMouseExited(evt);
-            }
-        });
-        txtTipoProducto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoProductoActionPerformed(evt);
-            }
-        });
-        txtTipoProducto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtTipoProductoKeyReleased(evt);
-            }
-        });
-        jPanel6.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 110, 30));
+        jPanel6.add(txtTipoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, 110, 30));
 
         va3.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va3.setForeground(new java.awt.Color(0, 0, 0));
         va3.setText("Tipo producto:  ");
-        jPanel6.add(va3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, -1));
+        jPanel6.add(va3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, -1, -1));
 
         jLabel50.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(0, 0, 0));
         jLabel50.setText("$");
-        jPanel6.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 10, -1));
+        jPanel6.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 20, 30));
 
-        jLabel51.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel51.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(255, 0, 0));
         jLabel51.setText("*");
-        jPanel6.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 20, 20));
+        jPanel6.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 10, 20));
 
-        jLabel52.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel52.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(255, 0, 0));
         jLabel52.setText("*");
-        jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 20, 20));
+        jPanel6.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 20, 20));
 
-        jLabel53.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel53.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(255, 0, 0));
         jLabel53.setText("*");
-        jPanel6.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 20, 20));
+        jPanel6.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 20, 20));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -775,23 +730,18 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         mensajeExito1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jPanel8.add(mensajeExito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 220, 60));
 
-        jLabel18.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel18.setText("Nombre Producto:");
-        jPanel8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 110, -1));
-
         jLabel20.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("Tamaño:");
-        jPanel8.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+        jPanel8.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("Imagen:");
-        jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
+        jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         cbxMaterialMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Madera", "Metal", "Cuero", "Tela", "Rattan y mimbre", "Vidrio", "Plástico", "Mármol y granito", "Corcho", "Melamina", "Acrílico", "Espuma y materiales de relleno", "Cartón", "Otros" }));
-        jPanel8.add(cbxMaterialMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 200, 30));
+        jPanel8.add(cbxMaterialMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 200, 30));
 
         btnCrear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear1.setText("CREAR");
@@ -830,7 +780,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         btnAyudaTipoMuebles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyudaTipoMuebles.setContentAreaFilled(false);
-        jPanel8.add(btnAyudaTipoMuebles, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 40, 30));
+        jPanel8.add(btnAyudaTipoMuebles, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 40, 30));
 
         jSeparator6.setBackground(new java.awt.Color(0, 204, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 204, 255));
@@ -850,35 +800,31 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         va7.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va7.setForeground(new java.awt.Color(0, 0, 0));
-        va7.setText("Codigo vendible: ");
+        va7.setText("ID Vendible:");
         jPanel8.add(va7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 100, -1));
 
         jLabel24.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Precio:");
-        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, -1, -1));
-
-        chbxDisponibliidad_Producto_Si1.setText("Si");
-        jPanel8.add(chbxDisponibliidad_Producto_Si1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, 40, -1));
+        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("REGISTRO DE MUEBLES");
         jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 290, -1));
-        jPanel8.add(txtCodigoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 140, 30));
+        jPanel8.add(txtCodigoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Codigo mueble: ");
-        jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 90, 40));
-        jPanel8.add(txtCodigoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, 110, 30));
+        jLabel6.setText("ID mueble: ");
+        jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 70, 40));
+        jPanel8.add(txtCodigoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 80, 30));
 
         va10.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va10.setForeground(new java.awt.Color(0, 0, 0));
-        va10.setText("Codigo producto: ");
+        va10.setText("ID Producto:");
         jPanel8.add(va10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 100, -1));
-        jPanel8.add(txtNombreProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 240, 30));
-        jPanel8.add(txtCodigoVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 110, 30));
+        jPanel8.add(txtCodigoVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 80, 30));
 
         btnImagenProducto1.setBackground(new java.awt.Color(255, 255, 255));
         btnImagenProducto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
@@ -887,7 +833,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnCargarImagen1.setBackground(new java.awt.Color(255, 255, 255));
         btnCargarImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
         btnCargarImagen1.setBorder(null);
-        jPanel8.add(btnCargarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 100, 80));
+        jPanel8.add(btnCargarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 100, 90));
 
         jLabel8.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -902,24 +848,19 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("Material:");
-        jPanel8.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        jPanel8.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
 
         cbxTipoMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Sofás y sillones", "Mesas", "Sillas", "Camas", "Armarios y roperos", "Cómodas y cajoneras", "Estanterías y libreros", "Escritorios", "Bancos y taburetes", "Otros" }));
-        jPanel8.add(cbxTipoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 200, -1));
+        jPanel8.add(cbxTipoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 200, -1));
 
         jLabel26.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Tipo:");
-        jPanel8.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+        jPanel8.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         cbxTamañoMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pequeño", "Mediano", "Grande", "Muy Grande" }));
-        jPanel8.add(cbxTamañoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 120, -1));
-        jPanel8.add(txtPrecioVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 110, 30));
-
-        va12.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va12.setForeground(new java.awt.Color(0, 0, 0));
-        va12.setText("Disponibilidad:");
-        jPanel8.add(va12, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, -1, -1));
+        jPanel8.add(cbxTamañoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 120, -1));
+        jPanel8.add(txtPrecioVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 110, 30));
 
         tblMuebles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -946,21 +887,11 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         btnConsultarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultarTipo.setContentAreaFilled(false);
-        jPanel8.add(btnConsultarTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 50, 40));
+        jPanel8.add(btnConsultarTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 50, 40));
 
         btnLimpiar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar1.setContentAreaFilled(false);
         jPanel8.add(btnLimpiar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, 40));
-
-        jLabel7.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Opcional");
-        jPanel8.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, -1, -1));
-
-        jSeparator8.setBackground(new java.awt.Color(0, 204, 255));
-        jSeparator8.setForeground(new java.awt.Color(0, 204, 255));
-        jSeparator8.setPreferredSize(new java.awt.Dimension(5, 0));
-        jPanel8.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 230, 10));
 
         jLabel27.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
@@ -973,6 +904,14 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         vaSi1.setContentAreaFilled(false);
         vaSi1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/ver.png"))); // NOI18N
         jPanel8.add(vaSi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, -1, -1));
+
+        va4.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
+        va4.setForeground(new java.awt.Color(0, 0, 0));
+        va4.setText("Tipo producto:  ");
+        jPanel8.add(va4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, -1, -1));
+
+        txtTipoProducto1.setText("Vendible");
+        jPanel8.add(txtTipoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 80, 30));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1475,30 +1414,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtTipoProductoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTipoProductoFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoProductoFocusGained
-
-    private void txtTipoProductoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTipoProductoFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoProductoFocusLost
-
-    private void txtTipoProductoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoProductoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoProductoMouseEntered
-
-    private void txtTipoProductoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoProductoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoProductoMouseExited
-
-    private void txtTipoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoProductoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoProductoActionPerformed
-
-    private void txtTipoProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoProductoKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoProductoKeyReleased
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelAlimentos;
@@ -1548,15 +1463,13 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCodigosMedicamentos;
     private javax.swing.JComboBox<String> cbxCodigosMuebles;
     private javax.swing.JComboBox<String> cbxCodigosRopa;
-    private javax.swing.JComboBox<String> cbxColor;
+    private javax.swing.JComboBox<String> cbxEstado;
     private javax.swing.JComboBox<String> cbxFormaFarmac;
     private javax.swing.JComboBox<String> cbxMaterialMueble;
     private javax.swing.JComboBox<String> cbxTalla;
     private javax.swing.JComboBox<String> cbxTamañoMueble;
     private javax.swing.JComboBox<String> cbxTipoMueble;
     private javax.swing.JComboBox<String> cbxTipoRopa;
-    private javax.swing.JCheckBox chbxDisponibliidad_Producto_Si;
-    private javax.swing.JCheckBox chbxDisponibliidad_Producto_Si1;
     private javax.swing.JCheckBox chbxDisponibliidad_Producto_Si2;
     private javax.swing.JCheckBox chbxDisponibliidad_Producto_Si3;
     private com.toedter.calendar.JDateChooser datFechaElaboracion;
@@ -1564,15 +1477,12 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser datFechaVencimiento;
     private com.toedter.calendar.JDateChooser datFechaVencimiento1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1607,13 +1517,11 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
@@ -1637,10 +1545,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private org.edisoncor.gui.label.LabelTask labelTask1;
@@ -1673,19 +1579,16 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigoRopa;
     private javax.swing.JTextField txtCodigoVendible;
     private javax.swing.JTextField txtCodigoVendible1;
-    private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtNombreProducto;
-    private javax.swing.JTextField txtNombreProducto1;
     private javax.swing.JTextField txtNombreProducto2;
     private javax.swing.JTextField txtNombreProducto3;
     private javax.swing.JTextField txtPrecioVendible;
     private javax.swing.JTextField txtPrecioVendible1;
     private javax.swing.JTextField txtTipoProducto;
+    private javax.swing.JTextField txtTipoProducto1;
     private javax.swing.JTextField txtTipoProducto2;
     private javax.swing.JTextField txtTipoProducto3;
     private javax.swing.JLabel va1;
     private javax.swing.JLabel va10;
-    private javax.swing.JLabel va12;
     private javax.swing.JLabel va13;
     private javax.swing.JLabel va14;
     private javax.swing.JLabel va15;
@@ -1700,7 +1603,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel va23;
     private javax.swing.JLabel va24;
     private javax.swing.JLabel va3;
-    private javax.swing.JLabel va6;
+    private javax.swing.JLabel va4;
     private javax.swing.JLabel va7;
     private javax.swing.JCheckBox vaSi;
     private javax.swing.JCheckBox vaSi1;

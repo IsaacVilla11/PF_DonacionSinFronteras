@@ -13,14 +13,6 @@ public class TipoDonable extends Producto {
         super();
     }
 
-    public TipoDonable(int id_donable, int cantidad_dona, Date fechaVencimiento, int id_pro_dona, int id_pro, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
-        super(id_pro, tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro);
-        this.id_donable = id_donable;
-        this.cantidad_dona = cantidad_dona;
-        this.fechaVencimiento = fechaVencimiento;
-        this.id_pro_dona = id_pro_dona;
-    }
-
     public int getId_donable() {
         return id_donable;
     }

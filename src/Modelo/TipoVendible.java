@@ -5,41 +5,21 @@ public class TipoVendible extends Producto {
     private int id_vendible;
     private double precio;
     private String tipo;
+    private String estado;
     private int id_pro_ven;
-
-    private TipoVendible tipoVendible;
-
-    public TipoVendible getTipoVendible() {
-        return tipoVendible;
-    }
 
     public TipoVendible() {
         super();
     }
 
-    public TipoVendible(int id_vendible, double precio, String tipo, int id_pro_ven, int id_pro, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
-        super(id_pro, tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro);
+    public TipoVendible(int id_vendible, double precio, String tipo, String estado, int id_pro_ven, int id_producto, String tipo_pro, byte[] imagen_pro) {
+        super(id_producto, tipo_pro, imagen_pro);
         this.id_vendible = id_vendible;
         this.precio = precio;
         this.tipo = tipo;
+        this.estado = estado;
         this.id_pro_ven = id_pro_ven;
     }
-
-    public TipoVendible(int id_vendible, double precio, String tipo, int id_pro_ven) {
-        this.id_vendible = id_vendible;
-        this.precio = precio;
-        this.tipo = tipo;
-        this.id_pro_ven = id_pro_ven;
-    }
-
-    public TipoVendible(double precio, String tipo, int id_pro_ven, TipoVendible tipoVendible) {
-        this.precio = precio;
-        this.tipo = tipo;
-        this.id_pro_ven = id_pro_ven;
-        this.tipoVendible = tipoVendible;
-    }
-    
-    
 
     public int getId_vendible() {
         return id_vendible;
@@ -71,6 +51,14 @@ public class TipoVendible extends Producto {
 
     public void setId_pro_ven(int id_pro_ven) {
         this.id_pro_ven = id_pro_ven;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
 }

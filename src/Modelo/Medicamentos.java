@@ -10,10 +10,10 @@ public class Medicamentos extends TipoDonable {
     private int id_donable_med;
 
     public Medicamentos() {
+        super();
     }
 
-    public Medicamentos(int id_med, String formaFarmaceutica_med, String docificacion_med, int id_donable_med, int id_donable, int cantidad_dona, Date fechaVencimiento, int id_pro_dona, int id_pro, String tipo_pro, boolean disponibilidad_pro, String nombre_pro, byte[] imagen_pro) {
-        super(id_donable, cantidad_dona, fechaVencimiento, id_pro_dona, id_pro, tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro);
+    public Medicamentos(int id_med, String formaFarmaceutica_med, String docificacion_med, int id_donable_med) {
         this.id_med = id_med;
         this.formaFarmaceutica_med = formaFarmaceutica_med;
         this.docificacion_med = docificacion_med;

@@ -17,12 +17,10 @@ public class ModeloProducto {
     public static int insertarProducto(Producto producto) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "INSERT INTO producto (tipo_pro, disponibilidad_pro, nombre_pro, imagen_pro) VALUES (?, ?, ?, ?) RETURNING id_producto")) {
+                        "INSERT INTO producto (tipo_pro, imagen_pro) VALUES (?, ?) RETURNING id_producto")) {
 
             pst.setString(1, producto.getTipo_pro());
-            pst.setBoolean(2, producto.isDisponibilidad_pro());
-            pst.setString(3, producto.getNombre_pro());
-            pst.setBytes(4, producto.getImagen_pro());
+            pst.setBytes(2, producto.getImagen_pro());
 
             ResultSet rs = pst.executeQuery();
 
@@ -48,8 +46,6 @@ public class ModeloProducto {
                 Producto producto = new Producto();
                 producto.setId_producto(rs.getInt("id_producto"));
                 producto.setTipo_pro(rs.getString("tipo_pro"));
-                producto.setDisponibilidad_pro(rs.getBoolean("disponibilidad_pro"));
-                producto.setNombre_pro(rs.getString("nombre_pro"));
                 // Puedes optar por no recuperar la imagen aquí para mejorar el rendimiento
 
                 listaProductos.add(producto);
@@ -96,8 +92,6 @@ public class ModeloProducto {
                     producto = new Producto();
                     producto.setId_producto(rs.getInt("id_producto"));
                     producto.setTipo_pro(rs.getString("tipo_pro"));
-                    producto.setDisponibilidad_pro(rs.getBoolean("disponibilidad_pro"));
-                    producto.setNombre_pro(rs.getString("nombre_pro"));
                     producto.setImagen_pro(rs.getBytes("imagen_pro"));
                 }
             }
@@ -131,13 +125,11 @@ public class ModeloProducto {
     public static boolean modificarProducto(Producto producto) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "UPDATE producto SET tipo_pro=?, disponibilidad_pro=?, nombre_pro=?, imagen_pro=? WHERE id_producto=?")) {
+                        "UPDATE producto SET tipo_pro=?, imagen_pro=? WHERE id_producto=?")) {
 
             pst.setString(1, producto.getTipo_pro());
-            pst.setBoolean(2, producto.isDisponibilidad_pro());
-            pst.setString(3, producto.getNombre_pro());
-            pst.setBytes(4, producto.getImagen_pro());
-            pst.setInt(5, producto.getId_producto());
+            pst.setBytes(2, producto.getImagen_pro());
+            pst.setInt(3, producto.getId_producto());
 
             int filasActualizadas = pst.executeUpdate();
 
