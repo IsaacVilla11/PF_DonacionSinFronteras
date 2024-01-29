@@ -1,11 +1,8 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
-/**
- *
- * @author ASUS
- */
 public class V_Solicitante extends javax.swing.JFrame {
 
     public V_Solicitante() {
@@ -15,6 +12,25 @@ public class V_Solicitante extends javax.swing.JFrame {
     public JButton getBtnregresar() {
         return btnregresar;
     }
+
+    public JButton getBtnEstadoSol() {
+        return btnEstadoSol;
+    }
+
+    public JButton getBtnInicio() {
+        return btnInicio;
+    }
+
+    public JButton getBtnSolicitar() {
+        return btnSolicitar;
+    }
+
+    public static JPanel getContenido() {
+        return Contenido;
+    }
+
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -26,17 +42,17 @@ public class V_Solicitante extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jpSecciones = new javax.swing.JPanel();
         btnInicio = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSolicitar = new javax.swing.JButton();
+        btnEstadoSol = new javax.swing.JButton();
         btnregresar = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        Contenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1087, 625));
 
-        jpEncabezado.setBackground(new java.awt.Color(0, 0, 102));
+        jpEncabezado.setBackground(new java.awt.Color(51, 94, 255));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 102));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BIENVENIDO SOLICITANTE");
@@ -50,46 +66,47 @@ public class V_Solicitante extends javax.swing.JFrame {
         jpEncabezadoLayout.setHorizontalGroup(
             jpEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpEncabezadoLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(323, 323, 323)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(284, 284, 284)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(338, Short.MAX_VALUE))
         );
         jpEncabezadoLayout.setVerticalGroup(
             jpEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpEncabezadoLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpEncabezadoLayout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jpEncabezadoLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jpSecciones.setBackground(new java.awt.Color(0, 0, 102));
+        jpSecciones.setBackground(new java.awt.Color(51, 94, 255));
 
-        btnInicio.setBackground(new java.awt.Color(0, 0, 102));
-        btnInicio.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnInicio.setBackground(new java.awt.Color(51, 94, 255));
+        btnInicio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnInicio.setForeground(new java.awt.Color(255, 255, 255));
         btnInicio.setText("INICIO");
         btnInicio.setBorderPainted(false);
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 102));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("SOLICITAR DONACION");
-        jButton2.setBorderPainted(false);
+        btnSolicitar.setBackground(new java.awt.Color(51, 94, 255));
+        btnSolicitar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSolicitar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSolicitar.setText("SOLICITAR DONACION");
+        btnSolicitar.setBorderPainted(false);
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 102));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("ESTADO DE SOLICITUD");
-        jButton3.setBorderPainted(false);
+        btnEstadoSol.setBackground(new java.awt.Color(51, 94, 255));
+        btnEstadoSol.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEstadoSol.setForeground(new java.awt.Color(255, 255, 255));
+        btnEstadoSol.setText("ESTADO DE SOLICITUD");
+        btnEstadoSol.setBorderPainted(false);
 
-        btnregresar.setBackground(new java.awt.Color(255, 255, 255));
-        btnregresar.setFont(new java.awt.Font("Dubai", 1, 11)); // NOI18N
+        btnregresar.setBackground(new java.awt.Color(51, 94, 255));
+        btnregresar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnregresar.setForeground(new java.awt.Color(255, 255, 255));
         btnregresar.setText("CERRAR SESION");
-        btnregresar.setBorder(null);
+        btnregresar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnregresar.setBorderPainted(false);
 
         javax.swing.GroupLayout jpSeccionesLayout = new javax.swing.GroupLayout(jpSecciones);
@@ -97,12 +114,9 @@ public class V_Solicitante extends javax.swing.JFrame {
         jpSeccionesLayout.setHorizontalGroup(
             jpSeccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpSeccionesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnregresar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(btnSolicitar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnEstadoSol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnregresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpSeccionesLayout.setVerticalGroup(
             jpSeccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,26 +124,26 @@ public class V_Solicitante extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSolicitar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnregresar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152))
+                .addComponent(btnEstadoSol, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                .addComponent(btnregresar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+        Contenido.setBackground(new java.awt.Color(255, 255, 255));
+        Contenido.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 946, Short.MAX_VALUE)
+        javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
+        Contenido.setLayout(ContenidoLayout);
+        ContenidoLayout.setHorizontalGroup(
+            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 549, Short.MAX_VALUE)
+        ContenidoLayout.setVerticalGroup(
+            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -139,23 +153,17 @@ public class V_Solicitante extends javax.swing.JFrame {
             .addComponent(jpEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jpSecciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jpEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpSecciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(66, 66, 66))))
+                    .addComponent(jpSecciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -176,14 +184,14 @@ public class V_Solicitante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JPanel Contenido;
+    private javax.swing.JButton btnEstadoSol;
     private javax.swing.JButton btnInicio;
+    private javax.swing.JButton btnSolicitar;
     private javax.swing.JButton btnregresar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jpEncabezado;
     private javax.swing.JPanel jpSecciones;
     // End of variables declaration//GEN-END:variables

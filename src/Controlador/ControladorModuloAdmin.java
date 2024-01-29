@@ -6,9 +6,11 @@ import Modelo.ModeloCentroAcopio;
 import Modelo.ModeloLugarAfectado;
 import Vista.CRUD_Comprador;
 import Vista.CRUD_Donante;
+import Vista.CRUD_Solicitante;
 import Vista.Crud_centroAcopio;
 import Vista.Crud_lugarAfectado;
 import Vista.Registro_Comprador;
+import Vista.Registro_Conductor;
 import Vista.V_ModuloProducto;
 import Vista.V_Principal;
 import Vista.crudAdministrador;
@@ -52,6 +54,10 @@ public class ControladorModuloAdmin {
        vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
        vistaModAdmin.getBtnCA().addActionListener(e -> cargarTablaCA());
        vistaModAdmin.getJmiModuloProducto().addActionListener(l -> mostrarModuloProductos());
+       vistaModAdmin.getRConductor().addActionListener(l -> mostrarCrudConductor());
+       vistaModAdmin.getJmiCrudSolicitante().addActionListener(l -> mostrarCrudSolicitante());
+
+     
        
        //Notocar
        vistaModAdmin.getJmitemRegDonacion().addActionListener(l->mostrarRegistroDonante());
@@ -60,7 +66,17 @@ public class ControladorModuloAdmin {
        vistaModAdmin.getBtnCentroAcopio().addActionListener(l->mostrarCentroAcopio());
        vistaModAdmin.getBtnLugarAyuda().addActionListener(l-> mostrarCrudLugarAyuda());
        vistaModAdmin.getBtnLA().addActionListener(l->CargarTablaLA());
-    }   
+    } 
+    
+         public void mostrarCrudConductor() {
+        vistaModAdmin.dispose();
+        Registro_Conductor vista = new Registro_Conductor();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        Controlador_conductor control = new Controlador_conductor(vista);
+        control.iniciarControl();
+    }
     
     
     //jose
@@ -228,6 +244,15 @@ public class ControladorModuloAdmin {
         vista.setVisible(true);
         
         ControladorModuloProductos control = new ControladorModuloProductos(vista);
+        control.iniciarControl();
+    }
+     public void mostrarCrudSolicitante() {
+        vistaModAdmin.dispose();
+        CRUD_Solicitante vista = new CRUD_Solicitante();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorCrudSolicitante control = new ControladorCrudSolicitante(vista);
         control.iniciarControl();
     }
 }

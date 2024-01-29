@@ -8,6 +8,7 @@ import com.sun.jdi.connect.spi.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -69,59 +70,72 @@ public class ModeloConductor extends Conductor {
         }
     }
 
-//    public boolean modificarConductor(String cedula, String nuevaJornada, String nuevoTipoLicencia,
-//            String nuevoNombre, String nuevoApellido, String nuevoCelular,
-//            String nuevoCorreo, String nuevaDireccion, String nuevoTipoSangre,
-//            String nuevaCiudad, String nuevoSexo, Date nuevaFechaNacimiento,
-//            String nuevaContraseña) {
-//        String sql = "UPDATE conductor SET jornada_con = ?, tipoLicencia_con = ? WHERE id_persona_con = (SELECT id_persona FROM persona WHERE cedula_usu = ?)";
-//        try {
-//            PreparedStatement statement = cone.getCon().prepareStatement(sql);
-//            statement.setString(1, nuevaJornada);
-//            statement.setString(2, nuevoTipoLicencia);
-//            statement.setString(3, cedula);
-//
-//            int rowsAffected = statement.executeUpdate();
-//            statement.close();
-//
-//            if (rowsAffected > 0) {
-//                // Actualizar otros campos en la tabla persona (si es necesario)
-//                String updatePersonaSql = "UPDATE persona SET nombre_usu = ?, apellido_usu = ?, celular_usu = ?, "
-//                        + "correo_usu = ?, direccion_usu = ?, tipoSangre_usu = ?, ciudad_usu = ?, "
-//                        + "sexo_usu = ?, fechaNacimiento_usu = ?, contraseña_usu = ? WHERE cedula_usu = ?";
-//
-//                // Define fechaNacimientoSQL antes de su uso
-//                java.sql.Date fechaNacimientoSQL = new java.sql.Date(nuevaFechaNacimiento.getTime());
-//
-//                PreparedStatement personaStatement = cone.getCon().prepareStatement(updatePersonaSql);
-//                personaStatement.setString(1, nuevoNombre);
-//                personaStatement.setString(2, nuevoApellido);
-//
-//                // Utiliza setObject para la fecha
-//                personaStatement.setDate(3, nuevaFechaNacimiento);
-//
-//
-//                personaStatement.setString(4, nuevoSexo);
-//                personaStatement.setString(5, nuevoCorreo);
-//                personaStatement.setString(6, nuevoTipoSangre);
-//                personaStatement.setString(7, nuevoCelular);
-//                personaStatement.setString(8, nuevaCiudad);
-//                personaStatement.setString(9, nuevaDireccion);
-//                personaStatement.setString(10, nuevaContraseña);
-//                personaStatement.setString(11, cedula);
-//
-//                int personaRowsAffected = personaStatement.executeUpdate();
-//                personaStatement.close();
-//
-//                return personaRowsAffected > 0;
-//            }
-//
-//            return false;
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//            return false;
-//        }
-//    }
+    public boolean actualizarConductor(ModeloConductor nuevoConductor) {
+        String sqlActualizarPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?, direccion_usu=?, contrasenia_usu=? WHERE cedula_usu=?";
+        String sqlActualizarConductor = "UPDATE conductor SET jornada_con=?, tipoLicencia_con=? WHERE id_persona_con=(SELECT id_persona FROM persona WHERE cedula_usu=?)";
+
+        try {
+            // Convertir la fecha de nacimiento a java.sql.Date
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaNacimiento = sdf.parse(nuevoConductor.getFechaNacimiento_usu());
+            java.sql.Date fechaNacimientoSQL = new java.sql.Date(fechaNacimiento.getTime());
+
+            // Actualizar en la tabla persona
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlActualizarPersona);
+            statementPersona.setString(1, nuevoConductor.getNombre_usu());
+            statementPersona.setString(2, nuevoConductor.getApellido_usu());
+            statementPersona.setDate(3, fechaNacimientoSQL);
+            statementPersona.setString(4, nuevoConductor.getSexo_usu());
+            statementPersona.setString(5, nuevoConductor.getTipoSangre_usu());
+            statementPersona.setString(6, nuevoConductor.getCorreo_usu());
+            statementPersona.setString(7, nuevoConductor.getCelular_usu());
+            statementPersona.setString(8, nuevoConductor.getCiudad_usu());
+            statementPersona.setString(9, nuevoConductor.getDireccion_usu());
+            statementPersona.setString(10, nuevoConductor.getContraseña_usu());
+            statementPersona.setString(11, nuevoConductor.getCedula_usu());
+
+            int rowsAffectedPersona = statementPersona.executeUpdate();
+            statementPersona.close();
+
+            // Actualizar en la tabla conductor
+            PreparedStatement statementConductor = cone.getCon().prepareStatement(sqlActualizarConductor);
+            statementConductor.setString(1, nuevoConductor.getJornada_con());
+            statementConductor.setString(2, nuevoConductor.getTipoLicencia_con());
+            statementConductor.setString(3, nuevoConductor.getCedula_usu());
+
+            int rowsAffectedConductor = statementConductor.executeUpdate();
+            statementConductor.close();
+
+            // Retornar true si se ha actualizado al menos una fila en ambas tablas
+            return rowsAffectedPersona > 0 && rowsAffectedConductor > 0;
+        } catch (ParseException | SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean verificarDuplicidadCedulaConductor(String cedula) {
+        String sql = "SELECT COUNT(*) AS count FROM persona p JOIN conductor c ON p.id_persona = c.id_persona_con WHERE p.cedula_usu = ?";
+
+        try {
+            PreparedStatement statement = cone.getCon().prepareStatement(sql);
+            statement.setString(1, cedula);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt("count");
+                return count > 0; // Si count > 0, significa que ya existe una persona con esa cédula y es conductor.
+            }
+
+            statement.close();
+            resultSet.close();
+            return false;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
     public boolean buscarConductorPorCedula(String cedulaBuscada) {
         String sql = "SELECT p.*, c.jornada_con, c.tipoLicencia_con FROM persona p JOIN conductor c ON p.id_persona = c.id_persona_con WHERE p.cedula_usu = ?";

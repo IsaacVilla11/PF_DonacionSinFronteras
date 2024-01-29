@@ -1,6 +1,8 @@
 package Vista;
 
 import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -10,6 +12,14 @@ public class Login_Solicitante extends javax.swing.JFrame {
 
     public Login_Solicitante() {
         initComponents();
+    }
+
+    public JPasswordField getTxtContra() {
+        return txtContra;
+    }
+
+    public JTextField getTxtxUsuario() {
+        return txtxUsuario;
     }
 
     public JButton getBtnRegresar() {
@@ -34,10 +44,10 @@ public class Login_Solicitante extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtxUsuario = new javax.swing.JTextField();
         btnRegresar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        txtContra = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -74,8 +84,7 @@ public class Login_Solicitante extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("Contraseña:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 152, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 187, 196, 36));
+        jPanel1.add(txtxUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 98, 196, 36));
 
         btnRegresar.setBackground(new java.awt.Color(20, 51, 166));
         btnRegresar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -88,6 +97,7 @@ public class Login_Solicitante extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 200, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,7 +123,7 @@ public class Login_Solicitante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField txtContra;
+    private javax.swing.JTextField txtxUsuario;
     // End of variables declaration//GEN-END:variables
 }

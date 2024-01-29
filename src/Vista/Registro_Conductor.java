@@ -29,9 +29,7 @@ public class Registro_Conductor extends javax.swing.JFrame {
         return bntVolver;
     }
 
-    public JButton getBtnConsultar() {
-        return btnConsultar;
-    }
+   
 
     public JButton getBtnEliminar() {
         return btnEliminar;
@@ -156,17 +154,16 @@ public class Registro_Conductor extends javax.swing.JFrame {
         panel2 = new org.edisoncor.gui.panel.Panel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnConsultar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         F_nacimiento = new com.toedter.calendar.JDateChooser();
         btnH = new javax.swing.JRadioButton();
         btnM = new javax.swing.JRadioButton();
         cbBoxSangre = new javax.swing.JComboBox<>();
         cbboxCiudad = new javax.swing.JComboBox<>();
-        btnGuardar = new javax.swing.JButton();
         btncargar = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
@@ -223,12 +220,12 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setText("Jornada:");
-        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
+        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 102));
         jLabel15.setText("Ciudad:");
-        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
+        panel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 102));
@@ -238,30 +235,30 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 102));
         jLabel18.setText("Contraseña:");
-        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, -1, -1));
+        panel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 102));
         jLabel19.setText("Direccion:");
-        panel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, -1, -1));
+        panel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 102));
         jLabel20.setText("Tipo de Licencia:");
-        panel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, 20));
+        panel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, -1, 20));
         panel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 196, 30));
         panel1.add(txtcelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 196, 30));
         panel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 196, 30));
-        panel1.add(txtdirecion, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 196, 30));
+        panel1.add(txtdirecion, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 196, 30));
         panel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 196, 30));
         panel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 196, 30));
-        panel1.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 200, 30));
+        panel1.add(txtcontra, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 200, 30));
 
         ComboLicencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "C1", "D ", "D1", "E", "El " }));
-        panel1.add(ComboLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 200, -1));
+        panel1.add(ComboLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 200, -1));
 
         ComboJornada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutina", "Despertina", "Nocturna" }));
-        panel1.add(ComboJornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 200, -1));
+        panel1.add(ComboJornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 200, -1));
 
         bntVolver.setBackground(new java.awt.Color(51, 51, 255));
         bntVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -291,14 +288,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Nirmala UI", 2, 24)); // NOI18N
         jLabel1.setText("Que desea hacer?");
 
-        btnConsultar.setBackground(new java.awt.Color(0, 0, 51));
-        btnConsultar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
-        btnConsultar.setText("CONSULTAR");
-        btnConsultar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnConsultar.setBorderPainted(false);
-
         btnModificar.setBackground(new java.awt.Color(0, 0, 51));
         btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnModificar.setForeground(new java.awt.Color(255, 255, 255));
@@ -323,26 +312,31 @@ public class Registro_Conductor extends javax.swing.JFrame {
         btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnEliminar.setBorderPainted(false);
 
+        btnGuardar.setBackground(new java.awt.Color(0, 0, 51));
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
+        btnGuardar.setText("CREAR");
+
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
             .addGroup(panel2Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(89, 89, 89))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,11 +345,11 @@ public class Registro_Conductor extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(39, 39, 39)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(38, 38, 38)
                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,13 +376,12 @@ public class Registro_Conductor extends javax.swing.JFrame {
         panel1.add(cbBoxSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 130, 20));
 
         cbboxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuenca", "Quito", "Guayaquil", "Loja", "Ambato" }));
-        panel1.add(cbboxCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 200, -1));
+        panel1.add(cbboxCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 200, -1));
 
-        btnGuardar.setText("CREAR");
-        panel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 90, 34));
-
-        btncargar.setText("Cargar");
-        panel1.add(btncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 70, -1));
+        btncargar.setFont(new java.awt.Font("Segoe UI Black", 0, 10)); // NOI18N
+        btncargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
+        btncargar.setText("BUSCAR");
+        panel1.add(btncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -453,7 +446,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JTable TablaConductor;
     private javax.swing.JButton bntVolver;
     private org.edisoncor.gui.util.BrightPassFilter brightPassFilter1;
-    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JRadioButton btnH;
