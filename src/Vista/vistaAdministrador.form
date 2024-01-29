@@ -86,7 +86,7 @@
                 <Property name="text" type="java.lang.String" value="Conductor"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                <MenuItem class="javax.swing.JMenuItem" name="RConductor">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crud"/>
                   </Properties>

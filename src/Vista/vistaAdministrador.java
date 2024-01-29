@@ -101,6 +101,11 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmiModuloProducto;
     }
 
+    public JMenuItem getRConductor() {
+        return RConductor;
+    }
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -140,7 +145,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jmiRegistroComprador = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        RConductor = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jmiCrudAdmin = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
@@ -339,8 +344,8 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/chofer.png"))); // NOI18N
         jMenu7.setText("Conductor");
 
-        jMenuItem3.setText("Crud");
-        jMenu7.add(jMenuItem3);
+        RConductor.setText("Crud");
+        jMenu7.add(RConductor);
 
         jMenu2.add(jMenu7);
 
@@ -432,6 +437,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem RConductor;
     private javax.swing.JButton btnCA;
     private javax.swing.JButton btnCentroAcopio;
     private javax.swing.JButton btnCerrarSesion;
@@ -461,7 +467,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

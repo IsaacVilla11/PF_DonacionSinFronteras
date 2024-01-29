@@ -4,7 +4,7 @@
  */
 package Controlador;
 
-import Modelo.Comprador;
+
 import Modelo.Conductor;
 import Modelo.ModeloConductor;
 import Modelo.ModeloUsuario;
@@ -45,6 +45,8 @@ public class Controlador_conductor {
         vistaConduct.getBtnEliminar().addActionListener(l -> eliminarConductorSeleccionado());
 
         vistaConduct.getBtncargar().addActionListener(l -> buscarConductorPorCedula());
+         vistaConduct.getBtnModificar().addActionListener(l -> guardarCambiosConductor());
+        
         //vistaConduct.getBtnModificar().addActionListener(l -> guardarCambios());
 
         // Otros eventos...
@@ -59,53 +61,87 @@ public class Controlador_conductor {
         ControladorModuloAdmin controlAdmin = new ControladorModuloAdmin(vistaAdmin);
         controlAdmin.iniciarControl();
     }
+    
+    public void guardarCambiosConductor() {
+        try {
+            String cedula = vistaConduct.getTxtcedula().getText();
 
-//    public void guardarCambios() {
-//    try {
-//        String cedulaOriginal = vistaConduct.getTxtcedula().getText();
-//
-//        // Obtener los nuevos datos del conductor desde la vista
-//        String nuevoNombre = vistaConduct.getTxtnombre().getText();
-//        String nuevoApellido = vistaConduct.getTxtapellido().getText();
-//        String nuevaJornada = vistaConduct.getComboJornada().getSelectedItem().toString();
-//        String nuevoTipoLicencia = vistaConduct.getComboLicencia().getSelectedItem().toString();
-//        String nuevoCelular = vistaConduct.getTxtcelular().getText();
-//        String nuevoCorreo = vistaConduct.getTxtcorreo().getText();
-//        String nuevaDireccion = vistaConduct.getTxtdirecion().getText();
-//        String nuevoTipoSangre = vistaConduct.getCbBoxSangre().getSelectedItem().toString();
-//        String nuevaCiudad = vistaConduct.getCbboxCiudad().getSelectedItem().toString();
-//        String nuevoSexo = vistaConduct.getBtnH().isSelected() ? "Hombre" : "Mujer";
-//
-//        // Obtener la fecha como tipo Date
-//        Date nuevaFechaNacimiento = vistaConduct.getF_nacimiento().getDate();
-//
-//        // Formatear la fecha como cadena en el formato "yyyy-MM-dd"
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//        String fechaNacimientoString = sdf.format(nuevaFechaNacimiento);
-//
-//        String nuevaContraseña = vistaConduct.getTxtcontra().getText();
-//
-//        // Llamar al método en el modelo para modificar el conductor
-//        if (modConduct.modificarConductor(
-//                cedulaOriginal, nuevaJornada, nuevoTipoLicencia, nuevoNombre, nuevoApellido,
-//                nuevoCelular, nuevoCorreo, nuevaDireccion, nuevoTipoSangre, nuevaCiudad,
-//                nuevoSexo, fechaNacimientoString, nuevaContraseña)) {
-//            JOptionPane.showMessageDialog(vistaConduct, "Cambios guardados exitosamente");
-//        } else {
-//            JOptionPane.showMessageDialog(vistaConduct, "Error al guardar cambios");
-//        }
-//    } catch (Exception e) {
-//        // Manejo de la excepción
-//        e.printStackTrace();
-//        JOptionPane.showMessageDialog(vistaConduct, "Error al guardar cambios");
-//    }
-//}
+            // Verificar duplicidad de la cédula de la persona
+//            if (modConduct.verificarDuplicidadCedulaConductor(cedula)) {
+//                JOptionPane.showMessageDialog(vistaConduct, "La cedula ingresada ya existe en el sistema");
+//                vistaConduct.getTxtcedula().setText("");
+//                return;
+//            }
 
+            if (!Validaciones.ValidarCedula(cedula)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Cédula incorrecta. Ingrese de nuevo");
+                return;
+            }
 
-    private Date obtenerFechaDesdeCalendar(Calendar calendar) {
-        // Obtener la fecha como tipo Date
-        return calendar.getTime();
+            // Obtén los datos cargados en la vista
+            String nombre = vistaConduct.getTxtnombre().getText();
+            String apellido = vistaConduct.getTxtapellido().getText();
+            String genero;
+            if (vistaConduct.getBtnH().isSelected()) {
+                genero = "Hombre";
+            } else if (vistaConduct.getBtnM().isSelected()) {
+                genero = "Mujer";
+            } else {
+                JOptionPane.showMessageDialog(vistaConduct, "Seleccione un género");
+                return;
+            }
+            String celular = vistaConduct.getTxtcelular().getText();
+            String correo = vistaConduct.getTxtcorreo().getText();
+            String direccion = vistaConduct.getTxtdirecion().getText();
+            String contrase = vistaConduct.getTxtcontra().getText();
+            String tipoSangre = vistaConduct.getCbBoxSangre().getSelectedItem().toString();
+            String ciudad = (String) vistaConduct.getCbboxCiudad().getSelectedItem();
+            String jornada = (String) vistaConduct.getComboJornada().getSelectedItem();
+            String tipoLicencia = (String) vistaConduct.getComboLicencia().getSelectedItem();
+
+            // Obtener fecha de nacimiento del JCalendar
+            String dia = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.DAY_OF_MONTH));
+            String mes = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.MONTH) + 1);
+            String año = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.YEAR));
+            String fechaNacimiento = año + "-" + mes + "-" + dia;
+
+            // Crear un nuevo modeloConductor con los datos actualizados
+            ModeloConductor conductorActualizado = new ModeloConductor();
+            conductorActualizado.setCedula_usu(cedula);
+            conductorActualizado.setNombre_usu(nombre);
+            conductorActualizado.setApellido_usu(apellido);
+            conductorActualizado.setSexo_usu(genero);
+            conductorActualizado.setCelular_usu(celular);
+            conductorActualizado.setCorreo_usu(correo);
+            conductorActualizado.setDireccion_usu(direccion);
+            conductorActualizado.setContraseña_usu(contrase);
+            conductorActualizado.setTipoSangre_usu(tipoSangre);
+            conductorActualizado.setCiudad_usu(ciudad);
+            conductorActualizado.setFechaNacimiento_usu(fechaNacimiento);
+            conductorActualizado.setJornada_con(jornada);
+            conductorActualizado.setTipoLicencia_con(tipoLicencia);
+
+            // Llamar al método de actualización en el modeloConductor
+            if (modConduct.actualizarConductor(conductorActualizado)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Cambios guardados exitosamente");
+                btnGuardar.setEnabled(true);
+                vistaConduct.getTxtcedula().setEnabled(true);
+                cargarTabla();
+                limpiarCampos();
+                
+            } else {
+                JOptionPane.showMessageDialog(vistaConduct, "Error al guardar cambios");
+            }
+        } catch (Exception e) {
+            // Manejo de la excepción
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(vistaConduct, "Error al intentar guardar cambios");
+        }
     }
+    
+    
+
+
 
     public void buscarConductorPorCedula() {
         try {
