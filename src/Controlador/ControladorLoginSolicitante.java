@@ -1,11 +1,15 @@
 package Controlador;
 
+import Modelo.ModeloSolicitante;
+import Modelo.Solicitante;
 import Vista.Login_Solicitante;
 import Vista.Registro_Donante;
 import Vista.Registro_Solicitante;
 import Vista.V_Donador;
 import Vista.V_Solicitante;
 import Vista.vistaLogins;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,10 +21,11 @@ public class ControladorLoginSolicitante {
 
     public ControladorLoginSolicitante(Login_Solicitante vistaLogSoli) {
         this.vistaLogSoli = vistaLogSoli;
+        vistaLogSoli.setVisible(true);
     }
 
     public void iniciarControl() {
-        vistaLogSoli.getBtnIniciarSesion().addActionListener(l -> iniciarSesion());
+        vistaLogSoli.getBtnIniciarSesion().addActionListener(l -> LoginSolicitante());
         vistaLogSoli.getBtnRegistrar().addActionListener(l -> registroSolicitante());
         vistaLogSoli.getBtnRegresar().addActionListener(l -> regresesarMenuLogins());
 
@@ -55,5 +60,24 @@ public class ControladorLoginSolicitante {
         ControladorLogins control = new ControladorLogins(vista);
         control.iniciarControl();
 
+    }
+    
+    public void LoginSolicitante() {
+        ModeloSolicitante modSolctnt = new ModeloSolicitante();
+        List<Solicitante> solc = modSolctnt.ListaSolicitante();
+
+        boolean bandera = modSolctnt.ConsultarSolicitante(vistaLogSoli.getTxtxUsuario().getText(), vistaLogSoli.getTxtContra().getText(), solc);
+
+        if (bandera) {
+            iniciarSesion();
+            vistaLogSoli.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario/Contraseña incorrecto");
+            limpiarcampos();
+        }
+    }
+    public void limpiarcampos(){
+        vistaLogSoli.getTxtxUsuario().setText("");
+        vistaLogSoli.getTxtContra().setText("");
     }
 }
