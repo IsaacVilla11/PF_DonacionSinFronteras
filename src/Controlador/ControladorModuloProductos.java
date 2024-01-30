@@ -676,7 +676,7 @@ public class ControladorModuloProductos {
                     if (idMueble != -1) {
                         //System.out.println("Registro de Mueble insertado con éxito. ID generado: " + idRopa);
                         mostrarMensajeMueble("CREACION EXITOSA", 2000, icon);
-                        cargarDatosEnTabla();
+                        cargarDatosEnTablaMueble();
                         limpiarCamposMueble();
                         cargarIdsCamposMueble();
                         cargarIdsCamposRopa();
