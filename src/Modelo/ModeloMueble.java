@@ -17,7 +17,7 @@ public class ModeloMueble {
     public static int insertarMueble(Mueble mueble) {
         try (Connection conexion = new ConexionPg().getCon();
                 PreparedStatement pst = conexion.prepareStatement(
-                        "INSERT INTO mueble (material_mue, tamaño_mue) VALUES (?, ?) RETURNING id_mueb")) {
+                        "INSERT INTO mueble (material_mue, tamaño_mue, id_vendible_mue) VALUES (?, ?, ?) RETURNING id_mueb")) {
 
             // Verificar si el objeto Ropa no es nulo antes de acceder a sus propiedades
             if (mueble != null) {
@@ -49,24 +49,24 @@ public class ModeloMueble {
         return -1; // En caso de error, devolver -1
     }
 
-    public static List<Integer> obtenerIdsRopa() {
-        List<Integer> idsRopa = new ArrayList<>();
+    public static List<Integer> obtenerIdsMueble() {
+        List<Integer> idsMueble = new ArrayList<>();
 
         try (Connection conexion = new ConexionPg().getCon();
-                PreparedStatement pst = conexion.prepareStatement("SELECT id_rop FROM ropa");
+                PreparedStatement pst = conexion.prepareStatement("SELECT id_mueb FROM mueble");
                 ResultSet rs = pst.executeQuery()) {
 
             while (rs.next()) {
-                int idRopa = rs.getInt("id_rop");
-                idsRopa.add(idRopa);
+                int idMueble = rs.getInt("id_mueb");
+                idsMueble.add(idMueble);
             }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.err.println("Error al obtener los IDs de ropa: " + ex.getMessage());
+            System.err.println("Error al obtener los IDs de mueble: " + ex.getMessage());
         }
 
-        return idsRopa;
+        return idsMueble;
     }
 
     public static List<Mueble> obtenerTodasLosMubles() {
@@ -222,14 +222,14 @@ public class ModeloMueble {
                     + "tipoVendible.precio "
                     + "FROM producto "
                     + "JOIN tipoVendible ON tipoVendible.id_producto_ven = producto.id_producto "
-                    + "JOIN muelbe ON mueble.id_vendible_mue = tipoVendible.id_vendible";
+                    + "JOIN mueble ON mueble.id_vendible_mue = tipoVendible.id_vendible";
 
             try (PreparedStatement statement = connection.prepareStatement(sql);
                     ResultSet resultSet = statement.executeQuery()) {
                 // Iterar a través de los resultados y construir objetos RopaDetalle
                 while (resultSet.next()) {
                     Mueble detalle = new Mueble();
-                    detalle.setId_mueb(resultSet.getInt("id_rop"));
+                    detalle.setId_mueb(resultSet.getInt("id_mueb"));
                     detalle.setTipo(resultSet.getString("tipo"));
                     detalle.setEstado(resultSet.getString("estado"));
                     detalle.setMaterial_mue(resultSet.getString("material_mue"));

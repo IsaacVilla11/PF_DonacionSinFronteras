@@ -264,6 +264,18 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return txtTipoProducto1;
     }
 
+    public JComboBox<String> getCbxTipoMueble() {
+        return cbxTipoMueble;
+    }
+
+    public JLabel getMensajeExito1() {
+        return mensajeExito1;
+    }
+
+    public JComboBox<String> getCbxEstado1() {
+        return cbxEstado1;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -361,6 +373,11 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         vaSi1 = new javax.swing.JCheckBox();
         va4 = new javax.swing.JLabel();
         txtTipoProducto1 = new javax.swing.JTextField();
+        cbxEstado1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         PanelMedicamentos = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
@@ -733,7 +750,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("Tamaño:");
-        jPanel8.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        jPanel8.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 0));
@@ -741,7 +758,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel8.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         cbxMaterialMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Madera", "Metal", "Cuero", "Tela", "Rattan y mimbre", "Vidrio", "Plástico", "Mármol y granito", "Corcho", "Melamina", "Acrílico", "Espuma y materiales de relleno", "Cartón", "Otros" }));
-        jPanel8.add(cbxMaterialMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 200, 30));
+        jPanel8.add(cbxMaterialMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 200, 30));
 
         btnCrear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear1.setText("CREAR");
@@ -806,7 +823,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Precio:");
-        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
+        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -848,7 +865,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("Material:");
-        jPanel8.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+        jPanel8.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         cbxTipoMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Sofás y sillones", "Mesas", "Sillas", "Camas", "Armarios y roperos", "Cómodas y cajoneras", "Estanterías y libreros", "Escritorios", "Bancos y taburetes", "Otros" }));
         jPanel8.add(cbxTipoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 200, -1));
@@ -859,8 +876,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel8.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         cbxTamañoMueble.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Pequeño", "Mediano", "Grande", "Muy Grande" }));
-        jPanel8.add(cbxTamañoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 120, -1));
-        jPanel8.add(txtPrecioVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 110, 30));
+        jPanel8.add(cbxTamañoMueble, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 120, -1));
+        jPanel8.add(txtPrecioVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 110, 30));
 
         tblMuebles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -887,7 +904,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         btnConsultarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultarTipo.setContentAreaFilled(false);
-        jPanel8.add(btnConsultarTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 50, 40));
+        jPanel8.add(btnConsultarTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 50, 40));
 
         btnLimpiar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar1.setContentAreaFilled(false);
@@ -913,20 +930,42 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         txtTipoProducto1.setText("Vendible");
         jPanel8.add(txtTipoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 80, 30));
 
+        cbxEstado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Usado", "Seminuevo", "Nuevo", "Otro" }));
+        jPanel8.add(cbxEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 150, -1));
+
+        jLabel17.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Estado:");
+        jPanel8.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel54.setText("*");
+        jPanel8.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 20, 20));
+
+        jLabel55.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel55.setText("*");
+        jPanel8.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 20, 20));
+
+        jLabel56.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel56.setText("*");
+        jPanel8.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 20, 20));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 33, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 902, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jScrollPane3.setViewportView(jPanel7);
@@ -1464,6 +1503,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxCodigosMuebles;
     private javax.swing.JComboBox<String> cbxCodigosRopa;
     private javax.swing.JComboBox<String> cbxEstado;
+    private javax.swing.JComboBox<String> cbxEstado1;
     private javax.swing.JComboBox<String> cbxFormaFarmac;
     private javax.swing.JComboBox<String> cbxMaterialMueble;
     private javax.swing.JComboBox<String> cbxTalla;
@@ -1483,6 +1523,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1521,6 +1562,9 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
