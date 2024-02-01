@@ -7,6 +7,7 @@ import Modelo.EncabezadoFactura;
 import Modelo.ModeloComprador;
 import Modelo.ModeloDetalleFactura;
 import Modelo.ModeloEncabezadoFact;
+import Modelo.ModeloReportProduct;
 import Modelo.Producto;
 import Modelo.TablaImagenRender;
 import Vista.Login_Comprador;
@@ -23,11 +24,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.View;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -42,6 +45,8 @@ public class ControladorModuloComprador {
 
     String cedula;
     V_Comprador vistaModCom; // Principal y unica vista
+    ModeloReportProduct modProduct=new ModeloReportProduct();
+    
 
     public ControladorModuloComprador(V_Comprador vistaModCom, String cedula) {
         this.vistaModCom = vistaModCom;
@@ -62,6 +67,29 @@ public class ControladorModuloComprador {
 
     }
 
+    public void cargarTablaReport(VC_Reporte report){
+         
+        DefaultTableModel tb = new DefaultTableModel();
+        tb.addColumn("ID Factura");
+        tb.addColumn("FECHA");
+        tb.addColumn("TOTAL");
+       
+
+        List<EncabezadoFactura> EnF = modProduct.obtenerReport();
+        System.out.println("Tamaño" + EnF.size());
+        EnF.forEach(p -> {
+            Object[] rowData = {
+                p.getId_encabezadoFact(),
+                p.getFecha_fact(),
+              //  p.,
+                p.getTotal()
+               
+            };
+            tb.addRow(rowData);
+        });
+
+        report.getTblReportCompras().setModel(tb);
+    }
     public void initVentanaInicio() {
         VC_Inicio view = new VC_Inicio();
         ShowJPanel(view);
@@ -89,10 +117,11 @@ public class ControladorModuloComprador {
     public void initReporteCompras() {
         VC_Reporte view = new VC_Reporte();
         ShowJPanel(view);
+        cargarTablaReport(view);
         view.getBtnImprimir().addActionListener(e -> {
             imprimirReporteComp();
         });
-
+        
     }
 
     // metodo para generar reporte de compras en jasper
