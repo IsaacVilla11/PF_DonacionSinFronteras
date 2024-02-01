@@ -72,7 +72,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dubai" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="LISTA DE COMPRAS"/>
+        <Property name="text" type="java.lang.String" value="FACTURAS GENERADAS:"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

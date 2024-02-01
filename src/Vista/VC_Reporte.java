@@ -56,7 +56,7 @@ public class VC_Reporte extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(897, 495));
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
-        jLabel1.setText("LISTA DE COMPRAS");
+        jLabel1.setText("FACTURAS GENERADAS:");
 
         tblReportCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
