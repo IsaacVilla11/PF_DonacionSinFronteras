@@ -1,6 +1,5 @@
 package Controlador;
 
-import Vista.Login_Donador;
 import Vista.Login_Solicitante;
 import Vista.Registro_Solicitante;
 
