@@ -22,9 +22,6 @@ public class vistaLogins extends javax.swing.JFrame {
         return btnLoginComprador;
     }
 
-    public JButton getBtnLoginDonador() {
-        return btnLoginDonador;
-    }
 
     public JButton getBtnLoginSolicitante() {
         return btnLoginSolicitante;
@@ -34,9 +31,6 @@ public class vistaLogins extends javax.swing.JFrame {
         return btnRegistroComprador;
     }
 
-    public JButton getBtnRegistroDonador() {
-        return btnRegistroDonador;
-    }
 
     public JButton getBtnRegistroSolicitante() {
         return btnRegistroSolicitante;
@@ -59,8 +53,6 @@ public class vistaLogins extends javax.swing.JFrame {
         btnRegistroSolicitante = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnRegistroDonador = new javax.swing.JButton();
-        btnLoginDonador = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -114,18 +106,6 @@ public class vistaLogins extends javax.swing.JFrame {
         jLabel1.setText("Inicia Sesión");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
-        btnRegistroDonador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/registro (1).png"))); // NOI18N
-        btnRegistroDonador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(31, 65, 187)));
-        btnRegistroDonador.setContentAreaFilled(false);
-        jPanel1.add(btnRegistroDonador, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 80, 40));
-
-        btnLoginDonador.setBackground(new java.awt.Color(241, 244, 255));
-        btnLoginDonador.setForeground(new java.awt.Color(98, 98, 98));
-        btnLoginDonador.setText("Donador");
-        btnLoginDonador.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 65, 187), 1, true));
-        btnLoginDonador.setContentAreaFilled(false);
-        jPanel1.add(btnLoginDonador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 280, 40));
-
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Login Screen (4).png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -175,10 +155,8 @@ public class vistaLogins extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoginComprador;
-    private javax.swing.JButton btnLoginDonador;
     private javax.swing.JButton btnLoginSolicitante;
     private javax.swing.JButton btnRegistroComprador;
-    private javax.swing.JButton btnRegistroDonador;
     private javax.swing.JButton btnRegistroSolicitante;
     private javax.swing.JButton btnRegresarMenu;
     private javax.swing.JLabel jLabel1;
