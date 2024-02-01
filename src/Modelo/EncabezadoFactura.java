@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.Date;
+import java.util.List;
 
 public class EncabezadoFactura {
 
@@ -50,10 +51,14 @@ public class EncabezadoFactura {
     public void setId_comprador_fact(int id_comprador_fact) {
         this.id_comprador_fact = id_comprador_fact;
     }
-
+    
     @Override
     public String toString() {
         return "EncabezadoFactura{" + "id_encabezadoFact=" + id_encabezadoFact + ", fecha_fact=" + fecha_fact + ", total=" + total + ", id_comprador_fact=" + id_comprador_fact + '}';
+    }
+
+    void setDetallesFactura(List<DetalleFactura> detallesFactura) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
