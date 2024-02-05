@@ -70,14 +70,17 @@ public class ControladorModuloComprador {
     }
 
     public void cargarTablaReport(VC_Reporte report){
+         ModeloEncabezadoFact enca=new ModeloEncabezadoFact();
          
+           // Asigna el ID del comprador al encabezado de factura
+            int idPersona=enca.traerCodigoDePersonaCrear(cedula);
         DefaultTableModel tb = new DefaultTableModel();
         tb.addColumn("ID Factura");
         tb.addColumn("FECHA");
         tb.addColumn("TOTAL");
        
 
-        List<EncabezadoFactura> EnF = modProduct.obtenerReport();
+        List<EncabezadoFactura> EnF = modProduct.obtenerReport(idPersona);
         System.out.println("Tamaño" + EnF.size());
         EnF.forEach(p -> {
             Object[] rowData = {
