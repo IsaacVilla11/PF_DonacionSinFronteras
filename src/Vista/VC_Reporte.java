@@ -54,9 +54,11 @@ public class VC_Reporte extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(897, 495));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
         jLabel1.setText("FACTURAS GENERADAS:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 25, -1, -1));
 
         tblReportCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,43 +81,14 @@ public class VC_Reporte extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblReportCompras);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 63, -1, 347));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/solicitante-login.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 50, -1, -1));
 
         btnImprimir.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         btnImprimir.setText("IMPRIMIR");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(btnImprimir)))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addComponent(btnImprimir)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
+        add(btnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 428, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
    
 
