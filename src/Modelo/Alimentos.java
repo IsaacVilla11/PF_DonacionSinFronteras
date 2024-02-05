@@ -9,6 +9,7 @@ public class Alimentos extends TipoDonable {
     private int id_donable_ali;
 
     public Alimentos() {
+        super();
     }
 
     public Alimentos(int id_ali, String tipo_ali, int id_donable_ali) {

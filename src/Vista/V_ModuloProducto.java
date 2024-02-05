@@ -1,5 +1,6 @@
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -49,7 +50,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     }
 
     public JButton getBtnCargarImagen2() {
-        return btnCargarImagen2;
+        return btnCargarImagenMedi;
     }
 
     public JButton getBtnCargarImagen3() {
@@ -276,6 +277,103 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return cbxEstado1;
     }
 
+    public JButton getBtnCargarImagenMedi() {
+        return btnCargarImagenMedi;
+    }
+
+    public JComboBox<String> getCbxFormaFarmac() {
+        return cbxFormaFarmac;
+    }
+
+    public JDateChooser getDatFechaElaboracion() {
+        return datFechaElaboracion;
+    }
+
+    public JDateChooser getDatFechaVencimiento() {
+        return datFechaVencimiento;
+    }
+
+    public JLabel getMensaje2() {
+        return mensaje2;
+    }
+
+    public JLabel getMensajeExito2() {
+        return mensajeExito2;
+    }
+
+    public JTable getTblMedicamentos() {
+        return tblMedicamentos;
+    }
+
+    public JTextField getTxtCodigoDonable() {
+        return txtCodigoDonable;
+    }
+
+    public JTextField getTxtCodigoMedicamento() {
+        return txtCodigoMedicamento;
+    }
+
+    public JTextField getTxtCodigoProducto2() {
+        return txtCodigoProducto2;
+    }
+
+    public JTextField getTxtNombreMedicamento() {
+        return txtNombreMedicamento;
+    }
+
+    public JTextField getTxtTipoProducto2() {
+        return txtTipoProducto2;
+    }
+
+    public JDateChooser getDatFechaElaboracion1() {
+        return datFechaElaboracion1;
+    }
+
+    public JDateChooser getDatFechaVencimiento1() {
+        return datFechaVencimiento1;
+    }
+
+    public JTable getTblAlimentos() {
+        return tblAlimentos;
+    }
+
+    public JTextField getTxtCodigoAlimento() {
+        return txtCodigoAlimento;
+    }
+
+    public JTextField getTxtCodigoDonable1() {
+        return txtCodigoDonable1;
+    }
+
+    public JTextField getTxtCodigoProducto3() {
+        return txtCodigoProducto3;
+    }
+
+    public JTextField getTxtNombreProducto3() {
+        return txtNombreAlimento;
+    }
+
+    public JTextField getTxtTipoProducto3() {
+        return txtTipoProducto3;
+    }
+
+    public JComboBox<String> getCbxTipoAlimento() {
+        return cbxTipoAlimento;
+    }
+
+    public JLabel getMensaje1() {
+        return mensaje1;
+    }
+
+    public JLabel getMensajeExito3() {
+        return mensajeExito3;
+    }
+
+    public JTextField getTxtNombreAlimento() {
+        return txtNombreAlimento;
+    }
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -404,23 +502,17 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va13 = new javax.swing.JLabel();
         mensaje1 = new javax.swing.JLabel();
         va14 = new javax.swing.JLabel();
-        chbxDisponibliidad_Producto_Si2 = new javax.swing.JCheckBox();
         jLabel35 = new javax.swing.JLabel();
         txtTipoProducto2 = new javax.swing.JTextField();
         txtCodigoMedicamento = new javax.swing.JTextField();
-        va15 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         txtCodigoProducto2 = new javax.swing.JTextField();
-        spnCantidadDonables = new javax.swing.JSpinner();
-        va16 = new javax.swing.JLabel();
         va17 = new javax.swing.JLabel();
-        txtNombreProducto2 = new javax.swing.JTextField();
+        txtNombreMedicamento = new javax.swing.JTextField();
         txtCodigoDonable = new javax.swing.JTextField();
         btnImagenProducto2 = new javax.swing.JButton();
-        btnCargarImagen2 = new javax.swing.JButton();
+        btnCargarImagenMedi = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
-        spnCantidadProducto2 = new javax.swing.JSpinner();
-        va18 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         vaSi2 = new javax.swing.JCheckBox();
         cbxCodigosMedicamentos = new javax.swing.JComboBox<>();
@@ -436,7 +528,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        cbxCategoria = new javax.swing.JComboBox<>();
+        cbxTipoAlimento = new javax.swing.JComboBox<>();
         btnCrear3 = new javax.swing.JButton();
         btnEliminar3 = new javax.swing.JButton();
         btnModificar3 = new javax.swing.JButton();
@@ -451,21 +543,15 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         datFechaVencimiento1 = new com.toedter.calendar.JDateChooser();
         va19 = new javax.swing.JLabel();
-        va20 = new javax.swing.JLabel();
         mensaje2 = new javax.swing.JLabel();
         va21 = new javax.swing.JLabel();
-        chbxDisponibliidad_Producto_Si3 = new javax.swing.JCheckBox();
         jLabel46 = new javax.swing.JLabel();
         txtTipoProducto3 = new javax.swing.JTextField();
         txtCodigoAlimento = new javax.swing.JTextField();
-        va22 = new javax.swing.JLabel();
-        spnCantidadProducto3 = new javax.swing.JSpinner();
         jLabel47 = new javax.swing.JLabel();
         txtCodigoProducto3 = new javax.swing.JTextField();
-        spnCantidadDonables1 = new javax.swing.JSpinner();
-        va23 = new javax.swing.JLabel();
         va24 = new javax.swing.JLabel();
-        txtNombreProducto3 = new javax.swing.JTextField();
+        txtNombreAlimento = new javax.swing.JTextField();
         txtCodigoDonable1 = new javax.swing.JTextField();
         btnImagenProducto3 = new javax.swing.JButton();
         btnCargarImagen3 = new javax.swing.JButton();
@@ -1079,7 +1165,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         va13.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va13.setForeground(new java.awt.Color(0, 0, 0));
-        va13.setText("Codigo donable: ");
+        va13.setText("ID donable: ");
         jPanel10.add(va13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 100, -1));
 
         mensaje1.setBackground(new java.awt.Color(102, 255, 255));
@@ -1090,9 +1176,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va14.setText("Tipo producto:  ");
         jPanel10.add(va14, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, -1, -1));
 
-        chbxDisponibliidad_Producto_Si2.setText("Si");
-        jPanel10.add(chbxDisponibliidad_Producto_Si2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, 40, -1));
-
         jLabel35.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("Registro de medicamentos");
@@ -1102,49 +1185,32 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel10.add(txtTipoProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 210, 110, 30));
         jPanel10.add(txtCodigoMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 120, 30));
 
-        va15.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va15.setForeground(new java.awt.Color(0, 0, 0));
-        va15.setText("Disponibilidad:");
-        jPanel10.add(va15, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, -1, -1));
-
         jLabel36.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel36.setText("Codigo medicamento: ");
+        jLabel36.setText("ID medicamento: ");
         jPanel10.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 130, -1));
         jPanel10.add(txtCodigoProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 130, 110, 30));
-        jPanel10.add(spnCantidadDonables, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, 70, -1));
-
-        va16.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va16.setForeground(new java.awt.Color(0, 0, 0));
-        va16.setText("Cantidad donable:");
-        jPanel10.add(va16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 290, -1, -1));
 
         va17.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va17.setForeground(new java.awt.Color(0, 0, 0));
-        va17.setText("Codigo producto: ");
+        va17.setText("ID producto: ");
         jPanel10.add(va17, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 100, -1));
-        jPanel10.add(txtNombreProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 240, 30));
+        jPanel10.add(txtNombreMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 240, 30));
         jPanel10.add(txtCodigoDonable, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 110, 30));
 
         btnImagenProducto2.setBackground(new java.awt.Color(255, 255, 255));
         btnImagenProducto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
         jPanel10.add(btnImagenProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 200, 130));
 
-        btnCargarImagen2.setBackground(new java.awt.Color(255, 255, 255));
-        btnCargarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
-        btnCargarImagen2.setBorder(null);
-        jPanel10.add(btnCargarImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, 90));
+        btnCargarImagenMedi.setBackground(new java.awt.Color(255, 255, 255));
+        btnCargarImagenMedi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/AGREGAR FOTO.PNG"))); // NOI18N
+        btnCargarImagenMedi.setBorder(null);
+        jPanel10.add(btnCargarImagenMedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, 90));
 
         jLabel37.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
         jLabel37.setText("Codigo medicamento: ");
         jPanel10.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
-        jPanel10.add(spnCantidadProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 80, -1));
-
-        va18.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va18.setForeground(new java.awt.Color(0, 0, 0));
-        va18.setText("Cantidad Productos:");
-        jPanel10.add(va18, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
@@ -1225,8 +1291,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel40.setText("Categoria:");
-        jPanel12.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+        jLabel40.setText("Tipo alimento:");
+        jPanel12.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
         jLabel41.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
@@ -1238,8 +1304,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel42.setText("Fecha de vencimiento : ");
         jPanel12.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 120, -1));
 
-        cbxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Alimentos enlatados", "Alimentos secos", "Frutas enlatadas o envasadas", "Vegetales enlatados", "Legumbres secas", "Aceite vegetal", "Salsas y condimentos", "Productos infantiles", "Productos sin gluten", "Frutos secos y barras energéticas", "Agua embotellada o envasada", "Comida enlatada para mascotas", "Otros" }));
-        jPanel12.add(cbxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 220, 30));
+        cbxTipoAlimento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Alimentos enlatados", "Alimentos secos", "Frutas enlatadas o envasadas", "Vegetales enlatados", "Legumbres secas", "Aceite vegetal", "Salsas y condimentos", "Productos infantiles", "Productos sin gluten", "Frutos secos y barras energéticas", "Agua embotellada o envasada", "Comida enlatada para mascotas", "Otros" }));
+        jPanel12.add(cbxTipoAlimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 220, 30));
 
         btnCrear3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
         btnCrear3.setText("CREAR");
@@ -1261,7 +1327,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnConsultar3.setText("CONSULTAR");
         btnConsultar3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
         jPanel12.add(btnConsultar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 130, 50));
-        jPanel12.add(datFechaElaboracion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 140, -1));
+        jPanel12.add(datFechaElaboracion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 140, -1));
 
         jLabel43.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
@@ -1301,17 +1367,12 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
         jLabel45.setText("Fecha de elaboración : ");
         jPanel12.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
-        jPanel12.add(datFechaVencimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 140, -1));
+        jPanel12.add(datFechaVencimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 140, -1));
 
         va19.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va19.setForeground(new java.awt.Color(0, 0, 0));
-        va19.setText("Codigo donable: ");
-        jPanel12.add(va19, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 100, -1));
-
-        va20.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va20.setForeground(new java.awt.Color(0, 0, 0));
-        va20.setText("Cantidad Productos:");
-        jPanel12.add(va20, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
+        va19.setText("ID donable: ");
+        jPanel12.add(va19, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 70, -1));
 
         mensaje2.setBackground(new java.awt.Color(102, 255, 255));
         jPanel12.add(mensaje2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 110, 60, 10));
@@ -1320,9 +1381,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va21.setForeground(new java.awt.Color(0, 0, 0));
         va21.setText("Tipo:  ");
         jPanel12.add(va21, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, -1, -1));
-
-        chbxDisponibliidad_Producto_Si3.setText("Si");
-        jPanel12.add(chbxDisponibliidad_Producto_Si3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 310, 40, -1));
 
         jLabel46.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
@@ -1333,29 +1391,17 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel12.add(txtTipoProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 190, 110, 30));
         jPanel12.add(txtCodigoAlimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 120, 30));
 
-        va22.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va22.setForeground(new java.awt.Color(0, 0, 0));
-        va22.setText("Disponibilidad:");
-        jPanel12.add(va22, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, -1, -1));
-        jPanel12.add(spnCantidadProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 70, -1));
-
         jLabel47.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel47.setText("Codigo alimento: ");
+        jLabel47.setText("ID alimento: ");
         jPanel12.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 100, -1));
         jPanel12.add(txtCodigoProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, 110, 30));
-        jPanel12.add(spnCantidadDonables1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, 70, -1));
-
-        va23.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
-        va23.setForeground(new java.awt.Color(0, 0, 0));
-        va23.setText("Cantidad donable:");
-        jPanel12.add(va23, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, -1, -1));
 
         va24.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va24.setForeground(new java.awt.Color(0, 0, 0));
-        va24.setText("Codigo producto: ");
-        jPanel12.add(va24, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 100, -1));
-        jPanel12.add(txtNombreProducto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 240, 30));
+        va24.setText("ID producto: ");
+        jPanel12.add(va24, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 70, -1));
+        jPanel12.add(txtNombreAlimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 240, 30));
         jPanel12.add(txtCodigoDonable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 110, 30));
 
         btnImagenProducto3.setBackground(new java.awt.Color(255, 255, 255));
@@ -1465,8 +1511,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnAyudaTipoMuebles;
     private javax.swing.JButton btnCargarImagen;
     private javax.swing.JButton btnCargarImagen1;
-    private javax.swing.JButton btnCargarImagen2;
     private javax.swing.JButton btnCargarImagen3;
+    private javax.swing.JButton btnCargarImagenMedi;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnConsultar2;
@@ -1497,7 +1543,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnReporte1;
     private javax.swing.JButton btnReporte2;
     private javax.swing.JButton btnReporte3;
-    private javax.swing.JComboBox<String> cbxCategoria;
     private javax.swing.JComboBox<String> cbxCodigosAlimentos;
     private javax.swing.JComboBox<String> cbxCodigosMedicamentos;
     private javax.swing.JComboBox<String> cbxCodigosMuebles;
@@ -1508,10 +1553,9 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxMaterialMueble;
     private javax.swing.JComboBox<String> cbxTalla;
     private javax.swing.JComboBox<String> cbxTamañoMueble;
+    private javax.swing.JComboBox<String> cbxTipoAlimento;
     private javax.swing.JComboBox<String> cbxTipoMueble;
     private javax.swing.JComboBox<String> cbxTipoRopa;
-    private javax.swing.JCheckBox chbxDisponibliidad_Producto_Si2;
-    private javax.swing.JCheckBox chbxDisponibliidad_Producto_Si3;
     private com.toedter.calendar.JDateChooser datFechaElaboracion;
     private com.toedter.calendar.JDateChooser datFechaElaboracion1;
     private com.toedter.calendar.JDateChooser datFechaVencimiento;
@@ -1603,10 +1647,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private org.edisoncor.gui.panel.Panel panel1;
     private javax.swing.JPanel panelMuebles;
     private javax.swing.JPanel panelRopa;
-    private javax.swing.JSpinner spnCantidadDonables;
-    private javax.swing.JSpinner spnCantidadDonables1;
-    private javax.swing.JSpinner spnCantidadProducto2;
-    private javax.swing.JSpinner spnCantidadProducto3;
     private javax.swing.JTable tblAlimentos;
     private javax.swing.JTable tblMedicamentos;
     private javax.swing.JTable tblMuebles;
@@ -1623,8 +1663,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigoRopa;
     private javax.swing.JTextField txtCodigoVendible;
     private javax.swing.JTextField txtCodigoVendible1;
-    private javax.swing.JTextField txtNombreProducto2;
-    private javax.swing.JTextField txtNombreProducto3;
+    private javax.swing.JTextField txtNombreAlimento;
+    private javax.swing.JTextField txtNombreMedicamento;
     private javax.swing.JTextField txtPrecioVendible;
     private javax.swing.JTextField txtPrecioVendible1;
     private javax.swing.JTextField txtTipoProducto;
@@ -1635,16 +1675,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel va10;
     private javax.swing.JLabel va13;
     private javax.swing.JLabel va14;
-    private javax.swing.JLabel va15;
-    private javax.swing.JLabel va16;
     private javax.swing.JLabel va17;
-    private javax.swing.JLabel va18;
     private javax.swing.JLabel va19;
     private javax.swing.JLabel va2;
-    private javax.swing.JLabel va20;
     private javax.swing.JLabel va21;
-    private javax.swing.JLabel va22;
-    private javax.swing.JLabel va23;
     private javax.swing.JLabel va24;
     private javax.swing.JLabel va3;
     private javax.swing.JLabel va4;
