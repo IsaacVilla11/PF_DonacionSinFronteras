@@ -39,7 +39,7 @@ public class ControladorCrudDonante {
         cargarTabla();
         vistaCrudDona.getBtnRegresar().addActionListener(l -> regresarModuloAdmin());
         vistaCrudDona.getBtnCrear().addActionListener(l -> registrarDonante());
-        //vistaCrudDona.getBtnModificar().addActionListener(l -> modificarDonante());
+        vistaCrudDona.getBtnModificar().addActionListener(l -> modificarDonante());
         vistaCrudDona.getBtnCargar().addActionListener(l-> cargarDonant());
         vistaCrudDona.getBtnConsultar().addActionListener(l-> consultarDonante());
         vistaCrudDona.getBtnEliminar().addActionListener(l-> eliminarDonante());
@@ -188,23 +188,29 @@ public class ControladorCrudDonante {
     }
 
     public void modificarDonante() {
-        ModeloDonante perDona = new ModeloDonante();
-        ModeloUsuario per = new ModeloUsuario();
+        ModeloDonante donanteActualizado = new ModeloDonante();
+      
 
         try {
-
+            String cedula = vistaCrudDona.getTxtCedu().getText();
+            if (!Validaciones.ValidarCedula(cedula)) {
+                JOptionPane.showMessageDialog(vistaCrudDona, "Cédula incorrecta. Ingrese de nuevo");
+                return;
+            }
+            donanteActualizado.setCedula_usu(cedula);
+            
             String nombre = vistaCrudDona.getTxtNomb().getText();
             if (!Validaciones.ValidarNomApe(nombre)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Nombre incorrecto. Ingrese de nuevo");
                 return;
             }
-            per.setNombre_usu(nombre);
+            donanteActualizado.setNombre_usu(nombre);
             String apellido = vistaCrudDona.getTxtApe().getText();
             if (!Validaciones.ValidarNomApe(apellido)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Apellido incorrecto. Ingrese de nuevo");
                 return;
             }
-            per.setApellido_usu(apellido);
+            donanteActualizado.setApellido_usu(apellido);
 
             String genero;
             if (vistaCrudDona.getBtnH().isSelected()) {
@@ -215,27 +221,27 @@ public class ControladorCrudDonante {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Seleccione un género");
                 return;
             }
-            per.setSexo_usu(genero);
+            donanteActualizado.setSexo_usu(genero);
             
             String celular = vistaCrudDona.getTxtCelular().getText();
             if (!Validaciones.ValidarCedula(celular)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "# Celular no válido. Ingrese de nuevo");
                 return;
             }
-            per.setCelular_usu(celular);
+            donanteActualizado.setCelular_usu(celular);
 
             String correo = vistaCrudDona.getTxtCorreo().getText();
             if (!Validaciones.ValidarCorreo(correo)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Correo no válido. Ingrese de nuevo");
                 return;
             }
-            per.setCorreo_usu(correo);
+            donanteActualizado.setCorreo_usu(correo);
 
             String tipoSangre = vistaCrudDona.getCbBoxSangre().getSelectedItem().toString();
-            per.setTipoSangre_usu(tipoSangre);
+            donanteActualizado.setTipoSangre_usu(tipoSangre);
 
             String ciudad = (String) vistaCrudDona.getCbboxCiudad().getSelectedItem();
-            per.setCiudad_usu(ciudad);
+            donanteActualizado.setCiudad_usu(ciudad);
 
             // Obtener fecha de nacimiento del JCalendar
             String dia = Integer.toString(vistaCrudDona.getjDnacimiento().getCalendar().get(Calendar.DAY_OF_MONTH));
@@ -247,21 +253,21 @@ public class ControladorCrudDonante {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Seleccione una fecha de nacimiento");
                 return; // O realiza alguna otra acción apropiada para manejar el error
             }
-            per.setFechaNacimiento_usu(FechaNacimiento);
+            donanteActualizado.setFechaNacimiento_usu(FechaNacimiento);
 
             String direccion = vistaCrudDona.getTxtDirecc().getText();
             if (!Validaciones.ValidarNomApe(direccion)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Dirección incorrecta. Ingrese de nuevo");
                 return;
             }
-            per.setDireccion_usu(direccion);
+            donanteActualizado.setDireccion_usu(direccion);
 
             String contraseniaDonant = vistaCrudDona.getTxtPass().getText();
             if (!Validaciones.ValidarContrasena(contraseniaDonant)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Contraseña no valida. Ingrese de nuevo");
                 return;
             }
-            per.setContraseña_usu(contraseniaDonant);
+            donanteActualizado.setContraseña_usu(contraseniaDonant);
 
             // Resto del código para validar y asignar los datos al modelo donante...
             String proyecto = vistaCrudDona.getTxtproyecto().getText();
@@ -269,25 +275,28 @@ public class ControladorCrudDonante {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Nombre Del Proyecto incorrecto. Ingrese de nuevo");
                 return;
             }
-            modDonante.setProyecto_dont(proyecto);
+            donanteActualizado.setProyecto_dont(proyecto);
 
             String entidad = vistaCrudDona.getTxtentidad().getText();
             if (!Validaciones.ValidarNomApe(entidad)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Nombre De Entidad incorrecto. Ingrese de nuevo");
                 return;
             }
-            modDonante.setEntidad_dont(entidad);
+            donanteActualizado.setEntidad_dont(entidad);
 
             String motivo = vistaCrudDona.getTxtMotivo().getText();
             if (!Validaciones.validarLetras(motivo)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Motivo incorrecto. Ingrese de nuevo");
                 return;
             }
-            modDonante.setMotivo_dont(motivo);
+            donanteActualizado.setMotivo_dont(motivo);
             // Lógica para modificar eldonante
-            if (per.modificarPersona(FechaNacimiento)) {
+            if (modDonante.actualizarDonante(donanteActualizado)) {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Donante modificado satisfactoriamente");
                 cargarTabla(); // Método para actualizar la tabla después de la modificación
+                vistaCrudDona.getBtnCrear().setEnabled(true);
+                vistaCrudDona.getTxtCedu().setEnabled(true);
+                limpiarCampos();
             } else {
                 JOptionPane.showMessageDialog(vistaCrudDona, "Error al modificar el Donante");
             }
@@ -296,7 +305,23 @@ public class ControladorCrudDonante {
         }
 
     }
-
+     public void limpiarCampos() {
+        vistaCrudDona.getTxtCedu().setText("");
+        vistaCrudDona.getTxtNomb().setText("");
+        vistaCrudDona.getTxtApe().setText("");
+        vistaCrudDona.getBtnH().setSelected(false);
+        vistaCrudDona.getBtnM().setSelected(false);
+        vistaCrudDona.getTxtCelular().setText("");
+        vistaCrudDona.getTxtCorreo().setText("");
+        vistaCrudDona.getTxtDirecc().setText("");
+        vistaCrudDona.getTxtPass().setText("");
+        vistaCrudDona.getTxtMotivo().setText("");
+        vistaCrudDona.getTxtentidad().setText("");
+        vistaCrudDona.getTxtproyecto().setText("");
+        vistaCrudDona.getCbBoxSangre().setSelectedIndex(0);  // Puedes ajustar el índice según tu necesidad
+        vistaCrudDona.getCbboxCiudad().setSelectedIndex(0); // Puedes ajustar el índice según tu necesidad
+        vistaCrudDona.getjDnacimiento().setCalendar(null);
+    }
      //Metodo para buscar dn¿nante y llamar al metodo para llenar los campos
     private void cargarDonant() {
         String cedula = vistaCrudDona.getTxtCedu().getText();

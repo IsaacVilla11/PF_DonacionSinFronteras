@@ -10,7 +10,10 @@ import Vista.CRUD_Comprador;
 import Vista.CRUD_Comprador;
 import Vista.vistaAdministrador;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +38,8 @@ public class ControladorCrudComprador {
         cargarTabla();
         vistaCrudCompra.getBtnRegresar().addActionListener(l -> regresarModuloAdmin());
         vistaCrudCompra.getBtnGuardar().addActionListener(l->RegistrarComprador());
+        vistaCrudCompra.getBtnCargar().addActionListener(l->cargarComprador());
+        vistaCrudCompra.getBtnModi().addActionListener(l-> modificarComprador());
         vistaCrudCompra.getBtnConsultar().addActionListener(l-> consultarComprador());
         vistaCrudCompra.getBtnDelete().addActionListener(l-> eliminarComprador());
     }
@@ -173,6 +178,180 @@ public class ControladorCrudComprador {
         }
     }
     
+    public void modificarComprador(){
+        ModeloComprador compradorActualizado=new ModeloComprador();
+         try {
+            String cedula = vistaCrudCompra.getTxtCedu().getText();
+            if (!Validaciones.ValidarCedula(cedula)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Cédula incorrecta. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setCedula_usu(cedula);
+            // Modificar los datos de la persona
+            String nombre = vistaCrudCompra.getTxtNomb().getText();
+            if (!Validaciones.ValidarNomApe(nombre)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Nombre incorrecto. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setNombre_usu(nombre);
+
+            String apellido = vistaCrudCompra.getTxtApe().getText();
+            if (!Validaciones.ValidarNomApe(apellido)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Apellido incorrecto. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setApellido_usu(apellido);
+
+            String genero;
+            if (vistaCrudCompra.getBtnH().isSelected()) {
+                genero = "Hombre";
+            } else if (vistaCrudCompra.getBtnM().isSelected()) {
+                genero = "Mujer";
+            } else {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Seleccione un género");
+                return;
+            }
+            compradorActualizado.setSexo_usu(genero);
+
+            String celular = vistaCrudCompra.getTxtCelular().getText();
+            if (!Validaciones.ValidarCedula(celular)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "# Celular no válido. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setCelular_usu(celular);
+
+            String correo = vistaCrudCompra.getTxtCorreo().getText();
+            if (!Validaciones.ValidarCorreo(correo)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Correo no válido. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setCorreo_usu(correo);
+
+            String tipoSangre = vistaCrudCompra.getCbBoxSangre().getSelectedItem().toString();
+            compradorActualizado.setTipoSangre_usu(tipoSangre);
+
+            String ciudad = (String) vistaCrudCompra.getCbboxCiudad().getSelectedItem();
+            compradorActualizado.setCiudad_usu(ciudad);
+
+            // Obtener fecha de nacimiento del JCalendar
+            String dia = Integer.toString(vistaCrudCompra.getjDnacimiento().getCalendar().get(Calendar.DAY_OF_MONTH));
+            String mes = Integer.toString(vistaCrudCompra.getjDnacimiento().getCalendar().get(Calendar.MONTH) + 1);
+            String año = Integer.toString(vistaCrudCompra.getjDnacimiento().getCalendar().get(Calendar.YEAR));
+            String FechaNacimiento = (dia + "-" + mes + "-" + año);
+
+            if (vistaCrudCompra.getjDnacimiento() == null) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Seleccione una fecha de nacimiento");
+                return; // O realiza alguna otra acción apropiada para manejar el error
+            }
+            compradorActualizado.setFechaNacimiento_usu(FechaNacimiento);
+
+            String direccion = vistaCrudCompra.getTxtDirecc().getText();
+            if (!Validaciones.ValidarNomApe(direccion)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Dirección incorrecta. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setDireccion_usu(direccion);
+
+            String contraseniaAdmi = vistaCrudCompra.getTxtPass().getText();
+            if (!Validaciones.ValidarContrasena(contraseniaAdmi)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Contraseña no valida. Ingrese de nuevo");
+                return;
+            }
+            compradorActualizado.setContraseña_usu(contraseniaAdmi);
+            // Resto del código para validar y asignar los datos al modelo compra...
+                    String metPago = vistaCrudCompra.getCbboxMetPagos().getSelectedItem().toString();
+                    compradorActualizado.setMetodoPago_com(metPago);
+                    String estCivil = vistaCrudCompra.getCbboxEstCivil().getSelectedItem().toString();
+                    compradorActualizado.setEstadoCivil_com(estCivil);
+            // Llamar al método de actualización en el modeloComprador
+            if (modCompra.actualizarComprador(compradorActualizado)) {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Cambios guardados exitosamente");
+                vistaCrudCompra.getBtnGuardar().setEnabled(true);
+                vistaCrudCompra.getTxtCedu().setEnabled(true);
+                cargarTabla();
+                limpiarCampos();
+                
+            } else {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "Error al guardar cambios");
+            }
+
+        } catch (Exception e) {
+            // Manejo de la excepción
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(vistaCrudCompra, "Error al intentar guardar cambios");
+        }
+    }
+    
+    public void limpiarCampos() {
+        vistaCrudCompra.getTxtCedu().setText("");
+        vistaCrudCompra.getTxtNomb().setText("");
+        vistaCrudCompra.getTxtApe().setText("");
+        vistaCrudCompra.getBtnH().setSelected(false);
+        vistaCrudCompra.getBtnM().setSelected(false);
+        vistaCrudCompra.getTxtCelular().setText("");
+        vistaCrudCompra.getTxtCorreo().setText("");
+        vistaCrudCompra.getTxtDirecc().setText("");
+        vistaCrudCompra.getTxtPass().setText("");
+        vistaCrudCompra.getCbboxEstCivil().setSelectedIndex(0);
+        vistaCrudCompra.getCbboxMetPagos().setSelectedIndex(0);
+        vistaCrudCompra.getCbBoxSangre().setSelectedIndex(0);  // Puedes ajustar el índice según tu necesidad
+        vistaCrudCompra.getCbboxCiudad().setSelectedIndex(0); // Puedes ajustar el índice según tu necesidad
+        vistaCrudCompra.getjDnacimiento().setCalendar(null);
+    }
+      //Metodo para buscar comprador y llamar al metodo para llenar los campos
+    private void cargarComprador() {
+        String cedula = vistaCrudCompra.getTxtCedu().getText();
+
+        try {
+            // Buscar el compra en la base de datos
+            Comprador compra = modCompra.buscarComprador(cedula);
+
+            // Verificar si se encontró el comprador
+            if (compra != null) {
+                // Cargar los datos del comprador en el formulario
+                cargarDatosFormulario(compra);
+                vistaCrudCompra.getTxtCedu().setEditable(false);
+            } else {
+                JOptionPane.showMessageDialog(vistaCrudCompra, "No se encontró el comprador");
+                vistaCrudCompra.getTxtCedu().setEditable(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+      // metod para llenar los campos con los datos segun cedula
+    private void cargarDatosFormulario(Comprador compra) {
+
+        vistaCrudCompra.getTxtCedu().setText(compra.getCedula_usu());
+        vistaCrudCompra.getTxtNomb().setText(compra.getNombre_usu());
+        vistaCrudCompra.getTxtApe().setText(compra.getApellido_usu());
+
+        if ("Hombre".equals(compra.getSexo_usu())) {
+            vistaCrudCompra.getBtnH().setSelected(true);
+        } else if ("Mujer".equals(compra.getSexo_usu())) {
+            vistaCrudCompra.getBtnM().setSelected(true);
+        }
+
+        vistaCrudCompra.getTxtCelular().setText(compra.getCelular_usu());
+        vistaCrudCompra.getTxtCorreo().setText(compra.getCorreo_usu());
+        vistaCrudCompra.getCbBoxSangre().setSelectedItem(compra.getTipoSangre_usu());
+        vistaCrudCompra.getCbboxCiudad().setSelectedItem(compra.getCiudad_usu());
+
+        SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+        Date fecha = null;
+        try {
+            fecha = formatofecha.parse(compra.getFechaNacimiento_usu());
+        } catch (ParseException ex) {
+            Logger.getLogger(vistaAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        vistaCrudCompra.getjDnacimiento().setDate(fecha);
+
+        vistaCrudCompra.getTxtDirecc().setText(compra.getDireccion_usu());
+        vistaCrudCompra.getCbboxMetPagos().setSelectedItem(compra.getMetodoPago_com());
+        vistaCrudCompra.getCbboxEstCivil().setSelectedItem(compra.getEstadoCivil_com());
+        vistaCrudCompra.getTxtPass().setText(compra.getContraseña_usu());
+    }
     // metodo para cargar el jtable con todos los registros
     private void cargarTabla() {
         DefaultTableModel tb = new DefaultTableModel();

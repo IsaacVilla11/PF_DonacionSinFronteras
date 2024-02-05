@@ -180,26 +180,31 @@ public class ControladorCrudAdmin {
     }
 
     public void modificarAdministrador() {
-        ModeloAdministrador admin = new ModeloAdministrador();
-        ModeloUsuario per = new ModeloUsuario();
+        // Crear un nuevo modeloAdmin con los datos actualizados
+        ModeloAdministrador administradorActualizado = new ModeloAdministrador();
+      
 
         try {
             String cedula = vistaCrudAdmin.getTxtCedu().getText();
-
+            if (!Validaciones.ValidarCedula(cedula)) {
+                JOptionPane.showMessageDialog(vistaCrudAdmin, "Cédula incorrecta. Ingrese de nuevo");
+                return;
+            }
+            administradorActualizado.setCedula_usu(cedula);
             // Modificar los datos de la persona
             String nombre = vistaCrudAdmin.getTxtNomb().getText();
             if (!Validaciones.ValidarNomApe(nombre)) {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Nombre incorrecto. Ingrese de nuevo");
                 return;
             }
-            per.setNombre_usu(nombre);
+            administradorActualizado.setNombre_usu(nombre);
 
             String apellido = vistaCrudAdmin.getTxtApe().getText();
             if (!Validaciones.ValidarNomApe(apellido)) {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Apellido incorrecto. Ingrese de nuevo");
                 return;
             }
-            per.setApellido_usu(apellido);
+            administradorActualizado.setApellido_usu(apellido);
 
             String genero;
             if (vistaCrudAdmin.getBtnH().isSelected()) {
@@ -210,27 +215,27 @@ public class ControladorCrudAdmin {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Seleccione un género");
                 return;
             }
-            per.setSexo_usu(genero);
+            administradorActualizado.setSexo_usu(genero);
 
             String celular = vistaCrudAdmin.getTxtCelular().getText();
             if (!Validaciones.ValidarCedula(celular)) {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "# Celular no válido. Ingrese de nuevo");
                 return;
             }
-            per.setCelular_usu(celular);
+            administradorActualizado.setCelular_usu(celular);
 
             String correo = vistaCrudAdmin.getTxtCorreo().getText();
             if (!Validaciones.ValidarCorreo(correo)) {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Correo no válido. Ingrese de nuevo");
                 return;
             }
-            per.setCorreo_usu(correo);
+            administradorActualizado.setCorreo_usu(correo);
 
             String tipoSangre = vistaCrudAdmin.getCbBoxSangre().getSelectedItem().toString();
-            per.setTipoSangre_usu(tipoSangre);
+            administradorActualizado.setTipoSangre_usu(tipoSangre);
 
             String ciudad = (String) vistaCrudAdmin.getCbboxCiudad().getSelectedItem();
-            per.setCiudad_usu(ciudad);
+            administradorActualizado.setCiudad_usu(ciudad);
 
             // Obtener fecha de nacimiento del JCalendar
             String dia = Integer.toString(vistaCrudAdmin.getjDnacimiento().getCalendar().get(Calendar.DAY_OF_MONTH));
@@ -242,49 +247,56 @@ public class ControladorCrudAdmin {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Seleccione una fecha de nacimiento");
                 return; // O realiza alguna otra acción apropiada para manejar el error
             }
-            per.setFechaNacimiento_usu(FechaNacimiento);
+            administradorActualizado.setFechaNacimiento_usu(FechaNacimiento);
 
             String direccion = vistaCrudAdmin.getTxtDirecc().getText();
             if (!Validaciones.ValidarNomApe(direccion)) {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Dirección incorrecta. Ingrese de nuevo");
                 return;
             }
-            per.setDireccion_usu(direccion);
+            administradorActualizado.setDireccion_usu(direccion);
 
             String contraseniaAdmi = vistaCrudAdmin.getTxtPass().getText();
             if (!Validaciones.ValidarContrasena(contraseniaAdmi)) {
                 JOptionPane.showMessageDialog(vistaCrudAdmin, "Contraseña no valida. Ingrese de nuevo");
                 return;
             }
-            per.setContraseña_usu(contraseniaAdmi);
-            if (per.modificarPersona(FechaNacimiento)) {
-                // Obtener el id_persona recién insertado
-                int idPersona = per.traerCodigoDePersonaCrear(cedula);
-
-                if (idPersona > 0) {
-                    // Asignar el id_persona al modeloAdmin
-                    admin.setId_persona(idPersona);
-
-                    // Resto del código para validar y asignar los datos al modelo admin...
+            administradorActualizado.setContraseña_usu(contraseniaAdmi);
+            // Resto del código para validar y asignar los datos al modelo admin...
                     String cargo = vistaCrudAdmin.getCbBoxCargo().getSelectedItem().toString();
-                    admin.setCargo_adm(cargo);
-                    if (admin.modificarAdministrador()) {
-                        JOptionPane.showMessageDialog(vistaCrudAdmin, "Se modificó exitosamente");
-                        cargarTabla();
-                    } else {
-                        JOptionPane.showMessageDialog(vistaCrudAdmin, "No se pudo modifcar el administrador");
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(vistaCrudAdmin, "No se pudo obtener el id_persona");
-                }
+                    administradorActualizado.setCargo_adm(cargo);
+            // Llamar al método de actualización en el modeloAdmin
+            if (modAdmi.actualizarAdministrador(administradorActualizado)) {
+                JOptionPane.showMessageDialog(vistaCrudAdmin, "Cambios guardados exitosamente");
+                vistaCrudAdmin.getBtnGuardar().setEnabled(true);
+                vistaCrudAdmin.getTxtCedu().setEnabled(true);
+                cargarTabla();
+                limpiarCampos();
+                
             } else {
-                JOptionPane.showMessageDialog(vistaCrudAdmin, "No se pudo modificar la persona");
+                JOptionPane.showMessageDialog(vistaCrudAdmin, "Error al guardar cambios");
             }
 
         } catch (Exception e) {
             // Manejo de la excepción
-            // Resto del código para manejar la excepción...
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(vistaCrudAdmin, "Error al intentar guardar cambios");
         }
+    }
+    public void limpiarCampos() {
+        vistaCrudAdmin.getTxtCedu().setText("");
+        vistaCrudAdmin.getTxtNomb().setText("");
+        vistaCrudAdmin.getTxtApe().setText("");
+        vistaCrudAdmin.getBtnH().setSelected(false);
+        vistaCrudAdmin.getBtnM().setSelected(false);
+        vistaCrudAdmin.getTxtCelular().setText("");
+        vistaCrudAdmin.getTxtCorreo().setText("");
+        vistaCrudAdmin.getTxtDirecc().setText("");
+        vistaCrudAdmin.getTxtPass().setText("");
+        vistaCrudAdmin.getCbBoxCargo().setSelectedIndex(0);
+        vistaCrudAdmin.getCbBoxSangre().setSelectedIndex(0);  // Puedes ajustar el índice según tu necesidad
+        vistaCrudAdmin.getCbboxCiudad().setSelectedIndex(0); // Puedes ajustar el índice según tu necesidad
+        vistaCrudAdmin.getjDnacimiento().setCalendar(null);
     }
 
     private void eliminarAdmin() {
