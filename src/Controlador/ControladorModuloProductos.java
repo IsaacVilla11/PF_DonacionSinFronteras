@@ -84,6 +84,7 @@ public class ControladorModuloProductos {
         vistaModProducto.getBtnImagenProducto().addActionListener(l -> mostrarImagenEnDialogoEmergenteRopa());
         vistaModProducto.getBtnLimpiar().addActionListener(l -> limpiarCamposRopa());
         //Mueble
+        vistaModProducto.getBtnAyuda1().addActionListener(l -> ayudaMueble());
         vistaModProducto.getBtnCrear1().addActionListener(l -> crearMueble());
         vistaModProducto.getBtnConsultar1().addActionListener(l -> consultarMueble());
         vistaModProducto.getBtnModificar1().addActionListener(l -> modificarMueble());
@@ -93,6 +94,7 @@ public class ControladorModuloProductos {
         vistaModProducto.getBtnImagenProducto1().addActionListener(l -> mostrarImagenEnDialogoEmergenteMueble());
         vistaModProducto.getBtnLimpiar1().addActionListener(l -> limpiarCamposMueble());
         //Medicamento
+        vistaModProducto.getBtnAyuda2().addActionListener(l -> ayudaMedicamento());
         vistaModProducto.getBtnCrear2().addActionListener(l -> crearMedicamento());
         vistaModProducto.getBtnConsultar2().addActionListener(l -> consultarMedicamento());
         vistaModProducto.getBtnModificar2().addActionListener(l -> modificarMedicamento());
@@ -102,6 +104,7 @@ public class ControladorModuloProductos {
         vistaModProducto.getBtnImagenProducto2().addActionListener(l -> mostrarImagenEnDialogoEmergenteMedicamento());
         vistaModProducto.getBtnLimpiar2().addActionListener(l -> limpiarCamposMedicamento());
         //Alimento
+        vistaModProducto.getBtnAyuda3().addActionListener(l -> ayudaAlimento());
         vistaModProducto.getBtnCrear3().addActionListener(l -> crearAlimento());
         vistaModProducto.getBtnConsultar3().addActionListener(l -> consultarAlimento());
         vistaModProducto.getBtnModificar3().addActionListener(l -> modificarAlimento());
@@ -615,6 +618,36 @@ public class ControladorModuloProductos {
                 + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
                 + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
     }
+    private void ayudaMueble() {
+        JOptionPane.showMessageDialog(null, "Aqui se encuentra la ventana para el registro de muebles"
+                + "\nBotones "
+                + "\n1. Crear: En este boton se guardara los datos ingresados en los campos del formulario en la base de datos,"
+                + "\n                 los datos ingresados deben pertenecer a su tipo de dato correspondiente."
+                + "\n2. Consultar: Este boton realizara una consulta de los registros en la base de datos."
+                + "\n3. Modificar: Este boton modificara los datos que se ingresan en los campos, cuando se hace una consulta."
+                + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
+                + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
+    }
+    private void ayudaMedicamento() {
+        JOptionPane.showMessageDialog(null, "Aqui se encuentra la ventana para el registro de medicamentos"
+                + "\nBotones "
+                + "\n1. Crear: En este boton se guardara los datos ingresados en los campos del formulario en la base de datos,"
+                + "\n                 los datos ingresados deben pertenecer a su tipo de dato correspondiente."
+                + "\n2. Consultar: Este boton realizara una consulta de los registros en la base de datos."
+                + "\n3. Modificar: Este boton modificara los datos que se ingresan en los campos, cuando se hace una consulta."
+                + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
+                + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
+    }
+    private void ayudaAlimento() {
+        JOptionPane.showMessageDialog(null, "Aqui se encuentra la ventana para el registro de alimentos"
+                + "\nBotones "
+                + "\n1. Crear: En este boton se guardara los datos ingresados en los campos del formulario en la base de datos,"
+                + "\n                 los datos ingresados deben pertenecer a su tipo de dato correspondiente."
+                + "\n2. Consultar: Este boton realizara una consulta de los registros en la base de datos."
+                + "\n3. Modificar: Este boton modificara los datos que se ingresan en los campos, cuando se hace una consulta."
+                + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
+                + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
+    }
 
     private String rutaImagenSeleccionada;
 
@@ -654,6 +687,7 @@ public class ControladorModuloProductos {
 
     // </editor-fold>
     // <editor-fold desc="Metodos para el crud de mueble">
+    
     private void crearMueble() {
         try {
             // Atributos de producto
@@ -1107,7 +1141,7 @@ public class ControladorModuloProductos {
             String formaFarmace = vistaModProducto.getCbxFormaFarmac().getSelectedItem().toString();
 
             // Validar que los campos requeridos estén llenos
-            if (nombre.isEmpty() || fechaEla == null || fechaVen == null) {
+            if (nombre.isEmpty() || fechaEla == null || fechaVen == null || formaFarmace.equals("Seleccionar")) {
                 JOptionPane.showMessageDialog(vistaModProducto, "Por favor, complete todos los campos requeridos.", "Error", JOptionPane.ERROR_MESSAGE);
                 return; // Salir del método si hay campos vacíos
             }
@@ -1154,6 +1188,7 @@ public class ControladorModuloProductos {
                         cargarIdsCamposMedicamento();
                         cargarIdsCamposMueble();
                         cargarIdsCamposRopa();
+                        cargarIdsCamposAlimento();
                         cargarIdsMedicamentoEnComboBox();
                         // Confirmar la transacción
                         conexion.commit();
@@ -1543,7 +1578,7 @@ public class ControladorModuloProductos {
             String tipoAli = vistaModProducto.getCbxTipoAlimento().getSelectedItem().toString();
 
             // Validar que los campos requeridos estén llenos
-            if (nombre.isEmpty() || fechaEla == null || fechaVen == null) {
+            if (nombre.isEmpty() || fechaEla == null || fechaVen == null || tipoAli.equals("Seleccionar")) {
                 JOptionPane.showMessageDialog(vistaModProducto, "Por favor, complete todos los campos requeridos.", "Error", JOptionPane.ERROR_MESSAGE);
                 return; // Salir del método si hay campos vacíos
             }

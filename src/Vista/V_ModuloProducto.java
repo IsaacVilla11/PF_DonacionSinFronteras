@@ -476,6 +476,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
         PanelMedicamentos = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
@@ -519,6 +520,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         tblMedicamentos = new javax.swing.JTable();
         btnLimpiar2 = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
         PanelAlimentos = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jPanel11 = new javax.swing.JPanel();
@@ -563,6 +568,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         tblAlimentos = new javax.swing.JTable();
         cbxCodigosAlimentos = new javax.swing.JComboBox<>();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -576,7 +585,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         labelTask1.setText("Modulo de productos");
         labelTask1.setToolTipText("");
         labelTask1.setCategoryFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        labelTask1.setDescription("Vendibles y donables");
+        labelTask1.setDescription("Tipo Vendibles y Donables");
         panel1.add(labelTask1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 302, -1));
 
         jTabbedPane1.setBackground(new java.awt.Color(0, 153, 204));
@@ -681,8 +690,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Codigo ropa: ");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 80, -1));
+        jLabel3.setText("ID ropa: ");
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 60, -1));
         jPanel6.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 70, 30));
 
         va1.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
@@ -903,8 +912,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         va7.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va7.setForeground(new java.awt.Color(0, 0, 0));
-        va7.setText("ID Vendible:");
-        jPanel8.add(va7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 100, -1));
+        va7.setText("ID Tipo Vendible: ");
+        jPanel8.add(va7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 100, -1));
 
         jLabel24.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
@@ -921,13 +930,13 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ID mueble: ");
         jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 70, 40));
-        jPanel8.add(txtCodigoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 80, 30));
+        jPanel8.add(txtCodigoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 80, 30));
 
         va10.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va10.setForeground(new java.awt.Color(0, 0, 0));
         va10.setText("ID Producto:");
         jPanel8.add(va10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 100, -1));
-        jPanel8.add(txtCodigoVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 80, 30));
+        jPanel8.add(txtCodigoVendible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, 80, 30));
 
         btnImagenProducto1.setBackground(new java.awt.Color(255, 255, 255));
         btnImagenProducto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
@@ -940,8 +949,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Codigo mueble: ");
-        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
+        jLabel8.setText("ID mueble: ");
+        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 70, -1));
 
         btnAyuda1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda1.setText("Ayuda");
@@ -1011,10 +1020,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va4.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va4.setForeground(new java.awt.Color(0, 0, 0));
         va4.setText("Tipo producto:  ");
-        jPanel8.add(va4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, -1, -1));
+        jPanel8.add(va4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, -1, -1));
 
         txtTipoProducto1.setText("Vendible");
-        jPanel8.add(txtTipoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 80, 30));
+        jPanel8.add(txtTipoProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 80, 30));
 
         cbxEstado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Usado", "Seminuevo", "Nuevo", "Otro" }));
         jPanel8.add(cbxEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 150, -1));
@@ -1038,6 +1047,11 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel56.setForeground(new java.awt.Color(255, 0, 0));
         jLabel56.setText("*");
         jPanel8.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 20, 20));
+
+        jLabel65.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel65.setText("$");
+        jPanel8.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 20, 30));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1165,8 +1179,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         va13.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va13.setForeground(new java.awt.Color(0, 0, 0));
-        va13.setText("ID donable: ");
-        jPanel10.add(va13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 100, -1));
+        va13.setText("ID Tipo Donable: ");
+        jPanel10.add(va13, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 90, -1));
 
         mensaje1.setBackground(new java.awt.Color(102, 255, 255));
         jPanel10.add(mensaje1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 110, 60, 10));
@@ -1174,7 +1188,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         va14.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va14.setForeground(new java.awt.Color(0, 0, 0));
         va14.setText("Tipo producto:  ");
-        jPanel10.add(va14, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, -1, -1));
+        jPanel10.add(va14, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, -1, -1));
 
         jLabel35.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
@@ -1182,21 +1196,21 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel10.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 290, -1));
 
         txtTipoProducto2.setText("Donable");
-        jPanel10.add(txtTipoProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 210, 110, 30));
+        jPanel10.add(txtTipoProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, 110, 30));
         jPanel10.add(txtCodigoMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 120, 30));
 
         jLabel36.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 0));
         jLabel36.setText("ID medicamento: ");
         jPanel10.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 130, -1));
-        jPanel10.add(txtCodigoProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 130, 110, 30));
+        jPanel10.add(txtCodigoProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 130, 110, 30));
 
         va17.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va17.setForeground(new java.awt.Color(0, 0, 0));
         va17.setText("ID producto: ");
-        jPanel10.add(va17, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 100, -1));
+        jPanel10.add(va17, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 70, -1));
         jPanel10.add(txtNombreMedicamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 240, 30));
-        jPanel10.add(txtCodigoDonable, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 110, 30));
+        jPanel10.add(txtCodigoDonable, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 110, 30));
 
         btnImagenProducto2.setBackground(new java.awt.Color(255, 255, 255));
         btnImagenProducto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/signo-de-interrogacion.png"))); // NOI18N
@@ -1209,8 +1223,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel37.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel37.setText("Codigo medicamento: ");
-        jPanel10.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
+        jLabel37.setText("ID medicamento: ");
+        jPanel10.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 100, -1));
 
         jLabel38.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
@@ -1241,9 +1255,29 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 640, 460));
 
-        btnLimpiar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
+        btnLimpiar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar2.setContentAreaFilled(false);
         jPanel10.add(btnLimpiar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, 40));
+
+        jLabel57.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel57.setText("*");
+        jPanel10.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, 20));
+
+        jLabel58.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel58.setText("*");
+        jPanel10.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 20, 20));
+
+        jLabel59.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel59.setText("*");
+        jPanel10.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 20, 20));
+
+        jLabel64.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel64.setText("*");
+        jPanel10.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 20, 20));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1345,7 +1379,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         btnAyudaCategoriaAli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyudaCategoriaAli.setContentAreaFilled(false);
-        jPanel12.add(btnAyudaCategoriaAli, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 40, 40));
+        jPanel12.add(btnAyudaCategoriaAli, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 40, 40));
 
         jSeparator11.setBackground(new java.awt.Color(0, 204, 255));
         jSeparator11.setForeground(new java.awt.Color(0, 204, 255));
@@ -1371,16 +1405,16 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         va19.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va19.setForeground(new java.awt.Color(0, 0, 0));
-        va19.setText("ID donable: ");
-        jPanel12.add(va19, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 70, -1));
+        va19.setText("ID Tipo Donable: ");
+        jPanel12.add(va19, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, -1, -1));
 
         mensaje2.setBackground(new java.awt.Color(102, 255, 255));
         jPanel12.add(mensaje2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 110, 60, 10));
 
         va21.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         va21.setForeground(new java.awt.Color(0, 0, 0));
-        va21.setText("Tipo:  ");
-        jPanel12.add(va21, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, -1, -1));
+        va21.setText("Tipo producto:  ");
+        jPanel12.add(va21, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, -1));
 
         jLabel46.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
@@ -1415,8 +1449,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         jLabel48.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel48.setText("Codigo alimento: ");
-        jPanel12.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 130, -1));
+        jLabel48.setText("ID alimento: ");
+        jPanel12.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 80, -1));
 
         btnAyuda3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda3.setText("Ayuda");
@@ -1454,7 +1488,27 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel12.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 610, -1));
 
         cbxCodigosAlimentos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel12.add(cbxCodigosAlimentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 140, 30));
+        jPanel12.add(cbxCodigosAlimentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 140, 30));
+
+        jLabel60.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel60.setText("*");
+        jPanel12.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 20, 20));
+
+        jLabel61.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel61.setText("*");
+        jPanel12.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, 20));
+
+        jLabel62.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel62.setText("*");
+        jPanel12.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 20, 20));
+
+        jLabel63.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel63.setText("*");
+        jPanel12.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 20, 20));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1609,7 +1663,16 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
