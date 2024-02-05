@@ -11,6 +11,7 @@ import java.lang.System.Logger.Level;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,49 +78,44 @@ public class ModeloAdministrador extends Administrador {
         }
     }
 
-    /* public boolean modificarPersona(String fecha) {
-        Date date = new Date();
+     public boolean actualizarAdministrador(ModeloAdministrador nuevoAdmin) {
+        String sqlActualizarPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?, direccion_usu=?, contrasenia_usu=? WHERE cedula_usu=?";
+        String sqlActualizarAdmin = "UPDATE administrador SET cargo_adm=? WHERE id_persona_adm=(SELECT id_persona FROM persona WHERE cedula_usu=?)";
 
-        SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
-        fecha = formatofecha.format(date);
-        java.sql.Date fechasql = java.sql.Date.valueOf(fecha);
         try {
-            String sqlPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?,direccion_usu=?,contrasenia_usu=? WHERE cedula_usu=?";
-            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlPersona);
+            // Convertir la fecha de nacimiento a java.sql.Date
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaNacimiento = sdf.parse(nuevoAdmin.getFechaNacimiento_usu());
+            java.sql.Date fechaNacimientoSQL = new java.sql.Date(fechaNacimiento.getTime());
 
-            statementPersona.setString(1, getNombre_usu());
-            statementPersona.setString(2, getApellido_usu());
-            statementPersona.setDate(3, fechasql); // Utilizar la fecha proporcionada como argumento
-            statementPersona.setString(4, getSexo_usu());
-            statementPersona.setString(5, getTipoSangre_usu());
-            statementPersona.setString(6, getCorreo_usu());
-            statementPersona.setString(7, getCelular_usu());
-            statementPersona.setString(8, getCiudad_usu());
-            statementPersona.setString(9, getDireccion_usu());
-            statementPersona.setString(10, getContraseña_usu());
-            statementPersona.setString(11, getCedula_usu()); // Establecer el valor del parámetro faltante
+            // Actualizar en la tabla persona
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlActualizarPersona);
+            statementPersona.setString(1, nuevoAdmin.getNombre_usu());
+            statementPersona.setString(2, nuevoAdmin.getApellido_usu());
+            statementPersona.setDate(3, fechaNacimientoSQL);
+            statementPersona.setString(4, nuevoAdmin.getSexo_usu());
+            statementPersona.setString(5, nuevoAdmin.getTipoSangre_usu());
+            statementPersona.setString(6, nuevoAdmin.getCorreo_usu());
+            statementPersona.setString(7, nuevoAdmin.getCelular_usu());
+            statementPersona.setString(8, nuevoAdmin.getCiudad_usu());
+            statementPersona.setString(9, nuevoAdmin.getDireccion_usu());
+            statementPersona.setString(10, nuevoAdmin.getContraseña_usu());
+            statementPersona.setString(11, nuevoAdmin.getCedula_usu());
 
             int rowsAffectedPersona = statementPersona.executeUpdate();
             statementPersona.close();
 
-            return rowsAffectedPersona > 0;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }*/
-    public boolean modificarAdministrador() {
-        try {
-            String sqlAdmin = "UPDATE administrador SET cargo_adm=? WHERE cedula_usu=?";
-            PreparedStatement statementAdmin = cone.getCon().prepareStatement(sqlAdmin);
-            statementAdmin.setString(1, getCargo_adm());
-            statementAdmin.setString(2, getCedula_usu());
+            // Actualizar en la tabla admin
+            PreparedStatement statementAdmin = cone.getCon().prepareStatement(sqlActualizarAdmin);
+            statementAdmin.setString(1, nuevoAdmin.getCargo_adm());
+            statementAdmin.setString(2, nuevoAdmin.getCedula_usu());
 
             int rowsAffectedAdmin = statementAdmin.executeUpdate();
             statementAdmin.close();
 
-            return rowsAffectedAdmin > 0;
-        } catch (SQLException ex) {
+            // Retornar true si se ha actualizado al menos una fila en ambas tablas
+            return rowsAffectedPersona > 0 && rowsAffectedAdmin > 0;
+        } catch (ParseException | SQLException ex) {
             ex.printStackTrace();
             return false;
         }

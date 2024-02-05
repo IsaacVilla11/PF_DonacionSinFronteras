@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -70,6 +71,49 @@ public class ModeloComprador extends Comprador {
         }
     }
 
+    public boolean actualizarComprador(ModeloComprador nuevoComprador) {
+        String sqlActualizarPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?, direccion_usu=?, contrasenia_usu=? WHERE cedula_usu=?";
+        String sqlActualizarComprador = "UPDATE comprador SET metodopago_com=?, estadocivil_com=? WHERE id_persona_com=(SELECT id_persona FROM persona WHERE cedula_usu=?)";
+
+        try {
+            // Convertir la fecha de nacimiento a java.sql.Date
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaNacimiento = sdf.parse(nuevoComprador.getFechaNacimiento_usu());
+            java.sql.Date fechaNacimientoSQL = new java.sql.Date(fechaNacimiento.getTime());
+
+            // Actualizar en la tabla persona
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlActualizarPersona);
+            statementPersona.setString(1, nuevoComprador.getNombre_usu());
+            statementPersona.setString(2, nuevoComprador.getApellido_usu());
+            statementPersona.setDate(3, fechaNacimientoSQL);
+            statementPersona.setString(4, nuevoComprador.getSexo_usu());
+            statementPersona.setString(5, nuevoComprador.getTipoSangre_usu());
+            statementPersona.setString(6, nuevoComprador.getCorreo_usu());
+            statementPersona.setString(7, nuevoComprador.getCelular_usu());
+            statementPersona.setString(8, nuevoComprador.getCiudad_usu());
+            statementPersona.setString(9, nuevoComprador.getDireccion_usu());
+            statementPersona.setString(10, nuevoComprador.getContraseña_usu());
+            statementPersona.setString(11, nuevoComprador.getCedula_usu());
+
+            int rowsAffectedPersona = statementPersona.executeUpdate();
+            statementPersona.close();
+
+            // Actualizar en la tabla comprador
+            PreparedStatement statementComprador = cone.getCon().prepareStatement(sqlActualizarComprador);
+            statementComprador.setString(1, nuevoComprador.getMetodoPago_com());
+            statementComprador.setString(2, nuevoComprador.getEstadoCivil_com());
+            statementComprador.setString(3, nuevoComprador.getCedula_usu());
+
+            int rowsAffectedAdmin = statementComprador.executeUpdate();
+            statementComprador.close();
+
+            // Retornar true si se ha actualizado al menos una fila en ambas tablas
+            return rowsAffectedPersona > 0 && rowsAffectedAdmin > 0;
+        } catch (ParseException | SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
     public List<Comprador> ListaComprador() {
         ConexionPg cone = new ConexionPg();//Conectamos a la base
         String sqls = "SELECT * FROM persona per JOIN comprador compra ON per.id_persona  = compra.id_persona_com";

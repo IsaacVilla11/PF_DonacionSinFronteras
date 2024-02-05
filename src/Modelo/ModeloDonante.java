@@ -9,6 +9,7 @@ import com.sun.jdi.connect.spi.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -70,6 +71,50 @@ public class ModeloDonante extends Donante{
         }
     }
     
+    public boolean actualizarDonante(ModeloDonante nuevoDonante) {
+        String sqlActualizarPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?, direccion_usu=?, contrasenia_usu=? WHERE cedula_usu=?";
+        String sqlActualizarDonante = "UPDATE donante SET motivo_dont=?, entidad_dont=?, proyecto_dont=? WHERE id_persona_dont=(SELECT id_persona FROM persona WHERE cedula_usu=?)";
+
+        try {
+            // Convertir la fecha de nacimiento a java.sql.Date
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaNacimiento = sdf.parse(nuevoDonante.getFechaNacimiento_usu());
+            java.sql.Date fechaNacimientoSQL = new java.sql.Date(fechaNacimiento.getTime());
+
+            // Actualizar en la tabla persona
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlActualizarPersona);
+            statementPersona.setString(1, nuevoDonante.getNombre_usu());
+            statementPersona.setString(2, nuevoDonante.getApellido_usu());
+            statementPersona.setDate(3, fechaNacimientoSQL);
+            statementPersona.setString(4, nuevoDonante.getSexo_usu());
+            statementPersona.setString(5, nuevoDonante.getTipoSangre_usu());
+            statementPersona.setString(6, nuevoDonante.getCorreo_usu());
+            statementPersona.setString(7, nuevoDonante.getCelular_usu());
+            statementPersona.setString(8, nuevoDonante.getCiudad_usu());
+            statementPersona.setString(9, nuevoDonante.getDireccion_usu());
+            statementPersona.setString(10, nuevoDonante.getContraseña_usu());
+            statementPersona.setString(11, nuevoDonante.getCedula_usu());
+
+            int rowsAffectedPersona = statementPersona.executeUpdate();
+            statementPersona.close();
+
+            // Actualizar en la tabla donate
+            PreparedStatement statementDonante = cone.getCon().prepareStatement(sqlActualizarDonante);
+            statementDonante.setString(1, nuevoDonante.getMotivo_dont());
+            statementDonante.setString(2, nuevoDonante.getEntidad_dont());
+            statementDonante.setString(3, nuevoDonante.getProyecto_dont());
+            statementDonante.setString(4, nuevoDonante.getCedula_usu());
+
+            int rowsAffectedDonante = statementDonante.executeUpdate();
+            statementDonante.close();
+
+            // Retornar true si se ha actualizado al menos una fila en ambas tablas
+            return rowsAffectedPersona > 0 && rowsAffectedDonante > 0;
+        } catch (ParseException | SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
     public Donante buscarDonante(String cedula) throws SQLException {
 
         String sqlPersona = "SELECT * FROM persona WHERE cedula_usu = ?";
@@ -230,5 +275,24 @@ public class ModeloDonante extends Donante{
             java.util.logging.Logger.getLogger(ModeloComprador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             return null;
         }
+    }
+    
+    // verificar que no se repita uuna llave primaria 
+    public boolean verificarDuplicidadCedula(String cedulaDonant) {
+        String sql = "SELECT COUNT(*) AS count FROM donante WHERE cedula_usu = ?";
+        try {
+            PreparedStatement statement = cone.getCon().prepareStatement(sql);
+            statement.setString(1, cedulaDonant);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                return count > 0; // Si count > 0, significa que ya existe un registro con ese código
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 }
