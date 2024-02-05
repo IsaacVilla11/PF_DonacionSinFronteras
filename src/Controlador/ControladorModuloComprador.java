@@ -24,7 +24,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -119,24 +121,38 @@ public class ControladorModuloComprador {
         ShowJPanel(view);
         cargarTablaReport(view);
         view.getBtnImprimir().addActionListener(e -> {
-            imprimirReporteComp();
+            imprimirReporteComp(view);
         });
         
     }
 
     // metodo para generar reporte de compras en jasper
-    public void imprimirReporteComp() {
+    public void imprimirReporteComp(VC_Reporte view) {
+        ModeloEncabezadoFact enca=new ModeloEncabezadoFact();
+         
+           // Asigna el ID del comprador al encabezado de factura
+            int idPersona=enca.traerCodigoDePersonaCrear(cedula);
+            
         ConexionPg connection = new ConexionPg();
         try {
             JasperReport reporte = (JasperReport) JRLoader.loadObject(
                     getClass().getResource("/Vista/Reportes/reporteCompraProductos.jasper") // colocar el nombre del archivo.jasper
             );
 
-            JasperPrint jp = JasperFillManager.fillReport(
+            /*JasperPrint jp = JasperFillManager.fillReport(
                     reporte,
                     null,
                     connection.getCon());
             JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);*/
+            
+             Map<String,Object> parametros=new HashMap<String,Object>();
+         parametros.put("IDpersona", idPersona);
+         JasperPrint jp=JasperFillManager.fillReport( 
+                 reporte,
+                 parametros,
+                 connection.getCon());
+            JasperViewer jv=new JasperViewer(jp, false);
             jv.setVisible(true);
         } catch (Exception ex) {
             System.out.println(ex);
