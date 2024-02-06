@@ -66,7 +66,7 @@ public class ControladorModuloComprador {
         vistaModCom.getBtnInicio().addActionListener(l -> initVentanaInicio());
         vistaModCom.getBtnProductos().addActionListener(l -> initProductoVenta());
         vistaModCom.getBtnReporte().addActionListener(l -> initReporteCompras());
-
+        vistaModCom.getBtnFactura().addActionListener(l->imprimirFacturaComp());
     }
 
     public void cargarTablaReport(VC_Reporte report){
@@ -99,6 +99,7 @@ public class ControladorModuloComprador {
         VC_Inicio view = new VC_Inicio();
         ShowJPanel(view);
     }
+    
 
     public void initProductoVenta() {
         VC_Productos view = new VC_Productos();
@@ -129,6 +130,32 @@ public class ControladorModuloComprador {
         
     }
 
+    // metodo para generar reporte de compras en jasper
+    public void imprimirFacturaComp() {
+        ModeloEncabezadoFact enca=new ModeloEncabezadoFact();
+         
+           // Asigna el ID del comprador al encabezado de factura
+            int idPersona=enca.traerCodigoDePersonaCrear(cedula);
+            
+        ConexionPg connection = new ConexionPg();
+        try {
+            JasperReport reporte = (JasperReport) JRLoader.loadObject(
+                    getClass().getResource("/Vista/Reportes/Factura.jasper") // colocar el nombre del archivo.jasper
+            );
+            
+             Map<String,Object> parametros=new HashMap<String,Object>();
+         parametros.put("IDpersona", idPersona);
+         JasperPrint jp=JasperFillManager.fillReport( 
+                 reporte,
+                 parametros,
+                 connection.getCon());
+            JasperViewer jv=new JasperViewer(jp, false);
+            jv.setVisible(true);
+        } catch (Exception ex) {
+            System.out.println(ex);
+            System.out.println("NO se abre el report");
+        }
+    }
     // metodo para generar reporte de compras en jasper
     public void imprimirReporteComp(VC_Reporte view) {
         ModeloEncabezadoFact enca=new ModeloEncabezadoFact();
