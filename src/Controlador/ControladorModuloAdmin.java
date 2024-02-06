@@ -13,6 +13,8 @@ import Vista.Registro_Camion;
 import Vista.Registro_Comprador;
 import Vista.Registro_Conductor;
 import Vista.Registro_trasporte;
+import Vista.VA_Solicitudes;
+import Vista.V_EstadoSolicitud;
 import Vista.V_ModuloProducto;
 import Vista.V_Principal;
 import Vista.crudAdministrador;
@@ -58,6 +60,7 @@ public class ControladorModuloAdmin {
         vistaModAdmin.getJmiCrudSolicitante().addActionListener(l -> mostrarCrudSolicitante());
         vistaModAdmin.getJmiRegistroTransporte().addActionListener(l -> mostrarRTrasporte());
         vistaModAdmin.getRcamiones().addActionListener(l -> mostrarCrudCamion());
+        vistaModAdmin.getBtnSolicitudes().addActionListener(l -> mostrarSolicitudes());
 
         //Notocar
         vistaModAdmin.getJmitemRegDonacion().addActionListener(l -> mostrarRegistroDonante());
@@ -280,4 +283,35 @@ public class ControladorModuloAdmin {
         ControladorCrudSolicitante control = new ControladorCrudSolicitante(vista);
         control.iniciarControl();
     }
+    
+    public void mostrarSolicitudes() {
+        vistaModAdmin.dispose();
+        VA_Solicitudes vista = new VA_Solicitudes();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        vista.getBtnAprobar().addActionListener(l -> mostrarEstadoSoli()); 
+        vista.getBtnRegresar().addActionListener(l -> regresesarMenuAdmin()); 
+        //ControladorModuloSolicitante control = new ControladorModuloSolicitante(vista);
+        //control.iniciarControl();
+    }
+    
+    public void mostrarEstadoSoli() {
+        vistaModAdmin.dispose();
+        V_EstadoSolicitud vista = new V_EstadoSolicitud();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        vista.getBtnRegresar().addActionListener(l -> regresesarMenuAdmin());
+        //ControladorCrudSolicitante control = new ControladorCrudSolicitante(vista);
+        //control.iniciarControl();
+    }
+    public void regresesarMenuAdmin() {
+        //vistaModAdmin.dispose();
+        vistaAdministrador vista = new vistaAdministrador();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+    }
+    
 }
