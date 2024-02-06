@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class ControladorLoginSolicitante {
 
     private Login_Solicitante vistaLogSoli;
+    String cedulaSol;
 
     public ControladorLoginSolicitante(Login_Solicitante vistaLogSoli) {
         this.vistaLogSoli = vistaLogSoli;
@@ -35,7 +36,7 @@ public class ControladorLoginSolicitante {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
-        ControladorModuloSolicitante control = new ControladorModuloSolicitante(vista);
+        ControladorModuloSolicitante control = new ControladorModuloSolicitante(vista, cedulaSol);
         control.iniciarControl();
     }
 
