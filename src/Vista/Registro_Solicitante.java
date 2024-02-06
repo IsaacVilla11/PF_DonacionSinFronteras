@@ -1,6 +1,11 @@
 package Vista;
 
+import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class Registro_Solicitante extends javax.swing.JFrame {
 
@@ -16,10 +21,60 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         return btnRegresar;
     }
 
+    public JComboBox<String> getCbBoxSangre() {
+        return cbBoxSangre;
+    }
+
+    public JComboBox<String> getCboxciudad_soli() {
+        return cboxciudad_soli;
+    }
+
+    public JDateChooser getjDateChooser1() {
+        return jDateChooser1;
+    }
+
+    public JRadioButton getRbH() {
+        return rbH;
+    }
+
+    public JRadioButton getRbM() {
+        return rbM;
+    }
+
+    public JPasswordField getTxtContra_soli() {
+        return txtContra_soli;
+    }
+
+    public JTextField getTxtapellido_soli() {
+        return txtapellido_soli;
+    }
+
+    public JTextField getTxtcedula_soli() {
+        return txtcedula_soli;
+    }
+
+    public JTextField getTxtcelular_soli() {
+        return txtcelular_soli;
+    }
+
+    public JTextField getTxtcorreo_soli() {
+        return txtcorreo_soli;
+    }
+
+    public JTextField getTxtdireccion() {
+        return txtdireccion;
+    }
+
+    public JTextField getTxtnombre_soli() {
+        return txtnombre_soli;
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        G_sexo = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -33,7 +88,6 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
         txtcedula_soli = new javax.swing.JTextField();
         rbH = new javax.swing.JRadioButton();
         rbM = new javax.swing.JRadioButton();
@@ -41,15 +95,12 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         cboxciudad_soli = new javax.swing.JComboBox<>();
         txtContra_soli = new javax.swing.JPasswordField();
         btnRegresar = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
         txtnombre_soli = new javax.swing.JTextField();
         txtapellido_soli = new javax.swing.JTextField();
         txtcorreo_soli = new javax.swing.JTextField();
         txtcelular_soli = new javax.swing.JTextField();
         txtdireccion = new javax.swing.JTextField();
-        txtnum_solicitud = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
-        txtcodigo_solicitn = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
@@ -106,17 +157,15 @@ public class Registro_Solicitante extends javax.swing.JFrame {
 
         jLabel26.setForeground(new java.awt.Color(0, 0, 102));
         jLabel26.setText("CONTRASEÑA:");
-        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
-
-        jLabel27.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel27.setText("NUMERO DE SOLICITUD:");
-        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, -1, -1));
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
         jPanel2.add(txtcedula_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 190, -1));
 
+        G_sexo.add(rbH);
         rbH.setForeground(new java.awt.Color(0, 0, 102));
         rbH.setText("Hombre");
         jPanel2.add(rbH, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
+        G_sexo.add(rbM);
         rbM.setForeground(new java.awt.Color(0, 0, 102));
         rbM.setText("Mujer");
         jPanel2.add(rbM, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
@@ -130,7 +179,7 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         jPanel2.add(cboxciudad_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 122, -1));
 
         txtContra_soli.setForeground(new java.awt.Color(0, 0, 102));
-        jPanel2.add(txtContra_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 178, -1));
+        jPanel2.add(txtContra_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 178, -1));
 
         btnRegresar.setBackground(new java.awt.Color(20, 51, 166));
         btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -138,16 +187,11 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         btnRegresar.setText("REGRESAR");
         btnRegresar.setBorderPainted(false);
         jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 160, 40));
-
-        jLabel28.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel28.setText("CODIGO:");
-        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, -1, -1));
         jPanel2.add(txtnombre_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 190, -1));
         jPanel2.add(txtapellido_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 190, -1));
         jPanel2.add(txtcorreo_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 190, -1));
         jPanel2.add(txtcelular_soli, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 178, -1));
         jPanel2.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 178, -1));
-        jPanel2.add(txtnum_solicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 55, -1));
 
         btnRegistrar.setBackground(new java.awt.Color(20, 51, 166));
         btnRegistrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -155,7 +199,6 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         btnRegistrar.setText("REGISTRARME");
         btnRegistrar.setBorderPainted(false);
         jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 150, 40));
-        jPanel2.add(txtcodigo_solicitn, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 50, 54, -1));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 29, 700, 10));
 
         jDateChooser1.setForeground(new java.awt.Color(0, 0, 102));
@@ -169,7 +212,7 @@ public class Registro_Solicitante extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -177,6 +220,7 @@ public class Registro_Solicitante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup G_sexo;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cbBoxSangre;
@@ -194,8 +238,6 @@ public class Registro_Solicitante extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton rbH;
@@ -204,10 +246,8 @@ public class Registro_Solicitante extends javax.swing.JFrame {
     private javax.swing.JTextField txtapellido_soli;
     private javax.swing.JTextField txtcedula_soli;
     private javax.swing.JTextField txtcelular_soli;
-    private javax.swing.JTextField txtcodigo_solicitn;
     private javax.swing.JTextField txtcorreo_soli;
     private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtnombre_soli;
-    private javax.swing.JTextField txtnum_solicitud;
     // End of variables declaration//GEN-END:variables
 }
