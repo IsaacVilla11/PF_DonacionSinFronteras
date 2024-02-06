@@ -4,6 +4,7 @@ import com.sun.jdi.connect.spi.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -95,6 +96,41 @@ public class ModeloSolicitante extends Solicitante{
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ModeloSolicitante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             return null;
+        }
+    }
+    
+    public boolean actualizarSolicitante(ModeloSolicitante nuevoSolicitante) {
+        String sqlActualizarPersona = "UPDATE persona SET nombre_usu=?, apellido_usu=?, fechaNacimiento_usu=?, sexo_usu=?, tipoSangre_usu=?, correo_usu=?, celular_usu=?, ciudad_usu=?, direccion_usu=?, contrasenia_usu=? WHERE cedula_usu=?";
+
+        try {
+            // Convertir la fecha de nacimiento a java.sql.Date
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date fechaNacimiento = sdf.parse(nuevoSolicitante.getFechaNacimiento_usu());
+            java.sql.Date fechaNacimientoSQL = new java.sql.Date(fechaNacimiento.getTime());
+
+            // Actualizar en la tabla persona
+            PreparedStatement statementPersona = cone.getCon().prepareStatement(sqlActualizarPersona);
+            statementPersona.setString(1, nuevoSolicitante.getNombre_usu());
+            statementPersona.setString(2, nuevoSolicitante.getApellido_usu());
+            statementPersona.setDate(3, fechaNacimientoSQL);
+            statementPersona.setString(4, nuevoSolicitante.getSexo_usu());
+            statementPersona.setString(5, nuevoSolicitante.getTipoSangre_usu());
+            statementPersona.setString(6, nuevoSolicitante.getCorreo_usu());
+            statementPersona.setString(7, nuevoSolicitante.getCelular_usu());
+            statementPersona.setString(8, nuevoSolicitante.getCiudad_usu());
+            statementPersona.setString(9, nuevoSolicitante.getDireccion_usu());
+            statementPersona.setString(10, nuevoSolicitante.getContraseña_usu());
+            statementPersona.setString(11, nuevoSolicitante.getCedula_usu());
+
+            int rowsAffectedPersona = statementPersona.executeUpdate();
+            statementPersona.close();
+
+
+            // Retornar true si se ha actualizado al menos una fila en ambas tablas
+            return rowsAffectedPersona > 0;
+        } catch (ParseException | SQLException ex) {
+            ex.printStackTrace();
+            return false;
         }
     }
     
