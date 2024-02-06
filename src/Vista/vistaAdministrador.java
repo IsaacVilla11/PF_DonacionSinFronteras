@@ -45,6 +45,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmiCrudSolicitante;
     }
 
+    public JButton getBtnSolicitudes() {
+        return BtnSolicitudes;
+    }
+
     
     public JMenuItem getJmiCrudAdmin() {
         return jmiCrudAdmin;
@@ -128,7 +132,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnDonaciones = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BtnSolicitudes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         btnCerrarSesion = new javax.swing.JButton();
@@ -217,12 +221,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jButton6.setContentAreaFilled(false);
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, -1));
 
-        jButton5.setForeground(new java.awt.Color(20, 51, 166));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/mensajes.png"))); // NOI18N
-        jButton5.setText("Solicitudes");
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 30));
+        BtnSolicitudes.setForeground(new java.awt.Color(20, 51, 166));
+        BtnSolicitudes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/mensajes.png"))); // NOI18N
+        BtnSolicitudes.setText("Solicitudes");
+        BtnSolicitudes.setBorderPainted(false);
+        BtnSolicitudes.setContentAreaFilled(false);
+        jPanel1.add(BtnSolicitudes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 30));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 140, 100));
 
@@ -458,6 +462,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnSolicitudes;
     private javax.swing.JMenuItem RConductor;
     private javax.swing.JMenuItem Rcamiones;
     private javax.swing.JButton btnCA;
@@ -468,7 +473,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnLugarAyuda;
     private javax.swing.JButton btnTables;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
