@@ -153,12 +153,10 @@ public class ControladorCrudSolicitante {
                     // Asignar el id_persona al modeloSolicitante
                     solictnt.setId_persona(idPersona);
 
-                    // Resto del código para validar y asignar los datos al modelo admin...
-//                    String cargo = vistaCrudSolicitante.getCbBoxCargo().getSelectedItem().toString();
-//                    solictnt.setCargo_adm(cargo);
                     if (solictnt.InsertarSolicitante()) {
                         JOptionPane.showMessageDialog(vistaCrudSolicitante, "Se guardó exitosamente");
                         cargarTabla();
+                        limpiarCampos();
                     } else {
                         JOptionPane.showMessageDialog(vistaCrudSolicitante, "No se pudo registrar el solicitante");
                     }
@@ -174,109 +172,105 @@ public class ControladorCrudSolicitante {
         }
     }
     
-//    public void ModificarSolicitante() {
-//        ModeloSolicitante solictnt = new ModeloSolicitante();
-//        ModeloUsuario per = new ModeloUsuario();
-//
-//        try {
-//            String cedula = vistaCrudSolicitante.getTxtcedula_soli().getText();
-//
-//            String nombre = vistaCrudSolicitante.getTxtnombre_soli().getText();
-//            if (!Validaciones.ValidarNomApe(nombre)) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Nombre incorrecto. Ingrese de nuevo");
-//                return;
-//            }
-//            per.setNombre_usu(nombre);
-//
-//            String apellido = vistaCrudSolicitante.getTxtapellido_soli().getText();
-//            if (!Validaciones.ValidarNomApe(apellido)) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Apellido incorrecto. Ingrese de nuevo");
-//                return;
-//            }
-//            per.setApellido_usu(apellido);
-//
-//            String genero;
-//            if (vistaCrudSolicitante.getRbH().isSelected()) {
-//                genero = "Hombre";
-//            } else if (vistaCrudSolicitante.getRbM().isSelected()) {
-//                genero = "Mujer";
-//            } else {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Seleccione un género");
-//                return;
-//            }
-//            per.setSexo_usu(genero);
-//
-//            String celular = vistaCrudSolicitante.getTxtcelular_soli().getText();
-//            if (!Validaciones.ValidarCedula(celular)) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "# Celular no válido. Ingrese de nuevo");
-//                return;
-//            }
-//            per.setCelular_usu(celular);
-//
-//            String correo = vistaCrudSolicitante.getTxtcorreo_soli().getText();
-//            if (!Validaciones.ValidarCorreo(correo)) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Correo no válido. Ingrese de nuevo");
-//                return;
-//            }
-//            per.setCorreo_usu(correo);
-//
-//            String tipoSangre = vistaCrudSolicitante.getCbBoxSangre().getSelectedItem().toString();
-//            per.setTipoSangre_usu(tipoSangre);
-//
-//            String ciudad = (String) vistaCrudSolicitante.getCboxciudad_soli().getSelectedItem();
-//            per.setCiudad_usu(ciudad);
-//
-//            // Obtener fecha de nacimiento del JCalendar
-//            String dia = Integer.toString(vistaCrudSolicitante.getF_nac_soli().getCalendar().get(Calendar.DAY_OF_MONTH));
-//            String mes = Integer.toString(vistaCrudSolicitante.getF_nac_soli().getCalendar().get(Calendar.MONTH) + 1);
-//            String año = Integer.toString(vistaCrudSolicitante.getF_nac_soli().getCalendar().get(Calendar.YEAR));
-//            String FechaNacimiento = (dia + "-" + mes + "-" + año);
-//
-//            if (vistaCrudSolicitante.getF_nac_soli() == null) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Seleccione una fecha de nacimiento");
-//                return; // O realiza alguna otra acción apropiada para manejar el error
-//            }
-//            per.setFechaNacimiento_usu(FechaNacimiento);
-//
-//            String direccion = vistaCrudSolicitante.getTxtdireccion().getText();
-//            if (!Validaciones.ValidarNomApe(direccion)) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Dirección incorrecta. Ingrese de nuevo");
-//                return;
-//            }
-//            per.setDireccion_usu(direccion);
-//
-//            String contraseniaSolctnt = vistaCrudSolicitante.getTxtContra_soli().getText();
-//            if (!Validaciones.ValidarContrasena(contraseniaSolctnt)) {
-//                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Contraseña no valida. Ingrese de nuevo");
-//                return;
-//            }
-//            per.setContraseña_usu(contraseniaSolctnt);
-//
-//            if (per.InsertarPersona(FechaNacimiento)) {
-//                // Obtener el id_persona recién insertado
-//                int idPersona = per.traerCodigoDePersonaCrear(cedula);
-//
-//                if (idPersona > 0) {
-//                    // Asignar el id_persona al modeloSolicitante
-//                    solictnt.setId_persona(idPersona);
-//
-//                    if (solictnt.InsertarSolicitante()) {
-//                        JOptionPane.showMessageDialog(vistaCrudSolicitante, "Se modifico exitosamente");
-//                        cargarTabla();
-//                    } else {
-//                        JOptionPane.showMessageDialog(vistaCrudSolicitante, "No se pudo modifico el solicitante");
-//                    }
-//                } else {
-//                    JOptionPane.showMessageDialog(vistaCrudSolicitante, "No se pudo obtener el id_persona");
-//                }
-//            } else {
-////                JOptionPane.showMessageDialog(vistaCrudSolicitante, "No se pudo modifico la persona");
-//            }
-//        } catch (Exception e) {
-//            // Manejo de la excepción
-//            // Resto del código para manejar la excepción...
-//        }
-//    }
+    public void modificarComprador(){
+        ModeloSolicitante SolicitanteActualizado=new ModeloSolicitante();
+         try {
+            String cedula = vistaCrudSolicitante.getTxtcedula_soli().getText();
+            if (!Validaciones.ValidarCedula(cedula)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Cédula incorrecta. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setCedula_usu(cedula);
+            // Modificar los datos de la persona
+            String nombre = vistaCrudSolicitante.getTxtnombre_soli().getText();
+            if (!Validaciones.ValidarNomApe(nombre)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Nombre incorrecto. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setNombre_usu(nombre);
+
+            String apellido = vistaCrudSolicitante.getTxtapellido_soli().getText();
+            if (!Validaciones.ValidarNomApe(apellido)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Apellido incorrecto. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setApellido_usu(apellido);
+
+            String genero;
+            if (vistaCrudSolicitante.getRbH().isSelected()) {
+                genero = "Hombre";
+            } else if (vistaCrudSolicitante.getRbM().isSelected()) {
+                genero = "Mujer";
+            } else {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Seleccione un género");
+                return;
+            }
+            SolicitanteActualizado.setSexo_usu(genero);
+
+            String celular = vistaCrudSolicitante.getTxtcelular_soli().getText();
+            if (!Validaciones.ValidarCedula(celular)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "# Celular no válido. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setCelular_usu(celular);
+
+            String correo = vistaCrudSolicitante.getTxtcorreo_soli().getText();
+            if (!Validaciones.ValidarCorreo(correo)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Correo no válido. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setCorreo_usu(correo);
+
+            String tipoSangre = vistaCrudSolicitante.getCbBoxSangre().getSelectedItem().toString();
+            SolicitanteActualizado.setTipoSangre_usu(tipoSangre);
+
+            String ciudad = (String) vistaCrudSolicitante.getCboxciudad_soli().getSelectedItem();
+            SolicitanteActualizado.setCiudad_usu(ciudad);
+
+            // Obtener fecha de nacimiento del JCalendar
+            String dia = Integer.toString(vistaCrudSolicitante.getF_nac_soli().getCalendar().get(Calendar.DAY_OF_MONTH));
+            String mes = Integer.toString(vistaCrudSolicitante.getF_nac_soli().getCalendar().get(Calendar.MONTH) + 1);
+            String año = Integer.toString(vistaCrudSolicitante.getF_nac_soli().getCalendar().get(Calendar.YEAR));
+            String FechaNacimiento = (dia + "-" + mes + "-" + año);
+
+            if (vistaCrudSolicitante.getF_nac_soli() == null) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Seleccione una fecha de nacimiento");
+                return; // O realiza alguna otra acción apropiada para manejar el error
+            }
+            SolicitanteActualizado.setFechaNacimiento_usu(FechaNacimiento);
+
+            String direccion = vistaCrudSolicitante.getTxtdireccion().getText();
+            if (!Validaciones.ValidarNomApe(direccion)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Dirección incorrecta. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setDireccion_usu(direccion);
+
+            String contraseniaAdmi = vistaCrudSolicitante.getTxtContra_soli().getText();
+            if (!Validaciones.ValidarContrasena(contraseniaAdmi)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Contraseña no valida. Ingrese de nuevo");
+                return;
+            }
+            SolicitanteActualizado.setContraseña_usu(contraseniaAdmi);
+
+            // Llamar al método de actualización en el modeloSolicitante
+            if (modSolictnt.actualizarSolicitante(SolicitanteActualizado)) {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Cambios guardados exitosamente");
+                vistaCrudSolicitante.getBtnCrear().setEnabled(true);
+                vistaCrudSolicitante.getTxtcedula_soli().setEnabled(true);
+                cargarTabla();
+                limpiarCampos();
+                
+            } else {
+                JOptionPane.showMessageDialog(vistaCrudSolicitante, "Error al guardar cambios");
+            }
+
+        } catch (Exception e) {
+            // Manejo de la excepción
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(vistaCrudSolicitante, "Error al intentar guardar cambios");
+        }
+    }
     
     private void eliminarSolictnt() {
         String cedula = vistaCrudSolicitante.getTxtcedula_soli().getText();
@@ -435,5 +429,20 @@ public class ControladorCrudSolicitante {
         }
 
         vistaCrudSolicitante.getTabla_Solicitante().setModel(tb);
+    }
+    
+    public void limpiarCampos() {
+        vistaCrudSolicitante.getTxtcedula_soli().setText("");
+        vistaCrudSolicitante.getTxtnombre_soli().setText("");
+        vistaCrudSolicitante.getTxtapellido_soli().setText("");
+        vistaCrudSolicitante.getRbH().setSelected(false);
+        vistaCrudSolicitante.getRbM().setSelected(false);
+        vistaCrudSolicitante.getTxtcelular_soli().setText("");
+        vistaCrudSolicitante.getTxtcorreo_soli().setText("");
+        vistaCrudSolicitante.getTxtdireccion().setText("");
+        vistaCrudSolicitante.getTxtContra_soli().setText("");
+        vistaCrudSolicitante.getCbBoxSangre().setSelectedIndex(0);  // Puedes ajustar el índice según tu necesidad
+        vistaCrudSolicitante.getCboxciudad_soli().setSelectedIndex(0); // Puedes ajustar el índice según tu necesidad
+        vistaCrudSolicitante.getF_nac_soli().setCalendar(null);
     }
 }
