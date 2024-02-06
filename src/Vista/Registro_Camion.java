@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ASUS TUF
@@ -16,6 +21,63 @@ public class Registro_Camion extends javax.swing.JFrame {
     public Registro_Camion() {
         initComponents();
     }
+
+    public JComboBox<String> getCombo_donductores() {
+        return combo_donductores;
+    }
+
+    public JTextField getTxtcolor() {
+        return txtcolor;
+    }
+
+    public JTextField getTxtid() {
+        return txtid;
+    }
+
+    public JTextField getTxtmarca() {
+        return txtmarca;
+    }
+
+    public JTextField getTxtmodelo() {
+        return txtmodelo;
+    }
+
+    public JTextField getTxtpeso() {
+        return txtpeso;
+    }
+
+    
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public JTable getTablacamiones() {
+        return tablacamiones;
+    }
+
+    public JButton getBtnConsultar() {
+        return btnConsultar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public JButton getBtnModificar() {
+        return btnModificar;
+    }
+
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+    
+
+
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,25 +98,25 @@ public class Registro_Camion extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jTextField10 = new javax.swing.JTextField();
+        txtmarca = new javax.swing.JTextField();
+        txtid = new javax.swing.JTextField();
+        txtpeso = new javax.swing.JTextField();
+        txtcolor = new javax.swing.JTextField();
+        btnVolver = new javax.swing.JButton();
+        txtmodelo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablacamiones = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        combo_donductores = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         panel2 = new org.edisoncor.gui.panel.Panel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -100,39 +162,38 @@ public class Registro_Camion extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 102));
         panel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 110, -1));
-        panel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 196, 30));
-        panel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 100, 30));
-        panel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 200, 30));
-        panel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 196, 30));
+        panel1.add(txtmarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 196, 30));
+        panel1.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 100, 30));
+        panel1.add(txtpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 200, 30));
+        panel1.add(txtcolor, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 196, 30));
 
-        jButton5.setBackground(new java.awt.Color(51, 51, 255));
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("VOLVER");
-        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.setBorderPainted(false);
-        panel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, 80, 30));
-        panel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 200, 30));
+        btnVolver.setBackground(new java.awt.Color(51, 51, 255));
+        btnVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("VOLVER");
+        btnVolver.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVolver.setBorderPainted(false);
+        panel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, 80, 30));
+        panel1.add(txtmodelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 200, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablacamiones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Cedula", "Marca", "Color", "Modelo", "Peso Maximo"
+                "ID", "Marca", "Color", "Modelo", "Peso Maximo", "Conductor"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablacamiones);
 
         panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 740, 120));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 102));
         jLabel14.setText("ID");
-        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 50, -1));
+        panel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 50, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        panel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 200, -1));
+        panel1.add(combo_donductores, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 200, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 102));
@@ -145,21 +206,13 @@ public class Registro_Camion extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
         jLabel5.setText("Que desea hacer?");
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 51));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
-        jButton4.setText("CONSULTAR");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setBorderPainted(false);
-
-        jButton7.setBackground(new java.awt.Color(0, 0, 51));
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
-        jButton7.setText("MODIFICAR");
-        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.setBorderPainted(false);
+        btnModificar.setBackground(new java.awt.Color(0, 0, 51));
+        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
+        btnModificar.setText("MODIFICAR");
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setBorderPainted(false);
 
         jButton6.setBackground(new java.awt.Color(51, 0, 51));
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -169,13 +222,18 @@ public class Registro_Camion extends javax.swing.JFrame {
         jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.setBorderPainted(false);
 
-        jButton8.setBackground(new java.awt.Color(0, 0, 51));
-        jButton8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
-        jButton8.setText("ELIMINAR");
-        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton8.setBorderPainted(false);
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setBorderPainted(false);
+
+        btnGuardar.setBackground(new java.awt.Color(0, 0, 51));
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
+        btnGuardar.setText("CREAR");
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -190,13 +248,17 @@ public class Registro_Camion extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panel2Layout.createSequentialGroup()
+                    .addGap(50, 50, 50)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(50, 50, 50)))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,27 +267,30 @@ public class Registro_Camion extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addGap(36, 36, 36)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
+            .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panel2Layout.createSequentialGroup()
+                    .addGap(177, 177, 177)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(178, Short.MAX_VALUE)))
         );
 
-        panel1.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 60, 240, 400));
+        panel1.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 240, 400));
 
-        jButton9.setBackground(new java.awt.Color(0, 204, 0));
-        jButton9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
-        jButton9.setText("Guardar");
-        jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton9.setBorderPainted(false);
-        panel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 140, 39));
+        btnConsultar.setBackground(new java.awt.Color(0, 0, 51));
+        btnConsultar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/consulta.png"))); // NOI18N
+        btnConsultar.setText("CONSULTAR");
+        btnConsultar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnConsultar.setBorderPainted(false);
+        panel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, 140, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,48 +309,48 @@ public class Registro_Camion extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro_Camion().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Registro_Camion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Registro_Camion().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IMAGEN;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JComboBox<String> combo_donductores;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -299,13 +364,13 @@ public class Registro_Camion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField9;
     private org.edisoncor.gui.panel.Panel panel1;
     private org.edisoncor.gui.panel.Panel panel2;
+    private javax.swing.JTable tablacamiones;
+    private javax.swing.JTextField txtcolor;
+    private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtmarca;
+    private javax.swing.JTextField txtmodelo;
+    private javax.swing.JTextField txtpeso;
     // End of variables declaration//GEN-END:variables
 }

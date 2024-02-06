@@ -5,6 +5,7 @@
 package Controlador;
 
 
+import Modelo.Ciudad;
 import Modelo.Conductor;
 import Modelo.ModeloConductor;
 import Modelo.ModeloUsuario;
@@ -39,6 +40,7 @@ public class Controlador_conductor {
 
     public void iniciarControl() {
         cargarTabla();
+        llenarComboBoxCiudades();
         btnGuardar = vistaConduct.getBtnGuardar();
         vistaConduct.getBntVolver().addActionListener(l -> RegresarModuloAdmin());
         vistaConduct.getBtnGuardar().addActionListener(l -> RegistrarConductor());
@@ -47,10 +49,21 @@ public class Controlador_conductor {
         vistaConduct.getBtncargar().addActionListener(l -> buscarConductorPorCedula());
          vistaConduct.getBtnModificar().addActionListener(l -> guardarCambiosConductor());
         
-        //vistaConduct.getBtnModificar().addActionListener(l -> guardarCambios());
-
-        // Otros eventos...
+        
     }
+
+    public void llenarComboBoxCiudades() {
+    List<Ciudad> ciudades = modConduct.obtenerCiudades(); 
+
+    vistaConduct.getCbboxCiudad().removeAllItems();
+
+
+    if (ciudades != null) {
+        for (Ciudad ciudad : ciudades) {
+            vistaConduct.getCbboxCiudad().addItem(ciudad.getNombre_ciud());
+        }
+    }
+}
 
     public void RegresarModuloAdmin() {
         vistaConduct.dispose();
@@ -66,12 +79,6 @@ public class Controlador_conductor {
         try {
             String cedula = vistaConduct.getTxtcedula().getText();
 
-            // Verificar duplicidad de la cédula de la persona
-//            if (modConduct.verificarDuplicidadCedulaConductor(cedula)) {
-//                JOptionPane.showMessageDialog(vistaConduct, "La cedula ingresada ya existe en el sistema");
-//                vistaConduct.getTxtcedula().setText("");
-//                return;
-//            }
 
             if (!Validaciones.ValidarCedula(cedula)) {
                 JOptionPane.showMessageDialog(vistaConduct, "Cédula incorrecta. Ingrese de nuevo");

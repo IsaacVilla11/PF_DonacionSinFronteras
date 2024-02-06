@@ -9,8 +9,10 @@ import Vista.CRUD_Donante;
 import Vista.CRUD_Solicitante;
 import Vista.Crud_centroAcopio;
 import Vista.Crud_lugarAfectado;
+import Vista.Registro_Camion;
 import Vista.Registro_Comprador;
 import Vista.Registro_Conductor;
+import Vista.Registro_trasporte;
 import Vista.V_ModuloProducto;
 import Vista.V_Principal;
 import Vista.crudAdministrador;
@@ -28,8 +30,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
-
-
 /**
  *
  * @author IV
@@ -40,35 +40,45 @@ public class ControladorModuloAdmin {
     Crud_lugarAfectado vistaLugarAfectado;
     ModeloCentroAcopio modCA = new ModeloCentroAcopio();
     ModeloLugarAfectado modLA = new ModeloLugarAfectado();
- 
 
     public ControladorModuloAdmin(vistaAdministrador vistaModAdmin) {
         this.vistaModAdmin = vistaModAdmin;
         vistaModAdmin.setVisible(true);
 
     }
-    public void iniciarControl() {
-       vistaModAdmin.getBtnCerrarSesion().addActionListener(l -> regresesarMenuPrincipal());
-       vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
-       vistaModAdmin.getJmiRegistroDonante().addActionListener(l->mostrarCrudDonante());
-       vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
-       vistaModAdmin.getBtnCA().addActionListener(e -> cargarTablaCA());
-       vistaModAdmin.getJmiModuloProducto().addActionListener(l -> mostrarModuloProductos());
-       vistaModAdmin.getRConductor().addActionListener(l -> mostrarCrudConductor());
-       vistaModAdmin.getJmiCrudSolicitante().addActionListener(l -> mostrarCrudSolicitante());
 
-     
-       
-       //Notocar
-       vistaModAdmin.getJmitemRegDonacion().addActionListener(l->mostrarRegistroDonante());
-       vistaModAdmin.getJmitemCiudad().addActionListener(l->MostrarCrudCiudad());
-       vistaModAdmin.getBtnDonaciones().addActionListener(l->mostrarCrudDonaciones());
-       vistaModAdmin.getBtnCentroAcopio().addActionListener(l->mostrarCentroAcopio());
-       vistaModAdmin.getBtnLugarAyuda().addActionListener(l-> mostrarCrudLugarAyuda());
-       vistaModAdmin.getBtnLA().addActionListener(l->CargarTablaLA());
-    } 
-    
-         public void mostrarCrudConductor() {
+    public void iniciarControl() {
+        vistaModAdmin.getBtnCerrarSesion().addActionListener(l -> regresesarMenuPrincipal());
+        vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
+        vistaModAdmin.getJmiRegistroDonante().addActionListener(l -> mostrarCrudDonante());
+        vistaModAdmin.getJmiCrudAdmin().addActionListener(l -> mostrarCrudAdmin());
+        vistaModAdmin.getBtnCA().addActionListener(e -> cargarTablaCA());
+        vistaModAdmin.getJmiModuloProducto().addActionListener(l -> mostrarModuloProductos());
+        vistaModAdmin.getRConductor().addActionListener(l -> mostrarCrudConductor());
+        vistaModAdmin.getJmiCrudSolicitante().addActionListener(l -> mostrarCrudSolicitante());
+        vistaModAdmin.getJmiRegistroTransporte().addActionListener(l -> mostrarRTrasporte());
+        vistaModAdmin.getRcamiones().addActionListener(l -> mostrarCrudCamion());
+
+        //Notocar
+        vistaModAdmin.getJmitemRegDonacion().addActionListener(l -> mostrarRegistroDonante());
+        vistaModAdmin.getJmitemCiudad().addActionListener(l -> MostrarCrudCiudad());
+        vistaModAdmin.getBtnDonaciones().addActionListener(l -> mostrarCrudDonaciones());
+        vistaModAdmin.getBtnCentroAcopio().addActionListener(l -> mostrarCentroAcopio());
+        vistaModAdmin.getBtnLugarAyuda().addActionListener(l -> mostrarCrudLugarAyuda());
+        vistaModAdmin.getBtnLA().addActionListener(l -> CargarTablaLA());
+    }
+
+    public void mostrarCrudCamion() {
+        vistaModAdmin.dispose();
+        Registro_Camion vista = new Registro_Camion();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorRegistroCamion control = new ControladorRegistroCamion(vista);
+        control.iniciarControl();
+    }
+
+    public void mostrarCrudConductor() {
         vistaModAdmin.dispose();
         Registro_Conductor vista = new Registro_Conductor();
         vista.setLocationRelativeTo(null);
@@ -77,128 +87,140 @@ public class ControladorModuloAdmin {
         Controlador_conductor control = new Controlador_conductor(vista);
         control.iniciarControl();
     }
-    
-    
+
+    public void mostrarRTrasporte() {
+        vistaModAdmin.dispose();
+        Registro_trasporte vista = new Registro_trasporte();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorRegistroTrasporte control = new ControladorRegistroTrasporte(vista);
+        control.iniciarControl();
+    }
+
     //jose
-    public void mostrarRegistroDonante(){
-        
+    public void mostrarRegistroDonante() {
+
         vistaModAdmin.dispose();
         crud_RegistroDonacion vista = new crud_RegistroDonacion();
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
         ControladorCrud_RegistroDonacion controR = new ControladorCrud_RegistroDonacion(vista);
-        controR.iniciarControl();      
-    }  
-    public void MostrarCrudCiudad(){
-        
-       vistaModAdmin.dispose();
-       crudCiudad vista2 = new crudCiudad();
-       vista2.setLocationRelativeTo(null);
-       vista2.setVisible(true);
-       
-       controladorCiudad controlC = new controladorCiudad(vista2);
-       controlC.iniciarControl();  
+        controR.iniciarControl();
     }
-       
-    public void mostrarCrudDonaciones(){
-       vistaModAdmin.dispose();
-       crud_Donacion vista2 = new crud_Donacion();
-       vista2.setLocationRelativeTo(null);
-       vista2.setVisible(true);
-       
-       controladorDonaciones controlC = new controladorDonaciones(vista2);
-       controlC.iniciarControl();    
+
+    public void MostrarCrudCiudad() {
+
+        vistaModAdmin.dispose();
+        crudCiudad vista2 = new crudCiudad();
+        vista2.setLocationRelativeTo(null);
+        vista2.setVisible(true);
+
+        controladorCiudad controlC = new controladorCiudad(vista2);
+        controlC.iniciarControl();
     }
-    
-    public void mostrarCentroAcopio(){
-       vistaModAdmin.dispose();
-       Crud_centroAcopio vista2 = new Crud_centroAcopio();
-       vista2.setLocationRelativeTo(null);
-       vista2.setVisible(true);
-       
-       controladorCentroAcopio controlC = new controladorCentroAcopio(vista2);
-       controlC.iniciarControl();  
+
+    public void mostrarCrudDonaciones() {
+        vistaModAdmin.dispose();
+        crud_Donacion vista2 = new crud_Donacion();
+        vista2.setLocationRelativeTo(null);
+        vista2.setVisible(true);
+
+        controladorDonaciones controlC = new controladorDonaciones(vista2);
+        controlC.iniciarControl();
     }
-    
-    public void mostrarCrudLugarAyuda(){
-       vistaModAdmin.dispose();
-       Crud_lugarAfectado vista2 = new Crud_lugarAfectado();
-       vista2.setLocationRelativeTo(null);
-       vista2.setVisible(true);
-       
-       controladorLugarAyuda controlC = new controladorLugarAyuda(vista2);
-       controlC.iniciarControl();
+
+    public void mostrarCentroAcopio() {
+        vistaModAdmin.dispose();
+        Crud_centroAcopio vista2 = new Crud_centroAcopio();
+        vista2.setLocationRelativeTo(null);
+        vista2.setVisible(true);
+
+        controladorCentroAcopio controlC = new controladorCentroAcopio(vista2);
+        controlC.iniciarControl();
     }
-    private void cargarTablaCA() {    
-      try {
-        List<CentroAcopio> listaCa = modCA.consultarCA();
 
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("RUC");
-        model.addColumn("CAPACIDAD");
-        model.addColumn("ID LUGAR");
-        model.addColumn("NOMBRE");
-        model.addColumn("DIRECCION");
-        model.addColumn("CIUDAD");
+    public void mostrarCrudLugarAyuda() {
+        vistaModAdmin.dispose();
+        Crud_lugarAfectado vista2 = new Crud_lugarAfectado();
+        vista2.setLocationRelativeTo(null);
+        vista2.setVisible(true);
 
-        for (CentroAcopio centro : listaCa) {
-            String nombreCiudad = modCA.obtenerNombreCiudad(centro.getId_ciudad());
+        controladorLugarAyuda controlC = new controladorLugarAyuda(vista2);
+        controlC.iniciarControl();
+    }
 
-            Object[] fila = {
-                centro.getRuc_ca(),
-                centro.getCapacidad_ca(),
-                centro.getId_lug(),
-                centro.getNombre_lug(),
-                centro.getDireccion_lug(),
-                nombreCiudad // Mostrar solo el nombre de la ciudad
-            };
+    private void cargarTablaCA() {
+        try {
+            List<CentroAcopio> listaCa = modCA.consultarCA();
 
-            model.addRow(fila);
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("RUC");
+            model.addColumn("CAPACIDAD");
+            model.addColumn("ID LUGAR");
+            model.addColumn("NOMBRE");
+            model.addColumn("DIRECCION");
+            model.addColumn("CIUDAD");
+
+            for (CentroAcopio centro : listaCa) {
+                String nombreCiudad = modCA.obtenerNombreCiudad(centro.getId_ciudad());
+
+                Object[] fila = {
+                    centro.getRuc_ca(),
+                    centro.getCapacidad_ca(),
+                    centro.getId_lug(),
+                    centro.getNombre_lug(),
+                    centro.getDireccion_lug(),
+                    nombreCiudad // Mostrar solo el nombre de la ciudad
+                };
+
+                model.addRow(fila);
+            }
+
+            vistaModAdmin.getTableRegistros().setModel(model);
+            vistaModAdmin.getLblmsjRegistro().setText("Registro de Centros de Acopio:");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error en el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        vistaModAdmin.getTableRegistros().setModel(model);
-        vistaModAdmin.getLblmsjRegistro().setText("Registro de Centros de Acopio:");
-    } catch (Exception e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error en el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
     }
-    }
-    private void CargarTablaLA() {    
-      try {
-        List<LugarAfectado> listaCa = modLA.consultarLA();
 
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("ESTADO");
-        model.addColumn("ID LUGAR");
-        model.addColumn("NOMBRE");
-        model.addColumn("DIRECCION");
-        model.addColumn("CIUDAD");
+    private void CargarTablaLA() {
+        try {
+            List<LugarAfectado> listaCa = modLA.consultarLA();
 
-        for (LugarAfectado centro : listaCa) {
-            String nombreCiudad = modLA.obtenerNombreCiudad(centro.getId_ciudad());
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("ESTADO");
+            model.addColumn("ID LUGAR");
+            model.addColumn("NOMBRE");
+            model.addColumn("DIRECCION");
+            model.addColumn("CIUDAD");
 
-            Object[] fila = {
-                centro.getEstado_luaf(),             
-                centro.getId_lug(),
-                centro.getNombre_lug(),
-                centro.getDireccion_lug(),
-                nombreCiudad // Mostrar solo el nombre de la ciudad
-            };
+            for (LugarAfectado centro : listaCa) {
+                String nombreCiudad = modLA.obtenerNombreCiudad(centro.getId_ciudad());
 
-            model.addRow(fila);
+                Object[] fila = {
+                    centro.getEstado_luaf(),
+                    centro.getId_lug(),
+                    centro.getNombre_lug(),
+                    centro.getDireccion_lug(),
+                    nombreCiudad // Mostrar solo el nombre de la ciudad
+                };
+
+                model.addRow(fila);
+            }
+
+            vistaModAdmin.getTableRegistros().setModel(model);
+            vistaModAdmin.getLblmsjRegistro().setText("Registro de Lugares Afectados:");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error en el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        vistaModAdmin.getTableRegistros().setModel(model);
-        vistaModAdmin.getLblmsjRegistro().setText("Registro de Lugares Afectados:");
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error en el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
     }
-    }   
     //No tocar ////////
-        
+
     public void regresesarMenuPrincipal() {
         vistaModAdmin.dispose();
         V_Principal vista = new V_Principal();
@@ -228,25 +250,28 @@ public class ControladorModuloAdmin {
         ControladorCrudAdmin control = new ControladorCrudAdmin(vista);
         control.iniciarControl();
     }
-    public void mostrarCrudDonante(){
+
+    public void mostrarCrudDonante() {
         vistaModAdmin.dispose();
-        CRUD_Donante  vista=new CRUD_Donante();
+        CRUD_Donante vista = new CRUD_Donante();
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
-        
-        ControladorCrudDonante control= new ControladorCrudDonante(vista);
+
+        ControladorCrudDonante control = new ControladorCrudDonante(vista);
         control.iniciarControl();
     }
-    public void mostrarModuloProductos(){
+
+    public void mostrarModuloProductos() {
         vistaModAdmin.dispose();
         V_ModuloProducto vista = new V_ModuloProducto();
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
-        
+
         ControladorModuloProductos control = new ControladorModuloProductos(vista);
         control.iniciarControl();
     }
-     public void mostrarCrudSolicitante() {
+
+    public void mostrarCrudSolicitante() {
         vistaModAdmin.dispose();
         CRUD_Solicitante vista = new CRUD_Solicitante();
         vista.setLocationRelativeTo(null);

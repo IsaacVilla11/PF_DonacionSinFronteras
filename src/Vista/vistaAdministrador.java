@@ -3,6 +3,7 @@ package Vista;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JTable;
 
@@ -108,6 +109,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
     public JMenuItem getRConductor() {
         return RConductor;
     }
+
+    public JMenuItem getRcamiones() {
+        return Rcamiones;
+    }
+
+    
     
 
     @SuppressWarnings("unchecked")
@@ -165,6 +172,8 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu10 = new javax.swing.JMenu();
         jmitemRegDonacion = new javax.swing.JMenuItem();
         jmiRegistroTransporte = new javax.swing.JMenuItem();
+        sa = new javax.swing.JMenu();
+        Rcamiones = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -419,6 +428,14 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu10);
 
+        sa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/camion.png"))); // NOI18N
+        sa.setText("Camion");
+
+        Rcamiones.setText("Registrar Camion");
+        sa.add(Rcamiones);
+
+        jMenuBar1.add(sa);
+
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/pagina-de-inicio (1).png"))); // NOI18N
         jMenu8.setText("Inicio");
         jMenuBar1.add(jMenu8);
@@ -442,6 +459,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem RConductor;
+    private javax.swing.JMenuItem Rcamiones;
     private javax.swing.JButton btnCA;
     private javax.swing.JButton btnCentroAcopio;
     private javax.swing.JButton btnCerrarSesion;
@@ -492,6 +510,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmitemRegDonacion;
     private javax.swing.JMenuItem jmitemRopa;
     private javax.swing.JLabel lblmsjRegistro;
+    private javax.swing.JMenu sa;
     private javax.swing.JTable tableRegistros;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,6 +23,32 @@ public class ModeloConductor extends Conductor {
 
     ConexionPg cone = new ConexionPg(); // Conectamos a la base
 
+    public List<Ciudad> obtenerCiudades() {
+        List<Ciudad> ciudades = new ArrayList<>();
+
+        String query = "SELECT id_ciudad, nombre_ciud FROM Ciudad";
+
+        try {
+            ResultSet rs = cone.consultaDB(query); // Utilizar la instancia cone para llamar al método consultaDB
+
+            while (rs.next()) {
+                int idCiudad = rs.getInt("id_ciudad");
+                String nombreCiudad = rs.getString("nombre_ciud");
+
+                Ciudad ciudad = new Ciudad(idCiudad, nombreCiudad);
+                ciudades.add(ciudad);
+            }
+
+            rs.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            cone.cerrarConexion(); // Asegurarse de cerrar la conexión después de usarla
+        }
+
+        return ciudades;
+    }
+
     public boolean InsertarPersona(String fechaNacimiento) {
         String sql = "INSERT INTO persona (cedula_usu, nombre_usu, apellido_usu, fechaNacimiento_usu, sexo_usu, tipoSangre_usu, correo_usu, celular_usu, ciudad_usu, direccion_usu, contrasenia_usu)"
                 + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
