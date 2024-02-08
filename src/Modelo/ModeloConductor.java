@@ -43,7 +43,7 @@ public class ModeloConductor extends Conductor {
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
-            cone.cerrarConexion(); // Asegurarse de cerrar la conexión después de usarla
+//            cone.cerrarConexion(); // Asegurarse de cerrar la conexión después de usarla
         }
 
         return ciudades;
