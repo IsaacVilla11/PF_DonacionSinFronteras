@@ -10,9 +10,10 @@ import java.util.logging.Logger;
 
 public class ConexionPg {
 
-    String cadenaConexion = "jdbc:postgresql://localhost:5432/PF_DonacionSinFronterasd"; // NOmbre de la base en postgres
+    String cadenaConexion = "jdbc:postgresql://localhost:5432/PF_DonacionSinFronteras"; // NOmbre de la base en postgres
+    //String cadenaConexion = "jdbc:postgresql://192.168.229.122/PF_DonacionSinFronteras"; // Cliente-Servidor
     String userPG = "postgres";
-    String passPG = "123"; //Cada uno pone su Contraseña 
+    String passPG = "1234"; //Cada uno pone su Contraseña 
 
     Connection con;
 
