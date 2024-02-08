@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.*;
+import Vista.VP_Ropa;
 import Vista.V_ModuloProducto;
 import Vista.vistaAdministrador;
 import java.awt.event.ActionEvent;
@@ -429,6 +430,12 @@ public class ControladorModuloProductos {
     }
 
     private void reporteRopa() {
+        VP_Ropa vista = new VP_Ropa();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorReporteRopa control = new ControladorReporteRopa(vista);
+        control.iniciarControl();
         mostrarMensajeRopa("REPORTE EXITOSO", 1000, icon);
     }
 
@@ -550,6 +557,7 @@ public class ControladorModuloProductos {
 
     private void validacionesEventosKeyTyped() {
         agregarValidacionCampoNumerico(vistaModProducto.getTxtPrecioVendible(), Integer.MAX_VALUE);
+        agregarValidacionCampoNumerico(vistaModProducto.getTxtPrecioVendible1(), Integer.MAX_VALUE);
     }
 
     private void cargarImagenRopa() {
@@ -595,7 +603,7 @@ public class ControladorModuloProductos {
         timer.setRepeats(false);
         timer.start();
     }
-
+    
     // </editor-fold>
     // <editor-fold desc="Metodos utiles">
     private void regresarModuloAdmin() {
@@ -618,6 +626,7 @@ public class ControladorModuloProductos {
                 + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
                 + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
     }
+
     private void ayudaMueble() {
         JOptionPane.showMessageDialog(null, "Aqui se encuentra la ventana para el registro de muebles"
                 + "\nBotones "
@@ -628,6 +637,7 @@ public class ControladorModuloProductos {
                 + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
                 + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
     }
+
     private void ayudaMedicamento() {
         JOptionPane.showMessageDialog(null, "Aqui se encuentra la ventana para el registro de medicamentos"
                 + "\nBotones "
@@ -638,6 +648,7 @@ public class ControladorModuloProductos {
                 + "\n4. Eliminar: Este boton eliminara un registro de la base de datos."
                 + "\n5. Reporte: Este boton realizara una actualizacion en la tabla de los registros de la base de datos.");
     }
+
     private void ayudaAlimento() {
         JOptionPane.showMessageDialog(null, "Aqui se encuentra la ventana para el registro de alimentos"
                 + "\nBotones "
@@ -687,7 +698,6 @@ public class ControladorModuloProductos {
 
     // </editor-fold>
     // <editor-fold desc="Metodos para el crud de mueble">
-    
     private void crearMueble() {
         try {
             // Atributos de producto

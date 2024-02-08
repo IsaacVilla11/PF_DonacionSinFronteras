@@ -240,4 +240,221 @@ public class ModeloRopa {
         return detalles;
     }
 
+    public static List<Ropa> buscarRopaPorId(int id) {
+        Connection conexion = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Ropa> resultados = new ArrayList<>();
+
+        try {
+            conexion = new ConexionPg().getCon();
+
+            // Construir la consulta SQL
+            String consultaSQL = "SELECT * FROM ropa r JOIN tipoVendible tv ON r.id_vendible_rop = tv.id_vendible WHERE r.id_rop = ?";
+
+            preparedStatement = conexion.prepareStatement(consultaSQL);
+            preparedStatement.setInt(1, id);
+
+            // Ejecutar la consulta
+            resultSet = preparedStatement.executeQuery();
+
+            // Procesar los resultados
+            while (resultSet.next()) {
+                // Construir objetos Ropa según los resultados y agregarlos a la lista
+                Ropa ropa = new Ropa();
+                // Setear atributos de la ropa con resultSet.getString("nombre_del_campo")
+                // ...
+                ropa.setId_rop(resultSet.getInt("id_rop"));
+                ropa.setTipo(resultSet.getString("tipo"));
+                ropa.setEstado(resultSet.getString("estado"));
+                ropa.setTalla_rop(resultSet.getString("talla_rop"));
+                ropa.setPrecio(resultSet.getDouble("precio"));
+
+                resultados.add(ropa);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            // Cerrar recursos (ResultSet, PreparedStatement, Connection)
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conexion != null) {
+                    conexion.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return resultados;
+    }
+    public static List<Ropa> buscarRopaPorTipo(String tipo) {
+        Connection conexion = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Ropa> resultados = new ArrayList<>();
+
+        try {
+            conexion = new ConexionPg().getCon();
+
+            // Construir la consulta SQL
+            String consultaSQL = "SELECT * FROM ropa r JOIN tipoVendible tv ON r.id_vendible_rop = tv.id_vendible WHERE tv.tipo = ?";
+
+            preparedStatement = conexion.prepareStatement(consultaSQL);
+            preparedStatement.setString(1, tipo);
+
+            // Ejecutar la consulta
+            resultSet = preparedStatement.executeQuery();
+
+            // Procesar los resultados
+            while (resultSet.next()) {
+                // Construir objetos Ropa según los resultados y agregarlos a la lista
+                Ropa ropa = new Ropa();
+                // Setear atributos de la ropa con resultSet.getString("nombre_del_campo")
+                // ...
+                ropa.setId_rop(resultSet.getInt("id_rop"));
+                ropa.setTipo(resultSet.getString("tipo"));
+                ropa.setEstado(resultSet.getString("estado"));
+                ropa.setTalla_rop(resultSet.getString("talla_rop"));
+                ropa.setPrecio(resultSet.getDouble("precio"));
+
+                resultados.add(ropa);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            // Cerrar recursos (ResultSet, PreparedStatement, Connection)
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conexion != null) {
+                    conexion.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return resultados;
+    }
+    public static List<Ropa> buscarRopaPorEstado(String estado) {
+        Connection conexion = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Ropa> resultados = new ArrayList<>();
+
+        try {
+            conexion = new ConexionPg().getCon();
+
+            // Construir la consulta SQL
+            String consultaSQL = "SELECT * FROM ropa r JOIN tipoVendible tv ON r.id_vendible_rop = tv.id_vendible WHERE tv.estado = ?";
+
+            preparedStatement = conexion.prepareStatement(consultaSQL);
+            preparedStatement.setString(1, estado);
+
+            // Ejecutar la consulta
+            resultSet = preparedStatement.executeQuery();
+
+            // Procesar los resultados
+            while (resultSet.next()) {
+                // Construir objetos Ropa según los resultados y agregarlos a la lista
+                Ropa ropa = new Ropa();
+                // Setear atributos de la ropa con resultSet.getString("nombre_del_campo")
+                // ...
+                ropa.setId_rop(resultSet.getInt("id_rop"));
+                ropa.setTipo(resultSet.getString("tipo"));
+                ropa.setEstado(resultSet.getString("estado"));
+                ropa.setTalla_rop(resultSet.getString("talla_rop"));
+                ropa.setPrecio(resultSet.getDouble("precio"));
+
+                resultados.add(ropa);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            // Cerrar recursos (ResultSet, PreparedStatement, Connection)
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conexion != null) {
+                    conexion.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return resultados;
+    }
+    public static List<Ropa> buscarRopaPorTalla(String talla) {
+        Connection conexion = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Ropa> resultados = new ArrayList<>();
+
+        try {
+            conexion = new ConexionPg().getCon();
+
+            // Construir la consulta SQL
+            String consultaSQL = "SELECT * FROM ropa r JOIN tipoVendible tv ON r.id_vendible_rop = tv.id_vendible WHERE r.talla_rop = ?";
+
+            preparedStatement = conexion.prepareStatement(consultaSQL);
+            preparedStatement.setString(1, talla);
+
+            // Ejecutar la consulta
+            resultSet = preparedStatement.executeQuery();
+
+            // Procesar los resultados
+            while (resultSet.next()) {
+                // Construir objetos Ropa según los resultados y agregarlos a la lista
+                Ropa ropa = new Ropa();
+                // Setear atributos de la ropa con resultSet.getString("nombre_del_campo")
+                // ...
+                ropa.setId_rop(resultSet.getInt("id_rop"));
+                ropa.setTipo(resultSet.getString("tipo"));
+                ropa.setEstado(resultSet.getString("estado"));
+                ropa.setTalla_rop(resultSet.getString("talla_rop"));
+                ropa.setPrecio(resultSet.getDouble("precio"));
+
+                resultados.add(ropa);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            // Cerrar recursos (ResultSet, PreparedStatement, Connection)
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (conexion != null) {
+                    conexion.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return resultados;
+    }
+
 }

@@ -622,24 +622,28 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         btnCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
-        btnCrear.setText("Crear");
-        btnCrear.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
+        btnCrear.setText("CREAR");
+        btnCrear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnCrear.setContentAreaFilled(false);
         btnCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel6.add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 130, 50));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/eliminar.png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
-        btnEliminar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
+        btnEliminar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnEliminar.setContentAreaFilled(false);
         jPanel6.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 130, 50));
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/modificar.png"))); // NOI18N
         btnModificar.setText("MODIFICAR");
-        btnModificar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
+        btnModificar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnModificar.setContentAreaFilled(false);
         jPanel6.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 130, 50));
 
         btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btnConsultar.setText("CONSULTAR");
-        btnConsultar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
+        btnConsultar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnConsultar.setContentAreaFilled(false);
         jPanel6.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 130, 50));
 
         jLabel14.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
@@ -669,7 +673,8 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/informe.png"))); // NOI18N
         btnReporte.setText("REPORTE");
-        btnReporte.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(51, 204, 255))); // NOI18N
+        btnReporte.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnReporte.setContentAreaFilled(false);
         jPanel6.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, 130, 50));
 
         va2.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
@@ -711,8 +716,10 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
         btnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
         btnAyuda.setText("Ayuda");
+        btnAyuda.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnAyuda.setBorderPainted(false);
         btnAyuda.setContentAreaFilled(false);
-        jPanel6.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 100, -1));
+        jPanel6.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 100, 40));
 
         jLabel13.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
@@ -721,6 +728,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel6.add(txtPrecioVendible, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 110, 30));
 
         btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
+        btnLimpiar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnLimpiar.setContentAreaFilled(false);
         jPanel6.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, 40));
 
@@ -774,6 +782,7 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
 
         cbxTipoRopa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Camisetas", "Pantalones", "Faldas", "Vestidos", "Chaquetas", "Abrigos", "Trajes", "Ropa Deportiva", "Ropa Interior", "Ropa de Baño", "Ropa de Dormir", "Accesorios (sombreros, guantes, bufandas, etc.)", "Calzado", "Ropa Casual", "Ropa Formal", "Ropa Infantil", "Ropa de Maternidad", "Ropa Étnica o Cultural", "Ropa de Trabajo", "Ropa de Fiesta/Eventos Especiales" }));
+        cbxTipoRopa.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel6.add(cbxTipoRopa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 150, -1));
 
         txtTipoProducto.setText("Vendible");
