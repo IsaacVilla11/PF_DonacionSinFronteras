@@ -43,6 +43,8 @@ public class Registro_Conductor extends javax.swing.JFrame {
         return btnModificar;
     }
 
+    
+
     public JComboBox<String> getComboJornada() {
         return ComboJornada;
     }
@@ -59,9 +61,11 @@ public class Registro_Conductor extends javax.swing.JFrame {
         return btnH;
     }
 
-    public JRadioButton getBtnM() {
-        return btnM;
+    public JRadioButton getBtM() {
+        return btM;
     }
+
+   
 
     public JComboBox<String> getCbBoxSangre() {
         return cbBoxSangre;
@@ -123,6 +127,7 @@ public class Registro_Conductor extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         brightPassFilter1 = new org.edisoncor.gui.util.BrightPassFilter();
+        sexo = new javax.swing.ButtonGroup();
         panel1 = new org.edisoncor.gui.panel.Panel();
         IMAGEN = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -154,17 +159,16 @@ public class Registro_Conductor extends javax.swing.JFrame {
         panel2 = new org.edisoncor.gui.panel.Panel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnModificar = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         F_nacimiento = new com.toedter.calendar.JDateChooser();
-        btnH = new javax.swing.JRadioButton();
-        btnM = new javax.swing.JRadioButton();
         cbBoxSangre = new javax.swing.JComboBox<>();
         cbboxCiudad = new javax.swing.JComboBox<>();
         btncargar = new javax.swing.JButton();
+        btM = new javax.swing.JRadioButton();
+        btnH = new javax.swing.JRadioButton();
 
         jLabel2.setText("jLabel2");
 
@@ -257,19 +261,21 @@ public class Registro_Conductor extends javax.swing.JFrame {
         ComboLicencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "C1", "D ", "D1", "E", "El " }));
         panel1.add(ComboLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 200, -1));
 
-        ComboJornada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutina", "Despertina", "Nocturna" }));
+        ComboJornada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutina", "Vespertina", "Nocturna" }));
         panel1.add(ComboJornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 200, -1));
 
-        bntVolver.setBackground(new java.awt.Color(51, 51, 255));
+        bntVolver.setBackground(new java.awt.Color(0, 0, 102));
         bntVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bntVolver.setForeground(new java.awt.Color(255, 255, 255));
         bntVolver.setText("VOLVER");
         bntVolver.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bntVolver.setBorderPainted(false);
-        panel1.add(bntVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, 80, 30));
+        panel1.add(bntVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 90, 40));
 
-        TablaConductor.setBackground(new java.awt.Color(204, 255, 204));
+        TablaConductor.setBackground(new java.awt.Color(0, 51, 102));
         TablaConductor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TablaConductor.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        TablaConductor.setForeground(new java.awt.Color(255, 255, 255));
         TablaConductor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -283,26 +289,19 @@ public class Registro_Conductor extends javax.swing.JFrame {
         panel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, 980, 130));
 
         panel2.setColorPrimario(new java.awt.Color(169, 169, 169));
-        panel2.setColorSecundario(new java.awt.Color(152, 255, 152));
+        panel2.setColorSecundario(new java.awt.Color(0, 51, 204));
 
-        jLabel1.setFont(new java.awt.Font("Nirmala UI", 2, 24)); // NOI18N
-        jLabel1.setText("Que desea hacer?");
+        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("¿Que desea hacer?");
 
-        btnModificar.setBackground(new java.awt.Color(0, 0, 51));
-        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
-        btnModificar.setText("MODIFICAR");
-        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnModificar.setBorderPainted(false);
-
-        jButton6.setBackground(new java.awt.Color(51, 0, 51));
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/reporte.png"))); // NOI18N
-        jButton6.setText("REPORTE");
-        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.setBorderPainted(false);
+        btnGuardar.setBackground(new java.awt.Color(0, 0, 51));
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGuardar.setBorderPainted(false);
 
         btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
         btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -312,31 +311,34 @@ public class Registro_Conductor extends javax.swing.JFrame {
         btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnEliminar.setBorderPainted(false);
 
-        btnGuardar.setBackground(new java.awt.Color(0, 0, 51));
-        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/btnCrear.png"))); // NOI18N
-        btnGuardar.setText("CREAR");
+        btnModificar.setBackground(new java.awt.Color(0, 0, 51));
+        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
+        btnModificar.setText("MODIFICAR");
+        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnModificar.setBorderPainted(false);
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
             .addGroup(panel2Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(89, 89, 89))
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                        .addGap(89, 89, 89))))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,15 +347,13 @@ public class Registro_Conductor extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(58, 58, 58)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(27, 27, 27)
                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         panel1.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 90, 330, 440));
@@ -366,12 +366,6 @@ public class Registro_Conductor extends javax.swing.JFrame {
         F_nacimiento.setForeground(new java.awt.Color(0, 0, 102));
         panel1.add(F_nacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 190, -1));
 
-        btnH.setText("Hombre");
-        panel1.add(btnH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 80, -1));
-
-        btnM.setText("Mujer");
-        panel1.add(btnM, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 90, -1));
-
         cbBoxSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ORH+", "ORH-", "ARH+", "ARH-", "BRH+", "BRH-", "ABRH+", "ABRH-", " " }));
         panel1.add(cbBoxSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 130, 20));
 
@@ -381,6 +375,14 @@ public class Registro_Conductor extends javax.swing.JFrame {
         btncargar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
         btncargar.setText("BUSCAR");
         panel1.add(btncargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 110, 40));
+
+        sexo.add(btM);
+        btM.setText("Mujer");
+        panel1.add(btM, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 80, -1));
+
+        sexo.add(btnH);
+        btnH.setText("Hombre");
+        panel1.add(btnH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 80, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -412,15 +414,14 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JTable TablaConductor;
     private javax.swing.JButton bntVolver;
     private org.edisoncor.gui.util.BrightPassFilter brightPassFilter1;
+    private javax.swing.JRadioButton btM;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JRadioButton btnH;
-    private javax.swing.JRadioButton btnM;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btncargar;
     private javax.swing.JComboBox<String> cbBoxSangre;
     private javax.swing.JComboBox<String> cbboxCiudad;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -442,6 +443,7 @@ public class Registro_Conductor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private org.edisoncor.gui.panel.Panel panel1;
     private org.edisoncor.gui.panel.Panel panel2;
+    private javax.swing.ButtonGroup sexo;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcelular;

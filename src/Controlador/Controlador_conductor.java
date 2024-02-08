@@ -4,7 +4,6 @@
  */
 package Controlador;
 
-
 import Modelo.Ciudad;
 import Modelo.Conductor;
 import Modelo.ModeloConductor;
@@ -20,6 +19,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -47,23 +47,21 @@ public class Controlador_conductor {
         vistaConduct.getBtnEliminar().addActionListener(l -> eliminarConductorSeleccionado());
 
         vistaConduct.getBtncargar().addActionListener(l -> buscarConductorPorCedula());
-         vistaConduct.getBtnModificar().addActionListener(l -> guardarCambiosConductor());
-        
-        
+        vistaConduct.getBtnModificar().addActionListener(l -> guardarCambiosConductor());
+
     }
 
     public void llenarComboBoxCiudades() {
-    List<Ciudad> ciudades = modConduct.obtenerCiudades(); 
+        List<Ciudad> ciudades = modConduct.obtenerCiudades();
 
-    vistaConduct.getCbboxCiudad().removeAllItems();
+        vistaConduct.getCbboxCiudad().removeAllItems();
 
-
-    if (ciudades != null) {
-        for (Ciudad ciudad : ciudades) {
-            vistaConduct.getCbboxCiudad().addItem(ciudad.getNombre_ciud());
+        if (ciudades != null) {
+            for (Ciudad ciudad : ciudades) {
+                vistaConduct.getCbboxCiudad().addItem(ciudad.getNombre_ciud());
+            }
         }
     }
-}
 
     public void RegresarModuloAdmin() {
         vistaConduct.dispose();
@@ -74,45 +72,72 @@ public class Controlador_conductor {
         ControladorModuloAdmin controlAdmin = new ControladorModuloAdmin(vistaAdmin);
         controlAdmin.iniciarControl();
     }
-    
+
     public void guardarCambiosConductor() {
         try {
             String cedula = vistaConduct.getTxtcedula().getText();
-
 
             if (!Validaciones.ValidarCedula(cedula)) {
                 JOptionPane.showMessageDialog(vistaConduct, "Cédula incorrecta. Ingrese de nuevo");
                 return;
             }
 
-            // Obtén los datos cargados en la vista
             String nombre = vistaConduct.getTxtnombre().getText();
+            if (!Validaciones.ValidarNomApe(nombre)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Nombre incorrecto. Ingrese de nuevo");
+                return;
+            }
+
             String apellido = vistaConduct.getTxtapellido().getText();
+            if (!Validaciones.ValidarNomApe(apellido)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Apellido incorrecto. Ingrese de nuevo");
+                return;
+            }
+
             String genero;
             if (vistaConduct.getBtnH().isSelected()) {
                 genero = "Hombre";
-            } else if (vistaConduct.getBtnM().isSelected()) {
+            } else if (vistaConduct.getBtM().isSelected()) {
                 genero = "Mujer";
             } else {
                 JOptionPane.showMessageDialog(vistaConduct, "Seleccione un género");
                 return;
             }
+
             String celular = vistaConduct.getTxtcelular().getText();
+            if (!Validaciones.ValidarCedula(celular)) {
+                JOptionPane.showMessageDialog(vistaConduct, "# Celular no válido. Ingrese de nuevo");
+                return;
+            }
+
             String correo = vistaConduct.getTxtcorreo().getText();
+            if (!Validaciones.ValidarCorreo(correo)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Correo no válido. Ingrese de nuevo");
+                return;
+            }
+
             String direccion = vistaConduct.getTxtdirecion().getText();
+            if (!Validaciones.ValidarDireccion(direccion)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Direccion no válido. Ingrese de nuevo");
+                return;
+            }
+
             String contrase = vistaConduct.getTxtcontra().getText();
+            if (!Validaciones.ValidarContrasena(contrase)) {
+                JOptionPane.showMessageDialog(vistaConduct, "Contraseña no válido. Ingrese de nuevo");
+                return;
+            }
+
             String tipoSangre = vistaConduct.getCbBoxSangre().getSelectedItem().toString();
             String ciudad = (String) vistaConduct.getCbboxCiudad().getSelectedItem();
             String jornada = (String) vistaConduct.getComboJornada().getSelectedItem();
             String tipoLicencia = (String) vistaConduct.getComboLicencia().getSelectedItem();
 
-            // Obtener fecha de nacimiento del JCalendar
             String dia = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.DAY_OF_MONTH));
             String mes = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.MONTH) + 1);
             String año = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.YEAR));
             String fechaNacimiento = año + "-" + mes + "-" + dia;
 
-            // Crear un nuevo modeloConductor con los datos actualizados
             ModeloConductor conductorActualizado = new ModeloConductor();
             conductorActualizado.setCedula_usu(cedula);
             conductorActualizado.setNombre_usu(nombre);
@@ -128,28 +153,91 @@ public class Controlador_conductor {
             conductorActualizado.setJornada_con(jornada);
             conductorActualizado.setTipoLicencia_con(tipoLicencia);
 
-            // Llamar al método de actualización en el modeloConductor
             if (modConduct.actualizarConductor(conductorActualizado)) {
                 JOptionPane.showMessageDialog(vistaConduct, "Cambios guardados exitosamente");
                 btnGuardar.setEnabled(true);
                 vistaConduct.getTxtcedula().setEnabled(true);
                 cargarTabla();
                 limpiarCampos();
-                
+
             } else {
                 JOptionPane.showMessageDialog(vistaConduct, "Error al guardar cambios");
             }
         } catch (Exception e) {
-            // Manejo de la excepción
             e.printStackTrace();
             JOptionPane.showMessageDialog(vistaConduct, "Error al intentar guardar cambios");
         }
     }
-    
-    
 
-
-
+//    public void guardarCambiosConductor() {
+//        try {
+//            String cedula = vistaConduct.getTxtcedula().getText();
+//
+//            if (!Validaciones.ValidarCedula(cedula)) {
+//                JOptionPane.showMessageDialog(vistaConduct, "Cédula incorrecta. Ingrese de nuevo");
+//                return;
+//            }
+//
+//            // Obtén los datos cargados en la vista
+//            String nombre = vistaConduct.getTxtnombre().getText();
+//            String apellido = vistaConduct.getTxtapellido().getText();
+//            String genero;
+//            if (vistaConduct.getBtnH().isSelected()) {
+//                genero = "Hombre";
+//            } else if (vistaConduct.getBtM().isSelected()) {
+//                genero = "Mujer";
+//            } else {
+//                JOptionPane.showMessageDialog(vistaConduct, "Seleccione un género");
+//                return;
+//            }
+//            String celular = vistaConduct.getTxtcelular().getText();
+//            String correo = vistaConduct.getTxtcorreo().getText();
+//            String direccion = vistaConduct.getTxtdirecion().getText();
+//            String contrase = vistaConduct.getTxtcontra().getText();
+//            String tipoSangre = vistaConduct.getCbBoxSangre().getSelectedItem().toString();
+//            String ciudad = (String) vistaConduct.getCbboxCiudad().getSelectedItem();
+//            String jornada = (String) vistaConduct.getComboJornada().getSelectedItem();
+//            String tipoLicencia = (String) vistaConduct.getComboLicencia().getSelectedItem();
+//
+//            // Obtener fecha de nacimiento del JCalendar
+//            String dia = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.DAY_OF_MONTH));
+//            String mes = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.MONTH) + 1);
+//            String año = Integer.toString(vistaConduct.getF_nacimiento().getCalendar().get(Calendar.YEAR));
+//            String fechaNacimiento = año + "-" + mes + "-" + dia;
+//
+//            // Crear un nuevo modeloConductor con los datos actualizados
+//            ModeloConductor conductorActualizado = new ModeloConductor();
+//            conductorActualizado.setCedula_usu(cedula);
+//            conductorActualizado.setNombre_usu(nombre);
+//            conductorActualizado.setApellido_usu(apellido);
+//            conductorActualizado.setSexo_usu(genero);
+//            conductorActualizado.setCelular_usu(celular);
+//            conductorActualizado.setCorreo_usu(correo);
+//            conductorActualizado.setDireccion_usu(direccion);
+//            conductorActualizado.setContraseña_usu(contrase);
+//            conductorActualizado.setTipoSangre_usu(tipoSangre);
+//            conductorActualizado.setCiudad_usu(ciudad);
+//            conductorActualizado.setFechaNacimiento_usu(fechaNacimiento);
+//            conductorActualizado.setJornada_con(jornada);
+//            conductorActualizado.setTipoLicencia_con(tipoLicencia);
+//
+//            // Llamar al método de actualización en el modeloConductor
+//            if (modConduct.actualizarConductor(conductorActualizado)) {
+//                JOptionPane.showMessageDialog(vistaConduct, "Cambios guardados exitosamente");
+//                btnGuardar.setEnabled(true);
+//                vistaConduct.getTxtcedula().setEnabled(true);
+//                cargarTabla();
+//                limpiarCampos();
+//
+//            } else {
+//                JOptionPane.showMessageDialog(vistaConduct, "Error al guardar cambios");
+//            }
+//        } catch (Exception e) {
+//            // Manejo de la excepción
+//            e.printStackTrace();
+//            JOptionPane.showMessageDialog(vistaConduct, "Error al intentar guardar cambios");
+//        }
+//    }
     public void buscarConductorPorCedula() {
         try {
             btnGuardar.setEnabled(false);
@@ -181,7 +269,7 @@ public class Controlador_conductor {
                         obtenerCalendarDesdeString(conductor.getFechaNacimiento_usu())
                 );
                 vistaConduct.getBtnH().setSelected("Hombre".equals(conductor.getSexo_usu()));
-                vistaConduct.getBtnM().setSelected("Mujer".equals(conductor.getSexo_usu()));
+                vistaConduct.getBtM().setSelected("Mujer".equals(conductor.getSexo_usu()));
                 vistaConduct.getCbboxCiudad().setSelectedItem(conductor.getCiudad_usu());
 
                 // Contraseña
@@ -246,10 +334,25 @@ public class Controlador_conductor {
             }
             persona.setApellido_usu(apellido);
 
+            JRadioButton btnHombre = vistaConduct.getBtnH();
+            JRadioButton btnMujer = vistaConduct.getBtM();
+
             String genero;
+
+            if (btnHombre.isSelected()) {
+                genero = "Hombre";
+            } else if (btnMujer.isSelected()) {
+                genero = "Mujer";
+            } else {
+                JOptionPane.showMessageDialog(vistaConduct, "Seleccione un género");
+                return;
+            }
+
+            persona.setSexo_usu(genero);
+//            String genero;
             if (vistaConduct.getBtnH().isSelected()) {
                 genero = "Hombre";
-            } else if (vistaConduct.getBtnM().isSelected()) {
+            } else if (vistaConduct.getBtM().isSelected()) {
                 genero = "Mujer";
             } else {
                 JOptionPane.showMessageDialog(vistaConduct, "Seleccione un género");
@@ -348,7 +451,7 @@ public class Controlador_conductor {
         vistaConduct.getTxtnombre().setText("");
         vistaConduct.getTxtapellido().setText("");
         vistaConduct.getBtnH().setSelected(false);
-        vistaConduct.getBtnM().setSelected(false);
+        vistaConduct.getBtM().setSelected(false);
         vistaConduct.getTxtcelular().setText("");
         vistaConduct.getTxtcorreo().setText("");
         vistaConduct.getTxtdirecion().setText("");
@@ -382,7 +485,7 @@ public class Controlador_conductor {
                 JOptionPane.showMessageDialog(vistaConduct, "Conductor eliminado correctamente");
                 cargarTabla(); // Actualizar la tabla después de la eliminación
             } else {
-                JOptionPane.showMessageDialog(vistaConduct, "Error al eliminar el conductor");
+                JOptionPane.showMessageDialog(vistaConduct, "Error al eliminar-Este Conductor puede RELACIONADO");
             }
         }
     }

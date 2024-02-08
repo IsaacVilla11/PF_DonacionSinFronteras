@@ -77,8 +77,19 @@ public class ControladorRegistroCamion {
         try {
             int idCamion = Integer.parseInt(vistaCamion.getTxtid().getText());
             int idNuevoConductor = obtenerIdNuevoConductorSeleccionado();
+
             String marca = vistaCamion.getTxtmarca().getText().trim();
+            if (!Validaciones.validarLetras(marca)) {
+                JOptionPane.showMessageDialog(vistaCamion, "Marca incorrecta. Ingrese de nuevo");
+                return;
+            }
+
             String color = vistaCamion.getTxtcolor().getText().trim();
+            if (!Validaciones.validarLetras(color)) {
+                JOptionPane.showMessageDialog(vistaCamion, "Color incorrecto. Ingrese de nuevo");
+                return;
+            }
+
             String modelo = vistaCamion.getTxtmodelo().getText().trim();
 
             String pesoInput = vistaCamion.getTxtpeso().getText().trim();
@@ -87,7 +98,13 @@ public class ControladorRegistroCamion {
                 return;
             }
 
-            int pesoMax = Integer.parseInt(pesoInput);
+            int pesoMax;
+            try {
+                pesoMax = Integer.parseInt(pesoInput);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(vistaCamion, "El peso debe ser un número entero.");
+                return;
+            }
 
             if (marca.isEmpty() || color.isEmpty() || modelo.isEmpty()) {
                 JOptionPane.showMessageDialog(vistaCamion, "Todos los campos deben estar llenos.");
@@ -113,6 +130,47 @@ public class ControladorRegistroCamion {
         }
     }
 
+//    public void modificarCamionDesdeInterfaz() {
+//        System.out.println("Modificando camión desde la interfaz...");
+//
+//        try {
+//            int idCamion = Integer.parseInt(vistaCamion.getTxtid().getText());
+//            int idNuevoConductor = obtenerIdNuevoConductorSeleccionado();
+//            String marca = vistaCamion.getTxtmarca().getText().trim();
+//            String color = vistaCamion.getTxtcolor().getText().trim();
+//            String modelo = vistaCamion.getTxtmodelo().getText().trim();
+//
+//            String pesoInput = vistaCamion.getTxtpeso().getText().trim();
+//            if (pesoInput.isEmpty()) {
+//                JOptionPane.showMessageDialog(vistaCamion, "El campo de peso no puede estar vacío.");
+//                return;
+//            }
+//
+//            int pesoMax = Integer.parseInt(pesoInput);
+//
+//            if (marca.isEmpty() || color.isEmpty() || modelo.isEmpty()) {
+//                JOptionPane.showMessageDialog(vistaCamion, "Todos los campos deben estar llenos.");
+//                return;
+//            }
+//
+//            boolean modificadoExitosamente = modCam.modificarCamion(idCamion, idNuevoConductor, marca, color, modelo, pesoMax);
+//
+//            if (modificadoExitosamente) {
+//                cargarTablaCamion();
+//                limpiarCamposCamion();
+//                JOptionPane.showMessageDialog(vistaCamion, "Camión modificado exitosamente.");
+//                btnGuardar.setEnabled(true);
+//                vistaCamion.getTxtid().setEnabled(true);
+//            } else {
+//                // Si no se modificó exitosamente, no hagas nada en la interfaz.
+//                // El mensaje de error ya se maneja en el método del modelo.
+//            }
+//
+//        } catch (NumberFormatException ex) {
+//            JOptionPane.showMessageDialog(vistaCamion, "Error en el formato de datos.");
+//            ex.printStackTrace();
+//        }
+//    }
 //    public void modificarCamionDesdeInterfaz() {
 //        System.out.println("Modificando camión desde la interfaz...");
 //        
@@ -232,11 +290,21 @@ public class ControladorRegistroCamion {
     public void crearCamionDesdeInterfaz() {
         System.out.println("Creando camión desde la interfaz...");
         try {
-
             String selectedConductor = (String) vistaCamion.getCombo_donductores().getSelectedItem();
             int idConductor = Integer.parseInt(selectedConductor.split(" - ")[0]);
+
             String marca = vistaCamion.getTxtmarca().getText().trim();
+            if (!Validaciones.validarLetras(marca)) {
+                JOptionPane.showMessageDialog(vistaCamion, "Marca incorrecta. Ingrese de nuevo");
+                return;
+            }
+
             String color = vistaCamion.getTxtcolor().getText().trim();
+            if (!Validaciones.validarLetras(color)) {
+                JOptionPane.showMessageDialog(vistaCamion, "Color incorrecto. Ingrese de nuevo");
+                return;
+            }
+
             String modelo = vistaCamion.getTxtmodelo().getText().trim();
 
             String pesoInput = vistaCamion.getTxtpeso().getText().trim();
@@ -245,10 +313,16 @@ public class ControladorRegistroCamion {
                 return;
             }
 
-            int pesoMax = Integer.parseInt(pesoInput);
+            int pesoMax;
+            try {
+                pesoMax = Integer.parseInt(pesoInput);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(vistaCamion, "El peso debe ser un número entero.");
+                return;
+            }
 
-            if (marca.isEmpty() || color.isEmpty() || modelo.isEmpty()) {
-                JOptionPane.showMessageDialog(vistaCamion, "Todos los campos deben estar llenos.");
+            if (modelo.isEmpty()) {
+                JOptionPane.showMessageDialog(vistaCamion, "El campo de modelo no puede estar vacío.");
                 return;
             }
 
@@ -271,6 +345,47 @@ public class ControladorRegistroCamion {
         }
     }
 
+//    public void crearCamionDesdeInterfaz() {
+//        System.out.println("Creando camión desde la interfaz...");
+//        try {
+//
+//            String selectedConductor = (String) vistaCamion.getCombo_donductores().getSelectedItem();
+//            int idConductor = Integer.parseInt(selectedConductor.split(" - ")[0]);
+//            String marca = vistaCamion.getTxtmarca().getText().trim();
+//            String color = vistaCamion.getTxtcolor().getText().trim();
+//            String modelo = vistaCamion.getTxtmodelo().getText().trim();
+//
+//            String pesoInput = vistaCamion.getTxtpeso().getText().trim();
+//            if (pesoInput.isEmpty()) {
+//                JOptionPane.showMessageDialog(vistaCamion, "El campo de peso no puede estar vacío.");
+//                return;
+//            }
+//
+//            int pesoMax = Integer.parseInt(pesoInput);
+//
+//            if (marca.isEmpty() || color.isEmpty() || modelo.isEmpty()) {
+//                JOptionPane.showMessageDialog(vistaCamion, "Todos los campos deben estar llenos.");
+//                return;
+//            }
+//
+//            if (modCam.conductorAsignadoACamion(idConductor)) {
+//                JOptionPane.showMessageDialog(vistaCamion, "Este conductor ya está asignado a otro camión.");
+//                return;
+//            }
+//
+//            modCam.crearCamionSeleccionado(idConductor, marca, color, modelo, pesoMax);
+//
+//            cargarTablaCamion();
+//            limpiarCamposCamion();
+//
+//            JOptionPane.showMessageDialog(vistaCamion, "Camión creado exitosamente.");
+//
+//        } catch (NumberFormatException ex) {
+//            // Manejo de errores si hay problemas al convertir datos numéricos
+//            JOptionPane.showMessageDialog(vistaCamion, "Error en el formato de datos.");
+//            ex.printStackTrace();
+//        }
+//    }
     private void limpiarCamposCamion() {
         vistaCamion.getCombo_donductores().setSelectedIndex(0);
         vistaCamion.getTxtmarca().setText("");
