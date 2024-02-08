@@ -68,14 +68,19 @@ public class vistaLogins extends javax.swing.JFrame {
         btnLoginSolicitante.setText("Solicitante");
         btnLoginSolicitante.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 65, 187), 1, true));
         btnLoginSolicitante.setContentAreaFilled(false);
-        jPanel1.add(btnLoginSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 280, 40));
+        btnLoginSolicitante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginSolicitanteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLoginSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 280, 40));
 
         btnLoginComprador.setBackground(new java.awt.Color(241, 244, 255));
         btnLoginComprador.setForeground(new java.awt.Color(98, 98, 98));
         btnLoginComprador.setText("Comprador");
         btnLoginComprador.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(31, 65, 187), 1, true));
         btnLoginComprador.setContentAreaFilled(false);
-        jPanel1.add(btnLoginComprador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 280, 40));
+        jPanel1.add(btnLoginComprador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 280, 40));
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -86,25 +91,25 @@ public class vistaLogins extends javax.swing.JFrame {
         btnRegresarMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresarMenu.setText("Regresar");
         btnRegresarMenu.setBorderPainted(false);
-        jPanel1.add(btnRegresarMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 620, 220, 40));
+        jPanel1.add(btnRegresarMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 280, 30));
 
         btnRegistroComprador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/registro (1).png"))); // NOI18N
         btnRegistroComprador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(31, 65, 187)));
         btnRegistroComprador.setContentAreaFilled(false);
-        jPanel1.add(btnRegistroComprador, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 80, 40));
+        jPanel1.add(btnRegistroComprador, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 80, 40));
 
         btnRegistroSolicitante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/registro (1).png"))); // NOI18N
         btnRegistroSolicitante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(31, 65, 187)));
         btnRegistroSolicitante.setContentAreaFilled(false);
-        jPanel1.add(btnRegistroSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 80, 40));
+        jPanel1.add(btnRegistroSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 80, 40));
 
         jLabel3.setForeground(new java.awt.Color(31, 65, 187));
         jLabel3.setText("Registro");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 80, -1));
 
         jLabel1.setForeground(new java.awt.Color(31, 65, 187));
         jLabel1.setText("Inicia Sesión");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Login Screen (4).png"))); // NOI18N
@@ -151,6 +156,10 @@ public class vistaLogins extends javax.swing.JFrame {
     private void jmiLoginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiLoginAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiLoginAdminActionPerformed
+
+    private void btnLoginSolicitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginSolicitanteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginSolicitanteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

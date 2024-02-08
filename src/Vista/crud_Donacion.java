@@ -41,9 +41,7 @@ public class crud_Donacion extends javax.swing.JFrame {
         return btnGuardar;
     }
 
-    public JButton getBtnModificar() {
-        return btnModificar;
-    }
+    
 
     public JComboBox<String> getCbDonantes() {
         return cbDonantes;
@@ -57,9 +55,15 @@ public class crud_Donacion extends javax.swing.JFrame {
         return lblFoto;
     }
 
-    public JList<String> getListDonaciones() {
-        return listDonaciones;
+    public JButton getBtnEliminar() {
+        return btnEliminar;
     }
+
+    public JButton getBtnEliminarReg() {
+        return btnEliminarReg;
+    }
+
+   
 
     public JSpinner getSpnCantidad() {
         return spnCantidad;
@@ -67,6 +71,16 @@ public class crud_Donacion extends javax.swing.JFrame {
 
     public JTable getTblDonaciones() {
         return tblDonaciones;
+    }
+
+    public JButton getBtnDeshacer() {
+        return btnDeshacer;
+    }
+
+  
+
+    public JTable getTblProd() {
+        return tblProd;
     }
 
     /**
@@ -81,11 +95,9 @@ public class crud_Donacion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDonaciones = new javax.swing.JTable();
-        btnModificar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JButton();
         lblFoto = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -96,18 +108,19 @@ public class crud_Donacion extends javax.swing.JFrame {
         spnCantidad = new javax.swing.JSpinner();
         cbDonantes = new javax.swing.JComboBox<>();
         cbProductos = new javax.swing.JComboBox<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        listDonaciones = new javax.swing.JList<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnDeshacer = new javax.swing.JButton();
+        btnEliminarReg = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(216, 224, 224));
+        jPanel1.setBackground(new java.awt.Color(251, 253, 251));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblDonaciones.setModel(new javax.swing.table.DefaultTableModel(
@@ -115,30 +128,20 @@ public class crud_Donacion extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id donacion", "Fecha donacin", "Cantidad"
+
             }
         ));
         jScrollPane1.setViewportView(tblDonaciones);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 420, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 460, 240));
 
-        btnModificar.setBackground(new java.awt.Color(0, 0, 51));
-        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/editar (1).png"))); // NOI18N
-        btnModificar.setText("MODIFICAR");
-        btnModificar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnModificar.setBorderPainted(false);
-        jPanel1.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 140, -1));
-
-        btnGuardar.setBackground(new java.awt.Color(0, 204, 0));
+        btnGuardar.setBackground(new java.awt.Color(0, 204, 193));
         btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/disco-flexible.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnGuardar.setBorderPainted(false);
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 140, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, 420, 40));
 
         btnVolver.setBackground(new java.awt.Color(51, 51, 255));
         btnVolver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -149,151 +152,118 @@ public class crud_Donacion extends javax.swing.JFrame {
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel1.setText("Registra la Donacion");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
-
-        btnEliminar.setBackground(new java.awt.Color(0, 0, 51));
-        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/boton-eliminar (1).png"))); // NOI18N
-        btnEliminar.setText("ELIMINAR");
-        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnEliminar.setBorderPainted(false);
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 140, -1));
+        jLabel1.setText("Bienvenido Registra la Donacion");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 190, 30));
 
         lblFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel1.add(lblFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 290, 240));
+        jPanel1.add(lblFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 490, 320));
 
         jLabel3.setText("Prodcuto");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, -1, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, 30));
 
         jLabel4.setText("Donante");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, -1, 30));
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/agregar.png"))); // NOI18N
         btnAgregar.setText("Agregar");
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 110, -1));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 110, -1));
 
         btnCargar.setText("Cargar registros");
-        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 330, -1, -1));
+        jPanel1.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 330, 140, -1));
 
         tblProd.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id donacion", "Id producto", "Id  donante", "Nombre", "Apellido"
+
             }
         ));
         jScrollPane2.setViewportView(tblProd);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 420, 180));
-        jPanel1.add(spnCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 50, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 460, 180));
 
-        jPanel1.add(cbDonantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 190, 30));
+        spnCantidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        spnCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        spnCantidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        spnCantidad.setOpaque(false);
+        jPanel1.add(spnCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 100, 20));
 
-        jPanel1.add(cbProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 190, 30));
+        jPanel1.add(cbDonantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 190, 30));
 
-        jScrollPane3.setViewportView(listDonaciones);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 190, 240));
+        jPanel1.add(cbProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 190, 30));
 
         jLabel5.setBackground(new java.awt.Color(204, 204, 204));
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 290, 150));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 490, 150));
 
-        jLabel6.setText("Cantidad");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, 20));
+        jLabel6.setText("Cantidad productos");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 140, 20));
 
         jLabel7.setText("Producto");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 74, -1, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, 20));
 
         jLabel8.setText("Registro Donaciones");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, -1, 30));
-
-        jLabel9.setText("Donante y su producto");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 74, -1, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, 20));
 
         jLabel10.setText("Productos y donantes asociados con donacion");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, -1, 20));
+
+        btnDeshacer.setText("Deshacer");
+        jPanel1.add(btnDeshacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 480, 100, 20));
+
+        btnEliminarReg.setText("Eliminar");
+        jPanel1.add(btnEliminarReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 560, 80, -1));
+
+        btnEliminar.setText("Eliminar ");
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, 100, -1));
+
+        jLabel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 210, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(crud_Donacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(crud_Donacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(crud_Donacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(crud_Donacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new crud_Donacion().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCargar;
+    private javax.swing.JButton btnDeshacer;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarReg;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JComboBox<String> cbDonantes;
     private javax.swing.JComboBox<String> cbProductos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblFoto;
-    private javax.swing.JList<String> listDonaciones;
     private javax.swing.JSpinner spnCantidad;
     private javax.swing.JTable tblDonaciones;
     private javax.swing.JTable tblProd;

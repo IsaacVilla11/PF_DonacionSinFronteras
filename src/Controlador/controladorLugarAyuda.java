@@ -92,7 +92,7 @@ public class controladorLugarAyuda {
     }
     }   
     public void RegistrarLA() {      
-    try {   
+     try {   
         if (vistaLugarAfectdo.getTxtNombre().getText().isEmpty() || vistaLugarAfectdo.getTxtDireccion().getText().isEmpty()
                 || vistaLugarAfectdo.getTxtDescribcion().getText().isEmpty() || vistaLugarAfectdo.getCbEstado().getSelectedItem()==null
                 ||  vistaLugarAfectdo.getCbCiudad().getSelectedItem()==null) {
@@ -196,7 +196,7 @@ public class controladorLugarAyuda {
           JOptionPane.showMessageDialog(null, "Error al obtener los detalles del Centro de Acopio");
           return;
       }
-
+      
     // Cargar los datos en los campos de texto
     vistaLugarAfectdo.getCbEstado().setSelectedItem(centro.getEstado_luaf());
     vistaLugarAfectdo.getTxtNombre().setText(centro.getNombre_lug()); 

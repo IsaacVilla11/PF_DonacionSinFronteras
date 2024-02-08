@@ -158,7 +158,7 @@ public class controladorCentroAcopio {
 
     if (filaSeleccionada != -1) {
         // Obtener el centro de acopio de la fila seleccionada
-       int id_lugar = (Integer) vistaCentroAcopio.getTableCA().getValueAt(filaSeleccionada, 0);     
+       int id_lugar = (Integer) vistaCentroAcopio.getTableCA().getValueAt(filaSeleccionada, 2);     
 
         // Obtener los nuevos valores de los campos de texto
         String nuevoNombre = vistaCentroAcopio.getTxtNombre().getText();
@@ -186,9 +186,8 @@ public class controladorCentroAcopio {
           return;
       }
 
-      int id_lugar = (Integer) vistaCentroAcopio.getTableCA().getValueAt(filaSeleccionada, 0);
-      int ruc_ca = (Integer) vistaCentroAcopio.getTableCA().getValueAt(filaSeleccionada, 1);
-
+      int id_lugar = (Integer) vistaCentroAcopio.getTableCA().getValueAt(filaSeleccionada, 2);
+      
       CentroAcopio centro = modCA.obtenerDetallesCA(id_lugar);
 
       if (centro == null) {

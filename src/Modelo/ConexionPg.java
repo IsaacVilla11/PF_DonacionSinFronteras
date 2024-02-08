@@ -10,9 +10,9 @@ import java.util.logging.Logger;
 
 public class ConexionPg {
 
-    String cadenaConexion = "jdbc:postgresql://localhost:5432/PF_DonacionSinFronterasd"; // NOmbre de la base en postgres
+    String cadenaConexion = "jdbc:postgresql://localhost:5432/PF_DonacionSinFronteras"; // NOmbre de la base en postgres
     String userPG = "postgres";
-    String passPG = "123"; //Cada uno pone su Contraseña 
+    String passPG = "1234"; //Cada uno pone su Contraseña 
 
     Connection con;
 
@@ -71,5 +71,14 @@ public class ConexionPg {
             // Manejar la excepción, por ejemplo, imprimir un mensaje de error
         }
     }
-
+    public void rollback() {
+    try {
+        if (con != null) {
+            con.rollback();
+            System.out.println("Rollback realizado con éxito.");
+        }
+    } catch (SQLException ex) {
+        System.err.println("Error al realizar rollback: " + ex.getMessage());
+    }
+}
 }
