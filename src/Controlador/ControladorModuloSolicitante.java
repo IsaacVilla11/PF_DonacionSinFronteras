@@ -87,10 +87,12 @@ public class ControladorModuloSolicitante {
             }
             solicitd.setRazon_soli(requerimientos);
             
+            // Asigna el ID del solicitante a la solicitud
             solicitd.setId_solicitante_soli(solicitd.traerCodigoDePersonaCrear(cedula));
             
             if (solicitd.insertarSolicitud(solicitd.traerCodigoDePersonaCrear(cedula))) {
                 
+                // Obtener el id_soli recién insertado
                 int idSolicidtud = solicitd.obtenerUltimoIdSolicitud();
                 
                 if (idSolicidtud > 0) {
