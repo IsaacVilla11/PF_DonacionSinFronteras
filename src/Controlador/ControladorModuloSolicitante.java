@@ -1,6 +1,6 @@
 package Controlador;
 
-import static Controlador.ControladorModuloComprador.ShowJPanel;
+//import static Controlador.ControladorModuloComprador.ShowJPanel;
 import Modelo.ModeloSolicitante;
 import Modelo.ModeloSolicitud;
 import Vista.VA_Solicitudes;
@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import static Vista.V_Solicitante.Contenido;
 import java.awt.BorderLayout;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +23,8 @@ import javax.swing.JOptionPane;
  */
 public class ControladorModuloSolicitante {
 
-    VA_Solicitudes vistaModSolicitudes;
     String cedula;
+    //VA_Solicitudes vistaModSolicitudes;
     V_Solicitante vistaSoli;
 
     public ControladorModuloSolicitante(V_Solicitante vistaSoli, String cedula) {
@@ -70,39 +72,37 @@ public class ControladorModuloSolicitante {
     
     public void RegistrarSolicitud(VS_SolicitarDonacion view){
 
-        ModeloSolicitud solicud = new ModeloSolicitud();
-        ModeloSolicitante solctnt = new ModeloSolicitante();
+        ModeloSolicitud solicitd = new ModeloSolicitud();
+        //ModeloSolicitante solctnt = new ModeloSolicitante();
         
         try {
         
             LocalDate fechaFactura = LocalDate.now();
-            solicud.setFecha_soli(java.sql.Date.valueOf(fechaFactura));
+            solicitd.setFecha_soli(java.sql.Date.valueOf(fechaFactura));
             
             String requerimientos = view.getjTextAreaREQUERIMIENTOS().getText();
             if (!Validaciones.validarLetras(requerimientos)) {
                 JOptionPane.showMessageDialog(view, "Requerimientos incorrectos. Ingrese de nuevo");
                 return;
             }
-            solicud.setRazon_soli(requerimientos);
+            solicitd.setRazon_soli(requerimientos);
             
-            solicud.setId_solicitante_soli(solicud.traerCodigoDePersona(cedula));
+            solicitd.setId_solicitante_soli(solicitd.traerCodigoDePersonaCrear(cedula));
             
-            if (solicud.insertarSolicitud(solicud.traerCodigoDePersona(cedula))) {
+            if (solicitd.insertarSolicitud(solicitd.traerCodigoDePersonaCrear(cedula))) {
                 
-                int idSolicidtud = solicud.obtenerUltimoIdSolicitud();
+                int idSolicidtud = solicitd.obtenerUltimoIdSolicitud();
                 
                 if (idSolicidtud > 0) {
-                    // Asignar el id_encabezadoFact al modelo DetalleFactura
-                    solctnt.setId_solicitante(idSolicidtud);
                     
                     JOptionPane.showMessageDialog(view, "SOLICITUD ENVIADA: Uno De Nuestros Representantes Analizara Su Solicitud Y Se Comunicara Con Ud. En Las Proximas 24 Horas");
     
                 } else {
-                    JOptionPane.showMessageDialog(view, "No se pudo obtener el id_encabezadoFact");
+                    JOptionPane.showMessageDialog(view, "No se pudo obtener el id_soli");
                 }
                                        
             } else {
-                JOptionPane.showMessageDialog(view, "No se pudo Enviar la Solicitud");
+                JOptionPane.showMessageDialog(view, "No se pudo registrar la solicitud");
             }
                               
         } catch (Exception e){
