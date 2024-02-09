@@ -73,6 +73,8 @@ public class ModeloSolicitante extends Solicitante{
             while (rs.next()) {
                 Solicitante mi_solic = new Solicitante();
                 
+                
+                mi_solic.setId_solicitante(rs.getInt("id_solicitante"));
                 mi_solic.setContraseña_usu(rs.getString("contrasenia_usu"));
                 mi_solic.setCedula_usu(rs.getString("cedula_usu"));
 
@@ -273,12 +275,12 @@ public class ModeloSolicitante extends Solicitante{
         }
     }
     
-    public boolean ConsultarSolicitante(String usuario, String contrasenia, List<Solicitante> solicitantes) {
+    public Solicitante ConsultarSolicitante(String usuario, String contrasenia, List<Solicitante> solicitantes) {
         for (Solicitante solici : solicitantes) {
             if (solici.getCedula_usu().equals(usuario) && solici.getContraseña_usu().equals(contrasenia)) {
-                return true;
+                return solici;
             }
         }
-        return false;
+        return null;
     }
 }
