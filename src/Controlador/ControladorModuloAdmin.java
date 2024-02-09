@@ -6,6 +6,9 @@ import Modelo.LugarAfectado;
 import Modelo.ModeloAdministrador;
 import Modelo.ModeloCentroAcopio;
 import Modelo.ModeloLugarAfectado;
+import Modelo.ModeloReportSolicitudes;
+import Modelo.ModeloSolicitud;
+import Modelo.Solicitud;
 import Vista.CRUD_Comprador;
 import Vista.CRUD_Donante;
 import Vista.CRUD_Solicitante;
@@ -46,10 +49,14 @@ public class ControladorModuloAdmin {
 
     vistaAdministrador vistaModAdmin;
     Crud_lugarAfectado vistaLugarAfectado;
+    ModeloReportSolicitudes modSol = new ModeloReportSolicitudes();
     ModeloCentroAcopio modCA = new ModeloCentroAcopio();
     ModeloLugarAfectado modLA = new ModeloLugarAfectado();
     ModeloAdministrador modAdministrador = new ModeloAdministrador();
     private JList<String> adminList;
+    VA_Solicitudes vistasolis = new VA_Solicitudes();
+    V_EstadoSolicitud vistaEstadosoli = new V_EstadoSolicitud();
+    String cedula;
 
     public ControladorModuloAdmin(vistaAdministrador vistaModAdmin) {
         this.vistaModAdmin = vistaModAdmin;
@@ -71,7 +78,7 @@ public class ControladorModuloAdmin {
         vistaModAdmin.getJmiCrudSolicitante().addActionListener(l -> mostrarCrudSolicitante());
         vistaModAdmin.getJmiRegistroTransporte().addActionListener(l -> mostrarRTrasporte());
         vistaModAdmin.getRcamiones().addActionListener(l -> mostrarCrudCamion());
-        vistaModAdmin.getBtnSolicitudes().addActionListener(l -> mostrarSolicitudes());
+        vistaModAdmin.getBtnSolicitudes().addActionListener(l -> ReporteSolicitudes());
 
         //No tocar
         vistaModAdmin.getJmitemCiudad().addActionListener(l -> MostrarCrudCiudad());
@@ -298,34 +305,70 @@ private void cargarAdministradores() {
         control.iniciarControl();
     }
     
-    public void mostrarSolicitudes() {
-        vistaModAdmin.dispose();
-        VA_Solicitudes vista = new VA_Solicitudes();
-        vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
-
-        vista.getBtnAprobar().addActionListener(l -> mostrarEstadoSoli()); 
-        vista.getBtnRegresar().addActionListener(l -> regresesarMenuAdmin()); 
-        //ControladorModuloSolicitante control = new ControladorModuloSolicitante(vista);
-        //control.iniciarControl();
-    }
-    
     public void mostrarEstadoSoli() {
-        vistaModAdmin.dispose();
-        V_EstadoSolicitud vista = new V_EstadoSolicitud();
-        vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
-
-        vista.getBtnRegresar().addActionListener(l -> regresesarMenuAdmin());
+        vistasolis.dispose();
+        vistaEstadosoli.setLocationRelativeTo(null);
+        vistaEstadosoli.setVisible(true);
+        vistaEstadosoli.getBtnRegresar().addActionListener(l -> regresesarMenuAdmin1());
         //ControladorCrudSolicitante control = new ControladorCrudSolicitante(vista);
         //control.iniciarControl();
     }
     public void regresesarMenuAdmin() {
-        //vistaModAdmin.dispose();
+        vistasolis.dispose();
         vistaAdministrador vista = new vistaAdministrador();
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
+        ControladorModuloAdmin control = new ControladorModuloAdmin(vista);
+        control.iniciarControl();
+
+    }
+    public void regresesarMenuAdmin1() {
+        vistaEstadosoli.dispose();
+        vistaAdministrador vista = new vistaAdministrador();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorModuloAdmin control = new ControladorModuloAdmin(vista);
+        control.iniciarControl();
+
+    }
+    
+    public void cargarTablaSolicitudes(VA_Solicitudes solicitd){
+         ModeloSolicitud solic =new ModeloSolicitud();
+         
+           // Asigna el ID del comprador al encabezado de factura
+            //int idPersona=solic.traerCodigoDePersonaCrear(cedula);
+            DefaultTableModel tb = new DefaultTableModel();
+            tb.addColumn("CODIGO DE SOLICITANTE");
+            tb.addColumn("CODIGO DE SOLICITUD");
+            tb.addColumn("FECHA0");
+            tb.addColumn("REQUERIMIENTOS");
+
+            List<Solicitud> soli = modSol.obtenerReport();
+            System.out.println("Tamaño" + soli.size());
+            soli.forEach(p -> {
+                Object[] rowData = {
+                    p.getId_solicitante_soli(),
+                    p.getId_soli(),
+                    p.getFecha_soli(),
+                    p.getRazon_soli()
+
+                };
+                tb.addRow(rowData);
+            });
+
+            solicitd.getTabla_solicitudes().setModel(tb);
+    }
+    
+    public void ReporteSolicitudes() {
+        vistaModAdmin.dispose();
+        cargarTablaSolicitudes(vistasolis);
+        vistasolis.setVisible(true);
+        
+        vistasolis.getBtnAprobar().addActionListener(l -> mostrarEstadoSoli()); 
+        vistasolis.getBtnRegresar().addActionListener(l -> regresesarMenuAdmin()); 
+              
     }
     
 }
