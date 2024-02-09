@@ -40,10 +40,6 @@ public class V_EstadoSolicitud extends javax.swing.JFrame {
         return jCheckBoxAPRUEBA;
     }
 
-    public JDateChooser getjDateFechaAprob() {
-        return jDateFechaAprob;
-    }
-
     public JTable getTabla_solicitudes() {
         return tabla_solicitudes;
     }
@@ -59,8 +55,6 @@ public class V_EstadoSolicitud extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnRegresar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jDateFechaAprob = new com.toedter.calendar.JDateChooser();
         jCboxIDsolicitud = new javax.swing.JComboBox<>();
         btnAprobar = new javax.swing.JButton();
         jCheckBoxAPRUEBA = new javax.swing.JCheckBox();
@@ -94,7 +88,7 @@ public class V_EstadoSolicitud extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabla_solicitudes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 780, 190));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 780, 190));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 530, 20));
 
         btnRegresar.setBackground(new java.awt.Color(20, 51, 166));
@@ -106,29 +100,22 @@ public class V_EstadoSolicitud extends javax.swing.JFrame {
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setText("ID Solicitud:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 10));
-
-        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel6.setText("Fecha De Aprobacion:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 10));
-
-        jDateFechaAprob.setForeground(new java.awt.Color(0, 0, 102));
-        jPanel1.add(jDateFechaAprob, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 160, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, 10));
 
         jCboxIDsolicitud.setForeground(new java.awt.Color(0, 0, 102));
         jCboxIDsolicitud.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jCboxIDsolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 140, -1));
+        jPanel1.add(jCboxIDsolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 140, -1));
 
         btnAprobar.setBackground(new java.awt.Color(20, 51, 166));
         btnAprobar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAprobar.setForeground(new java.awt.Color(255, 255, 255));
         btnAprobar.setText("ENVIAR");
         btnAprobar.setBorderPainted(false);
-        jPanel1.add(btnAprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 170, 40));
+        jPanel1.add(btnAprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 170, 40));
 
         jCheckBoxAPRUEBA.setForeground(new java.awt.Color(0, 0, 102));
         jCheckBoxAPRUEBA.setText("APRUEBA");
-        jPanel1.add(jCheckBoxAPRUEBA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
+        jPanel1.add(jCheckBoxAPRUEBA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,10 +139,8 @@ public class V_EstadoSolicitud extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> jCboxIDsolicitud;
     private javax.swing.JCheckBox jCheckBoxAPRUEBA;
-    private com.toedter.calendar.JDateChooser jDateFechaAprob;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
