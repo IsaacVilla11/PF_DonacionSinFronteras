@@ -19,7 +19,7 @@ public class ModeloEstadoSolicitud extends AprobacionSolicitud{
 
             // Setear los parámetros
             statement.setDate(1, (Date) getFechaAprobacion());
-            //statement.setBoolean(2, getAprueba());
+            statement.setBoolean(2, isAprueba());
             statement.setInt(3, idAdmin);
             statement.setInt(4, getId_soli_apso());
 
