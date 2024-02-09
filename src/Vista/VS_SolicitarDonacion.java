@@ -17,10 +17,6 @@ public class VS_SolicitarDonacion extends javax.swing.JPanel {
         return btnEnviarSolic;
     }
 
-    public JDateChooser getFecha_solictd() {
-        return fecha_solictd;
-    }
-
     public JTextArea getjTextAreaREQUERIMIENTOS() {
         return jTextAreaREQUERIMIENTOS;
     }
@@ -34,8 +30,6 @@ public class VS_SolicitarDonacion extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        fecha_solictd = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaREQUERIMIENTOS = new javax.swing.JTextArea();
         jSeparator1 = new javax.swing.JSeparator();
@@ -52,18 +46,13 @@ public class VS_SolicitarDonacion extends javax.swing.JPanel {
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setText("REQUERIMINETOS  DE LA SOLICITUD:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, -1));
-
-        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel4.setText("FECHA DE SOLICITUD:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
-        jPanel1.add(fecha_solictd, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 139, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 330, 20));
 
         jTextAreaREQUERIMIENTOS.setColumns(20);
         jTextAreaREQUERIMIENTOS.setRows(5);
         jScrollPane2.setViewportView(jTextAreaREQUERIMIENTOS);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 560, 140));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 870, 170));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 620, 20));
 
         btnEnviarSolic.setBackground(new java.awt.Color(20, 51, 166));
@@ -72,7 +61,7 @@ public class VS_SolicitarDonacion extends javax.swing.JPanel {
         btnEnviarSolic.setText("ENVIAR SOLICITUD ");
         btnEnviarSolic.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnEnviarSolic.setBorderPainted(false);
-        jPanel1.add(btnEnviarSolic, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 180, 40));
+        jPanel1.add(btnEnviarSolic, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 180, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -91,10 +80,8 @@ public class VS_SolicitarDonacion extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviarSolic;
-    private com.toedter.calendar.JDateChooser fecha_solictd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
