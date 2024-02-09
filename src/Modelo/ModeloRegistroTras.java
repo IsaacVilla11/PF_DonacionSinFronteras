@@ -6,6 +6,7 @@ package Modelo;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -81,48 +82,166 @@ public class ModeloRegistroTras {
         }
     }
 
-    public boolean insertarRegistroTransporte(RegistroTransporte registro) {
-        String sql = "INSERT INTO registro_transporte (fecha_salida, fecha_llegada, id_cam_retr, id_lugar, id_donacion) VALUES (CURRENT_DATE, ?, ?, ?, ?)";
+   public boolean insertarRegistroTransporte(RegistroTransporte registro) {
+    String sql = "INSERT INTO registro_transporte (fecha_llegada, id_cam_retr, id_lugar, id_donacion) VALUES (?, ?, ?, ?)";
 
-        ConexionPg cone = new ConexionPg();
-        Connection connection = null;
-        PreparedStatement statement = null;
+    ConexionPg cone = new ConexionPg();
+    Connection connection = null;
+    PreparedStatement statement = null;
 
+    try {
+        connection = cone.getCon();
+        statement = connection.prepareStatement(sql);
+
+        // Obtener el ID del lugar
+        int idLugar = obtenerIdLugar(registro.getId_lugar());
+
+        statement.setDate(1, new java.sql.Date(registro.getFecha_llegada().getTime()));
+        statement.setInt(2, registro.getId_cam_retr());
+        statement.setInt(3, idLugar); // Usar el ID del lugar obtenido
+        statement.setInt(4, registro.getId_donacion());
+
+        int filasAfectadas = statement.executeUpdate();
+
+        // Si se insertó al menos una fila, retornamos true
+        return filasAfectadas > 0;
+    } catch (SQLException e) {
+        System.err.println("Error al insertar registro de transporte: " + e.getMessage());
+        e.printStackTrace();  // Puedes ajustar esto según tus necesidades
+
+        return false;
+    } finally {
         try {
-            connection = cone.getCon();
-            statement = connection.prepareStatement(sql);
-
-            statement.setDate(1, new java.sql.Date(registro.getFecha_llegada().getTime()));
-            statement.setInt(2, registro.getId_cam_retr());
-            statement.setInt(3, registro.getId_lugar());
-            statement.setInt(4, registro.getId_donacion());
-
-            int filasAfectadas = statement.executeUpdate();
-
-            // Si se insertó al menos una fila, retornamos true
-            return filasAfectadas > 0;
-        } catch (SQLException e) {
-
-            System.err.println("Error al insertar registro de transporte: " + e.getMessage());
-            e.printStackTrace();  // Puedes ajustar esto según tus necesidades
-
-            return false;
-        } finally {
-
-            try {
-                if (statement != null) {
-                    statement.close();
-                }
-                if (connection != null && !connection.isClosed()) {
-                    connection.close();
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-
+            if (statement != null) {
+                statement.close();
             }
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+
+private int obtenerIdLugarPorNombre(Connection connection, String nombreLugar) throws SQLException {
+    String sql = "SELECT id_lug FROM lugar WHERE nombre_lug = ?";
+    PreparedStatement statement = null;
+    ResultSet resultSet = null;
+
+    try {
+        statement = connection.prepareStatement(sql);
+        statement.setString(1, nombreLugar);
+        resultSet = statement.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getInt("id_lug");
+        } else {
+            // Si no se encuentra el lugar en la tabla lugar, buscar en la tabla centroAcopio
+            return obtenerIdLugarCentroAcopioPorNombre(connection, nombreLugar);
+        }
+    } finally {
+        // Cerrar recursos
+        if (resultSet != null) {
+            resultSet.close();
+        }
+        if (statement != null) {
+            statement.close();
+        }
+    }
+}
+
+private int obtenerIdLugarCentroAcopioPorNombre(Connection connection, String nombreLugar) throws SQLException {
+    String sql = "SELECT id_lug FROM centroAcopio WHERE nombre_lug = ?";
+    PreparedStatement statement = null;
+    ResultSet resultSet = null;
+
+    try {
+        statement = connection.prepareStatement(sql);
+        statement.setString(1, nombreLugar);
+        resultSet = statement.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getInt("id_lug");
+        } else {
+            // Si no se encuentra el lugar en la tabla centroAcopio, retornar un valor predeterminado o lanzar una excepción según lo deseado
+            return -1; // Valor predeterminado o lanzar excepción
+        }
+    } finally {
+        // Cerrar recursos
+        if (resultSet != null) {
+            resultSet.close();
+        }
+        if (statement != null) {
+            statement.close();
+        }
+    }
+}
+
+    private int obtenerIdLugar(int idLugar) {
+    ConexionPg cone = new ConexionPg();
+    Connection connection = null;
+    PreparedStatement statement = null;
+    ResultSet resultSet = null;
+    int idLugarPadre = idLugar; // Por defecto, asumimos que el ID recibido es el ID de la tabla lugar
+
+    try {
+        connection = cone.getCon();
+        String sql = "SELECT id_lug FROM lugar WHERE id_lug = ?";
+        statement = connection.prepareStatement(sql);
+        statement.setInt(1, idLugar);
+
+        resultSet = statement.executeQuery();
+
+        // Si el ID recibido no corresponde a la tabla lugar, buscamos su ID padre en la jerarquía de herencia
+        if (!resultSet.next()) {
+            // Si el ID no está en la tabla lugar, buscamos en las tablas hijas (centroAcopio y lugarAfectado)
+            sql = "SELECT id_lug FROM centroacopio WHERE id_lug = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, idLugar);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                idLugarPadre = resultSet.getInt("id_lug"); // El ID recibido pertenece a la tabla centroAcopio
+            } else {
+                sql = "SELECT id_lug FROM lugarafectado WHERE id_lug = ?";
+                statement = connection.prepareStatement(sql);
+                statement.setInt(1, idLugar);
+
+                resultSet = statement.executeQuery();
+
+                if (resultSet.next()) {
+                    idLugarPadre = resultSet.getInt("id_lug"); // El ID recibido pertenece a la tabla lugarAfectado
+                } else {
+                    // Si el ID no está en ninguna tabla de la jerarquía de herencia, no se encontró el ID padre
+                    throw new IllegalArgumentException("El ID recibido no corresponde a ninguna tabla de la jerarquía de herencia.");
+                }
+            }
+        }
+    } catch (SQLException e) {
+        // Manejar la excepción según sea necesario
+        e.printStackTrace();
+    } finally {
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException ex) {
+            // Manejar la excepción según sea necesario
+            ex.printStackTrace();
         }
     }
 
+    return idLugarPadre;
+}
+    
     public List<RegistroTransporte> obtenerRegistrosConDatosCompletos() {
         List<RegistroTransporte> registros = new ArrayList<>();
         String sql = "SELECT rt.id_reg_trans, rt.fecha_salida, rt.fecha_llegada, "

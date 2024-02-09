@@ -118,9 +118,9 @@ public class ControladorRegistroTrasporte {
 
                     registroModificado.setFecha_llegada(vistatras.getFechafin().getDate());
 
-                    String idLugarCombo = (String) vistatras.getCombolugares().getSelectedItem();
-                    int idLugarInt = Integer.parseInt(extraerNumeros(idLugarCombo));
-                    registroModificado.setId_lugar(idLugarInt);
+                   String idLugarCombo = (String) vistatras.getCombolugares().getSelectedItem();
+int idLugarInt = Integer.parseInt(idLugarCombo.substring(0, 1)); // Obtener el primer dígito
+registroModificado.setId_lugar(idLugarInt);
 
                     String idCamionCombo = (String) vistatras.getComboCamniones().getSelectedItem();
                     int idCamionInt = Integer.parseInt(extraerNumeros(idCamionCombo));
@@ -267,14 +267,17 @@ public class ControladorRegistroTrasporte {
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String fechaLlegada = sdf.format(fechaLlegadaDate);
-
             String idCamion = (String) vistatras.getComboCamniones().getSelectedItem();
-            String idLugar = (String) vistatras.getCombolugares().getSelectedItem();
+            
             String idDonacion = (String) vistatras.getComboDonaciones1().getSelectedItem();
 
             int idCamionInt = idCamion.isEmpty() ? 0 : Integer.parseInt(extraerNumeros(idCamion));
-            int idLugarInt = idLugar.isEmpty() ? 0 : Integer.parseInt(extraerNumeros(idLugar));
+            
             int idDonacionInt = idDonacion.isEmpty() ? 0 : Integer.parseInt(extraerNumeros(idDonacion));
+            String idLugar = (String) vistatras.getCombolugares().getSelectedItem();
+            String[] partes = idLugar.split("-");
+            String idLugarNumerico = partes[0].trim(); // Obtener el ID numérico y eliminar espacios en blanco
+            int idLugarInt = Integer.parseInt(idLugarNumerico);
 
             // Validar que los campos no estén vacíos
             if (fechaLlegada.trim().isEmpty() || idCamion.trim().isEmpty() || idLugar.trim().isEmpty() || idDonacion.trim().isEmpty()) {
@@ -289,7 +292,7 @@ public class ControladorRegistroTrasporte {
             nuevoRegistro.setId_donacion(idDonacionInt);
 
             boolean exito = modTras.insertarRegistroTransporte(nuevoRegistro);
-
+            
             if (exito) {
                 JOptionPane.showMessageDialog(null, "Registro de transporte guardado exitosamente");
                 mostrarRegistrosEnTabla();
