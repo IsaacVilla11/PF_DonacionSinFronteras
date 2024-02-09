@@ -22,7 +22,6 @@ import Vista.V_Principal;
 import Vista.crudAdministrador;
 import Vista.crudCiudad;
 import Vista.crud_Donacion;
-import Vista.crud_RegistroDonacion;
 import Vista.vistaAdministrador;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
