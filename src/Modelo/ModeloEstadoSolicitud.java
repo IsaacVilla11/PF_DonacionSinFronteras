@@ -78,4 +78,28 @@ public class ModeloEstadoSolicitud extends AprobacionSolicitud{
         return solicitudes;
     }
     
+//    public  List<Solicitud> consultarSolictd() {//metodo para cargar todos los registros en el table
+//        List<Solicitud> listaSlds = new ArrayList<>();
+//
+//        try( 
+//            Connection conexion = new ConexionPg().getCon();
+//                PreparedStatement pst = conexion.prepareStatement("SELECT * FROM solicitud");
+//                ResultSet rs = pst.executeQuery()) {
+//
+//            while (rs.next()) {
+//                int id_soli = rs.getInt("id_soli");
+//                String razon_soli =rs.getString("razon_soli");
+//                Date fecha_soli = rs.getDate("fecha_soli");
+//                int id_solicitante_soli = rs.getInt("id_lug");
+//
+//                              
+//                Solicitud c = new Solicitud(id_soli,razon_soli,fecha_soli,id_solicitante_soli);
+//                listaSlds.add(c);
+//            }
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//        return listaSlds;
+//    }   
+    
 }
