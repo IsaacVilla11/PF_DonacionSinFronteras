@@ -153,8 +153,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
         btnTables = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableRegistros = new javax.swing.JTable();
         btnLists = new javax.swing.JButton();
+        tableRegistros = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -187,7 +188,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 255, 248));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCentroAcopio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -295,6 +296,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jToolBar1.add(jSeparator3);
 
         jPanel3.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 280, 20));
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 820, 300));
+
+        btnLists.setText("Cargar");
+        jPanel3.add(btnLists, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, -1));
 
         tableRegistros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         tableRegistros.setModel(new javax.swing.table.DefaultTableModel(
@@ -308,12 +313,11 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(tableRegistros);
+        jPanel3.add(tableRegistros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 820, 300));
-
-        btnLists.setText("Cargar");
-        jPanel3.add(btnLists, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/admm.jpeg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-650, 410, -1, 250));
 
         jMenuBar1.setBackground(new java.awt.Color(102, 204, 255));
         jMenuBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
@@ -433,11 +437,13 @@ public class vistaAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1027, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1027, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -457,6 +463,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnLugarAyuda;
     private javax.swing.JButton btnTables;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
