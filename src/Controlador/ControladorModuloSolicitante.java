@@ -3,6 +3,7 @@ package Controlador;
 //import static Controlador.ControladorModuloComprador.ShowJPanel;
 import Modelo.ModeloSolicitante;
 import Modelo.ModeloSolicitud;
+import Modelo.Solicitante;
 import Vista.VA_Solicitudes;
 import Vista.V_Principal;
 import Vista.V_Solicitante;
@@ -26,9 +27,10 @@ public class ControladorModuloSolicitante {
     String cedula;
     //VA_Solicitudes vistaModSolicitudes;
     V_Solicitante vistaSoli;
+    public Solicitante solic;
 
-    public ControladorModuloSolicitante(V_Solicitante vistaSoli, String cedula) {
-        this.cedula = cedula;
+    public ControladorModuloSolicitante(V_Solicitante vistaSoli, Solicitante solic) {
+        this.solic = solic;
         this.vistaSoli = vistaSoli;
         vistaSoli.setVisible(true);
         VentanaInicio();
@@ -77,8 +79,8 @@ public class ControladorModuloSolicitante {
         
         try {
         
-            LocalDate fechaFactura = LocalDate.now();
-            solicitd.setFecha_soli(java.sql.Date.valueOf(fechaFactura));
+            LocalDate fechaSolicitud = LocalDate.now();
+            solicitd.setFecha_soli(java.sql.Date.valueOf(fechaSolicitud));
             
             String requerimientos = view.getjTextAreaREQUERIMIENTOS().getText();
             if (!Validaciones.validarLetras(requerimientos)) {
@@ -87,25 +89,23 @@ public class ControladorModuloSolicitante {
             }
             solicitd.setRazon_soli(requerimientos);
             
-            // Asigna el ID del solicitante a la solicitud
-            solicitd.setId_solicitante_soli(solicitd.traerCodigoDePersonaCrear(cedula));
+            solicitd.setId_solicitante_soli(solic.getId_solicitante());
             
-            if (solicitd.insertarSolicitud(solicitd.traerCodigoDePersonaCrear(cedula))) {
                 
-                // Obtener el id_soli recién insertado
                 int idSolicidtud = solicitd.obtenerUltimoIdSolicitud();
-                
+                solicitd.setId_soli(idSolicidtud);
+                System.out.println("ultimo id"+idSolicidtud);
                 if (idSolicidtud > 0) {
-                    
+                     System.out.println(solicitd);
+                    solicitd.insertarSolicitud();
                     JOptionPane.showMessageDialog(view, "SOLICITUD ENVIADA: Uno De Nuestros Representantes Analizara Su Solicitud Y Se Comunicara Con Ud. En Las Proximas 24 Horas");
     
                 } else {
                     JOptionPane.showMessageDialog(view, "No se pudo obtener el id_soli");
                 }
                                        
-            } else {
-                JOptionPane.showMessageDialog(view, "No se pudo registrar la solicitud");
-            }
+                //JOptionPane.showMessageDialog(view, "No se pudo registrar la solicitud");
+            
                               
         } catch (Exception e){
             // Manejo de la excepción
