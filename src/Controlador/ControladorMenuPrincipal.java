@@ -1,5 +1,6 @@
 package Controlador;
 
+import Vista.Login_Solicitante;
 import Vista.V_Principal;
 import Vista.vistaLogins;
 
@@ -20,6 +21,7 @@ public class ControladorMenuPrincipal {
     public void iniciarControl() {
         vistaP.getBtnIniciarSesion().addActionListener(l -> mostrarLoginUsuarios());
         vistaP.getBtnRegistrarse().addActionListener(l -> mostrarLoginUsuarios());
+        vistaP.getBtnAyuda().addActionListener(l -> mostrarLoginSolicitante());
 
     }
 
@@ -34,5 +36,16 @@ public class ControladorMenuPrincipal {
         
         
 
+    }
+    
+    public void mostrarLoginSolicitante() {
+        vistaP.dispose();
+        Login_Solicitante vista = new Login_Solicitante();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorLoginSolicitante controlLogin = new ControladorLoginSolicitante(vista);
+        controlLogin.iniciarControl();
+        
     }
 }
