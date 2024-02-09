@@ -3,6 +3,7 @@ package Vista;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JTable;
@@ -31,6 +32,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
     public JButton getBtnCerrarSesion() {
         return btnCerrarSesion;
+    }
+
+    public JButton getBtnLists() {
+        return btnLists;
     }
 
     public JMenuItem getJmiRegistroComprador() {
@@ -90,9 +95,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return jmitemMueble;
     }
 
-    public JMenuItem getJmitemRegDonacion() {
-        return jmitemRegDonacion;
-    }
+  
 
     public JMenuItem getJmitemRopa() {
         return jmitemRopa;
@@ -118,6 +121,10 @@ public class vistaAdministrador extends javax.swing.JFrame {
         return Rcamiones;
     }
 
+    public JList<String> getListAdm() {
+        return listAdm;
+    }
+
     
     
 
@@ -134,13 +141,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         BtnSolicitudes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listAdm = new javax.swing.JList<>();
         btnCerrarSesion = new javax.swing.JButton();
         lblmsjRegistro = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         btnLA = new javax.swing.JButton();
@@ -151,6 +154,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableRegistros = new javax.swing.JTable();
+        btnLists = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -174,7 +178,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu9 = new javax.swing.JMenu();
         jmitemCiudad = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
-        jmitemRegDonacion = new javax.swing.JMenuItem();
         jmiRegistroTransporte = new javax.swing.JMenuItem();
         sa = new javax.swing.JMenu();
         Rcamiones = new javax.swing.JMenuItem();
@@ -230,12 +233,12 @@ public class vistaAdministrador extends javax.swing.JFrame {
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 140, 100));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Aqui se muestra", "la cedula", "y nombre de ", "donantes", " ", " " };
+        listAdm.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listAdm);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 140, 290));
 
@@ -249,25 +252,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
         lblmsjRegistro.setForeground(new java.awt.Color(20, 51, 166));
         lblmsjRegistro.setText("Registros");
         jPanel3.add(lblmsjRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 250, 20));
-
-        jLabel3.setForeground(new java.awt.Color(20, 51, 166));
-        jLabel3.setText("Donaciones registradas");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setText("Aqui solo se mostraran las imagenes de las donaciones, mas nada");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 56, -1, -1));
-
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 990, 230));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/agregar.png"))); // NOI18N
-        jButton1.setText("Agregar Donacion");
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 680, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(20, 51, 166));
@@ -327,6 +311,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tableRegistros);
 
         jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 820, 300));
+
+        btnLists.setText("Cargar");
+        jPanel3.add(btnLists, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, -1));
 
         jMenuBar1.setBackground(new java.awt.Color(102, 204, 255));
         jMenuBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
@@ -422,10 +409,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
         jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
         jMenu10.setText("Registros");
 
-        jmitemRegDonacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
-        jmitemRegDonacion.setText("Registro Donacion");
-        jMenu10.add(jmitemRegDonacion);
-
         jmiRegistroTransporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/InconoRegistro.png"))); // NOI18N
         jmiRegistroTransporte.setText("Registro Transporte");
         jMenu10.add(jmiRegistroTransporte);
@@ -454,7 +437,7 @@ public class vistaAdministrador extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
         );
 
         pack();
@@ -470,14 +453,11 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnDonaciones;
     private javax.swing.JButton btnLA;
+    private javax.swing.JButton btnLists;
     private javax.swing.JButton btnLugarAyuda;
     private javax.swing.JButton btnTables;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
@@ -493,7 +473,6 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -511,9 +490,9 @@ public class vistaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmitemCiudad;
     private javax.swing.JMenuItem jmitemMedicamentos;
     private javax.swing.JMenuItem jmitemMueble;
-    private javax.swing.JMenuItem jmitemRegDonacion;
     private javax.swing.JMenuItem jmitemRopa;
     private javax.swing.JLabel lblmsjRegistro;
+    private javax.swing.JList<String> listAdm;
     private javax.swing.JMenu sa;
     private javax.swing.JTable tableRegistros;
     // End of variables declaration//GEN-END:variables

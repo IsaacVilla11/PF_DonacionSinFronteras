@@ -5,7 +5,7 @@
  */
 package Modelo;
 
-import com.sun.jdi.connect.spi.Connection;
+//import com.sun.jdi.connect.spi.Connection;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.sql.PreparedStatement;
@@ -17,6 +17,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+        
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
 
 /**
  *
@@ -306,4 +317,37 @@ public class ModeloAdministrador extends Administrador {
         }
         return false;
     }
+public List<Administrador> obtenerNombresApellidosDonantes(int id_administrador) {
+        List<Administrador> donantes = new ArrayList<>();
+
+        try {
+            Connection conexion = new ConexionPg().getCon(); // Corregir llamada al método getCon()
+            PreparedStatement pst = conexion.prepareStatement(
+                     "SELECT a.id_adm, p.nombre_usu, p.apellido_usu " +
+                             "FROM administrador a " +
+                             "INNER JOIN persona p ON a.id_persona_adm = p.id_persona " +
+                             "WHERE a.id_adm = ?");
+
+            pst.setInt(1, id_administrador);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id_adm");
+                String nombre = rs.getString("nombre_usu");
+                String apellido = rs.getString("apellido_usu");
+
+                Administrador administrador = new Administrador
+        (id, null,0,0,null,nombre, apellido,null, null, null, null, null, null, null, null);
+                donantes.add(administrador);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return donantes;
+    }
 }
+
+
+//Administrador donante = new Administrador
+//        (id, null,0,0,null,nombre, apellido,null, null, null, null, null, null, null, null);

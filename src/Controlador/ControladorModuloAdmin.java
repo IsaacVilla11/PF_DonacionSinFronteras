@@ -1,7 +1,9 @@
 package Controlador;
 
 import Modelo.CentroAcopio;
+import Modelo.Administrador;
 import Modelo.LugarAfectado;
+import Modelo.ModeloAdministrador;
 import Modelo.ModeloCentroAcopio;
 import Modelo.ModeloLugarAfectado;
 import Vista.CRUD_Comprador;
@@ -26,11 +28,16 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JList;
 
 /**
  *
@@ -42,14 +49,19 @@ public class ControladorModuloAdmin {
     Crud_lugarAfectado vistaLugarAfectado;
     ModeloCentroAcopio modCA = new ModeloCentroAcopio();
     ModeloLugarAfectado modLA = new ModeloLugarAfectado();
+    ModeloAdministrador modAdministrador = new ModeloAdministrador();
+    private JList<String> adminList;
 
     public ControladorModuloAdmin(vistaAdministrador vistaModAdmin) {
         this.vistaModAdmin = vistaModAdmin;
         vistaModAdmin.setVisible(true);
+        cargarAdministradores();
 
     }
 
     public void iniciarControl() {
+        
+        vistaModAdmin.getBtnLists().addActionListener(l->cargarAdministradores());
         vistaModAdmin.getBtnCerrarSesion().addActionListener(l -> regresesarMenuPrincipal());
         vistaModAdmin.getJmiRegistroComprador().addActionListener(l -> mostrarCrudComprador());
         vistaModAdmin.getJmiRegistroDonante().addActionListener(l -> mostrarCrudDonante());
@@ -62,8 +74,7 @@ public class ControladorModuloAdmin {
         vistaModAdmin.getRcamiones().addActionListener(l -> mostrarCrudCamion());
         vistaModAdmin.getBtnSolicitudes().addActionListener(l -> mostrarSolicitudes());
 
-        //Notocar
-        vistaModAdmin.getJmitemRegDonacion().addActionListener(l -> mostrarRegistroDonante());
+        //No tocar
         vistaModAdmin.getJmitemCiudad().addActionListener(l -> MostrarCrudCiudad());
         vistaModAdmin.getBtnDonaciones().addActionListener(l -> mostrarCrudDonaciones());
         vistaModAdmin.getBtnCentroAcopio().addActionListener(l -> mostrarCentroAcopio());
@@ -102,16 +113,7 @@ public class ControladorModuloAdmin {
     }
 
     //jose
-    public void mostrarRegistroDonante() {
 
-        vistaModAdmin.dispose();
-        crud_RegistroDonacion vista = new crud_RegistroDonacion();
-        vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
-
-        ControladorCrud_RegistroDonacion controR = new ControladorCrud_RegistroDonacion(vista);
-        controR.iniciarControl();
-    }
 
     public void MostrarCrudCiudad() {
 
@@ -222,6 +224,19 @@ public class ControladorModuloAdmin {
             JOptionPane.showMessageDialog(null, "Error en el reporte.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+private void cargarAdministradores() {
+    DefaultListModel<String> model = new DefaultListModel<>();
+    vistaModAdmin.getListAdm().setModel(model);
+
+    List<Administrador> administradores = modAdministrador.obtenerNombresApellidosDonantes(0); // Suponiendo que este método retorna la lista de administradores
+
+    for (Administrador administrador : administradores) {
+        String administradorString = administrador.getId_adm()+ ": " + administrador.getNombre_usu() + " " + administrador.getApellido_usu();
+        model.addElement(administradorString);
+    }
+}
+
     //No tocar ////////
 
     public void regresesarMenuPrincipal() {
