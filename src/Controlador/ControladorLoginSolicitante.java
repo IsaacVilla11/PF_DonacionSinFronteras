@@ -17,6 +17,7 @@ public class ControladorLoginSolicitante {
 
     private Login_Solicitante vistaLogSoli;
     String cedulaSol;
+    public static Solicitante solicitanteingresado;
 
     public ControladorLoginSolicitante(Login_Solicitante vistaLogSoli) {
         this.vistaLogSoli = vistaLogSoli;
@@ -36,7 +37,7 @@ public class ControladorLoginSolicitante {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
 
-        ControladorModuloSolicitante control = new ControladorModuloSolicitante(vista, cedulaSol);
+        ControladorModuloSolicitante control = new ControladorModuloSolicitante(vista, solicitanteingresado);
         control.iniciarControl();
     }
 
@@ -65,9 +66,9 @@ public class ControladorLoginSolicitante {
         ModeloSolicitante modSolctnt = new ModeloSolicitante();
         List<Solicitante> solc = modSolctnt.ListaSolicitante();
 
-        boolean bandera = modSolctnt.ConsultarSolicitante(vistaLogSoli.getTxtxUsuario().getText(), vistaLogSoli.getTxtContra().getText(), solc);
+        solicitanteingresado = modSolctnt.ConsultarSolicitante(vistaLogSoli.getTxtxUsuario().getText(), vistaLogSoli.getTxtContra().getText(), solc);
 
-        if (bandera) {
+        if (solicitanteingresado != null) {
             iniciarSesion();
             vistaLogSoli.dispose();
         } else {
