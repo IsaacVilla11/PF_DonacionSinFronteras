@@ -37,10 +37,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         return btnAyudaCategoriaAli;
     }
 
-    public JButton getBtnAyudaTipoMuebles() {
-        return btnAyudaTipoMuebles;
-    }
-
     public JButton getBtnCargarImagen() {
         return btnCargarImagen;
     }
@@ -71,10 +67,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
 
     public JButton getBtnConsultar3() {
         return btnConsultar3;
-    }
-
-    public JButton getBtnConsultarTipo() {
-        return btnConsultarTipo;
     }
 
     public JButton getBtnCrear() {
@@ -372,7 +364,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     public JTextField getTxtNombreAlimento() {
         return txtNombreAlimento;
     }
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -441,7 +432,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         btnConsultar1 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        btnAyudaTipoMuebles = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         btnReporte1 = new javax.swing.JButton();
@@ -464,7 +454,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         txtPrecioVendible1 = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblMuebles = new javax.swing.JTable();
-        btnConsultarTipo = new javax.swing.JButton();
         btnLimpiar1 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         cbxCodigosMuebles = new javax.swing.JComboBox<>();
@@ -899,10 +888,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jLabel23.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jPanel8.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
-        btnAyudaTipoMuebles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/interrogacion2.jpg"))); // NOI18N
-        btnAyudaTipoMuebles.setContentAreaFilled(false);
-        jPanel8.add(btnAyudaTipoMuebles, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 40, 30));
-
         jSeparator6.setBackground(new java.awt.Color(0, 204, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 204, 255));
         jSeparator6.setPreferredSize(new java.awt.Dimension(0, 5));
@@ -1005,10 +990,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
         jScrollPane4.setViewportView(tblMuebles);
 
         jPanel8.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 910, 370));
-
-        btnConsultarTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/busqueda.png"))); // NOI18N
-        btnConsultarTipo.setContentAreaFilled(false);
-        jPanel8.add(btnConsultarTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 50, 40));
 
         btnLimpiar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/limpieza.png"))); // NOI18N
         btnLimpiar1.setContentAreaFilled(false);
@@ -1571,7 +1552,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnAyuda2;
     private javax.swing.JButton btnAyuda3;
     private javax.swing.JButton btnAyudaCategoriaAli;
-    private javax.swing.JButton btnAyudaTipoMuebles;
     private javax.swing.JButton btnCargarImagen;
     private javax.swing.JButton btnCargarImagen1;
     private javax.swing.JButton btnCargarImagen3;
@@ -1580,7 +1560,6 @@ public class V_ModuloProducto extends javax.swing.JFrame {
     private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnConsultar2;
     private javax.swing.JButton btnConsultar3;
-    private javax.swing.JButton btnConsultarTipo;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnCrear1;
     private javax.swing.JButton btnCrear2;

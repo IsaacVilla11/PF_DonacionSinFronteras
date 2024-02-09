@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e2bdf3c-45ad-454a-ae0b-43b5b1f0b0fe">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="PieChartDataset" uuid="8ceafd3a-a8b5-475c-aa2e-767e89542b4d"/>
+	<queryString>
+		<![CDATA[SELECT tv.estado, COUNT(*) AS cantidad_productos
+FROM tipoVendible tv
+INNER JOIN ropa r ON tv.id_vendible = r.id_vendible_rop
+GROUP BY tv.estado;]]>
+	</queryString>
+	<field name="estado" class="java.lang.String"/>
+	<field name="cantidad_productos" class="java.lang.Long"/>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="258" y="65" width="295" height="29" uuid="c3be20e8-7384-464b-91cf-51a3a9871ddf"/>
+				<textElement textAlignment="Right">
+					<font size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reporte gráfico por estado]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="597" height="65" forecolor="#006699" backcolor="#006699" uuid="e4370e32-57a9-42e7-b636-ad6e68354041"/>
+				<staticText>
+					<reportElement style="Title" x="161" y="0" width="416" height="65" uuid="eeee5ed0-0bef-49e9-b731-78267b8a5639"/>
+					<textElement textAlignment="Right">
+						<font size="54" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Reportes de Ropa]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="29">
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="0" y="0" width="163" height="28" forecolor="#000000" uuid="99a798a8-dbdc-48c0-956f-cfce746f6f05"/>
+				<textElement>
+					<font fontName="Dubai" size="16" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="163" y="0" width="150" height="29" forecolor="#000000" uuid="373c213d-93a6-4661-9691-9c480c99a6c5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Dubai" size="16" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="0" y="0" width="163" height="18" uuid="46939008-8286-4ae5-b0cf-54c8c96c73d1"/>
+				<textElement>
+					<font fontName="Arial" size="15" isBold="false" isItalic="false" isUnderline="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="163" y="0" width="150" height="18" uuid="73d1a8df-2ed8-4d54-a3f3-14b0d6551de1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="15" isBold="false" isItalic="false" isUnderline="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad_productos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="407">
+			<pie3DChart>
+				<chart>
+					<reportElement x="0" y="26" width="535" height="280" uuid="d2e1b61a-4a4e-4b58-8d73-5cfd47acf8ee"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Page"/>
+					<keyExpression><![CDATA[$F{estado}]]></keyExpression>
+					<valueExpression><![CDATA[$F{cantidad_productos}]]></valueExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.*;
+import Vista.VP_Mueble;
 import Vista.VP_Ropa;
 import Vista.V_ModuloProducto;
 import Vista.vistaAdministrador;
@@ -603,7 +604,7 @@ public class ControladorModuloProductos {
         timer.setRepeats(false);
         timer.start();
     }
-    
+
     // </editor-fold>
     // <editor-fold desc="Metodos utiles">
     private void regresarModuloAdmin() {
@@ -1015,8 +1016,13 @@ public class ControladorModuloProductos {
     }
 
     private void reporteMueble() {
+        VP_Mueble vista = new VP_Mueble();
 
-        mostrarMensajeMueble("REPORTE EXITOSO", 1000, icon);
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+
+        ControladorReporteMueble control = new ControladorReporteMueble(vista);
+        control.iniciarControl();
     }
 
     private void limpiarCamposMueble() {
