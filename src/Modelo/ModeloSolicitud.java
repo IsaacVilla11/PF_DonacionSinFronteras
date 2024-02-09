@@ -8,11 +8,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class ModeloSolicitud extends Solicitud{
-    
     ConexionPg cone = new ConexionPg(); ////Conectamos a la base
     ModeloSolicitante solicitante =new ModeloSolicitante();
    
-    public boolean insertarSolicitud(int idSolicitante) {
+    public boolean insertarSolicitud() {
     String sql = "INSERT INTO solicitud (razon_soli, fecha_soli, id_solicitante_soli) VALUES (?, ?, ?)";
     try {
         PreparedStatement statement = cone.getCon().prepareStatement(sql);
@@ -20,7 +19,7 @@ public class ModeloSolicitud extends Solicitud{
         // Setear los parámetros
         statement.setString(1, getRazon_soli());
         statement.setDate(2, (Date) getFecha_soli());
-        statement.setInt(3, idSolicitante);
+        statement.setInt(3, getId_solicitante_soli());
 
         int rowsAffected = statement.executeUpdate();
         statement.close();
@@ -48,7 +47,7 @@ public class ModeloSolicitud extends Solicitud{
             System.err.println("Error al obtener el último ID de Solicitud: " + ex.getMessage());
         }
 
-        return ultimoId;
+        return ultimoId+1;
     }
     
 // metodo para sacar el id incremental para relacionar las tablas
