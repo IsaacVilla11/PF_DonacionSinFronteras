@@ -64,23 +64,23 @@ public class ModeloRegistroTras {
         }
     }
 
-    public List<Long> obtenerIdDonaciones() {
-        String sql = "SELECT id_donacion FROM donacion";
-        ResultSet rs = cone.consultaDB(sql);
-        List<Long> idDonaciones = new ArrayList<>();
+   public List<Long> obtenerIdDonacionesSinRegistroTransporte() {
+    String sql = "SELECT id_donacion FROM donacion WHERE NOT EXISTS (SELECT 1 FROM registro_transporte WHERE registro_transporte.id_donacion = donacion.id_donacion)";
+    ResultSet rs = cone.consultaDB(sql);
+    List<Long> idDonaciones = new ArrayList<>();
 
-        try {
-            while (rs.next()) {
-                long idDonacion = rs.getLong("id_donacion");
-                idDonaciones.add(idDonacion);
-            }
-            rs.close();
-            return idDonaciones;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
+    try {
+        while (rs.next()) {
+            long idDonacion = rs.getLong("id_donacion");
+            idDonaciones.add(idDonacion);
         }
+        rs.close();
+        return idDonaciones;
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        return null;
     }
+}
 
    public boolean insertarRegistroTransporte(RegistroTransporte registro) {
     String sql = "INSERT INTO registro_transporte (fecha_llegada, id_cam_retr, id_lugar, id_donacion) VALUES (?, ?, ?, ?)";
@@ -392,7 +392,44 @@ private int obtenerIdLugarCentroAcopioPorNombre(Connection connection, String no
         }
         return camion;
     }
+public boolean existeRegistroTransporteParaDonacion(int idDonacion) {
+    ConexionPg cone = new ConexionPg();
+    Connection connection = null;
+    PreparedStatement statement = null;
+    ResultSet resultSet = null;
+    boolean existeRegistro = false;
 
+    try {
+        connection = cone.getCon();
+        String sql = "SELECT id_reg_trans FROM registro_transporte WHERE id_donacion = ?";
+        statement = connection.prepareStatement(sql);
+        statement.setInt(1, idDonacion);
+        resultSet = statement.executeQuery();
+
+        // Si hay resultados, significa que hay al menos un registro de transporte asociado a la donación
+        if (resultSet.next()) {
+            existeRegistro = true;
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (statement != null) {
+                statement.close();
+            }
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    return existeRegistro;
+}
     //gurdar cambios
     public boolean actualizarRegistroTransporte(RegistroTransporte registro) {
         String sql = "UPDATE registro_transporte SET fecha_llegada = ?, id_cam_retr = ?, id_lugar = ?, id_donacion = ? WHERE id_reg_trans = ?";

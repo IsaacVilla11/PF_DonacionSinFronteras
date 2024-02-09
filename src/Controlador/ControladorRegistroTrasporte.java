@@ -90,6 +90,7 @@ public class ControladorRegistroTrasporte {
                 JOptionPane.showMessageDialog(vistatras, "Error al eliminar el registro de transporte");
             }
         }
+        llenarComboBoxDonaciones();
     }
 
     public void guardarCambiosRegistroTransporte() {
@@ -236,7 +237,7 @@ registroModificado.setId_lugar(idLugarInt);
     }
 
     public void llenarComboBoxDonaciones() {
-        List<Long> idDonaciones = modTras.obtenerIdDonaciones();
+        List<Long> idDonaciones = modTras.obtenerIdDonacionesSinRegistroTransporte();
 
         vistatras.getComboDonaciones1().removeAllItems();
 
@@ -292,8 +293,17 @@ registroModificado.setId_lugar(idLugarInt);
             nuevoRegistro.setId_donacion(idDonacionInt);
 
             boolean exito = modTras.insertarRegistroTransporte(nuevoRegistro);
-            
+             llenarComboBoxDonaciones();
+             
             if (exito) {
+                
+                 // Verificar si el id_donacion no está asociado a ningún registro de transporte
+    if (!modTras.existeRegistroTransporteParaDonacion(idDonacionInt)) {
+        // Si no hay registros de transporte asociados, eliminar el id_donacion del ComboBox
+        
+        vistatras.getComboDonaciones1().removeItemAt(vistatras.getComboDonaciones1().getSelectedIndex());
+             vistatras.getComboDonaciones1().getSelectedItem();
+    }
                 JOptionPane.showMessageDialog(null, "Registro de transporte guardado exitosamente");
                 mostrarRegistrosEnTabla();
             } else {
